@@ -5,8 +5,8 @@
 </script>
 
 <div class="flex flex-col items-center justify-center p-4 sm:p-0">
-	<div class="max-w-xl mx-auto">
-		<h3 class="text-xl sm:text-2xl font-bold mb-4 text-center">{title}</h3>
+	<div class="max-w-screen-sm mx-auto">
+		<h3 class="text-xl sm:text-l font-bold mb-4 text-center">{title}</h3>
 	</div>
 	<!-- Display the tags from the document in a nice way -->
 	<!-- <div class="flex flex-row flex-wrap justify-center mb-4">
