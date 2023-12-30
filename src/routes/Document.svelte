@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex flex-col items-center justify-center">
-	<div class="max-w-2xl mx-auto">
+	<div class="max-w-xl mx-auto">
 		<h2 class="text-2xl font-bold mb-4 text-center">{title}</h2>
 	</div>
 	<!-- Display the tags from the document in a nice way -->
@@ -17,7 +17,7 @@
 		{/each}
 	</div> -->
 	<textarea
-		class="text-lg mb-4 h-64 w-full max-w-2xl p-4 border border-gray-300 rounded-lg bg-gray-100"
+		class="text-lg mb-2 h-64 w-full max-w-xl p-4 border border-gray-300 rounded-lg bg-gray-100"
 		value={summary}
 		readonly
 	/>

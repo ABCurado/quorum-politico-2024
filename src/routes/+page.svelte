@@ -71,9 +71,9 @@
 		</div>
 	</div>
 {:else}
-	<div class="loading h-4 w-[{(currentVote / quizSize) * 100}%] bg-teal-500 transition-all duration-200 absolute z-40 top-0" />
-	{#key currentVote}
-		<div class="flex flex-col justify-center items-center mt-24">
+<div class="loading h-2 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {currentVote/quizSize * 100}%" />
+    {#key currentVote}
+		<div class="flex flex-col justify-center items-center mt-8">
 			<Document title={data.db[currentVote].title} summary={data.db[currentVote].sumary} url={data.db[currentVote].link_to_proposal} />
 
 			<div class="fixed bottom-16 left-0 right-0 flex justify-center space-x-4 m-8">
