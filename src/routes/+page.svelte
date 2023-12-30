@@ -2,6 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import Welcome from './Welcome.svelte';
 	import Document from './Document.svelte';
+	import mixpanel from 'mixpanel-browser';
 
 	export let data;
 	let readInstructions = false;
@@ -38,6 +39,10 @@
 		}
 		console.log(data.db);
 		console.log(partyProximity);
+		mixpanel.track('quiz-finished', {
+			'quiz-size': quizSize,
+			'party-proximity': partyProximity
+		});
 		return Object.keys(partyProximity)
 			.map((party: string) => {
 				return {
