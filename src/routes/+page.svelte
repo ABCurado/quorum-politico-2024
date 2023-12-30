@@ -73,13 +73,13 @@
 {:else}
 	<div class="loading h-2 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
-		<div class="flex flex-col justify-center items-center mt-8 px-4 sm:px-0">
+		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<Document title={data.db[currentVote].title} summary={data.db[currentVote].sumary} url={data.db[currentVote].link_to_proposal} />
 
-			<div class="fixed bottom-16 left-0 right-0 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 space-x-0 sm:space-x-4 m-8">
-				<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" id="1" on:click={handleVoteClick}>Favor</button>
-				<button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full" id="2" on:click={handleVoteClick}>Abstenção</button>
-				<button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" id="0" on:click={handleVoteClick}>Contra</button>
+			<div class="fixed bottom-14 left-0 right-0 flex justify-center space-x-4 m-8">
+				<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full" id="1" on:click={handleVoteClick}>👍</button>
+				<button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full" id="2" on:click={handleVoteClick}>🤷‍♂️</button>
+				<button class="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full" id="0" on:click={handleVoteClick}>👎</button>
 			</div>
 		</div>
 	{/key}
