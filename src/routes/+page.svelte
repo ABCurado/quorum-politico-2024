@@ -36,8 +36,8 @@
 				}
 			}
 		}
-        console.log(data.db);
-        console.log(partyProximity);
+		console.log(data.db);
+		console.log(partyProximity);
 		return Object.keys(partyProximity)
 			.map((party: string) => {
 				return {
@@ -56,27 +56,27 @@
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
-	<div class="flex flex-col justify-center items-center mt-24">
-		<h1 class="text-center text-6xl mb-8">Concordas?</h1>
-		<p class="text-center text-lg mb-4">
+	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen">
+		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
+		<p class="text-center text-base sm:text-lg mb-4">
 			O partido mais próximo a ti é o: <strong>{calculateProximity()[0].party}</strong>
 		</p>
 		<div>
 			{#each calculateProximity() as party}
 				<div class="flex align-middle mb-2">
-					<div class="bar-label w-60 font-bold">{party.party}</div>
+					<div class="bar-label w-48 sm:w-60 font-bold">{party.party}</div>
 					<div class="bar-fill" style="width: {party.proximity * 100}%" />
 				</div>
 			{/each}
 		</div>
 	</div>
 {:else}
-<div class="loading h-2 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {currentVote/quizSize * 100}%" />
-    {#key currentVote}
-		<div class="flex flex-col justify-center items-center mt-8">
+	<div class="loading h-2 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {(currentVote / quizSize) * 100}%" />
+	{#key currentVote}
+		<div class="flex flex-col justify-center items-center mt-8 px-4 sm:px-0">
 			<Document title={data.db[currentVote].title} summary={data.db[currentVote].sumary} url={data.db[currentVote].link_to_proposal} />
 
-			<div class="fixed bottom-16 left-0 right-0 flex justify-center space-x-4 m-8">
+			<div class="fixed bottom-16 left-0 right-0 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 space-x-0 sm:space-x-4 m-8">
 				<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" id="1" on:click={handleVoteClick}>Favor</button>
 				<button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full" id="2" on:click={handleVoteClick}>Abstenção</button>
 				<button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full" id="0" on:click={handleVoteClick}>Contra</button>
@@ -87,11 +87,6 @@
 
 <style>
 	.bar-fill {
-		height: 20px;
-		background-color: teal;
-		border-radius: 4px;
-		transition: width 0.3s ease-in-out;
-		direction: rtl; /* Add this line */
 		width: 100%; /* Add this line */
 	}
 
