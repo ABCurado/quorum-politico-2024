@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import { IconBrandFacebook, IconBrandX, IconBrandLinkedin,IconBrandWhatsapp } from '@tabler/icons-svelte';
 	import Welcome from './Welcome.svelte';
 	import Document from './Document.svelte';
 	import mixpanel from 'mixpanel-browser';
@@ -73,6 +74,48 @@
 					<div class="bar-fill" style="width: {party.proximity * 100}%" />
 				</div>
 			{/each}
+		</div>
+		<!-- Buttons to share the results in social media -->
+		<div class="flex flex-row justify-center space-x-4 m-8">
+			<a
+				href="https://twitter.com/intent/tweet?text=Descobre%20em%20quem%20votar%20nas%20pr%C3%B3ximas%20elei%C3%A7%C3%B5es%20com%20o%20Concordas%3F%20https%3A%2F%2Fconcordas.pt"
+				target="_blank"
+				class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-full"
+			>
+				<IconBrandX />
+			</a>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fconcordas.pt" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full">
+				<IconBrandFacebook />
+			</a>
+			<a
+				href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fconcordas.pt&title=Descobre%20em%20quem%20votar%20nas%20pr%C3%B3ximas%20elei%C3%A7%C3%B5es%20com%20o%20Concordas%3F"
+				target="_blank"
+				class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-6 rounded-full"
+			>
+				<IconBrandLinkedin />
+			</a>
+			<a
+				href="https://api.whatsapp.com/send?text=Descobre%20em%20quem%20votar%20nas%20pr%C3%B3ximas%20elei%C3%A7%C3%B5es%20com%20o%20Concordas%3F%20https%3A%2F%2Fconcordas.pt"
+				target="_blank"
+				class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full"
+			>
+				<IconBrandWhatsapp />
+			</a>
+
+		</div>
+		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
+			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
+			<button
+				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full"
+				on:click={() => {
+					currentVote = 0;
+					data.db.forEach((proposal) => {
+						proposal.user_vote = null;
+					});
+				}}
+			>
+				Voltar atrás
+			</button>
 		</div>
 	</div>
 {:else}
