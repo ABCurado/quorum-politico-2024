@@ -5,6 +5,7 @@
 	import Document from './Document.svelte';
 	import mixpanel from 'mixpanel-browser';
 	import SocialShare from './SocialShare.svelte';
+	import Hemicycle from './Hemicycle.svelte';
 
 	export let data;
 	let readInstructions = false;
@@ -39,8 +40,7 @@
 				}
 			}
 		}
-		console.log(data.db);
-		console.log(partyProximity);
+
 		mixpanel.track('quiz-finished', {
 			'quiz-size': quizSize,
 			'party-proximity': partyProximity
@@ -59,11 +59,12 @@
 </script>
 
 {#if !readInstructions}
-	<div transition:fade={{ duration: 150 }} class="absolute w-full h-full z-20 flex items-center justify-center">
+	<div transition:fade={{ duration: 300 }} class="absolute w-full h-full z-20 flex items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
 	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen">
+		<Hemicycle opacities={Object.fromEntries(calculateProximity().map(party => [party.party, party.proximity]))} centerText={calculateProximity()[0].party} />
 		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
 		<p class="text-center text-base sm:text-lg mb-4">
 			O partido mais próximo a ti é o: <strong>{calculateProximity()[0].party}</strong>
@@ -75,15 +76,6 @@
 					<div class="bar-fill" style="width: {party.proximity * 100}%" />
 				</div>
 			{/each}
-		</div>
-		<!-- Buttons to share the results in social media -->
-		<div class="flex gap-2 justify-center w-full fixed bottom-4 center">
-			<SocialShare
-				class="flex justify-center space-x-4 m-8"
-				title="Concordas?"
-				url="https://em-quem-votar-2023.pages.dev/"
-				description="O partido mais próximo a ti é o: {calculateProximity()[0].party}"
-			/>
 		</div>
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
@@ -98,6 +90,10 @@
 			>
 				Voltar atrás
 			</button>
+			<!-- Buttons to share the results in social media -->
+			<div class="flex gap-2 justify-center w-full fixed bottom-4 center">
+				<SocialShare class="flex justify-center space-x-4 m-8" title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O partido mais próximo a ti é o: {calculateProximity()[0].party}" />
+			</div>
 		</div>
 	</div>
 {:else}
