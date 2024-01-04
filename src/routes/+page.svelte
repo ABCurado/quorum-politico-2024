@@ -36,7 +36,7 @@
 				} else if (proposal.user_vote == 2) {
 					partyProximity[party] += 0.5;
 				} else {
-					console.log(proposal.id, ' VOTE NOT FOUND');
+					// console.log(proposal.id, ' VOTE NOT FOUND');
 				}
 			}
 		}
@@ -77,10 +77,12 @@
 				</div>
 			{/each}
 		</div>
+		<div class="flex justify-center w-full gap-3 center m-2 mt-6">
+			<SocialShare title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O partido mais próximo a ti é o: {calculateProximity()[0].party}" />
+		</div>
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
-			<button
-				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full"
+			<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4	"
 				on:click={() => {
 					currentVote = 0;
 					data.db.forEach((proposal) => {
@@ -91,9 +93,9 @@
 				Voltar atrás
 			</button>
 			<!-- Buttons to share the results in social media -->
-			<div class="flex gap-2 justify-center w-full fixed bottom-4 center">
-				<SocialShare class="flex justify-center space-x-4 m-8" title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O partido mais próximo a ti é o: {calculateProximity()[0].party}" />
-			</div>
+		</div>
+		<div class="m-4 px-4 sm:px-0">
+			<a href="/about" class="text-blue-500 hover:underline font-bold text-lg">Descobre mais sobre o projeto</a>
 		</div>
 	</div>
 {:else}
@@ -102,7 +104,7 @@
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<Document title={data.db[currentVote].title} summary={data.db[currentVote].sumary} url={data.db[currentVote].link_to_proposal} />
 
-			<div class="fixed bottom-14 left-0 right-0 flex justify-center space-x-4 m-8">
+			<div class="fixed bottom-14 sm:bottom-6 left-0 right-0 flex justify-center space-x-4 m-8">
 				<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full" id="1" on:click={handleVoteClick}>👍</button>
 				<button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full" id="2" on:click={handleVoteClick}>🤷‍♂️</button>
 				<button class="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full" id="0" on:click={handleVoteClick}>👎</button>
