@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-
+	let proximity: { party: string; proximity: number }[] = [];
 	import Welcome from './Welcome.svelte';
 	import Document from './Document.svelte';
 	import mixpanel from 'mixpanel-browser';
@@ -16,6 +16,10 @@
 		data.db[currentVote].user_vote = event.target.id;
 		currentVote += 1;
 	}
+
+	$: currentVote == quizSize ? mixpanel.track('quiz-finished', { 'quiz-size': quizSize}) : null;
+
+	$: proximity = calculateProximity();
 
 	function calculateProximity() {
 		let partyProximity = {
@@ -41,10 +45,6 @@
 			}
 		}
 
-		mixpanel.track('quiz-finished', {
-			'quiz-size': quizSize,
-			'party-proximity': partyProximity
-		});
 		return Object.keys(partyProximity)
 			.map((party: string) => {
 				return {
@@ -59,12 +59,12 @@
 </script>
 
 {#if !readInstructions}
-	<div transition:fade={{ duration: 300 }} class="absolute w-full h-full z-20 flex items-center justify-center">
+	<div class="absolute mx-auto w-full h-full z-20 flex items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
 	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen">
-		<Hemicycle opacities={Object.fromEntries(calculateProximity().map(party => [party.party, party.proximity]))} centerText={calculateProximity()[0].party} />
+		<Hemicycle opacities={Object.fromEntries(calculateProximity().map((party) => [party.party, party.proximity]))} centerText={calculateProximity()[0].party} />
 		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
 		<p class="text-center text-base sm:text-lg mb-4">
 			O partido mais próximo a ti é o: <strong>{calculateProximity()[0].party}</strong>
@@ -82,7 +82,8 @@
 		</div>
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
-			<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4	"
+			<button
+				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4"
 				on:click={() => {
 					currentVote = 0;
 					data.db.forEach((proposal) => {
@@ -99,15 +100,15 @@
 		</div>
 	</div>
 {:else}
-	<div class="loading h-2 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {(currentVote / quizSize) * 100}%" />
+	<div class="loading h-2 sm:h-4 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
-		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
+		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0">
 			<Document title={data.db[currentVote].title} summary={data.db[currentVote].sumary} url={data.db[currentVote].link_to_proposal} />
 
-			<div class="fixed bottom-14 sm:bottom-6 left-0 right-0 flex justify-center space-x-4 m-8">
-				<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full" id="1" on:click={handleVoteClick}>👍</button>
-				<button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full" id="2" on:click={handleVoteClick}>🤷‍♂️</button>
-				<button class="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full" id="0" on:click={handleVoteClick}>👎</button>
+			<div class="fixed bottom-10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8">
+				<button class="bg-green-400 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full" id="1" on:click={handleVoteClick}>👍<span class="hidden sm:block">Aprovado</span></button>
+				<button class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-full" id="2" on:click={handleVoteClick}>🤷‍♂️<span class="hidden sm:block">Abestençao</span></button>
+				<button class="bg-red-400 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full" id="0" on:click={handleVoteClick}>👎<span class="hidden sm:block">Rejeitado</span></button>
 			</div>
 		</div>
 	{/key}

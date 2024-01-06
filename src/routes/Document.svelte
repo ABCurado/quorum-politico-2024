@@ -17,9 +17,9 @@
 		{/each}
 	</div> -->
 	<textarea
-		class="text-base sm:text-lg mb-2 h-48 sm:h-48 w-full max-w-xl p-4 border border-gray-300 rounded-lg bg-gray-100"
+		class="text-base sm:text-lg mb-2 h-48 sm:h-64 lg:h-96 w-full max-w-xl p-4 border rounded-lg bg-gray-100"
 		value={summary}
 		readonly
 	/>
 	<a href={url} target="_blank" class="text-blue-500 underline">Ver documento</a>
-</div>
+</div>	

@@ -3,7 +3,7 @@
 </script>
 
 {#if !readInstructions}
-	<div class="flex flex-col justify-center items-center p-6 sm:p-8">
+	<div class="flex flex-col items-center p-6 sm:p-8">
 		<h1 class="text-center text-4xl mb-4">Descobre em quem votar</h1>
 		<p class="text-center text sm:text-base mb-4">
 			Olá! Bem-vindo ao <strong>Concordas?</strong>, um jogo que te permite descobrir em quem votar nas próximas eleições. O jogo é baseado nas votaçõoes que aconteceram no parlamento europeu de 2022-2023.

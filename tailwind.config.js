@@ -1,6 +1,7 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: ['class', '[data-mode="dark"]'],
+	plugins: [require('tailwindcss-hero-patterns')],
 	theme: {
 		extend: {
 			colors: {}
