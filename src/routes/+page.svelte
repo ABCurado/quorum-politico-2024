@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	let proximity: { party: string; proximity: number }[] = [];
 	import Welcome from './Welcome.svelte';
 	import Document from './Document.svelte';
 	import mixpanel from 'mixpanel-browser';
@@ -17,23 +16,12 @@
 		currentVote += 1;
 	}
 
-	$: currentVote == quizSize ? mixpanel.track('quiz-finished', { 'quiz-size': quizSize}) : null;
+	let proximity: { party: string; proximity: number }[] = [];
 
-	$: proximity = calculateProximity();
+	$: if (currentVote === quizSize) {
+		let partyProximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
 
-	function calculateProximity() {
-		let partyProximity = {
-			BE: 0,
-			CH: 0,
-			IL: 0,
-			L: 0,
-			PAN: 0,
-			PCP: 0,
-			PS: 0,
-			PSD: 0
-		};
-
-		for (var proposal of data.db) {
+		for (let proposal of data.db) {
 			for (const [party, result] of Object.entries(proposal.votes)) {
 				if (result == proposal.user_vote) {
 					partyProximity[party] += 1;
@@ -45,16 +33,16 @@
 			}
 		}
 
-		return Object.keys(partyProximity)
-			.map((party: string) => {
-				return {
-					party: party,
-					proximity: partyProximity[party] / quizSize
-				};
-			})
-			.sort((a: { proximity: number }, b: { proximity: number }) => {
-				return b.proximity - a.proximity;
-			});
+		proximity = Object.entries(partyProximity)
+			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
+			.sort((a, b) => b.proximity - a.proximity);
+
+		mixpanel.track('quiz-finished', {
+			'quiz-size': quizSize,
+			'top-party': proximity[0].party,
+			'top-party-proximity': proximity[0].proximity,
+			'user-votes': data.db
+		});
 	}
 </script>
 
@@ -64,13 +52,13 @@
 	</div>
 {:else if currentVote == quizSize}
 	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen">
-		<Hemicycle opacities={Object.fromEntries(calculateProximity().map((party) => [party.party, party.proximity]))} centerText={calculateProximity()[0].party} />
+		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
 		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
 		<p class="text-center text-base sm:text-lg mb-4">
-			O partido mais próximo a ti é o: <strong>{calculateProximity()[0].party}</strong>
+			O partido mais próximo a ti é o: <strong>{proximity[0].party}</strong>
 		</p>
 		<div>
-			{#each calculateProximity() as party}
+			{#each proximity as party}
 				<div class="flex align-middle mb-2">
 					<div class="bar-label w-48 sm:w-60 font-bold">{party.party}</div>
 					<div class="bar-fill" style="width: {party.proximity * 100}%" />
@@ -78,7 +66,7 @@
 			{/each}
 		</div>
 		<div class="flex justify-center w-full gap-3 center m-2 mt-6">
-			<SocialShare title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O partido mais próximo a ti é o: {calculateProximity()[0].party}" />
+			<SocialShare title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O partido mais próximo a ti é o: {proximity[0].party}" />
 		</div>
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>

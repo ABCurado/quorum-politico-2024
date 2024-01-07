@@ -1,7 +1,7 @@
 <script lang="ts">
 	import parlimentData from './parlimentData.json';
 
-	let partyColor: { [key: string]: string } = {
+	let partyColors: { [key: string]: string } = {
 		PCP: 'fill-current text-red-800',
 		BE: 'fill-current text-red-600',
 		L: 'fill-current text-red-500',
@@ -15,16 +15,9 @@
 	let radius = 7;
 
 	export let centerText = '';
-	export let opacities: { [key: string]: number } = {
-		PCP: opacity,
-		BE: opacity,
-		L: opacity,
-		PAN: opacity,
-		IL: opacity,
-		PS: opacity,
-		PSD: opacity,
-		CH: opacity
-	};
+	export let partyRankingList: { party: string; proximity: number }[] = [];
+	let partyRanking = Object.fromEntries(partyRankingList.map((party) => [party.party, party.proximity]));
+
 </script>
 
 <div class="flex flex-col justify-center items-center">
@@ -34,7 +27,7 @@
 			<text x="175" y="175" class="text-3xl font-bold text-center" style="text-anchor:middle;"> {centerText} </text>
 
 			{#each parlimentData as seat}
-				<circle cx={seat[0]} cy={seat[1]} r={radius * opacities[seat[2]] } class={partyColor[seat[2]]} style="opacity: {opacities[seat[2]] || '1.0'}" />
+				<circle cx={seat[0]} cy={seat[1]} r={radius * partyRanking[seat[2]]} class={partyColors[seat[2]]} style="opacity: {partyRanking[seat[2]] || { opacity }}" />
 			{/each}
 		</g>
 	</svg>
