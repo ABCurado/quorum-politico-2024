@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 	// @ts-ignore
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
 
 	export let url = 'https://em-quem-votar-2023.pages.dev/';
 	export let title = '';
 	export let desc = '';
+	export let hashtags = 'em-quem-votar-2023';
 </script>
 
 <!-- <Email subject={title} body="{desc} {url}" /> -->
@@ -18,5 +19,5 @@
 <WhatsApp class="share-button rounded" text="{title} {url}" />
 <!-- <Xing class="share-button" {title} {url} /> -->
 <Facebook class="share-button rounded" quote={title} {url} />
-<X class="share-button rounded" text={title} {desc} {url} related="other,users" />
+<X class="share-button rounded" text={title} {desc} {url} related="other,users" {hashtags} />
 <!-- <Line class="share-button" {url} /> -->
