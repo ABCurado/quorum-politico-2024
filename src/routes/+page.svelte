@@ -91,7 +91,7 @@
 	<div class="loading h-2 sm:h-4 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
 		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0">
-			<Document title={data.db[currentVote].title} summary={data.db[currentVote].sumary} url={data.db[currentVote].link_to_proposal} />
+			<Document title={data.db[currentVote].title} summary={data.db[currentVote].summary} url={data.db[currentVote].proposal_link} />
 
 			<div class="fixed bottom-10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8">
 				<button class="bg-green-400 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full" id="1" on:click={handleVoteClick}>👍<span class="hidden sm:block">Aprovado</span></button>
