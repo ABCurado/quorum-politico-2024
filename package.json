@@ -36,6 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"google-auth-library": "^9.4.1",
+		"google-spreadsheet": "^4.1.1",
 		"mixpanel-browser": "^2.47.0",
 		"n3": "^1.17.1",
 		"tailwindcss-hero-patterns": "^0.1.2"
