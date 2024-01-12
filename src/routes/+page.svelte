@@ -1,13 +1,16 @@
 <script lang="ts">
+	import BarChart from './BarChart.svelte';
+
 	import { fade } from 'svelte/transition';
 	import Welcome from './Welcome.svelte';
 	import Document from './Document.svelte';
 	import mixpanel from 'mixpanel-browser';
 	import SocialShare from './SocialShare.svelte';
 	import Hemicycle from './Hemicycle.svelte';
+	let showResults = false;
 
 	export let data;
-	let readInstructions = true;
+	let readInstructions = false;
 	let quizSize: number = data.db.length;
 	let currentVote = 0;
 
@@ -57,17 +60,31 @@
 		<p class="text-center text-base sm:text-lg mb-4">
 			O partido mais próximo a ti é o: <strong>{proximity[0].party}</strong>
 		</p>
-		<div>
-			{#each proximity as party}
-				<div class="flex align-middle mb-2">
-					<div class="bar-label w-48 sm:w-60 font-bold">{party.party}</div>
-					<div class="bar-fill" style="width: {party.proximity * 100}%" />
+		<BarChart {proximity} />
+		<div class="w-full flex flex-col gap-3 m-2 mt-6">
+			<p class="text-center">Partilha com amigos e compara as vossas tendências partidárias</p>
+			<div class="flex items-center justify-center gap-3">
+				<SocialShare title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O Partido que mais te representa é: {proximity[0].party}" />
+			</div>
+		</div>
+
+		<button on:click={() => (showResults = !showResults)} class="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 m-2 rounded"> Mostrar resultados </button>
+
+		{#if showResults}
+			{#each data.db as vote}
+				<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-2/3">
+					<div class="px-4 py-5 sm:px-6 border-b border-gray-200 w-full">
+						<h2 class="text-lg leading-6 font-medium text-gray-900">{vote.title} - {vote.author}</h2>
+					</div>
+					<div class="px-4 py-4 sm:px-6 w-full">
+						<p class="text-sm text-gray-500">⁠O que decidiste tu: {vote.user_vote === '0' ? 'Rejeitar' : vote.user_vote === '1' ? 'Aceitar' : 'Abestençao'}</p>
+						<p class="text-sm text-gray-500">⁠O que decidiu a average das pessoas:</p>
+						<p class="text-sm text-gray-500">⁠Qual foi o outcome real: {vote.final_result === '0' ? 'Rejeitar' : vote.final_result === '1' ? 'Aceitar' : 'Abestençao'}</p>
+					</div>
 				</div>
 			{/each}
-		</div>
-		<div class="flex justify-center w-full gap-3 center m-2 mt-6">
-			<SocialShare title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O partido mais próximo a ti é o: {proximity[0].party}" />
-		</div>
+		{/if}
+
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
 			<button
@@ -93,37 +110,12 @@
 		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0">
 			<Document {...data.db[currentVote]} />
 
-
-			<div class="fixed bottom-10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8">
-				
-				<button class="bg-green-400 hover:bg-green-700 text-gray-800 font-bold py-4 px-8 rounded-full" id="1" on:click={handleVoteClick}>👍<span class="hidden sm:block">Aprovar</span></button>
-				<button class="bg-gray-400 hover:bg-gray-700 text-gray-800 font-bold py-4 px-8 rounded-full" id="2" on:click={handleVoteClick}>🤷‍♂️<span class="hidden sm:block">Abster-me</span></button>
-				<button class="bg-red-400 hover:bg-red-700 text-gray-800 font-bold py-4 px-8 rounded-full" id="0" on:click={handleVoteClick}>👎<span class="hidden sm:block">Rejeitar</span></button>
+			<!-- <div class="fixed bottom-10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
+			<div class="left-0 right-0 flex justify-center space-x-4 m-8">
+				<button class="bg-green-400 hover:bg-green-700 text-gray-700 font-bold py-1 px-4 rounded-xl" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
+				<button class="bg-gray-400 hover:bg-gray-700 text-gray-700 font-bold px-4 rounded-xl" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
+				<button class="bg-red-400 hover:bg-red-700 text-gray-700 font-bold px-4 rounded-xl" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>
 	{/key}
 {/if}
-
-<style>
-	.bar-fill {
-		width: 100%; /* Add this line */
-	}
-
-	.bar-fill::after {
-		content: '';
-		display: block;
-		height: 100%;
-		border-radius: 4px;
-		background-color: rgba(0, 128, 128, 0.8);
-		transition: width 0.3s ease-in-out;
-		direction: ltr; /* Add this line if you have text inside the bar */
-	}
-
-	.bar-fill:hover::after {
-		background-color: rgba(0, 128, 128, 1);
-	}
-
-	.bar-fill:hover {
-		background-color: teal;
-	}
-</style>

@@ -24,7 +24,7 @@
 		<h1 class="text-center text-4xl mb-4">Descobre que partido melhor te representa!</h1>
 		<p class="text-center text sm:text-base mb-4">Bem-vindo! Este simulador permite-te descobrir como votaram os partidos em algumas das Propostas apresentadas na Assembleia da República.</p>
 		{#key ticker}
-			<Hemicycle centerText="Decide" randomRadius={true} />
+			<Hemicycle centerText="Decide" random={true} />
 		{/key}
 
 		<div class="mt-4 mb-8">
