@@ -7,7 +7,7 @@
 	import Hemicycle from './Hemicycle.svelte';
 
 	export let data;
-	let readInstructions = false;
+	let readInstructions = true;
 	let quizSize: number = data.db.length;
 	let currentVote = 0;
 
@@ -91,12 +91,14 @@
 	<div class="loading h-2 sm:h-4 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
 		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0">
-			<Document title={data.db[currentVote].title} summary={data.db[currentVote].summary} url={data.db[currentVote].proposal_link} />
+			<Document {...data.db[currentVote]} />
+
 
 			<div class="fixed bottom-10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8">
-				<button class="bg-green-400 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full" id="1" on:click={handleVoteClick}>👍<span class="hidden sm:block">Aprovado</span></button>
-				<button class="bg-gray-400 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-full" id="2" on:click={handleVoteClick}>🤷‍♂️<span class="hidden sm:block">Abestençao</span></button>
-				<button class="bg-red-400 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full" id="0" on:click={handleVoteClick}>👎<span class="hidden sm:block">Rejeitado</span></button>
+				
+				<button class="bg-green-400 hover:bg-green-700 text-gray-800 font-bold py-4 px-8 rounded-full" id="1" on:click={handleVoteClick}>👍<span class="hidden sm:block">Aprovar</span></button>
+				<button class="bg-gray-400 hover:bg-gray-700 text-gray-800 font-bold py-4 px-8 rounded-full" id="2" on:click={handleVoteClick}>🤷‍♂️<span class="hidden sm:block">Abster-me</span></button>
+				<button class="bg-red-400 hover:bg-red-700 text-gray-800 font-bold py-4 px-8 rounded-full" id="0" on:click={handleVoteClick}>👎<span class="hidden sm:block">Rejeitar</span></button>
 			</div>
 		</div>
 	{/key}
