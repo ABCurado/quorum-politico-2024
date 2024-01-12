@@ -17,6 +17,7 @@
 	function handleVoteClick(event) {
 		data.db[currentVote].user_vote = event.target.id;
 		currentVote += 1;
+		window.scrollTo(0,0);
 	}
 
 	let proximity: { party: string; proximity: number }[] = [];
@@ -50,7 +51,7 @@
 </script>
 
 {#if !readInstructions}
-	<div class="absolute mx-auto w-full h-full z-20 flex items-center justify-center">
+	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
@@ -72,7 +73,7 @@
 
 		{#if showResults}
 			{#each data.db as vote}
-				<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-2/3">
+				<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-3/4">
 					<div class="px-4 py-5 sm:px-6 border-b border-gray-200 w-full">
 						<h2 class="text-lg leading-6 font-medium text-gray-900">{vote.title} - {vote.author}</h2>
 					</div>
