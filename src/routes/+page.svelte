@@ -52,7 +52,7 @@
 	}
 </script>
 
-<DevBanner/>
+<DevBanner env={data.env}/>
 
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
