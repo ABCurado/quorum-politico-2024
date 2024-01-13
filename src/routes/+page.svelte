@@ -17,7 +17,7 @@
 	function handleVoteClick(event) {
 		data.db[currentVote].user_vote = event.target.id;
 		currentVote += 1;
-		window.scrollTo(0,0);
+		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
 	let proximity: { party: string; proximity: number }[] = [];

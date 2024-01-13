@@ -10,13 +10,16 @@
 	export let tag_2: string;
 
 	function highlightTitles(text) {
-		return text.split('\n').map(point => {
-			if (/^\d+\./.test(point)) {
-				return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
-			} else {
-				return `<p>${point}</p>`;
-			}
-		}).join('');
+		return text
+			.split('\n')
+			.map((point) => {
+				if (/^\d+\./.test(point)) {
+					return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
+				} else {
+					return `<p>${point}</p>`;
+				}
+			})
+			.join('');
 	}
 </script>
 
@@ -38,17 +41,9 @@
 	</div>
 	<h3 class="text-l sm:text-xl mb-2 text-left">Possíveis contra-argumentos do {type}:</h3>
 
-	<div class="text-base sm:text-lg mb-6 min-h-52 w-full max-w-4xl p-4 border rounded-lg bg-gray-100 highlighted-text">
+	<div class="text-base sm:text-lg mb-6 min-h-52 w-full max-w-4xl p-4 border rounded-lg bg-gray-100">
 		{@html highlightTitles(counter)}
 	</div>
 
 	<a href={proposal_link} target="_blank" class="text-blue-500 underline">Ver documento oficial {official_id} (Votado a {vote_link})</a>
 </div>
-
-
-<style>
-	.highlighted-text p {
-		margin-bottom: 1em;
-	}
-</style>
-
