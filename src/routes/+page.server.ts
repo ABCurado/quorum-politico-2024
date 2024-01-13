@@ -5,5 +5,8 @@ export const load: PageServerLoad = async (request: any) => {
     const platform = request.platform; // Define the platform variable
     // Pick 10 random items from the database
     const items = db.sort(() => Math.random() - 0.5).slice(0, 5);
-    return { "db": items, "env": platform?.env || "unknown" };
+    return {
+        "db": items,
+        // "env": platform?.env || "unknown"
+    };
 };
