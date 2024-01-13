@@ -6,6 +6,6 @@ export const load: PageServerLoad = async ({ request: any, platform }) => {
     const items = db.sort(() => Math.random() - 0.5).slice(0, 5);
     return {
         "db": items,
-        "env": !!platform?.env.ENV || "unknown"
+        "env": platform?.env.ENV || "unknown"
     };
 };
