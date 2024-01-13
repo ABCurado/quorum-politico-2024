@@ -1,4 +1,6 @@
 <script lang="ts">
+  import DevBanner from './DevBanner.svelte';
+
 	import BarChart from './BarChart.svelte';
 
 	import { fade } from 'svelte/transition';
@@ -49,6 +51,8 @@
 		});
 	}
 </script>
+
+<DevBanner/>
 
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
