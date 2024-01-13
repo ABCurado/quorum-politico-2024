@@ -8,6 +8,7 @@ declare global {
 		interface Platform {
 			env: {
 				BUCKET: R2Bucket;
+				ENV: string;
 			};
 			context: {
 				waitUntil(promise: Promise<any>): void;
