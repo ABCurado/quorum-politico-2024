@@ -1,5 +1,5 @@
 <script lang="ts">
-	import DevBanner from './DevBanner.svelte';
+  import DevBanner from './DevBanner.svelte';
 
 	import BarChart from './BarChart.svelte';
 
@@ -52,7 +52,7 @@
 	}
 </script>
 
-<DevBanner env={'dev'} />
+<DevBanner env={data.env}/>
 
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
