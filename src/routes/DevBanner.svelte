@@ -1,7 +1,7 @@
-<!-- <script>
-	import { ENV } from '$env/static/private';
-</script> -->
+<script>
+	let ENV = process.env.ENV;
+</script>
 
-{#if env.ENV === 'dev'}
+{#if ENV === 'dev'}
 	<div class="bg-red-500 text-white p-4">Development Environment</div>
 {/if}
