@@ -50,6 +50,7 @@
 			'user-votes': data.db
 		});
 	}
+	$: console.log(data.env);
 </script>
 
 <DevBanner env={data.env}/>
