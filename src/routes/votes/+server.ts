@@ -7,7 +7,7 @@ import type { RequestHandler } from "@sveltejs/kit";
 // ├─────┼───────────┼─────────┼─────────┼────────────┼────┤
 // │ 1   │ env       │ TEXT    │ 0       │            │ 0  │
 // ├─────┼───────────┼─────────┼─────────┼────────────┼────┤
-// │ 2   │ results   │ BLOB    │ 0       │            │ 0  │
+// │ 2   │ results   │ TEXT    │ 0       │            │ 0  │
 // ├─────┼───────────┼─────────┼─────────┼────────────┼────┤
 // │ 3   │ top_party │ TEXT    │ 0       │            │ 0  │
 // ├─────┼───────────┼─────────┼─────────┼────────────┼────┤
@@ -44,7 +44,7 @@ export async function POST({ request, platform }) {
         ).bind(
             body.device_id, 
             platform?.env.ENV, 
-            body.results, 
+            JSON.stringify(body.results), 
             body.top_party, 
             -1, 
             new Date().toISOString(), 
