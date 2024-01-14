@@ -30,7 +30,7 @@ interface Vote {
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ request, platform }) => {
     let result = await platform?.env.DB.prepare(
-        "SELECT agrees, COUNT(*) FROM votes GROUP BY 1"
+        "SELECT agrees, COUNT(*) AS votes FROM votes GROUP BY 1"
     ).run();
     return new Response(JSON.stringify(result.results));
 }

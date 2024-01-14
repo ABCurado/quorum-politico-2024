@@ -1,4 +1,8 @@
 <script lang="ts">
+  import OthersResults from './OthersResults.svelte';
+
+  import VoteResults from './VoteResults.svelte';
+
 	import DevBanner from './DevBanner.svelte';
 
 	import BarChart from './BarChart.svelte';
@@ -43,11 +47,12 @@
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
 			.sort((a, b) => b.proximity - a.proximity);
 
+		const results = data.db.map((vote) => ({ id: vote.official_id, user_vote: vote.user_vote }))
 		mixpanel.track('quiz-finished', {
 			'quiz-size': quizSize,
 			'top-party': proximity[0].party,
 			'top-party-proximity': proximity[0].proximity,
-			'user-votes': data.db
+			'user-votes': results
 		});
 
 		// Upload the results to the database
@@ -58,7 +63,7 @@
 			},
 			body: JSON.stringify({
 				device_id: mixpanel.get_distinct_id(),
-				results: data.db.map((vote) => ({ id: vote.official_id, user_vote: vote.user_vote })),
+				results: results,
 				top_party: proximity[0].party
 			})
 		})
@@ -86,23 +91,9 @@
 			</div>
 		</div>
 
-		<button on:click={() => (showResults = !showResults)} class="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 m-2 rounded"> Mostrar resultados </button>
-
-		{#if showResults}
-			{#each data.db as vote}
-				<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-3/4">
-					<div class="px-4 py-5 sm:px-6 border-b border-gray-200 w-full">
-						<h2 class="text-lg leading-6 font-medium text-gray-900">{vote.title} - {vote.author}</h2>
-					</div>
-					<div class="px-4 py-4 sm:px-6 w-full">
-						<p class="text-sm text-gray-500">⁠O que decidiste tu: {vote.user_vote === '0' ? 'Rejeitar' : vote.user_vote === '1' ? 'Aceitar' : 'Abestençao'}</p>
-						<p class="text-sm text-gray-500">⁠O que decidiu a average das pessoas:</p>
-						<p class="text-sm text-gray-500">⁠Qual foi o outcome real: {vote.final_result === '0' ? 'Rejeitar' : vote.final_result === '1' ? 'Aceitar' : 'Abestençao'}</p>
-					</div>
-				</div>
-			{/each}
-		{/if}
-
+		<VoteResults votes={data.db}/>
+		<OthersResults/>
+		
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
 			<button
