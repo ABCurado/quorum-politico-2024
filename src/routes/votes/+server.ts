@@ -28,15 +28,15 @@ interface Vote {
 }
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function GET({ request, platform }) {
+export const GET: RequestHandler = async ({ request, platform }) => {
     let result = await platform?.env.DB.prepare(
-        "SELECT * FROM votes"
+        "SELECT agrees, COUNT(*) FROM votes GROUP BY 1"
     ).run();
-    return new Response(JSON.stringify(result));
+    return new Response(JSON.stringify(result.results));
 }
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function POST({ request, platform }) {
+export const POST: RequestHandler = async ({ request, platform }) => {
     try {
         let body = await request.json();
 
@@ -54,12 +54,12 @@ export async function POST({ request, platform }) {
         let result = await platform?.env.DB.prepare(
             "INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)"
         ).bind(
-            body.device_id, 
-            platform?.env.ENV, 
-            JSON.stringify(body.results), 
-            body.top_party, 
-            -1, 
-            new Date().toISOString(), 
+            body.device_id,
+            platform?.env.ENV,
+            JSON.stringify(body.results),
+            body.top_party,
+            0,
+            new Date().toISOString(),
             new Date().toISOString()
         ).run();
 
@@ -74,7 +74,7 @@ export async function POST({ request, platform }) {
 }
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function PUT({ request, platform }) {
+export const PUT: RequestHandler = async ({ request, platform }) => {
     try {
         let body = await request.json();
         let result = await platform?.env.DB.prepare(
