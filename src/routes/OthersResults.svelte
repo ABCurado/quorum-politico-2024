@@ -30,7 +30,7 @@
 			},
 			body: JSON.stringify({
 				device_id: mixpanel.get_distinct_id(),
-				agrees: event.target.id === '1'
+				agrees: event.target.id === '1' ? 1 : 0,
 			})
 		});
 		results = await fetchData();
@@ -39,7 +39,6 @@
 		showResults = true;
 	}
 </script>
-
 
 <h2>Concordas? (Vê os resultados dos outros)</h2>
 <button on:click={showResultsFunction} id="1" class="bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 m-2 rounded"> Sim, votei neste partido desde pequenino </button>
