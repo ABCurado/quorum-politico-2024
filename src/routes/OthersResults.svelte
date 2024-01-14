@@ -34,8 +34,8 @@
 			})
 		});
 		const results = await fetchData();
-		voteResults['agrees'] = results.find((result: { user_vote: string; }) => result.user_vote === '1').votes;
-		voteResults['disagrees'] = results.find((result: { user_vote: string; }) => result.user_vote === '0').votes;
+		voteResults['agrees'] = results.find((result: { agrees: number; }) => result.agrees === 1).votes;
+		voteResults['disagrees'] = results.find((result: { agrees: number; }) => result.agrees === 0).votes;
 		showResults = true;
 	}
 </script>
