@@ -3,22 +3,23 @@
 	let showResults = false;
 
 	async function fetchData() {
-		return fetch('/votes', {
+		const response = await fetch('/votes', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'
 			}
-		})
-			.then((res) => res.json())
-			.then((json) => {
-				console.log(json);
-				return json;
-			});
+		});
+
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		}
+
+		return await response.json();
 	}
 
 	async function showResultsFunction() {
+        results = await fetchData();
 		showResults = true;
-		results = await fetchData();
 	}
 </script>
 
@@ -27,6 +28,6 @@
 {#if showResults}
 	{#each results as result}
 		<div>{result.agrees}</div>
-        <div>{result.votes}</div>
+		<div>{result.votes}</div>
 	{/each}
 {/if}
