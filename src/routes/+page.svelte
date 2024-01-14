@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import mixpanel from 'mixpanel-browser';
-	
+
 	import BarChart from './BarChart.svelte';
 	import DevBanner from './DevBanner.svelte';
 	import Document from './Document.svelte';
@@ -89,7 +89,7 @@
 			</div>
 		</div>
 
-		<VoteResults votes={data.db} />
+		<VoteResults vote_proposals={data.db} />
 		<OthersResults />
 
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
