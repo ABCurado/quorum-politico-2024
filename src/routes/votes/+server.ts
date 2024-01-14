@@ -58,7 +58,7 @@ export const POST: RequestHandler = async ({ request, platform }) => {
             platform?.env.ENV,
             JSON.stringify(body.results),
             body.top_party,
-            0,
+            2,
             new Date().toISOString(),
             new Date().toISOString()
         ).run();

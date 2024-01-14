@@ -22,7 +22,7 @@
 		return await response.json();
 	}
 
-	async function showResultsFunction(event) {
+	async function showResultsFunction(event: { target: { id: string; }; }) {
 		await fetch('/votes', {
 			method: 'PUT',
 			headers: {
@@ -30,12 +30,12 @@
 			},
 			body: JSON.stringify({
 				device_id: mixpanel.get_distinct_id(),
-				agrees: event.target.id === '1' ? 1 : 0,
+				agrees: event.target.id === '1' ? 1 : 0
 			})
 		});
-		results = await fetchData();
-		voteResults['agrees'] = results.find((result) => result.user_vote === '1').votes;
-		voteResults['disagrees'] = results.find((result) => result.user_vote === '0').votes;
+		const results = await fetchData();
+		voteResults['agrees'] = results.find((result: { user_vote: string; }) => result.user_vote === '1').votes;
+		voteResults['disagrees'] = results.find((result: { user_vote: string; }) => result.user_vote === '0').votes;
 		showResults = true;
 	}
 </script>
