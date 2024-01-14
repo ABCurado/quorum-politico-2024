@@ -39,6 +39,18 @@ export async function GET({ request, platform }) {
 export async function POST({ request, platform }) {
     try {
         let body = await request.json();
+
+        // Input validation
+        if (!body.device_id || !body.results || !body.top_party) {
+            return new Response('Invalid input', { status: 400 });
+        }
+
+        // Rate limiting
+        // const lastInsertTime = await platform?.env.CACHE.get(body.device_id);
+        // if (lastInsertTime) {
+        //     return new Response('Too many requests, please try again later.', { status: 429 });
+        // }
+
         let result = await platform?.env.DB.prepare(
             "INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)"
         ).bind(
@@ -50,6 +62,10 @@ export async function POST({ request, platform }) {
             new Date().toISOString(), 
             new Date().toISOString()
         ).run();
+
+        // Store the timestamp of the last insert for this device id
+        // await platform?.env.CACHE.put(body.device_id, Date.now(), { expirationTtl: 5 * 60 });
+
         return new Response(result, { status: 200 });
     } catch (error) {
         console.error(error);
@@ -62,13 +78,9 @@ export async function PUT({ request, platform }) {
     try {
         let body = await request.json();
         let result = await platform?.env.DB.prepare(
-            "UPDATE votes SET agrees = @agrees, _updated = @updated WHERE device_id = @device_id AND env = @env"
-        ).run({
-            "@device_id": body.device_id,
-            "@env": platform?.env.ENV,
-            "@agrees": body.agrees,
-            "@updated": new Date().toISOString()
-        });
+            "UPDATE votes SET agrees = ?1, _updated = ?2 WHERE rowid = (SELECT rowid FROM votes WHERE device_id = ?3 AND env = ?4 ORDER BY _updated DESC LIMIT 1)"
+        ).bind(body.agrees, new Date().toISOString(), body.device_id, platform?.env.ENV
+        ).run();
         return new Response(null, { status: 200 });
     } catch (error) {
         console.error(error);
