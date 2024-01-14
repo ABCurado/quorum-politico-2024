@@ -1,8 +1,8 @@
 [
     {
-        "update": "Revised",
+        "update": "",
         "id": "1",
-        "official_id": "N.\u00ba 952/XV/2.\u00aa",
+        "official_id": "952/XV/2",
         "title": "Recomenda ao Governo que d\u00ea maior import\u00e2ncia \u00e0 literacia financeira em contexto escolar.",
         "vote_link": "21-12-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=263408",
@@ -12,7 +12,7 @@
         "tag_1": "Educa\u00e7\u00e3o",
         "tag_2": "Finan\u00e7as",
         "type": "Deliberacao",
-        "votes": {
+        "votes":{
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -22,23 +22,22 @@
             "PAN": 1,
             "L": 2
         },
-        "final_result": "0",
-        "comments": ""
+        "final_result": "0"
     },
     {
         "update": "Revised",
         "id": "2",
-        "official_id": "N.\u00ba 72/XV/1.\u00aa",
+        "official_id": "72/XV/1",
         "title": "Refor\u00e7a a prote\u00e7\u00e3o da orienta\u00e7\u00e3o sexual atrav\u00e9s da proibi\u00e7\u00e3o e criminaliza\u00e7\u00e3o de \u201cpr\u00e1ticas de convers\u00e3o\u201d que visam a repress\u00e3o da identidade ou express\u00e3o de g\u00e9nero.",
         "vote_link": "21-12-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=121460",
         "author": "PS / PAN / IL",
-        "summary": "Prev\u00ea a criminaliza\u00e7\u00e3o de pr\u00e1ticas com vista \u00e0 altera\u00e7\u00e3o, limita\u00e7\u00e3o ou repress\u00e3o da orienta\u00e7\u00e3o sexual, da identidade ou express\u00e3o de g\u00e9nero, e promove o estudo destas pr\u00e1ticas em Portugal e a garantia de mecanismos de apoio e resposta\n\nMuito embora a legisla\u00e7\u00e3o constitucional tamb\u00e9m afirme a igualdade de todos os cidad\u00e3os perante a lei, refor\u00e7ando a necessidade de promover e garantir essa dignidade para todos, independentemente da orienta\u00e7\u00e3o sexual, identidade ou express\u00e3o de g\u00e9nero, pr\u00e1ticas como as \"terapias de convers\u00e3o\", que procuram alterar essas caracter\u00edsticas fundamentais, podem ser consideradas prejudiciais, n\u00e3o terap\u00eauticas e at\u00e9 resultar em s\u00e9rios danos f\u00edsicos e psicol\u00f3gicos. ",
+        "summary": "Embora a legisla\u00e7\u00e3o constitucional afirme a igualdade de todos os cidad\u00e3os perante a lei, refor\u00e7ando a necessidade de promover e garantir essa dignidade para todos, independentemente da orienta\u00e7\u00e3o sexual, identidade ou express\u00e3o de g\u00e9nero, pr\u00e1ticas como as \"terapias de convers\u00e3o\", que procuram alterar essas caracter\u00edsticas fundamentais, podem ser consideradas prejudiciais, n\u00e3o terap\u00eauticas e at\u00e9 resultar em s\u00e9rios danos f\u00edsicos e psicol\u00f3gicos.  Este decreto prev\u00ea a criminaliza\u00e7\u00e3o de pr\u00e1ticas com vista \u00e0 altera\u00e7\u00e3o, limita\u00e7\u00e3o ou repress\u00e3o da orienta\u00e7\u00e3o sexual, da identidade ou express\u00e3o de g\u00e9nero, e promove o estudo destas pr\u00e1ticas em Portugal e a garantia de mecanismos de apoio e resposta.",
         "counter": "1. Direitos Individuais e Liberdade de Escolha: Argumenta-se que a criminaliza\u00e7\u00e3o de certas pr\u00e1ticas pode infringir os direitos individuais e a liberdade de escolha, especialmente em quest\u00f5es relacionadas \u00e0 sa\u00fade e terapia. Debate-se sobre at\u00e9 que ponto o Estado deve intervir em decis\u00f5es pessoais e tratamentos m\u00e9dicos.\n2. Defini\u00e7\u00f5es de Scope: Pode haver desafios na defini\u00e7\u00e3o clara e no \u00e2mbito das pr\u00e1ticas que seriam criminalizadas. Definir o que constitui uma \"terapia de convers\u00e3o\" ou outras pr\u00e1ticas prejudiciais pode-se tornar complexo e requerer uma an\u00e1lise cuidadosa.\n3. Efic\u00e1cia da Criminaliza\u00e7\u00e3o: Questiona-se a efic\u00e1cia da criminaliza\u00e7\u00e3o como meio de combater tais pr\u00e1ticas. Argumenta-se que medidas educativas, de sensibiliza\u00e7\u00e3o e de regula\u00e7\u00e3o profissional podem ser mais eficazes do que a criminaliza\u00e7\u00e3o em si.\n4. Mecanismos de Apoio e Resposta: A proposta destaca a import\u00e2ncia de garantir mecanismos de apoio e resposta adequados. No entanto, a implementa\u00e7\u00e3o e manuten\u00e7\u00e3o desses mecanismos podem exigir recursos significativos, coordena\u00e7\u00e3o entre v\u00e1rias entidades e uma abordagem multidisciplinar.",
         "tag_1": "Direitos Humanos",
         "tag_2": "",
         "type": "Votacao Final Global",
-        "votes": {
+        "votes":{
             "PS": 1,
             "PSD": 0,
             "CH": 0,
@@ -48,13 +47,12 @@
             "PAN": 1,
             "L": 1
         },
-        "final_result": "1",
-        "comments": ""
+        "final_result": "1"
     },
     {
-        "update": "Revised",
+        "update": "",
         "id": "3",
-        "official_id": "N.\u00ba 957/XV/2.\u00aa ",
+        "official_id": "957/XV/2",
         "title": "Recomenda ao Governo que encete todos os esfor\u00e7os diplom\u00e1ticos para defender a cria\u00e7\u00e3o do Estado da Palestina, a par da exist\u00eancia do Estado de Israel, lado a lado, a viver em paz e seguran\u00e7a.",
         "vote_link": "19-12-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=263430",
@@ -63,8 +61,8 @@
         "counter": "1. Neutralidade e Soberania: Alguns argumentam que Portugal deve manter uma postura neutra e respeitar a soberania de outros pa\u00edses ao abordar quest\u00f5es internacionais delicadas. Intervir ativamente pode ser visto por algumas partes como parcialidade ou interfer\u00eancia nos assuntos internos.\n2. Complexidade do Conflito: O conflito entre Israel e Palestina \u00e9 profundamente complexo e multifacetado, que envolvem quest\u00f5es hist\u00f3ricas, religiosas, pol\u00edticas e territoriais. A busca por uma solu\u00e7\u00e3o duradoura e justa exige uma compreens\u00e3o aprofundada e uma abordagem equilibrada que considere as preocupa\u00e7\u00f5es e aspira\u00e7\u00f5es de ambas as partes.\n3. Resolu\u00e7\u00f5es da ONU: Embora as resolu\u00e7\u00f5es da ONU forne\u00e7am um quadro legal e diplom\u00e1tico para abordar o conflito, a implementa\u00e7\u00e3o dessas resolu\u00e7\u00f5es pode enfrentar desafios significativos devido \u00e0 falta de consenso internacional e \u00e0 din\u00e2mica geopol\u00edtica complexa envolvida.",
         "tag_1": "Militar",
         "tag_2": "Defesa",
-        "type": "Votacao na Generalidade",
-        "votes": {
+        "type": "Vota\u00e7\u00e3o na Generalidade",
+        "votes":{
             "PS": 1,
             "PSD": 1,
             "CH": 2,
@@ -74,13 +72,12 @@
             "PAN": 1,
             "L": 1
         },
-        "final_result": "1",
-        "comments": "\u00c9 curioso que neste dia existem tipo 4 ou 5 projetos de resolucao, de partidos diferentes, a pedir mais ou menos o mesmo: o reconhecimento da Palestina. Pah escolhi este aleatoriamente pq me pareceu o mais completo e diplomatico, mas na realidade nao li os 5 na integra."
+        "final_result": "1"
     },
     {
-        "update": "Revised",
+        "update": "",
         "id": "4",
-        "official_id": "N.\u00ba 664/XV/1.\u00aa",
+        "official_id": "664/XV/1",
         "title": "Estabelece a quota m\u00ednima obrigat\u00f3ria de 30% de m\u00fasica portuguesa na programa\u00e7\u00e3o musical dos servi\u00e7os de programas de r\u00e1dio.",
         "vote_link": "15-12-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=152661",
@@ -90,7 +87,7 @@
         "tag_1": "Cultura",
         "tag_2": "",
         "type": "Votacao Final Global",
-        "votes": {
+        "votes":{
             "PS": 1,
             "PSD": 0,
             "CH": 2,
@@ -100,13 +97,12 @@
             "PAN": 1,
             "L": 1
         },
-        "final_result": "1",
-        "comments": ""
+        "final_result": "1"
     },
     {
-        "update": "New",
+        "update": "",
         "id": "5",
-        "official_id": "N.\u00ba 91/XV\n",
+        "official_id": "91/XV",
         "title": "Regula o acesso a metadados referentes a comunica\u00e7\u00f5es eletr\u00f3nicas para fins de investiga\u00e7\u00e3o criminal.",
         "vote_link": "5-1-2024",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheDiplomaAprovado.aspx?BID=84166",
@@ -116,7 +112,7 @@
         "tag_1": "Privacidade",
         "tag_2": "Seguran\u00e7a",
         "type": "Reaprecia\u00e7\u00e3o do Decreto",
-        "votes": {
+        "votes":{
             "PS": 1,
             "PSD": 1,
             "CH": 2,
@@ -126,13 +122,12 @@
             "PAN": 1,
             "L": 2
         },
-        "final_result": "1",
-        "comments": ""
+        "final_result": "1"
     },
     {
-        "update": "New",
+        "update": "",
         "id": "6",
-        "official_id": "N.\u00ba 456/XV/1",
+        "official_id": "456/XV/1",
         "title": "Regula a conten\u00e7\u00e3o e treino de animais de companhia, vedando a comercializa\u00e7\u00e3o e utiliza\u00e7\u00e3o de \u201ccoleiras de choque\u201d e de \u201ccoleiras estranguladoras''.",
         "vote_link": "13-12-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=152227",
@@ -142,7 +137,7 @@
         "tag_1": "Direitos Animais",
         "tag_2": "",
         "type": "Vota\u00e7\u00e3o na Generalidade",
-        "votes": {
+        "votes":{
             "PS": 2,
             "PSD": 2,
             "CH": 2,
@@ -152,13 +147,12 @@
             "PAN": 1,
             "L": 1
         },
-        "final_result": "1",
-        "comments": ""
+        "final_result": "2"
     },
     {
-        "update": "New",
+        "update": "",
         "id": "7",
-        "official_id": "N\u00ba. 977/XV/2",
+        "official_id": "977/XV/2",
         "title": "Aumenta a amplitude da proibi\u00e7\u00e3o de exerc\u00edcio de determinadas fun\u00e7\u00f5es ap\u00f3s a cessa\u00e7\u00e3o de fun\u00e7\u00f5es pol\u00edticas executivas, bem como a dura\u00e7\u00e3o dessa proibi\u00e7\u00e3o",
         "vote_link": "30-11-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=263435",
@@ -168,7 +162,7 @@
         "tag_1": "Privacidade",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes": {
+        "votes":{
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -178,13 +172,12 @@
             "PAN": 3,
             "L": 0
         },
-        "final_result": "0",
-        "comments": ""
+        "final_result": "0"
     },
     {
-        "update": "New",
+        "update": "",
         "id": "8",
-        "official_id": "N\u00ba. 916/XV/2",
+        "official_id": "916/XV/2",
         "title": "Recomenda ao Governo que prossiga os esfor\u00e7os para a remo\u00e7\u00e3o do amianto presente nos estabelecimentos de ensino",
         "vote_link": "31-10-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=243330",
@@ -194,7 +187,7 @@
         "tag_1": "Educa\u00e7\u00e3o",
         "tag_2": "Sa\u00fade",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes": {
+        "votes":{
             "PS": 1,
             "PSD": 1,
             "CH": 2,
@@ -204,13 +197,12 @@
             "PAN": 1,
             "L": 1
         },
-        "final_result": "1",
-        "comments": ""
+        "final_result": "1"
     },
     {
-        "update": "New",
+        "update": "",
         "id": "9",
-        "official_id": "N\u00ba. 947/XV/2",
+        "official_id": "947/XV/2",
         "title": "Pro\u00edbe a venda de casas a n\u00e3o residentes",
         "vote_link": "25-10-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=263378",
@@ -220,7 +212,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "Constru\u00e7\u00e3o",
         "type": "Projeto de Lei",
-        "votes": {
+        "votes":{
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -230,13 +222,12 @@
             "PAN": 2,
             "L": 0
         },
-        "final_result": "0",
-        "comments": ""
+        "final_result": "0"
     },
     {
-        "update": "New",
+        "update": "",
         "id": "10",
-        "official_id": "N\u00ba. 948/XV/2",
+        "official_id": "948/XV/2",
         "title": "Controlo de rendas para defender o direito \u00e0 habita\u00e7\u00e3o",
         "vote_link": "25-10-2023",
         "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=263379",
@@ -246,7 +237,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "Constru\u00e7\u00e3o",
         "type": "Projeto de Lei",
-        "votes": {
+        "votes":{
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -256,7 +247,731 @@
             "PAN": 1,
             "L": 1
         },
-        "final_result": "0",
-        "comments": ""
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "11",
+        "official_id": "973/XV/2",
+        "title": "Desenvolvimento da Linha de Alta Velocidade Ferrovi\u00e1ria Porto \u2013 Lisboa",
+        "vote_link": "9-1-2024",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=263471",
+        "author": "PCP",
+        "summary": "Prop\u00f5e a acelera\u00e7\u00e3o do desenvolvimento da Linha de Alta Velocidade entre o Porto e Lisboa, uma infraestrutura considerada essencial h\u00e1 aproximadamente 30 anos. Destaca a necessidade de tr\u00eas altera\u00e7\u00f5es estruturais: O abandono do modelo de Parceria P\u00fablico-Privada (PPP) para a constru\u00e7\u00e3o, modifica\u00e7\u00f5es na fase 6 da obra para melhorar a liga\u00e7\u00e3o a Lisboa, e a considera\u00e7\u00e3o imediata da liga\u00e7\u00e3o da rede ferrovi\u00e1ria nacional ao Aeroporto Internacional de Lisboa. Enfatiza a import\u00e2ncia de adotar um tra\u00e7ado que siga pela margem esquerda do Tejo, passando pelo Novo Aeroporto de Lisboa em Alcochete e entrando em Lisboa pela Terceira Travessia do Tejo entre o Barreiro e Lisboa.",
+        "counter": "1. Custos Financeiros: Cr\u00edticos podem apontar para os elevados custos associados \u00e0 constru\u00e7\u00e3o de uma Linha de Alta Velocidade, especialmente considerando o hist\u00f3rico de derrapagens or\u00e7amentais em projetos semelhantes. Pode ser questionado se os recursos financeiros necess\u00e1rios para essa infraestrutura n\u00e3o poderiam ser direcionados para outras \u00e1reas priorit\u00e1rias, como sa\u00fade, educa\u00e7\u00e3o ou combate \u00e0 pobreza.\n2. Modelo de PPP vs. Gest\u00e3o P\u00fablica: Argumenta-se que o envolvimento do setor privado poderia trazer efici\u00eancia e inova\u00e7\u00e3o \u00e0 constru\u00e7\u00e3o e opera\u00e7\u00e3o da linha. Al\u00e9m disso, pode ser questionado se a gest\u00e3o p\u00fablica seria mais eficaz em termos de custos e prazos de execu\u00e7\u00e3o.\n3. Tra\u00e7ado Alternativo: A proposta de adotar um tra\u00e7ado na margem esquerda do Tejo pode ser contestada por raz\u00f5es ambientais, sociais ou econ\u00f3micas. Pode haver preocupa\u00e7\u00f5es relacionadas a impactos ambientais, deslocamento de comunidades locais ou aumento nos custos de expropria\u00e7\u00e3o de terras.",
+        "tag_1": "Infraestruturas",
+        "tag_2": "",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 1,
+            "PSD": 0,
+            "CH": 0,
+            "IL": 2,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "1"
+    },
+    {
+        "update": "New",
+        "id": "12",
+        "official_id": "625/XV/1",
+        "title": "Valoriza\u00e7\u00e3o das longas carreiras contributivas e aplica\u00e7\u00e3o de um regime de aposenta\u00e7\u00e3o espec\u00edfico para os professores e educadores",
+        "vote_link": "11-1-2024",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=152795",
+        "author": "PCP",
+        "summary": "Destaca a necessidade de valorizar longas carreiras contributivas, propondo a antecipa\u00e7\u00e3o da idade de acesso \u00e0 pens\u00e3o de velhice, sem penaliza\u00e7\u00f5es, para trabalhadores com 40 anos de contribui\u00e7\u00f5es, independentemente da idade. O partido argumenta que \u00e9 injusto obrigar algu\u00e9m a trabalhar para sobreviver at\u00e9 \u00e0 idade legal de reforma ap\u00f3s 40 anos de trabalho. Al\u00e9m disso, enfatiza o desgaste f\u00edsico e psicol\u00f3gico dos educadores e professores, propondo medidas espec\u00edficas para estes profissionais, como o rec\u00e1lculo das pens\u00f5es com base no tempo de servi\u00e7o prestado.\n\nProp\u00f5e uma avalia\u00e7\u00e3o do impacto da elimina\u00e7\u00e3o de regimes especiais de aposenta\u00e7\u00e3o, a contabiliza\u00e7\u00e3o integral do tempo de servi\u00e7o para efeitos de aposenta\u00e7\u00e3o e a promo\u00e7\u00e3o de condi\u00e7\u00f5es gerais de aposenta\u00e7\u00e3o para os trabalhadores da administra\u00e7\u00e3o p\u00fablica. O partido destaca a necessidade de rejuvenescimento da profiss\u00e3o docente, assegurando dignidade, estabilidade, valoriza\u00e7\u00e3o da carreira e combate \u00e0 precariedade. O projeto visa, assim, melhorar as condi\u00e7\u00f5es de aposenta\u00e7\u00e3o, especialmente para professores e educadores, enquanto promove a equidade e justi\u00e7a nas pol\u00edticas de reforma.",
+        "counter": "1. Sustentabilidade Financeira: Cr\u00edticos podem argumentar que antecipar a idade de acesso \u00e0 pens\u00e3o de velhice sem penaliza\u00e7\u00f5es, independentemente da idade, pode sobrecarregar o sistema de seguran\u00e7a social, levando a desafios financeiros e comprometendo a sustentabilidade a longo prazo.\n2. Equidade Intergeracional: Alguns podem alegar que a proposta n\u00e3o considera adequadamente a equidade intergeracional, j\u00e1 que beneficiaria uma gera\u00e7\u00e3o espec\u00edfica (trabalhadores com longas carreiras) em detrimento de outras que poderiam ter que suportar o peso financeiro resultante.\n3. Falta de Diferencia\u00e7\u00e3o: Cr\u00edticos podem argumentar que n\u00e3o h\u00e1 uma diferencia\u00e7\u00e3o adequada entre profiss\u00f5es, e que a proposta, ao propor medidas espec\u00edficas para educadores e professores, pode criar disparidades injustas em rela\u00e7\u00e3o a outros setores igualmente desgastantes.",
+        "tag_1": "Seguran\u00e7a Social",
+        "tag_2": "Educa\u00e7\u00e3o",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 0,
+            "PSD": 2,
+            "CH": 1,
+            "IL": 2,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "13",
+        "official_id": "850/XV/1",
+        "title": "Recomenda ao Governo o desenvolvimento e implementa\u00e7\u00e3o de um novo Referencial de Educa\u00e7\u00e3o para o Bem-Estar Animal e que a educa\u00e7\u00e3o para o bem-estar animal seja de car\u00e1ter obrigat\u00f3rio na disciplina de Cidadania e Desenvolvimento",
+        "vote_link": "11-1-2024",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=173207",
+        "author": "PAN",
+        "summary": "O projeto insta o Governo a desenvolver um novo Referencial de Educa\u00e7\u00e3o para o Bem-Estar Animal, independente de outros referenciais educativos, com a participa\u00e7\u00e3o de profissionais especializados em \u00e1reas relevantes. Critica-se o referencial anterior (argumenta-se que, apesar do Decreto-Lei n.\u00ba 27/2016 estabelecer a integra\u00e7\u00e3o do bem-estar animal no ensino desde o 1.\u00ba ciclo do Ensino B\u00e1sico, a implementa\u00e7\u00e3o pr\u00e1tica desse prop\u00f3sito tem sido insuficiente), elaborado em colabora\u00e7\u00e3o com v\u00e1rias entidades, por ser considerado pobre em informa\u00e7\u00f5es t\u00e9cnicas, pedag\u00f3gicas e cient\u00edficas, al\u00e9m de n\u00e3o refletir adequadamente a dignidade e os direitos dos animais. A proposta visa, assim, promover a sensibiliza\u00e7\u00e3o e a prote\u00e7\u00e3o dos animais, combatendo pr\u00e1ticas como os maus-tratos e o abandono, atrav\u00e9s de uma educa\u00e7\u00e3o mais efetiva e centrada no respeito pela vida animal.",
+        "counter": "1. Carga de Trabalho Adicional: A introdu\u00e7\u00e3o de um novo dom\u00ednio obrigat\u00f3rio sobre o bem-estar animal pode aumentar a carga de trabalho para alunos e professores, sobrecarregando o curr\u00edculo escolar.\n2. Flexibilidade Escolar: A flexibilidade nas escolas, permitindo a escolha entre dom\u00ednios obrigat\u00f3rios, pode ser mais eficaz para adaptar a educa\u00e7\u00e3o \u00e0s necessidades espec\u00edficas de cada comunidade escolar.\n3. Quest\u00f5es \u00c9ticas e Morais: O foco em quest\u00f5es \u00e9ticas e morais relacionadas aos animais pode ser considerado mais apropriado em contextos familiares ou religiosos, n\u00e3o sendo necessariamente uma obriga\u00e7\u00e3o da educa\u00e7\u00e3o formal.",
+        "tag_1": "Direitos Animais",
+        "tag_2": "",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 2,
+            "IL": 2,
+            "PCP": 2,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "14",
+        "official_id": "834/XV/1",
+        "title": "Altera os requisitos e os impedimentos para a candidatura a fam\u00edlia de acolhimento e alarga os apoios concedidos ao abrigo da medida de apoio junto de outro familiar e de confian\u00e7a a pessoa id\u00f3nea",
+        "vote_link": "11-1-2024",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=173090",
+        "author": "BE",
+        "summary": "O Projeto de Lei prop\u00f5e altera\u00e7\u00f5es significativas na legisla\u00e7\u00e3o referente ao acolhimento familiar, procurando promover a desinstitucionaliza\u00e7\u00e3o de crian\u00e7as e jovens em risco. Com base na Estrat\u00e9gia Nacional para os Direitos das Crian\u00e7as e em estrat\u00e9gias europeias similares, a iniciativa visa aumentar o n\u00famero de fam\u00edlias de acolhimento em detrimento do acolhimento residencial. Para atingir esse objetivo, prop\u00f5e-se a revis\u00e3o dos requisitos e impedimentos para candidaturas a fam\u00edlias de acolhimento, removendo restri\u00e7\u00f5es como a proibi\u00e7\u00e3o de la\u00e7os de parentesco e a impossibilidade de candidatura \u00e0 ado\u00e7\u00e3o. Al\u00e9m disso, busca equiparar as fam\u00edlias de acolhimento a outras formas de acolhimento, como apoio junto de outro familiar e confian\u00e7a a pessoa id\u00f3nea, ampliando os apoios concedidos.\n\nA proposta enfatiza a import\u00e2ncia de colocar crian\u00e7as em ambientes familiares, destacando que apenas 3,5% das crian\u00e7as em situa\u00e7\u00e3o de acolhimento est\u00e3o integradas em fam\u00edlias, enquanto 96,5% permanecem em acolhimento residencial. Ao remover obst\u00e1culos legais e equiparar diferentes formas de acolhimento, a inten\u00e7\u00e3o \u00e9 favorecer a desinstitucionaliza\u00e7\u00e3o e melhor proteger o superior interesse das crian\u00e7as, promovendo ambientes mais adequados e est\u00e1veis para o seu desenvolvimento.",
+        "counter": "1. Riscos de La\u00e7os Afetivos Preexistentes: Permitir que familiares biol\u00f3gicos sejam fam\u00edlias de acolhimento pode apresentar riscos emocionais e afetivos. A crian\u00e7a pode j\u00e1 ter experimentado situa\u00e7\u00f5es de abuso ou neglig\u00eancia no ambiente familiar original, o que pode dificultar a constru\u00e7\u00e3o de um ambiente de seguran\u00e7a e confian\u00e7a, pois os la\u00e7os afetivos preexistentes podem ser complexos.\n2. Poss\u00edvel Desvio de Objetivos da Ado\u00e7\u00e3o: A proibi\u00e7\u00e3o da candidatura \u00e0 ado\u00e7\u00e3o por parte das fam\u00edlias de acolhimento procura evitar contornos das regras do processo de ado\u00e7\u00e3o. Permitir a ado\u00e7\u00e3o por parte das fam\u00edlias de acolhimento poderia criar uma din\u00e2mica em que as fam\u00edlias, inicialmente interessadas apenas no acolhimento tempor\u00e1rio, optem pela ado\u00e7\u00e3o devido a la\u00e7os emocionais j\u00e1 estabelecidos, desviando-se dos objetivos originais do processo de ado\u00e7\u00e3o.\n3. Necessidade de Avalia\u00e7\u00f5es Rigorosas: A equipara\u00e7\u00e3o entre diferentes formas de acolhimento, como o apoio junto de outro familiar e a confian\u00e7a a pessoa id\u00f3nea, requer avalia\u00e7\u00f5es rigorosas para garantir que todos os ambientes ofere\u00e7am a seguran\u00e7a e o suporte necess\u00e1rios \u00e0s crian\u00e7as. A remo\u00e7\u00e3o de barreiras deve ser acompanhada de crit\u00e9rios estritos para assegurar a adequa\u00e7\u00e3o dos cuidadores.\n4. Poss\u00edveis Desafios Financeiros: A extens\u00e3o dos mesmos apoios financeiros a diferentes formas de acolhimento pode gerar desafios financeiros para o sistema, especialmente se o n\u00famero de crian\u00e7as em acolhimento aumentar significativamente. A aloca\u00e7\u00e3o de recursos deve ser cuidadosamente gerida para garantir o bem-estar adequado de todas as crian\u00e7as em acolhimento.",
+        "tag_1": "Seguran\u00e7a Social???????",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 1,
+            "CH": 1,
+            "IL": 1,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "15",
+        "official_id": "790/XV/1",
+        "title": "Reconhece aos enfermeiros o estatuto de profiss\u00e3o de desgaste r\u00e1pido e o direito a reforma antecipada, alterando o Decreto-Lei n.\u00ba 71/2019, de 27 de maio, e o C\u00f3digo do IRS",
+        "vote_link": "20-10-2023",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=172962",
+        "author": "PAN",
+        "summary": "Prop\u00f5e o reconhecimento do estatuto de profiss\u00e3o de desgaste r\u00e1pido para os enfermeiros, concedendo-lhes o direito \u00e0 reforma antecipada. A exposi\u00e7\u00e3o de motivos destaca o papel fundamental desempenhado pelos enfermeiros durante a crise da COVID-19, sublinhando as condi\u00e7\u00f5es desafiadoras e o desgaste f\u00edsico e emocional enfrentados diariamente. A proposta visa n\u00e3o apenas dignificar a profiss\u00e3o, mas tamb\u00e9m oferecer medidas concretas, como um suplemento remunerat\u00f3rio, uma progress\u00e3o de carreira mais r\u00e1pida e o aumento de dias de descanso e f\u00e9rias. Al\u00e9m disso, prop\u00f5e a redu\u00e7\u00e3o da idade de reforma para enfermeiros a partir dos 50 anos, reconhecendo assim o impacto prolongado e extenuante da profiss\u00e3o na sa\u00fade desses profissionais. A proposta tamb\u00e9m destaca a import\u00e2ncia de reconhecer a penosidade e risco associados \u00e0 profiss\u00e3o, equiparando os enfermeiros a outras categorias profissionais consideradas de desgaste r\u00e1pido, como mineiros e pescadores.",
+        "counter": "1. Implica\u00e7\u00f5es Financeiras: A concess\u00e3o de um estatuto de profiss\u00e3o de desgaste r\u00e1pido e o direito \u00e0 reforma antecipada para enfermeiros pode acarretar custos substanciais para o sistema de seguran\u00e7a social, especialmente considerando a crescente expectativa de vida e os desafios financeiros existentes nos sistemas de pens\u00f5es.\n2. Precedentes e Press\u00e3o sobre Recursos: A aprova\u00e7\u00e3o da medida pode estabelecer precedentes para outras categorias profissionais reivindicarem benef\u00edcios semelhantes, aumentando a press\u00e3o sobre os recursos j\u00e1 limitados do sistema de seguran\u00e7a social e comprometendo sua sustentabilidade a longo prazo.\n3. Abordagem Mais Equitativa: Argumenta-se que solu\u00e7\u00f5es mais equitativas podem incluir melhorias nas condi\u00e7\u00f5es de trabalho, promo\u00e7\u00e3o da sa\u00fade mental e implementa\u00e7\u00e3o de programas preventivos contra o esgotamento profissional, em vez de ajustes diretos na idade de reforma. Esta abordagem seria mais abrangente e poderia atender \u00e0s preocupa\u00e7\u00f5es dos enfermeiros sem sobrecarregar financeiramente o sistema de seguran\u00e7a social.",
+        "tag_1": "Seguran\u00e7a Social",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 2,
+            "CH": 1,
+            "IL": 2,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "16",
+        "official_id": "919/XV/2",
+        "title": "Procede ao alargamento da aplica\u00e7\u00e3o transit\u00f3ria de isen\u00e7\u00e3o de IVA a produtos alimentares aptos a crian\u00e7as e a vegetarianos e prorroga o prazo de aplica\u00e7\u00e3o deste regime",
+        "vote_link": "20-10-2023",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=243307",
+        "author": "PAN",
+        "summary": "A iniciativa visa abordar as crescentes dificuldades enfrentadas pelas fam\u00edlias devido \u00e0 escalada de pre\u00e7os dos alimentos e \u00e0 subida das taxas de juro Euribor, especialmente ap\u00f3s a invas\u00e3o da Ucr\u00e2nia pela R\u00fassia. Destaca-se a import\u00e2ncia de incluir frutas e alimentos \u00e0 base vegetal na isen\u00e7\u00e3o tempor\u00e1ria de IVA, considerando o n\u00famero significativo de pessoas que optam por uma alimenta\u00e7\u00e3o vegetariana e os benef\u00edcios para a sa\u00fade e o meio ambiente.",
+        "counter": "1. Impacto Or\u00e7amental: A amplia\u00e7\u00e3o da isen\u00e7\u00e3o de IVA para produtos alimentares aptos a crian\u00e7as e vegetarianos pode ter um impacto significativo no or\u00e7amento do Estado. A ren\u00fancia fiscal decorrente dessa medida pode comprometer as receitas necess\u00e1rias para financiar outras \u00e1reas cr\u00edticas, como sa\u00fade, educa\u00e7\u00e3o e seguran\u00e7a.\n2. Complexidade Administrativa: A inclus\u00e3o de novos produtos e categorias na lista de isen\u00e7\u00e3o de IVA pode aumentar a complexidade administrativa para as autoridades fiscais e os estabelecimentos comerciais. Isso pode resultar em custos adicionais e desafios log\u00edsticos para a implementa\u00e7\u00e3o e fiscaliza\u00e7\u00e3o efetiva do regime transit\u00f3rio.\n3. Poss\u00edveis Abusos: A isen\u00e7\u00e3o de IVA em produtos espec\u00edficos pode levar a comportamentos oportunistas, nos quais alguns estabelecimentos poderiam tentar incluir produtos n\u00e3o eleg\u00edveis para se beneficiarem da isen\u00e7\u00e3o. Isso pode criar dificuldades na defini\u00e7\u00e3o clara e precisa dos crit\u00e9rios para a isen\u00e7\u00e3o.\n4. Discrimina\u00e7\u00e3o Entre Setores: A isen\u00e7\u00e3o de IVA em determinados produtos alimentares pode criar disparidades entre diferentes setores da economia. Outros setores, n\u00e3o beneficiados pela isen\u00e7\u00e3o, podem argumentar que est\u00e3o a ser discriminados, o que pode suscitar quest\u00f5es de equidade e justi\u00e7a fiscal.\n5. Alternativas de Apoio: Em vez de conceder isen\u00e7\u00f5es de IVA, argumenta-se que seria mais eficaz implementar medidas de apoio direto \u00e0s fam\u00edlias em situa\u00e7\u00e3o de vulnerabilidade econ\u00f3mica, como programas de assist\u00eancia social, subs\u00eddios alimentares ou incentivos fiscais direcionados a esses grupos espec\u00edficos.\n6. Impacto Ambiental e de Sa\u00fade: Enquanto alguns alimentos vegetarianos s\u00e3o promovidos como op\u00e7\u00f5es mais saud\u00e1veis e ecologicamente sustent\u00e1veis, existem preocupa\u00e7\u00f5es sobre o impacto ambiental de certos produtos vegetais e a necessidade de garantir que a isen\u00e7\u00e3o de IVA n\u00e3o estimule o consumo excessivo de alimentos que podem ter impactos negativos na sa\u00fade.\n7. Consequ\u00eancias para o Mercado: A interven\u00e7\u00e3o cont\u00ednua no mercado por meio de isen\u00e7\u00f5es fiscais pode distorcer a concorr\u00eancia e afetar a din\u00e2mica do mercado. Algumas partes argumentam que o mercado deve operar com base em princ\u00edpios de livre concorr\u00eancia, sem interven\u00e7\u00e3o excessiva do governo.",
+        "tag_1": "Alimenta\u00e7\u00e3o",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 2,
+            "CH": 1,
+            "IL": 2,
+            "PCP": 2,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "17",
+        "official_id": "805/XV/1",
+        "title": "Recomenda ao Governo que defenda junto das institui\u00e7\u00f5es europeias a cria\u00e7\u00e3o do Sistema Europeu de Garantia de Dep\u00f3sitos como pe\u00e7a-chave de uma Uni\u00e3o Banc\u00e1ria apta a proteger os pequenos e m\u00e9dios depositantes e a consolidar a confian\u00e7a dos cidad\u00e3os no sistema financeiro europeu",
+        "vote_link": "20-10-2023",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=173136",
+        "author": "PS",
+        "summary": "Visa proteger os pequenos e m\u00e9dios depositantes e fortalecer a confian\u00e7a dos cidad\u00e3os no sistema financeiro europeu. O contexto hist\u00f3rico da crise financeira global de 2008 \u00e9 apresentado como um catalisador para a compreens\u00e3o da import\u00e2ncia da Uni\u00e3o Banc\u00e1ria e, especificamente, do SEGD. Destaca-se que as medidas adotadas desde ent\u00e3o, como o Mecanismo \u00danico de Supervis\u00e3o e o Mecanismo \u00danico de Resolu\u00e7\u00e3o Banc\u00e1ria, constituem avan\u00e7os significativos, mas a conclus\u00e3o da Uni\u00e3o Banc\u00e1ria com o estabelecimento do SEGD \u00e9 considerada crucial para a estabilidade e confian\u00e7a a longo prazo.\n\nNo \u00e2mbito das recomenda\u00e7\u00f5es, menciona-se a necessidade de partilha de risco e harmoniza\u00e7\u00e3o na supervis\u00e3o a n\u00edvel europeu, prevendo benef\u00edcios na estabiliza\u00e7\u00e3o do sistema financeiro, preven\u00e7\u00e3o de crises banc\u00e1rias e garantia da prote\u00e7\u00e3o dos depositantes. Refere-se ainda a recente proposta da Comiss\u00e3o Europeia sobre gest\u00e3o de crises banc\u00e1rias e seguro de dep\u00f3sitos, destacando o compromisso com a prote\u00e7\u00e3o dos depositantes e a necessidade de avan\u00e7ar com a conclus\u00e3o da Uni\u00e3o Banc\u00e1ria, conforme expresso em comunicados do Eurogrupo. Em \u00faltima an\u00e1lise, a resolu\u00e7\u00e3o visa refor\u00e7ar o papel do SEGD como um componente essencial para a integridade e robustez da Uni\u00e3o Banc\u00e1ria na Uni\u00e3o Europeia.",
+        "counter": "1. Desafios de Transfer\u00eancia de Recursos: Possibilidade de transfer\u00eancias significativas entre pa\u00edses membros do SEGD, gerando desequil\u00edbrios financeiros, assim como desiquil\u00edbrios entre pa\u00edses financeiramente s\u00f3lidos que podem suportar custos mais elevados em compara\u00e7\u00e3o com aqueles com sistemas banc\u00e1rios menos est\u00e1veis\n2. Abordagem Superficial aos Problemas Financeiros: Necessidade de reformas mais profundas nas estruturas e regulamenta\u00e7\u00f5es banc\u00e1rias de cada pa\u00eds para garantir estabilidade a longo prazo.\n3. Perda de Soberania e Implica\u00e7\u00f5es Pol\u00edticas: Resist\u00eancia \u00e0 perda de soberania em quest\u00f5es financeiras, especialmente em pa\u00edses que preferem manter maior controlo sobre suas pol\u00edticas econ\u00f4micas.",
+        "tag_1": "Finan\u00e7as",
+        "tag_2": "Europa",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 1,
+            "PSD": 1,
+            "CH": 2,
+            "IL": 1,
+            "PCP": 0,
+            "BE": 2,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "1"
+    },
+    {
+        "update": "New",
+        "id": "18",
+        "official_id": "938/XV/2",
+        "title": "Recomenda ao Governo que implemente um mecanismo de compensa\u00e7\u00e3o para os lesados do BES e do BANIF",
+        "vote_link": "20-10-2023",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=253371",
+        "author": "CH",
+        "summary": "Ambos os bancos enfrentaram colapsos repentinos, deixando um grande n\u00famero de pequenos investidores em situa\u00e7\u00f5es financeiras prec\u00e1rias. O documento destaca a necessidade urgente de justi\u00e7a e equidade, ressaltando que muitos lesados ainda aguardam compensa\u00e7\u00e3o anos ap\u00f3s os eventos, corroendo a confian\u00e7a do p\u00fablico nas institui\u00e7\u00f5es financeiras e regulamenta\u00e7\u00f5es banc\u00e1rias. O projeto recomenda a cria\u00e7\u00e3o de um mecanismo \u00e1gil, transparente e justo, adaptado \u00e0 realidade desses casos, assegurando compensa\u00e7\u00f5es sem gerar \u00f3nus excessivos para as finan\u00e7as p\u00fablicas ou distor\u00e7\u00f5es no mercado financeiro.\n\nO projeto insta o Governo a desenvolver e implementar um mecanismo de compensa\u00e7\u00e3o eficaz e transparente, com crit\u00e9rios claros de elegibilidade e um processo de reclama\u00e7\u00e3o simplificado. Al\u00e9m disso, enfatiza a import\u00e2ncia da supervis\u00e3o independente para garantir a integridade e efic\u00e1cia do mecanismo. O objetivo \u00e9 proporcionar al\u00edvio e justi\u00e7a aos lesados, restaurando a confian\u00e7a no setor financeiro e contribuindo para o desenvolvimento econ\u00f4mico sustent\u00e1vel de Portugal.",
+        "counter": "1. Impacto Financeiro: Implementar um mecanismo de compensa\u00e7\u00e3o para os lesados do BES e BANIF pode representar um \u00f3nus significativo para as finan\u00e7as p\u00fablicas. Isso pode resultar em custos imprevistos e afetar a estabilidade fiscal do pa\u00eds, especialmente considerando outros desafios econ\u00f3micos.\n2. Precedentes e Risco Moral: A cria\u00e7\u00e3o de um mecanismo de compensa\u00e7\u00e3o pode estabelecer um precedente perigoso. Pode encorajar uma cultura de irresponsabilidade financeira, onde os investidores acreditam que ser\u00e3o sempre compensados por perdas, independentemente das circunst\u00e2ncias. Isso cria um risco moral ao desincentivar a cautela e a dilig\u00eancia no setor financeiro.\n3. Complexidade e Morosidade: A implementa\u00e7\u00e3o de um mecanismo de compensa\u00e7\u00e3o eficaz e transparente pode ser uma tarefa complexa, sujeita a burocracias e atrasos. O processo de estabelecer crit\u00e9rios claros de elegibilidade, criar um sistema de reclama\u00e7\u00f5es e garantir supervis\u00e3o independente pode ser moroso e potencialmente ineficiente.\n4. Responsabilidade Individual: Argumenta-se que os investidores t\u00eam uma responsabilidade individual de avaliar os riscos associados aos seus investimentos. A cria\u00e7\u00e3o de um mecanismo de compensa\u00e7\u00e3o pode desconsiderar essa responsabilidade, transferindo os custos das decis\u00f5es individuais para o p\u00fablico em geral.",
+        "tag_1": "Finan\u00e7as",
+        "tag_2": "",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 0,
+            "PSD": 2,
+            "CH": 1,
+            "IL": 1,
+            "PCP": 2,
+            "BE": 2,
+            "PAN": 1,
+            "L": 2
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "19",
+        "official_id": "944/XV/2",
+        "title": "Elimina o chamado \u201cadicional ao ISP (imposto sobre servi\u00e7os petrol\u00edferos)\u201d e a dupla tributa\u00e7\u00e3o dos combust\u00edveis (IVA sobre ISP)",
+        "vote_link": "20-10-2023",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=253369",
+        "author": "PCP",
+        "summary": "A exposi\u00e7\u00e3o destaca os sucessivos aumentos especulativos nos pre\u00e7os dos combust\u00edveis, visando o aumento dos lucros das grandes petrol\u00edferas. Prop\u00f5e medidas fiscais, incluindo o fim do \"adicional ao ISP\" criado em 2016 e a elimina\u00e7\u00e3o da dupla tributa\u00e7\u00e3o, procurando aliviar o impacto nos consumidores e argumentando que a regulamenta\u00e7\u00e3o dos pre\u00e7os \u00e9 crucial para garantir que benef\u00edcios fiscais n\u00e3o sejam absorvidos pelas petrol\u00edferas.\n\nA iniciativa destaca a necessidade de a\u00e7\u00f5es adicionais, como a fixa\u00e7\u00e3o de pre\u00e7os de refer\u00eancia para combater a especula\u00e7\u00e3o, e prop\u00f5e a devolu\u00e7\u00e3o da parte do IVA que incide sobre o pr\u00f3prio ISP para eliminar a dupla tributa\u00e7\u00e3o. Argumenta que estas medidas s\u00e3o essenciais para reduzir imediatamente os pre\u00e7os pagos pelos consumidores, reafirmando a import\u00e2ncia do controlo p\u00fablico no setor da energia para servir o desenvolvimento do pa\u00eds. O Projeto de Lei aborda a urg\u00eancia da situa\u00e7\u00e3o atual de aumento de pre\u00e7os, enfatizando a necessidade de controlar margens e pre\u00e7os para solucionar os desafios no setor energ\u00e9tico.",
+        "counter": "1. Impacto nas Receitas P\u00fablicas: A elimina\u00e7\u00e3o do \"adicional ao ISP\" e a devolu\u00e7\u00e3o de parte do IVA podem resultar numa redu\u00e7\u00e3o das receitas p\u00fablicas, prejudicando a capacidade do Estado em financiar servi\u00e7os p\u00fablicos essenciais e programas sociais.\n2. Incerteza sobre a Utiliza\u00e7\u00e3o dos Benef\u00edcios: N\u00e3o h\u00e1 garantia de que a redu\u00e7\u00e3o fiscal proposta seja integralmente refletida nos pre\u00e7os ao consumidor. As petrol\u00edferas podem absorver parte ou totalidade dos benef\u00edcios fiscais, limitando o impacto real nos bolsos dos consumidores.\n3. Necessidade de Medidas Estruturais: Argumenta-se que medidas pontuais, como a elimina\u00e7\u00e3o do \"adicional ao ISP,\" podem n\u00e3o abordar as quest\u00f5es estruturais que contribuem para os altos pre\u00e7os dos combust\u00edveis, como a volatilidade nos mercados internacionais de petr\u00f3leo.\n4. Impacto na Transi\u00e7\u00e3o Energ\u00e9tica: A redu\u00e7\u00e3o dos impostos sobre os combust\u00edveis pode desincentivar a transi\u00e7\u00e3o para fontes de energia mais limpas e renov\u00e1veis, prejudicando os esfor\u00e7os para combater as mudan\u00e7as clim\u00e1ticas e promover a sustentabilidade ambiental.",
+        "tag_1": "Energia",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 1,
+            "IL": 1,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 2,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "20",
+        "official_id": "69/XV/1",
+        "title": "Determina o fim da possibilidade de acumula\u00e7\u00e3o de pens\u00f5es por parte dos titulares de cargos p\u00fablicos e pol\u00edticos delas benefici\u00e1rios",
+        "vote_link": "20-10-2023",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=121452",
+        "author": "CH",
+        "summary": "Tem como objetivo eliminar a possibilidade de acumula\u00e7\u00e3o de pens\u00f5es por parte dos titulares de cargos p\u00fablicos e pol\u00edticos, alterando o regime remunerat\u00f3rio dos executivos de autarquias locais. A exposi\u00e7\u00e3o de motivos destaca a vis\u00e3o do partido sobre as subven\u00e7\u00f5es vital\u00edcias, consideradas injustas e contr\u00e1rias ao princ\u00edpio da igualdade consagrado na Constitui\u00e7\u00e3o. Al\u00e9m disso, aponta para a acumula\u00e7\u00e3o de pens\u00f5es como um problema estrutural que perpetua privil\u00e9gios injustificados, propondo a revoga\u00e7\u00e3o do artigo 8.\u00ba da Lei n.\u00ba 52-A/2005.\nArgumenta que a acumula\u00e7\u00e3o de pens\u00f5es por titulares de cargos p\u00fablicos vai al\u00e9m de uma quest\u00e3o retroativa e representa uma situa\u00e7\u00e3o continuada, afetando mensalmente o er\u00e1rio p\u00fablico. Destaca a necessidade de corre\u00e7\u00e3o dessas situa\u00e7\u00f5es injustas, sendo um dever do legislador para com os eleitores e o povo portugu\u00eas. O projeto prop\u00f5e a revoga\u00e7\u00e3o do artigo 8.\u00ba da Lei n.\u00ba 52-A/2005, que regula pens\u00f5es e subven\u00e7\u00f5es de titulares de cargos pol\u00edticos, com entrada em vigor imediata.",
+        "counter": "1. Possibilidade de Retirar Direitos Adquiridos: O projeto de lei prop\u00f5e o fim da acumula\u00e7\u00e3o de pens\u00f5es, o que poderia ser interpretado como uma retroatividade da lei, retirando direitos adquiridos por titulares de cargos p\u00fablicos com base em legisla\u00e7\u00e3o anterior. Isso pode levantar quest\u00f5es \u00e9ticas e jur\u00eddicas.\n2. Necessidade de Manter Atratividade para Cargos P\u00fablicos: Alguns argumentam que a possibilidade de acumular pens\u00f5es pode ser um incentivo para profissionais qualificados assumirem cargos p\u00fablicos, especialmente em autarquias locais. Restringir essa possibilidade poderia afetar a atratividade dessas posi\u00e7\u00f5es para profissionais experientes.\n3. Abordagem Casu\u00edstica em Vez de Estrutural: Alguns cr\u00edticos podem argumentar que, em vez de abordar casos espec\u00edficos de acumula\u00e7\u00e3o de pens\u00f5es, seria mais eficaz implementar reformas estruturais mais amplas no sistema de pens\u00f5es e remunera\u00e7\u00e3o para garantir uma abordagem equitativa e sustent\u00e1vel a longo prazo.",
+        "tag_1": "Seguran\u00e7a Social",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 1,
+            "IL": 0,
+            "PCP": 2,
+            "BE": 1,
+            "PAN": 2,
+            "L": 2
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "21",
+        "official_id": "476/XV/1\n",
+        "title": "Recomenda ao Governo a aboli\u00e7\u00e3o de taxas de admiss\u00e3o a provas acad\u00e9micas",
+        "vote_link": "20-10-2023",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=152485",
+        "author": "L",
+        "summary": "Baseando-se em dados que destacam a relev\u00e2ncia dos doutorados no mercado de trabalho e sublinham a dedica\u00e7\u00e3o necess\u00e1ria para completar esse n\u00edvel de forma\u00e7\u00e3o, o documento argumenta que os candidatos n\u00e3o devem financiar as institui\u00e7\u00f5es de ensino superior por meio de taxas e emolumentos para provas inerentes \u00e0 obten\u00e7\u00e3o do grau acad\u00e9mico. A disparidade de pre\u00e7os praticados por diferentes institui\u00e7\u00f5es \u00e9 destacada, enfatizando a necessidade de assegurar que eventuais custos associados \u00e0s provas sejam responsabilidade das institui\u00e7\u00f5es ou, em \u00faltima inst\u00e2ncia, do Estado.",
+        "counter": "1. Financiamento das Institui\u00e7\u00f5es de Ensino Superior: Alguns opositores podem argumentar que as institui\u00e7\u00f5es de ensino superior enfrentam desafios financeiros significativos, e a cobran\u00e7a de taxas de admiss\u00e3o \u00e9 uma fonte adicional de receita para cobrir custos administrativos e de avalia\u00e7\u00e3o. A aboli\u00e7\u00e3o dessas taxas poderia impactar negativamente o or\u00e7amento das institui\u00e7\u00f5es, prejudicando a qualidade dos servi\u00e7os acad\u00e9micos oferecidos.\n2. Gest\u00e3o Eficiente de Recursos: Algumas pessoas podem argumentar que, em vez de eliminar as taxas, as institui\u00e7\u00f5es de ensino superior devem concentrar-se na gest\u00e3o eficiente de recursos e na redu\u00e7\u00e3o de custos operacionais, garantindo que os fundos existentes sejam utilizados de forma mais eficaz, permitindo uma oferta educacional de qualidade sem depender excessivamente das taxas de admiss\u00e3o.\n3. Autonomia Institucional: Alguns opositores podem alegar que a decis\u00e3o de cobrar ou n\u00e3o taxas de admiss\u00e3o deve ser deixada \u00e0 autonomia das institui\u00e7\u00f5es de ensino superior. Cada institui\u00e7\u00e3o pode ter necessidades e contextos espec\u00edficos, e a imposi\u00e7\u00e3o de uma regra geral pode ser considerada excessiva.",
+        "tag_1": "Educa\u00e7\u00e3o",
+        "tag_2": "",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 1,
+            "IL": 2,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "22",
+        "official_id": "880/XV/2",
+        "title": "Recomenda ao Governo que implemente medidas ambiciosas de combate \u00e0 evas\u00e3o fiscal, \u00e0 elis\u00e3o fiscal e ao planeamento fiscal agressivo",
+        "vote_link": "20-10-2023",
+        "proposal_link": "https://www.parlamento.pt/ActividadeParlamentar/Paginas/DetalheIniciativa.aspx?BID=233268",
+        "author": "L",
+        "summary": "Com base em dados que indicam a perda anual de milh\u00f5es de euros devido a essas pr\u00e1ticas, o documento destaca a necessidade de a\u00e7\u00f5es eficazes tanto a n\u00edvel nacional quanto internacional. O texto argumenta que, apesar de existirem planos estrat\u00e9gicos de combate \u00e0 fraude fiscal, muitas medidas n\u00e3o foram implementadas, resultando em perdas significativas para o er\u00e1rio p\u00fablico. Al\u00e9m disso, o projeto prop\u00f5e a revoga\u00e7\u00e3o de regimes fiscais que facilitam a fraude, a revis\u00e3o do sistema de benef\u00edcios fiscais para reduzir a opacidade e a promo\u00e7\u00e3o de medidas favor\u00e1veis \u00e0 cria\u00e7\u00e3o de uma legisla\u00e7\u00e3o mais rigorosa em institui\u00e7\u00f5es europeias e internacionais para combater essas pr\u00e1ticas.\n\n\n\n\n",
+        "counter": "1. Competitividade Internacional: Argumenta-se que regras mais restritivas podem prejudicar a competitividade do pa\u00eds, afastando investidores e empresas que valorizam a flexibilidade fiscal para seus neg\u00f3cios.\n2. Efetividade das Medidas Propostas: Cr\u00edticos podem questionar a efic\u00e1cia das medidas propostas, argumentando que a evas\u00e3o fiscal \u00e9 um problema global que requer coopera\u00e7\u00e3o internacional. Medidas unilaterais podem n\u00e3o ser suficientes se outros pa\u00edses n\u00e3o adotarem pol\u00edticas semelhantes.\n3. Equil\u00edbrio Necess\u00e1rio: Argumenta-se que a busca por solu\u00e7\u00f5es para a evas\u00e3o fiscal deve ser equilibrada, garantindo que as medidas adotadas n\u00e3o tenham efeitos adversos no ambiente de neg\u00f3cios e na cria\u00e7\u00e3o de empregos.",
+        "tag_1": "Finan\u00e7as",
+        "tag_2": "",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 1,
+            "PSD": 1,
+            "CH": 2,
+            "IL": 1,
+            "PCP": 2,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "1"
+    },
+    {
+        "update": "New",
+        "id": "23",
+        "official_id": "378/XV/1",
+        "title": "Integra\u00e7\u00e3o de trabalhadores com contrato individual de trabalho nas respetivas carreiras da Administra\u00e7\u00e3o P\u00fablica",
+        "vote_link": "6-1-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595338314e544e695a4749794d79316c4e546c684c54526b4e4749744f57566c596931684d544e6c5a4449794d32566d4f4467755a47396a&fich=553bdb23-e59a-4d4b-9eeb-a13ed223ef88.doc&Inline=true",
+        "author": "PCP",
+        "summary": "Visa corrigir a situa\u00e7\u00e3o de desigualdade e precariedade entre os trabalhadores na Administra\u00e7\u00e3o P\u00fablica em Portugal, que resultou da introdu\u00e7\u00e3o do contrato individual de trabalho em 2004. Prop\u00f5e-se a integra\u00e7\u00e3o desses trabalhadores nas carreiras p\u00fablicas, buscando estabelecer o princ\u00edpio de \"trabalho igual, direitos iguais\". O projeto abrange todos os trabalhadores, independentemente da modalidade contratual, e prev\u00ea a realiza\u00e7\u00e3o de procedimentos concursais para a integra\u00e7\u00e3o, com a cria\u00e7\u00e3o de vagas necess\u00e1rias nos mapas de pessoal, e destaca a import\u00e2ncia de considerar o tempo de servi\u00e7o, posicionamento remunerat\u00f3rio e outras condi\u00e7\u00f5es socio-profissionais.",
+        "counter": "1. Impacto Financeiro Desconhecido: A proposta n\u00e3o fornece uma an\u00e1lise detalhada do impacto financeiro da integra\u00e7\u00e3o dos trabalhadores com contrato individual de trabalho nas carreiras da Administra\u00e7\u00e3o P\u00fablica. Isso pode gerar incertezas sobre o custo real dessa transi\u00e7\u00e3o, especialmente em termos de despesas com sal\u00e1rios e benef\u00edcios, o que pode ter consequ\u00eancias negativas para o or\u00e7amento p\u00fablico.\n\n2. Poss\u00edvel Sobrecarga Burocr\u00e1tica: A abertura de procedimentos concursais para a integra\u00e7\u00e3o de milhares de trabalhadores pode resultar em uma sobrecarga burocr\u00e1tica significativa para os \u00f3rg\u00e3os e servi\u00e7os da Administra\u00e7\u00e3o P\u00fablica. Isso pode levar a atrasos na execu\u00e7\u00e3o das atividades, prejudicando a efici\u00eancia e funcionamento dos servi\u00e7os p\u00fablicos.\n\n3. Rigidez na Gest\u00e3o de Recursos Humanos: A proposta, ao insistir na integra\u00e7\u00e3o por meio de concursos p\u00fablicos, pode criar rigidez na gest\u00e3o de recursos humanos. Isso poderia limitar a capacidade dos \u00f3rg\u00e3os p\u00fablicos de ajustar dinamicamente suas equipas em resposta a mudan\u00e7as nas necessidades ou prioridades, tornando a Administra\u00e7\u00e3o P\u00fablica menos flex\u00edvel.\n\n4. Precedente para Outras Reivindica\u00e7\u00f5es: A aprova\u00e7\u00e3o desta proposta pode estabelecer um precedente para outras categorias de trabalhadores reivindicarem condi\u00e7\u00f5es semelhantes. Isso poderia criar uma press\u00e3o adicional sobre o or\u00e7amento p\u00fablico e aumentar as expectativas de outros grupos profissionais, tornando mais desafiador manter uma gest\u00e3o equilibrada e sustent\u00e1vel dos recursos.\n\n5. Potencial Desincentivo \u00e0 Contrata\u00e7\u00e3o: A exig\u00eancia de integrar todos os trabalhadores com contratos individuais de trabalho nas carreiras da Administra\u00e7\u00e3o P\u00fablica pode ser percebida como um desincentivo para futuras contrata\u00e7\u00f5es sob esse tipo de contrato. Isso pode limitar a capacidade do setor p\u00fablico de adotar modelos flex\u00edveis de emprego, que podem ser necess\u00e1rios em certos contextos ou para certas fun\u00e7\u00f5es espec\u00edficas.",
+        "tag_1": "Administra\u00e7\u00e3o P\u00fablica",
+        "tag_2": "Emprego",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 1,
+            "IL": 0,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "24",
+        "official_id": "422/XV/1",
+        "title": "Elimina os benef\u00edcios fiscais atribu\u00eddos no \u00e2mbito do Sistema de Incentivos Fiscais \u00e0 Investiga\u00e7\u00e3o e Desenvolvimento Empresarial (SIFIDE) a fundos de investimento",
+        "vote_link": "6-1-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c3259533834597a557a5a6a63784e6930304d6d4d7a4c54526c4f5755744f444e6b596930354d6a59774e4441314d445530596a51755a47396a65413d3d&fich=8c53f716-42c3-4e9e-83db-9260405054b4.docx&Inline=true",
+        "author": "BE",
+        "summary": "O SIFIDE II, implementado em 2011 e prorrogado at\u00e9 2025, introduziu mudan\u00e7as significativas ao programa, permitindo o abatimento fiscal de IRC de at\u00e9 82,5% para despesas n\u00e3o diretamente em Investiga\u00e7\u00e3o & Desenvolvimento (I&D), mas tamb\u00e9m investimentos em fundos de capital de risco que alegassem investimento em I&D (independentemente de o fundo investir de facto em empresas dedicadas \u00e0 tecnologia). O projeto destaca problemas, como a falta de fiscaliza\u00e7\u00e3o e controlo efetivos sobre a efic\u00e1cia do SIFIDE, al\u00e9m de apontar casos de potencial m\u00e1 utiliza\u00e7\u00e3o e abusos, especialmente no contexto de investimentos em fundos de capital de risco.\n\nO documento tamb\u00e9m destaca a disparidade entre os generosos benef\u00edcios fiscais oferecidos pelo SIFIDE e a redu\u00e7\u00e3o do investimento p\u00fablico em I&D em Portugal, comparando a despesa p\u00fablica em I&D em rela\u00e7\u00e3o ao Produto Interno Bruto (PIB) e salientando que, apesar da expressiva despesa fiscal associada ao SIFIDE, a an\u00e1lise do impacto real desses benef\u00edcios \u00e9 limitada. O projeto de lei prop\u00f5e a revoga\u00e7\u00e3o da possibilidade de benef\u00edcios fiscais para fundos de investimento no \u00e2mbito do SIFIDE, destacando preocupa\u00e7\u00f5es com a falta de justifica\u00e7\u00e3o e o potencial para abusos e fraude.",
+        "counter": "1. Impacto Negativo na Competitividade Empresarial: Votar contra a proposta pode ser justificado argumentando que a revoga\u00e7\u00e3o da possibilidade de benef\u00edcios fiscais para fundos de investimento no \u00e2mbito do SIFIDE pode ter um impacto negativo na competitividade das empresas. Os benef\u00edcios fiscais foram projetados para incentivar investimentos em I&D, e a remo\u00e7\u00e3o dessa op\u00e7\u00e3o pode desencorajar o setor privado de participar ativamente em iniciativas de pesquisa e desenvolvimento, prejudicando a inova\u00e7\u00e3o e a competitividade empresarial.\n\n2. Risco de Desincentivo ao Investimento Privado em I&D: Argumentar que a revoga\u00e7\u00e3o proposta pode criar um ambiente desfavor\u00e1vel ao investimento privado em I&D. A disponibilidade de benef\u00edcios fiscais, especialmente para fundos de capital de risco, pode ter sido um fator atrativo para investidores privados. A remo\u00e7\u00e3o desses benef\u00edcios pode resultar em uma redu\u00e7\u00e3o significativa nos investimentos em projetos de I&D, afetando negativamente o progresso tecnol\u00f3gico e a inova\u00e7\u00e3o no pa\u00eds.\n\n3. Poss\u00edvel Impacto na Gera\u00e7\u00e3o de Empregos e Crescimento Econ\u00f3mico: Alegar que a proposta pode ter efeitos adversos na gera\u00e7\u00e3o de empregos e no crescimento econ\u00f4mico. A exist\u00eancia de benef\u00edcios fiscais pode ter incentivado a cria\u00e7\u00e3o de empregos no setor de I&D e contribu\u00eddo para o crescimento econ\u00f4mico. Votar contra a revoga\u00e7\u00e3o desses benef\u00edcios pode ser justificado com base na preocupa\u00e7\u00e3o de que isso poderia resultar em impactos negativos no emprego e na atividade econ\u00f4mica associada \u00e0 inova\u00e7\u00e3o e pesquisa.",
+        "tag_1": "Finan\u00e7as",
+        "tag_2": "Fiscalidade",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 1,
+            "CH": 0,
+            "IL": 2,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "25",
+        "official_id": "401/XV/1",
+        "title": "ELIMINA A CONTRAORDENA\u00c7\u00c3O POR N\u00c3O DETER TR\u00caS EXEMPLARES PARA A DOCUMENTA\u00c7\u00c3O DOS TRANSPORTES DE MERCADORIA",
+        "vote_link": "13-1-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c3259533830596a4a695a4445354f5330304f4751314c5452685a6d4d74595455785969316c4d6a4d794e4467355a6a51334e7a67755a47396a65413d3d&fich=4b2bd199-48d5-4afc-a51b-e232489f4778.docx&Inline=true",
+        "author": "IL",
+        "summary": "Quando o \u00abdocumento de transporte\u00bb, i.e., a fatura, guia de remessa, nota de devolu\u00e7\u00e3o, guia de transporte ou documentos equivalentes necess\u00e1rios, se consubstancia num documento obtido atrav\u00e9s de programa inform\u00e1tico que tenha sido objeto de pr\u00e9via certifica\u00e7\u00e3o pela Autoridade Tribut\u00e1ria e Aduaneira (AT), ou num documento obtido atrav\u00e9s do Portal das Finan\u00e7as, ou num documento em papel, estes \u201cdevem ser processados em tr\u00eas exemplares, com uma ou mais s\u00e9ries, convenientemente referenciadas.\u201d\n\nH\u00e1 v\u00e1rios casos de coimas passadas por aus\u00eancia de apenas um destes tr\u00eas exemplares (que s\u00e3o iguais em conte\u00fado), quando em falta no transporte de mercadorias.Estes autos s\u00e3o claramente desproporcionais \u00e0 gravidade da falta do documento pelo que visa impedir a coima quando existam pelo menos dois exemplares do documento de transporte.",
+        "counter": "",
+        "tag_1": "Fiscalidade",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 1,
+            "CH": 1,
+            "IL": 1,
+            "PCP": 2,
+            "BE": 0,
+            "PAN": 1,
+            "L": 0
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "26",
+        "official_id": "411/XV/1",
+        "title": "Simplifica o procedimento de renova\u00e7\u00e3o da carta de condu\u00e7\u00e3o",
+        "vote_link": "13-1-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595338314d6a55344d6a51795a693168596d59314c5451784d5467745954597a4f5330354d5759305954517a5932597a595441755a47396a65413d3d&fich=5258242f-abf5-4118-a639-91f4a43cf3a0.docx&Inline=true",
+        "author": "IL",
+        "summary": "At\u00e9 dia 02 de novembro tinham sido autuados 5113 cidad\u00e3os por conduzirem sem t\u00edtulo de condu\u00e7\u00e3o v\u00e1lido, o que constitui infra\u00e7\u00e3o cujo valor da coima oscila entre os 120 e os 600 euros. Este n\u00famero de ocorr\u00eancias \u00e9 manifestamente superior ao registado nos anos de 2018, 2019, 2020 e 2021, em que se registaram, respetivamente, 4109, 4129, 3188 e 2924 infra\u00e7\u00f5es, numa altura em que ainda restavam dois meses para o ano terminar.\n\nProp\u00f5e-se a implementa\u00e7\u00e3o de um sistema de alerta obrigat\u00f3rio pelo Estado para titulares de cartas de condu\u00e7\u00e3o prestes a expirar. A proposta tamb\u00e9m defende a automatiza\u00e7\u00e3o da renova\u00e7\u00e3o da carta de condu\u00e7\u00e3o, isentando de custos os cidad\u00e3os nos casos em que n\u00e3o \u00e9 necess\u00e1rio apresentar atestado m\u00e9dico.",
+        "counter": "1. Poss\u00edvel Falta de Controlo e Fiscaliza\u00e7\u00e3o Adequada\n\n2. Preocupa\u00e7\u00f5es com a Sustentabilidade Financeira\n\n3. Desvaloriza\u00e7\u00e3o da Import\u00e2ncia do Atestado M\u00e9dico na Condu\u00e7\u00e3o",
+        "tag_1": "?",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 2,
+            "CH": 1,
+            "IL": 1,
+            "PCP": 2,
+            "BE": 2,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "27",
+        "official_id": "423/XV/1",
+        "title": "CRIA MECANISMOS DE INTERVEN\u00c7\u00c3O E FIXA\u00c7\u00c3O DE PRE\u00c7OS NOS BENS\r\nALIMENTARES ESSENCIAIS",
+        "vote_link": "13-1-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595338794d6d59784d4459334d6930304f4467344c5451325a475574595455794e69307a59574a6a4e6d51354d324579597a45755a47396a65413d3d&fich=22f10672-4888-46de-a526-3abc6d93a2c1.docx&Inline=true",
+        "author": "BE",
+        "summary": "Este projeto de lei prop\u00f5e a cria\u00e7\u00e3o de mecanismos de interven\u00e7\u00e3o e fixa\u00e7\u00e3o de pre\u00e7os nos bens alimentares essenciais em Portugal. A motiva\u00e7\u00e3o por tr\u00e1s da proposta \u00e9 a preocupa\u00e7\u00e3o com o comportamento monopolista da grande distribui\u00e7\u00e3o no pa\u00eds, que, segundo o projeto, fixa pre\u00e7os aos produtores agr\u00edcolas e estabelece os pre\u00e7os de revenda dos produtos essenciais. Alega-se que, devido a esses comportamentos, os cidad\u00e3os enfrentam aumentos significativos nos pre\u00e7os dos alimentos essenciais, enquanto as grandes empresas do setor registam lucros substanciais.\n\nA Autoridade da Concorr\u00eancia multou v\u00e1rias cadeias de supermercados por pr\u00e1ticas anticoncorrenciais, incluindo conspira\u00e7\u00e3o equivalente a cartel e fixa\u00e7\u00e3o de pre\u00e7os. Argumenta-se que a atual situa\u00e7\u00e3o de pre\u00e7os elevados prejudica a sociedade e prop\u00f5e a cria\u00e7\u00e3o de um mecanismo para fixar pre\u00e7os m\u00e1ximos de bens alimentares essenciais, visando proteger o interesse p\u00fablico, as pessoas e a economia em geral. O governo seria respons\u00e1vel por regulamentar e publicar os pre\u00e7os m\u00e1ximos desses produtos alimentares.",
+        "counter": "1. Interven\u00e7\u00e3o no Livre Mercado: A proposta de cria\u00e7\u00e3o de mecanismos de interven\u00e7\u00e3o e fixa\u00e7\u00e3o de pre\u00e7os nos bens alimentares essenciais pode ser vista como uma interfer\u00eancia excessiva no livre mercado. Argumenta-se que permitir que o mercado regule os pre\u00e7os \u00e9 mais eficiente e promove a concorr\u00eancia, levando eventualmente a pre\u00e7os mais baixos para os consumidores.\n\n2. Poss\u00edveis Efeitos Negativos na Produ\u00e7\u00e3o e Abastecimento: Cr\u00edticos da proposta podem afirmar que a fixa\u00e7\u00e3o de pre\u00e7os pode desencorajar os produtores de alimentos, uma vez que podem sentir que n\u00e3o est\u00e3o recebendo o valor adequado por seus produtos. Al\u00e9m disso, a fixa\u00e7\u00e3o de pre\u00e7os pode resultar em escassez de produtos essenciais, pois os produtores podem n\u00e3o encontrar incentivos suficientes para manter ou aumentar sua produ\u00e7\u00e3o.\n\n3. Complexidade na Implementa\u00e7\u00e3o e Regula\u00e7\u00e3o: A implementa\u00e7\u00e3o de mecanismos para fixar os pre\u00e7os dos bens alimentares essenciais pode ser desafiadora em termos de regulamenta\u00e7\u00e3o e fiscaliza\u00e7\u00e3o. Cr\u00edticos podem argumentar que o governo pode enfrentar dificuldades para definir pre\u00e7os justos e evitar manipula\u00e7\u00f5es, o que pode levar a uma burocracia adicional e a poss\u00edveis efeitos colaterais indesejados.",
+        "tag_1": "Finan\u00e7as",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 0,
+            "IL": 0,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "28",
+        "official_id": "56/XV",
+        "title": "Refor\u00e7a o sistema de incentivos fiscais aplic\u00e1vel \u00e0s start-ups e scaleups, altera o regime de tributa\u00e7\u00e3o dos planos de op\u00e7\u00f5es para trabalhadores de start-ups e empresas do setor da inova\u00e7\u00e3o",
+        "vote_link": "3-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c325953396a597a51794e446c6c5969307a5a44566c4c54526b597a5174596d45314d4330354f54553459544a6b4f4445794f4451755a47396a65413d3d&fich=cc4249eb-3d5e-4dc4-ba50-9958a2d81284.docx&Inline=true",
+        "author": "PS",
+        "summary": "Visa criar um quadro regulat\u00f3rio para incentivar a cria\u00e7\u00e3o e o desenvolvimento de start-ups e scale-ups em Portugal, incentivando o investimento, a investiga\u00e7\u00e3o e o desenvolvimento tecnol\u00f3gico no pa\u00eds. Prop\u00f5e: \n\nAltera\u00e7\u00f5es ao C\u00f3digo do Imposto sobre o Rendimento das Pessoas Singulares (CIRS) e ao Estatuto dos Benef\u00edcios Fiscais (EBF) para criar um regime fiscal favor\u00e1vel \u00e0 tributa\u00e7\u00e3o dos ganhos provenientes de op\u00e7\u00f5es de aquisi\u00e7\u00e3o de participa\u00e7\u00f5es sociais em start-ups. Os ganhos seriam tributados apenas no momento da aliena\u00e7\u00e3o das participa\u00e7\u00f5es sociais.\n\nRefor\u00e7o do Incentivo Fiscal em Investiga\u00e7\u00e3o e Desenvolvimento (I&D): A proposta aumenta o prazo para reporte de despesas em I&D.\n\nAltera\u00e7\u00f5es ao C\u00f3digo Fiscal do Investimento: Prop\u00f5e altera\u00e7\u00f5es ao C\u00f3digo Fiscal do Investimento (CFI) para prevenir situa\u00e7\u00f5es de duplo benef\u00edcio fiscal relacionadas com investimento indireto em I&D.",
+        "counter": "1. Desigualdade de Benef\u00edcios Fiscais: Cr\u00edticos podem argumentar que os benef\u00edcios fiscais propostos podem favorecer desproporcionalmente as start-ups em detrimento de outras empresas. Isso pode gerar preocupa\u00e7\u00f5es sobre a equidade no tratamento fiscal, especialmente se as vantagens se concentrarem em setores espec\u00edficos, excluindo outros contribuintes.\n\n2. Risco de Fraude e Otimiza\u00e7\u00e3o Fiscal: A concess\u00e3o de benef\u00edcios fiscais espec\u00edficos para start-ups pode abrir espa\u00e7o para pr\u00e1ticas de otimiza\u00e7\u00e3o fiscal e at\u00e9 mesmo para fraudes, pois algumas empresas podem buscar estrat\u00e9gias para qualificar-se artificialmente como start-ups apenas para usufruir dos incentivos fiscais, sem contribuir significativamente para a inova\u00e7\u00e3o ou o desenvolvimento.\n\n3. Redu\u00e7\u00e3o da receita fiscal",
+        "tag_1": "Fiscalidade",
+        "tag_2": "",
+        "type": "Vota\u00e7\u00e3o na Generalidade",
+        "votes":{
+            "PS": 1,
+            "PSD": 2,
+            "CH": 2,
+            "IL": 2,
+            "PCP": 0,
+            "BE": 0,
+            "PAN": 2,
+            "L": 2
+        },
+        "final_result": "1"
+    },
+    {
+        "update": "New",
+        "id": "29",
+        "official_id": "270/XV/1",
+        "title": "De solidariedade com a Ucr\u00e2nia, por ocasi\u00e3o do primeiro anivers\u00e1rio da invas\u00e3o do territ\u00f3rio ucraniano pela Federa\u00e7\u00e3o Russa",
+        "vote_link": "24-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a51574e3061585a705a47466b5a564268636d786862575675644746794c324d354d474a6a4d574a6c4c544d7a595759744e47597a4e6931695a6a41354c54566a4f444577596a6b344e6a45304f53356b62324e34&fich=c90bc1be-33af-4f36-bf09-5c810b986149.docx&Inline=true",
+        "author": "PS",
+        "summary": "",
+        "counter": "",
+        "tag_1": "Rela\u00e7\u00f5es internacionais",
+        "tag_2": "",
+        "type": "Voto de Solidariedade",
+        "votes":{
+            "PS": 1,
+            "PSD": 1,
+            "CH": 1,
+            "IL": 1,
+            "PCP": 0,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "1"
+    },
+    {
+        "update": "New",
+        "id": "30",
+        "official_id": "493/XV/1",
+        "title": "CONCEDER AO ENSINO PARTICULAR E\r\nCOOPERATIVO MAIOR AUTONOMIA PARA A CONTRATA\u00c7\u00c3O DE DOCENTES",
+        "vote_link": "22-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595338324e54526c4d6a55334f43316a5a6a637a4c54517759575974596d526a4d5331684e6d566d5a5745774d7a426b4d4751755a47396a65413d3d&fich=654e2578-cf73-40af-bdc1-a6efea030d0d.docx&Inline=true",
+        "author": "IL",
+        "summary": "Com o passar dos anos, os estabelecimentos de ensino privado t\u00eam sentido cada vez mais dificuldades em recrutar docentes com habilita\u00e7\u00f5es profissionais porque  \u201ca procura dos cursos que conferem habilita\u00e7\u00e3o profissional para a doc\u00eancia tem vindo a diminuir nos \u00faltimos anos e o n\u00famero de diplomados nesses cursos poder\u00e1 n\u00e3o ser suficiente para suprir as necessidades futuras dos professores\u201d\n\nDefende-se que a habilita\u00e7\u00e3o profissional seja um requisito facultativo no caso do ensino privado e cooperativo, ficando a cargo da liberdade contratual.\n\nA autonomia contratual n\u00e3o acarreta um risco de diminui\u00e7\u00e3o de qualidade do ensino, bem pelo contr\u00e1rio, pois a diversidade de contributos, a maior possibilidade\r\nde escolha por exist\u00eancia de maior oferta, bem como a possibilidade de continua\u00e7\u00e3o de processos formativos em contexto laboral, abre portas a uma escola preparada e adaptada \u00e0 diversidade de alunos, ao seu projeto educativo e aos objetivos que pretende alcan\u00e7ar.",
+        "counter": "Padr\u00f5es de Qualidade:\nA exig\u00eancia de habilita\u00e7\u00e3o profissional para docentes \u00e9 vista como um padr\u00e3o de qualidade no ensino. Ao flexibilizar esse requisito, pode haver preocupa\u00e7\u00f5es quanto \u00e0 manuten\u00e7\u00e3o dos padr\u00f5es educacionais e compet\u00eancia dos professores, o que pode impactar negativamente a qualidade da educa\u00e7\u00e3o fornecida.\n\nPrepara\u00e7\u00e3o Adequada dos Professores:\nArgumenta-se que a exig\u00eancia de habilita\u00e7\u00e3o profissional assegura uma prepara\u00e7\u00e3o adequada e consistente dos professores para enfrentar os desafios espec\u00edficos do ambiente educacional. Flexibilizar esse requisito pode resultar em lacunas na prepara\u00e7\u00e3o e forma\u00e7\u00e3o dos docentes, o que pode afetar adversamente a efic\u00e1cia do processo educativo.\n\nEquidade na Educa\u00e7\u00e3o:\nA manuten\u00e7\u00e3o de padr\u00f5es uniformes de habilita\u00e7\u00e3o profissional para docentes pode ser vista como uma medida que promove a equidade no acesso \u00e0 educa\u00e7\u00e3o. Permitir que escolas particulares e cooperativas tenham diferentes crit\u00e9rios de contrata\u00e7\u00e3o pode criar disparidades, favorecendo algumas institui\u00e7\u00f5es em detrimento de outras, o que pode afetar a equidade educacional.",
+        "tag_1": "Educa\u00e7\u00e3o",
+        "tag_2": "",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 0,
+            "PSD": 1,
+            "CH": 1,
+            "IL": 1,
+            "PCP": 0,
+            "BE": 0,
+            "PAN": 1,
+            "L": 0
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "31",
+        "official_id": "395/XV",
+        "title": "Criar condi\u00e7\u00f5es para o desenvolvimento do mercado volunt\u00e1rio de carbono em Portugal",
+        "vote_link": "10-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595339684e6a646b4f546c6d5969316a4e6a49784c54526d5a4445744f47466c4d4330794f444a694d6a41335a445979593245755a47396a65413d3d&fich=a67d99fb-c621-4fd1-8ae0-282b207d62ca.docx&Inline=true",
+        "author": "PS",
+        "summary": "cria\u00e7\u00e3o de condi\u00e7\u00f5es para a monetiza\u00e7\u00e3o do carbono de forma volunt\u00e1ria, num cen\u00e1rio em que, na aus\u00eancia de uma exig\u00eancia legal e de uma regulamenta\u00e7\u00e3o espec\u00edfica que o determine, se possam comprar cr\u00e9ditos de carbono, resultantes de projetos externos que reduzam, evitem ou capturem GEE, num processo que se designa de compensa\u00e7\u00e3o e onde se inclui a remo\u00e7\u00e3o de carbono atrav\u00e9s do \u201ccarbon farming\u201d, possibilitado por atividades de natureza agroflorestal e de gest\u00e3o dos solos agr\u00edcolas e com importantes benef\u00edcios colaterais para a biodiversidade e preserva\u00e7\u00e3o de ecossistemas\n\nApesar das estrat\u00e9gias que t\u00eam vindo a ser definidas e dos esfor\u00e7os pol\u00edticos para a respetiva concretiza\u00e7\u00e3o, estamos ainda longe de atingir as metas clim\u00e1ticas a que nos propusemos. \u00c9, por isso, essencial mobilizar a sociedade e as institui\u00e7\u00f5es e as empresas para a transforma\u00e7\u00e3o necess\u00e1ria em todos os setores e territ\u00f3rios.\n\no CELE tornou obrigat\u00f3ria a compra em leil\u00e3o de licen\u00e7as de emiss\u00e3o de CO2 para cada tonelada emitida, dando, assim, um importante incentivo \u00e0 redu\u00e7\u00e3o das emiss\u00f5es.\n\nO Acordo de Paris veio reconhecer a import\u00e2ncia dos mercados de carbono internacionais para alcan\u00e7ar esse desiderato e estabeleceu, nesse sentido, um quadro regulat\u00f3rio que deu j\u00e1 origem a v\u00e1rios sistemas nacionais e infranacionais de com\u00e9rcio de licen\u00e7as de emiss\u00e3o. \n\nNa base destes mercados est\u00e1 a necessidade de as entidades privadas demonstrarem os seus compromissos ambientais \u00e0 sociedade e ao mercado, mesmo n\u00e3o estando constrangidas a uma obriga\u00e7\u00e3o legal de redu\u00e7\u00e3o de emiss\u00f5es de gases de efeito estufa.\n\na atribui\u00e7\u00e3o de um pre\u00e7o ao carbono \u00e9 uma abordagem eficaz, flex\u00edvel e de baixo custo, para reduzir as emiss\u00f5es de gases com efeito de estufa (em combina\u00e7\u00e3o com outras pol\u00edticas)",
+        "counter": "Risco de Greenwashing: Um dos principais argumentos contra mercados volunt\u00e1rios de carbono \u00e9 o risco de greenwashing, onde as empresas podem comprar cr\u00e9ditos de carbono para criar uma imagem de responsabilidade ambiental sem efetivamente reduzir suas pr\u00f3prias emiss\u00f5es. Isso pode levar a uma falsa sensa\u00e7\u00e3o de progresso na luta contra as mudan\u00e7as clim\u00e1ticas, enquanto as emiss\u00f5es reais continuam a aumentar.\r\n\r\nFalta de Regulamenta\u00e7\u00e3o Adequada: Cr\u00edticos argumentam que os mercados volunt\u00e1rios de carbono muitas vezes carecem de regulamenta\u00e7\u00e3o rigorosa, o que pode resultar em pr\u00e1ticas comerciais injustas e na venda de cr\u00e9ditos de carbono de qualidade duvidosa. Sem padr\u00f5es claros e verifica\u00e7\u00e3o independente, o mercado pode se tornar propenso a abusos e manipula\u00e7\u00f5es.\r\n\r\n3. N\u00e3o Substitui a Redu\u00e7\u00e3o Direta de Emiss\u00f5es: A compra de cr\u00e9ditos de carbono n\u00e3o substitui a necessidade cr\u00edtica de reduzir diretamente as emiss\u00f5es nos setores mais poluentes. Argumenta-se que os mercados volunt\u00e1rios podem criar uma mentalidade de \"compensa\u00e7\u00e3o\" que desvia a aten\u00e7\u00e3o da necessidade essencial de reduzir as atividades que contribuem para as emiss\u00f5es de gases de efeito estufa.",
+        "tag_1": "Clima",
+        "tag_2": "",
+        "type": "Projeto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 1,
+            "PSD": 1,
+            "CH": 2,
+            "IL": 2,
+            "PCP": 0,
+            "BE": 0,
+            "PAN": 1,
+            "L": 2
+        },
+        "final_result": "1"
+    },
+    {
+        "update": "New",
+        "id": "32",
+        "official_id": "355/XV/1",
+        "title": "Revis\u00e3o dos termos da PPP da Lusoponte, com vista \u00e0 redu\u00e7\u00e3o dos valores de taxas de portagens das pontes Ponte Vasco da Gama e da Ponte 25 de Abri",
+        "vote_link": "10-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595338314e574d775a574d774d6931685a5451314c5452685a6a4d744f575134596931694e6a5a6d4f474a6959574a684e5441755a47396a65413d3d&fich=55c0ec02-ae45-4af3-9d8b-b66f8bbaba50.docx&Inline=true",
+        "author": "CH",
+        "summary": "A constru\u00e7\u00e3o da ponte Vasco da Gama foi apresentada como um investimento privado, mas grande parte do financiamento foi garantido pelo Estado. O contrato de concess\u00e3o, inicialmente fixado em 33 anos, j\u00e1 foi renegociado v\u00e1rias vezes, aumentando os custos para os contribuintes. A Lusoponte tem a concess\u00e3o das pontes sobre o rio Tejo at\u00e9 2030 e tamb\u00e9m o exclusivo de explorar futuras travessias.\n\nA Lusoponte, oito anos antes do t\u00e9rmino da concess\u00e3o, apresenta uma sa\u00fade financeira robusta, com lucros significativos em 2020, apesar da quebra de tr\u00e1fego devido \u00e0 pandemia. No entanto, as taxas de portagem nas pontes 25 de Abril e Vasco da Gama aumentaram, e h\u00e1 previs\u00f5es de novos aumentos em 2023. Os utentes, em sua maioria residentes na margem sul de Lisboa, enfrentam aumentos significativos nas despesas com portagens.\r\n\r\nA proposta destaca a discrep\u00e2ncia entre as pol\u00edticas de aumento de pre\u00e7os para as portagens nas pontes e as medidas governamentais para limitar os aumentos em outras \u00e1reas, como as rendas habitacionais. Para abordar essa disparidade, a proposta sugere a ado\u00e7\u00e3o de um modelo su\u00ed\u00e7o de pagamento \u00fanico para todas as autoestradas, com isen\u00e7\u00f5es para ve\u00edculos de emerg\u00eancia. Essa medida visa tornar o sistema de portagens mais acess\u00edvel e previs\u00edvel para os utentes residentes na \u00c1rea Metropolitana de Lisboa.",
+        "counter": "Sustentabilidade Financeira da Concess\u00e3o: Argumenta-se que o modelo atual de concess\u00e3o, com taxas de portagem ajust\u00e1veis, \u00e9 fundamental para manter a sustentabilidade financeira das pontes e garantir os recursos necess\u00e1rios para sua manuten\u00e7\u00e3o e melhorias. A implementa\u00e7\u00e3o de um modelo de pagamento \u00fanico poderia comprometer a capacidade de financiamento da Lusoponte, prejudicando a qualidade e a seguran\u00e7a das infraestruturas.\n\nImpacto Econ\u00f3omico na Lusoponte: A proposta de ado\u00e7\u00e3o de um modelo su\u00ed\u00e7o poderia ter impactos negativos nas finan\u00e7as da Lusoponte, que opera com base nas receitas geradas pelas portagens. Reduzir a flexibilidade no ajuste das taxas de portagem pode afetar a capacidade da concession\u00e1ria de cobrir custos operacionais, realizar investimentos e manter padr\u00f5es adequados de seguran\u00e7a e manuten\u00e7\u00e3o.\n\nEquidade e Uso Justo: Argumenta-se que um sistema de pagamento \u00fanico, mesmo renov\u00e1vel a cada 12 meses, pode n\u00e3o ser equitativo para todos os utentes. Poderia resultar em custos desproporcionais para aqueles que usam as pontes com menos frequ\u00eancia, enquanto n\u00e3o reflete adequadamente a intensidade de uso ou a capacidade de pagamento de diferentes utilizadores. Al\u00e9m disso, isen\u00e7\u00f5es espec\u00edficas poderiam criar disparidades entre os utentes, levando a uma distribui\u00e7\u00e3o desigual dos custos.",
+        "tag_1": "Infraestruturas",
+        "tag_2": "PPP",
+        "type": "Projecto de Resolu\u00e7\u00e3o",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 1,
+            "IL": 0,
+            "PCP": 0,
+            "BE": 1,
+            "PAN": 1,
+            "L": 2
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "33",
+        "official_id": "502/XV/1",
+        "title": "Pela renegocia\u00e7\u00e3o dos contratos de parcerias p\u00fablico-privadas do sector\r\nrodovi\u00e1rio",
+        "vote_link": "10-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595339684f5459304e32566b4f43316a4e7a526c4c545134596a5574595759354e7930344f5751784f546b354e47566b4d5445755a47396a65413d3d&fich=a9647ed8-c74e-48b5-af97-89d19994ed11.docx&Inline=true",
+        "author": "PAN",
+        "summary": "Os encargos brutos com as Parcerias P\u00fablico-Privadas neste sector pesam mais de 1 400 milh\u00f5es de euros no Or\u00e7amento do Estado de 2023, um valor exorbitante tendo em conta que os c\u00e1lculos do Eurostat1 nos dizem que o custo destas Parcerias deveria cifrar-se apenas nos 340 milh\u00f5es de euros anuais. Mas o car\u00e1cter ruinoso destes contratos est\u00e1, tamb\u00e9m, patente no Relat\u00f3rio do Or\u00e7amento de 2023, que prev\u00ea que, at\u00e9 2040, o Estado vai pagar por estas Parcerias cerca de 11 567 milh\u00f5es de euros, quando o valor das estruturas concessionadas \u00e9, segundo os referidos dados do Eurostat, de pouco mais de 5 000 milh\u00f5es de euros, o que significa que o nosso pa\u00eds, em 20 anos, pagar\u00e1 mais de 2 vezes as estruturas associadas a estas Parcerias.",
+        "counter": "Impacto Financeiro Desconhecido: A proposta sugere a renegocia\u00e7\u00e3o de contratos de Parcerias P\u00fablico-Privadas (PPPs) no setor rodovi\u00e1rio, mas n\u00e3o fornece uma avalia\u00e7\u00e3o clara do impacto financeiro que essa renegocia\u00e7\u00e3o teria. N\u00e3o apresenta uma estimativa dos custos associados \u00e0 rescis\u00e3o ou altera\u00e7\u00e3o dos contratos existentes, o que poderia gerar incertezas sobre os custos reais e potenciais efeitos negativos nas contas p\u00fablicas.\r\n\r\nRisco de Litiga\u00e7\u00e3o e Instabilidade Contratual: A renegocia\u00e7\u00e3o de contratos pode abrir espa\u00e7o para lit\u00edgios entre o setor p\u00fablico e os parceiros privados. A introdu\u00e7\u00e3o de altera\u00e7\u00f5es nos termos contratuais pode ser contestada pelas empresas envolvidas, resultando em processos legais demorados e custosos. Al\u00e9m disso, a instabilidade contratual pode desencorajar futuros investimentos privados em projetos de infraestrutura.\r\n\r\nFalta de Garantia de Melhoria: A proposta destaca a necessidade de renegociar contratos que se afigurem \"demasiado onerosos e desequilibrados\", mas n\u00e3o oferece garantias de que as renegocia\u00e7\u00f5es propostas resultar\u00e3o em melhores condi\u00e7\u00f5es para o setor p\u00fablico. N\u00e3o especifica crit\u00e9rios objetivos para determinar o que constitui um contrato \"justo\" e deixa em aberto a possibilidade de as renegocia\u00e7\u00f5es n\u00e3o atenderem adequadamente aos interesses p\u00fablicos, podendo, inclusive, prejudicar a continuidade e a qualidade dos servi\u00e7os rodovi\u00e1rios.",
+        "tag_1": "Infraestruturas",
+        "tag_2": "PPP",
+        "type": "Projeto Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 2,
+            "IL": 1,
+            "PCP": 0,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "34",
+        "official_id": "498/XV/1",
+        "title": "Pro\u00edbe a venda de bilhetes de lotarias e de lotaria instant\u00e2nea nas esta\u00e7\u00f5es e postos de correio",
+        "vote_link": "10-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c3259533833597a5a6859324d354e693078597a63354c5451794d5759744f4467794d43316d4d4451784e474a685a6d59794e6a4d755a47396a65413d3d&fich=7c6acc96-1c79-421f-8820-f0414baff263.docx&Inline=true",
+        "author": "L",
+        "summary": "As raspadinhas s\u00e3o um v\u00edcio negligenciado? A resposta est\u00e1 nos dados \u2013 que indicam que sim, s\u00e3o. O gasto m\u00e9dio por pessoa nestes jogos \u00e9 de 160\u20ac por ano em Portugal, um valor extremamenteelevado quando comparado com os 14\u20ac m\u00e9dios em Espanha. Dentre as raz\u00f5es para o consumo de raspadinhas est\u00e1: \u201cem primeiro lugar, a facilidade de acesso e o grande n\u00famero de pontos de distribui\u00e7\u00e3o; em segundo, a aceita\u00e7\u00e3o social e o baixo estigma associado a este tipo de v\u00edcio; em terceiro, a grande publicidade que alguns \u00f3rg\u00e3os de comunica\u00e7\u00e3o social fazem aos pr\u00e9mios atribu\u00eddos, com muitas hist\u00f3rias na primeira pessoa que fazem acreditar que\nganhar muito \u00e9 mais f\u00e1cil do que efetivamente \u00e9. O facto de o resultado da aposta ser imediato \u00e9 outro dos fatores que torna mais f\u00e1cil as pessoas ficarem viciadas\". N\u00e3o se v\u00ea, assim, como pode um prestador de um servi\u00e7o p\u00fablico ser autorizado a ter, em paralelo a este, uma atividade que acaba a permitir a difus\u00e3o do fen\u00f3meno do jogo. Sendo os interesses p\u00fablicos os interesses gerais de uma colectividade, verifica-se aqui uma contradi\u00e7\u00e3o insan\u00e1vel: o mesmo operador prossegue, por um lado, um ineg\u00e1vel interesse p\u00fablico - o servi\u00e7o postal universal -, e por outro ofende o interesse geral de prote\u00e7\u00e3o da comunidade contra o empobrecimento e contra o jogo patol\u00f3gico, a que o interesse privado da concession\u00e1ria deve sucumbir. ",
+        "counter": "Restri\u00e7\u00e3o \u00e0 Liberdade Comercial: Proibir a venda de bilhetes de lotarias e lotaria instant\u00e2nea nas esta\u00e7\u00f5es e postos de correio pode ser interpretado como uma restri\u00e7\u00e3o \u00e0 liberdade comercial. Isso cria um ambiente em que empresas e estabelecimentos s\u00e3o limitados em suas op\u00e7\u00f5es de produtos, impedindo-os de oferecer aos clientes a escolha de adquirir bilhetes de lotaria, que s\u00e3o produtos legalmente permitidos.\r\n\r\nImpacto Econ\u00f4mico nos Estabelecimentos: A proibi\u00e7\u00e3o dessa pr\u00e1tica pode ter um impacto econ\u00f4mico negativo nos estabelecimentos, como esta\u00e7\u00f5es e postos de correio, que dependem da venda desses produtos para aumentar sua receita. Limitar as op\u00e7\u00f5es de produtos dispon\u00edveis para venda pode reduzir a atratividade desses locais para os consumidores, afetando negativamente os neg\u00f3cios e a sustentabilidade financeira desses estabelecimentos.",
+        "tag_1": "Jogos de Sorte",
+        "tag_2": "",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 1,
+            "PSD": 2,
+            "CH": 0,
+            "IL": 0,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "1"
+    },
+    {
+        "update": "New",
+        "id": "35",
+        "official_id": "483/XV/1",
+        "title": "DETERMINA A TRANSPAR\u00caNCIA DE VENCIMENTOS E PROP\u00d5E O\r\nESTABELECIMENTO DE LEQUES SALARIAIS DE REFER\u00caNCIA COMO\r\nMECANISMO DE COMBATE \u00c0 DESIGUALDADE SALARIAL",
+        "vote_link": "10-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595338324e6a526a4f4759324e5330774d6a597a4c5451785a474974596d4a6c595330774e44526a596d46684e4449334e544d755a47396a&fich=664c8f65-0263-41db-bbea-044cbaa42753.doc&Inline=true",
+        "author": "BE",
+        "summary": "O r\u00e1cio entre os sal\u00e1rios m\u00e9dios e os sal\u00e1rios dos gestores das empresas do PSI-20 passou de 29,6 para 32,2. No Pingo Doce a diferen\u00e7a \u00e9 de 262,6 vezes entre a remunera\u00e7\u00e3o do administrador, Pedro Soares dos Santos, e os sal\u00e1rios m\u00e9dios dos trabalhadores da empresa. Cla\u00fadia Azevedo, administradora da SONAE, teve no ano passado uma remunera\u00e7\u00e3o 77,4 vezes superior \u00e0 dos trabalhadores do grupo. Gon\u00e7alo Moura Martins, CEO da Mota-Engil, ganhou mais de 73 vezes a m\u00e9dia dos sal\u00e1rios dos restantes trabalhadores da construtora.\n \nPeter Drucker, porventura a refer\u00eancia mais celebrada da gest\u00e3o moderna, defendia que o r\u00e1cio entre o sal\u00e1rio mais elevado e o sal\u00e1rio mais baixo de uma empresa n\u00e3o devia exceder os 25. Hoje, nas grandes empresas, a disparidade \u00e9 muit\u00edssimo superior a esse leque.\n\nNa Su\u00ed\u00e7a, por exemplo, 100 mil cidad\u00e3os propuseram ao Parlamento, em 2011, que ningu\u00e9m deveria poder ganhar num m\u00eas mais do que outro, na mesma empresa, ganha num ano.\n\nEm Fran\u00e7a, foi apresentada no Parlamento, em 2016, uma proposta com o mesmo objetivo: definir um r\u00e1cio m\u00e1ximo, mas desta vez de 1/20, nos sal\u00e1rios da mesma empresa ou grupo. Perante a press\u00e3o, a proposta foi\r\ntransformada num r\u00e1cio muito maior: 1/100. O projeto de lei, votado em maio daquele ano, acabou por ser chumbado por apenas um voto de diferen\u00e7a.",
+        "counter": "Restri\u00e7\u00e3o \u00e0 Liberdade Contratual: Estabelecer um leque salarial m\u00e1ximo pode ser interpretado como uma interven\u00e7\u00e3o excessiva na liberdade contratual entre empregadores e empregados. Isso pode prejudicar a capacidade das empresas de negociar sal\u00e1rios com base em crit\u00e9rios como experi\u00eancia, habilidades espec\u00edficas e desempenho individual.\r\n\r\nImpacto nas Empresas Competitivas: A imposi\u00e7\u00e3o de limites salariais pode desencorajar talentos de alto n\u00edvel a trabalhar em determinadas empresas, especialmente se essas empresas forem competitivas globalmente. A capacidade de atrair e reter profissionais qualificados muitas vezes depende da oferta de pacotes de remunera\u00e7\u00e3o competitivos, o que seria limitado por um leque salarial restrito.\r\n\r\nComplexidade na Avalia\u00e7\u00e3o de Justi\u00e7a Salarial: Determinar um leque salarial justo e equitativo pode ser desafiador, uma vez que diferentes setores e empresas t\u00eam realidades econ\u00f4micas distintas. Estabelecer uma pol\u00edtica \u00fanica para todos pode n\u00e3o levar em considera\u00e7\u00e3o as nuances e disparidades leg\u00edtimas que podem existir em diversos setores e empresas. Al\u00e9m disso, a avalia\u00e7\u00e3o de \"justi\u00e7a salarial\" pode ser subjetiva e dif\u00edcil de medir objetivamente.",
+        "tag_1": "Sal\u00e1rios",
+        "tag_2": "",
+        "type": "PROJETO DE LEI",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 0,
+            "IL": 0,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "36",
+        "official_id": "375/XV/1",
+        "title": "Prev\u00ea um regime de incentivos para a representa\u00e7\u00e3o equilibrada entre mulheres e\r\nhomens nos \u00f3rg\u00e3os de administra\u00e7\u00e3o, fiscaliza\u00e7\u00e3o ou ger\u00eancia das sociedades comerciais",
+        "vote_link": "10-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c325953396d4e545135596a6733595330774f5751304c5451355a475174596a6c6a5a69316a597a4d30595749334d6a6c685a4445755a47396a65413d3d&fich=f549b87a-09d4-49dd-b9cf-cc34ab729ad1.docx&Inline=true",
+        "author": "PAN",
+        "summary": "Em 2007, a Noruega introduziu a figura das quotas de g\u00e9nero na legisla\u00e7\u00e3o nacional obrigando os conselhos de administra\u00e7\u00e3o das sociedades cotadas a assegurar uma quota m\u00ednima do g\u00e9nero sub-representado, o feminino, de 40 por cento.\n\nNa pol\u00edtica, j\u00e1 desde 2006 que temos a Lei da Paridade, que visa assegurar uma representatividade m\u00ednima de 33,33 por cento do g\u00e9nero sub-representado\n\nAs quotas s\u00e3o, indubitavelmente, um impulsionador da mudan\u00e7a necess\u00e1ria para um equil\u00edbrio representativo e digno para ambos os g\u00e9neros, desafiador do status quo e do modelo de poder instalado de desigualdades estruturais. Porque o m\u00e9rito n\u00e3o \u00e9 exclusivo dos homens.",
+        "counter": "Princ\u00edpio da Livre Escolha e M\u00e9rito: A cria\u00e7\u00e3o de um regime de incentivos para a representa\u00e7\u00e3o equilibrada pode ser vista como uma interfer\u00eancia indevida na liberdade de escolha das empresas, minando o princ\u00edpio de m\u00e9rito. Defensores da meritocracia argumentam que a sele\u00e7\u00e3o para cargos de lideran\u00e7a deve ser baseada nas habilidades, experi\u00eancia e compet\u00eancias individuais, n\u00e3o em quotas de g\u00eanero.\r\n\r\nPoss\u00edvel Redu\u00e7\u00e3o da Efici\u00eancia Empresarial: Introduzir quotas de g\u00eanero pode resultar na nomea\u00e7\u00e3o de candidatos menos qualificados em detrimento da efici\u00eancia empresarial. Se as empresas forem obrigadas a cumprir quotas de g\u00eanero, isso poderia levar a escolhas baseadas em crit\u00e9rios de g\u00eanero em vez de compet\u00eancia, o que poderia prejudicar o desempenho global das empresas.\r\n\r\nDesincentivo para Mulheres Competentes: A cria\u00e7\u00e3o de um regime de incentivos baseado em quotas de g\u00eanero pode criar uma percep\u00e7\u00e3o de que as mulheres foram nomeadas apenas para cumprir requisitos regulat\u00f3rios, em vez devido \u00e0s suas qualifica\u00e7\u00f5es. Isso pode desencorajar mulheres competentes, que preferem ser reconhecidas por suas habilidades individuais em vez de serem vistas como parte de uma pol\u00edtica de quotas.",
+        "tag_1": "Igualdade de g\u00e9nero",
+        "tag_2": "Sal\u00e1rios",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 2,
+            "IL": 0,
+            "PCP": 0,
+            "BE": 2,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "37",
+        "official_id": "249/XV/1",
+        "title": "Aprova um Programa Nacional de Deseucaliptiza\u00e7\u00e3o",
+        "vote_link": "10-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595338794f4751774d7a5668597930314e6d497a4c54513259546374596a466d5a533032596d4a6c5a5467794d57526c4d6a63755a47396a65413d3d&fich=28d035ac-56b3-46a7-b1fe-6bbee821de27.docx&Inline=true",
+        "author": "PAN",
+        "summary": "Nas \u00faltimas d\u00e9cadas o ordenamento do territ\u00f3rio florestal em Portugal tem vindo a conhecer uma enorme transforma\u00e7\u00e3o assente na ideia de que se dever\u00e1 privilegiar a planta\u00e7\u00e3o de eucaliptos em detrimento de esp\u00e9cies aut\u00f3ctones, numa l\u00f3gica puramente economicista assente no rendimento econ\u00f3mico de curto prazo.\n\nNo nosso pa\u00eds assumem particular import\u00e2ncia as esp\u00e9cies aut\u00f3ctones, n\u00e3o s\u00f3 por estarem especialmente adaptadas ao clima e aos solos aqui existentes, mas tamb\u00e9m porque s\u00e3o uma mais-valia ambiental \u2013 visto assegurarem um maior equil\u00edbrio clim\u00e1tico, uma melhor qualidade do ar, uma maior diversidade de fauna, uma maior estabilidade dos aqu\u00edferos e uma melhor preserva\u00e7\u00e3o de solos \u2013 e em mat\u00e9ria de protec\u00e7\u00e3o civil \u2013 tendo uma importante resist\u00eancia e capacidade regenerativa face aos inc\u00eandios florestais.\n\nos eucaliptais ocupam cerca de 26% (844 mil hectares) da floresta continental portuguesa, tendo tido um incremento sistem\u00e1tico nos \u00faltimos 50 anos \u2013 um crescimento de mais de 59 mil hectares s\u00f3 entre 2005 e 2015.\n\nAp\u00f3s os grandes inc\u00eandios florestais dos \u00faltimos anos, nomeadamente os grandes inc\u00eandios de 2017, um n\u00famero alargado de especialistas apontou as extensas planta\u00e7\u00f5es de eucaliptos como um dos principais fatores para a propaga\u00e7\u00e3o de inc\u00eandios. A planta\u00e7\u00e3o intensiva deste tipo de monocultura, principalmente em zonas de acentuado declive constitui um risco agravado de inc\u00eandio al\u00e9m dos impactos extremamente negativos na paisagem, o decl\u00ednio da biodiversidade, na eros\u00e3o e empobrecimento dos solos e nas linhas de \u00e1gua.\n\nPrograma Nacional de Deseucaliptiza\u00e7\u00e3o, que a partir de 1 de Janeiro de 2023 atribua pr\u00e9mios para o arranque de eucaliptos e apoios sob a forma de comparticipa\u00e7\u00e3o financeira para as opera\u00e7\u00f5es de convers\u00e3o e de dearboriza\u00e7\u00e3o, na qual os benefici\u00e1rios, para al\u00e9m de substitu\u00edrem as suas \u00e1reas de eucaliptal por esp\u00e9cies arbustivas e arb\u00f3reas aut\u00f3ctones, assumem o compromisso de, durante 15 anos, n\u00e3o procederem a qualquer planta\u00e7\u00e3o de esp\u00e9cies de eucalipto",
+        "counter": "Impacto Econ\u00f4mico e Social: Cr\u00edticos da proposta podem argumentar que a cria\u00e7\u00e3o de um Programa Nacional de Deseucaliptiza\u00e7\u00e3o poderia ter impactos negativos na economia local e no setor florestal. O eucalipto \u00e9 uma fonte significativa de renda para algumas regi\u00f5es, especialmente no que diz respeito \u00e0 produ\u00e7\u00e3o de papel e celulose. A retirada massiva dessas planta\u00e7\u00f5es poderia resultar na perda de empregos e na diminui\u00e7\u00e3o da atividade econ\u00f4mica em certas \u00e1reas.\r\n\r\nImplementa\u00e7\u00e3o e Fiscaliza\u00e7\u00e3o: Cr\u00edticos podem questionar a viabilidade pr\u00e1tica da implementa\u00e7\u00e3o e fiscaliza\u00e7\u00e3o efetiva de um programa que envolve o arranque de eucaliptos e a substitui\u00e7\u00e3o por esp\u00e9cies aut\u00f3ctones. Pode ser desafiador garantir o cumprimento dos compromissos a longo prazo por parte dos benefici\u00e1rios, especialmente considerando a extens\u00e3o das \u00e1reas envolvidas.\r\n\r\nNecessidade de Medidas Abrangentes: Algumas cr\u00edticas podem argumentar que, em vez de focar exclusivamente na deseucaliptiza\u00e7\u00e3o, seria mais eficaz adotar medidas mais abrangentes para a gest\u00e3o florestal sustent\u00e1vel. Isso poderia incluir a implementa\u00e7\u00e3o de pr\u00e1ticas de cultivo mais respons\u00e1veis, a diversifica\u00e7\u00e3o de esp\u00e9cies em planta\u00e7\u00f5es e o refor\u00e7o das pol\u00edticas de preven\u00e7\u00e3o de inc\u00eandios, em vez de um enfoque exclusivo na remo\u00e7\u00e3o de uma esp\u00e9cie espec\u00edfica.",
+        "tag_1": "Ambiente",
+        "tag_2": "",
+        "type": "Projecto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 0,
+            "IL": 0,
+            "PCP": 0,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "38",
+        "official_id": "170/XV/1",
+        "title": "Estabelece as 7 horas por dia e as 35 horas por semana como o m\u00e1ximo do per\u00edodo normal de trabalho em Portugal",
+        "vote_link": "10-2-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c325953396a596a59314e5464685a5331694e7a42694c54526c4e6a6774595445324d433031596d45795a44417a4d544d304e7a45755a47396a65413d3d&fich=cb6557ae-b70b-4e68-a160-5ba2d0313471.docx&Inline=true",
+        "author": "L",
+        "summary": "Rep\u00f4r a paridade nos tempos de trabalho entre o setor p\u00fablico e privado, completando um passo no caminho de moderniza\u00e7\u00e3o e refor\u00e7o do Estado Social, garantindo uma semana de trabalho de n\u00e3o mais que 35 horas a todos os trabalhadores, com os olhos postos a que, num futuro n\u00e3o muito distantes, possamos avan\u00e7ar para as 30 horas e para uma semana de trabalho de 4 dias.",
+        "counter": "Impacto Econ\u00f4mico: Reduzir a semana de trabalho para 35 horas no setor privado pode ter um impacto negativo nas empresas, especialmente as de menor porte. Alega-se que essa redu\u00e7\u00e3o poderia aumentar os custos operacionais e afetar a produtividade, o que poderia resultar em demiss\u00f5es, redu\u00e7\u00e3o de investimentos e, potencialmente, prejudicar a competitividade das empresas no mercado global.\r\n\r\nFlexibilidade e Escolha Individual: Argumenta-se que impor uma semana de trabalho de 35 horas pode limitar a flexibilidade e a escolha individual dos trabalhadores. Alguns podem preferir hor\u00e1rios mais longos em determinados dias para desfrutar de per\u00edodos de folga mais estendidos, enquanto outros podem optar por trabalhar menos dias por semana. Restringir as horas de trabalho pode prejudicar a capacidade dos trabalhadores de adaptarem seus hor\u00e1rios de acordo com suas necessidades e prefer\u00eancias pessoais.\r\n\r\nCompetitividade Internacional: Cr\u00edticos podem apontar que, em um contexto global, muitos pa\u00edses adotam semanas de trabalho mais longas para manter a competitividade econ\u00f4mica. Alega-se que a implementa\u00e7\u00e3o de uma semana de trabalho mais curta no setor privado pode desencorajar investimentos estrangeiros e afetar negativamente a atratividade do pa\u00eds para empresas multinacionais. Isso poderia ter repercuss\u00f5es na economia e no mercado de trabalho.",
+        "tag_1": "Sal\u00e1rios",
+        "tag_2": "",
+        "type": "Proposta de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 2,
+            "IL": 0,
+            "PCP": 1,
+            "BE": 1,
+            "PAN": 1,
+            "L": 1
+        },
+        "final_result": "0"
+    },
+    {
+        "update": "New",
+        "id": "39",
+        "official_id": "285/XV/1",
+        "title": "Elimina a Contribui\u00e7\u00e3o para o Audiovisual, baixando a fatura da eletricidade dos portugueses",
+        "vote_link": "3-3-2023",
+        "proposal_link": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=6148523063484d364c793968636d356c6443397a6158526c63793959566b786c5a79394562324e31625756756447397a5357357059326c6864476c32595338334d54526a4f5451324d53316a4f446b774c54526a595455744f57526a4e6931694d7a59354d5463794e44466d4d7a63755a47396a&fich=714c9461-c890-4ca5-9dc6-b36917241f37.doc&Inline=true",
+        "author": "IL",
+        "summary": "Prop\u00f5e a elimina\u00e7\u00e3o da taxa audiovisual em rea\u00e7\u00e3o ao disparo dos pre\u00e7os da eletricidade (cerca de 35 euros que\nrepresenta por ano).\n\nEsta taxa financia a RTP.\n\nAo obrigar-se todos os contribuintes a pagar, est\u00e1-se a introduzir uma distor\u00e7\u00e3o na competi\u00e7\u00e3o nos sectores da r\u00e1dio e da televis\u00e3o, uma vez que os seus competidores \u2013 cuja opera\u00e7\u00e3o em nada a se distingue no momento presente das opera\u00e7\u00f5es da RTP \u2013 n\u00e3o s\u00e3o alvo, nem t\u00eam de ser, desse benef\u00edcio dos contribuintes. S\u00e3o cerca de 2,85\u20ac/m\u00eas por fatura de eletricidade, o que se traduz em 191 milh\u00f5es de euros por ano, ou 525 mil euros por dia, que saem diretamente do bolso dos contribuintes para a RTP.\n\nFundos p\u00fablicos n\u00e3o devem financiar servi\u00e7os de radiodifus\u00e3o e de televis\u00e3o. Ao contr\u00e1rio do que sucedia no passado, o servi\u00e7o p\u00fablico de radiodifus\u00e3o e de televis\u00e3o j\u00e1 n\u00e3o \u00e9 o \u00fanico existente. O financiamento dos servi\u00e7os p\u00fablicos de radiodifus\u00e3o e de televis\u00e3o deve ser assegurado exclusivamente pelas receitas comerciais dos respetivos servi\u00e7os, e n\u00e3o por qualquer contribui\u00e7\u00e3o ou taxa a recair sobre os contribuintes.",
+        "counter": "Financiamento dos Servi\u00e7os P\u00fablicos: Eliminar a Contribui\u00e7\u00e3o para o Audiovisual (CAV) pode afetar a capacidade de financiamento dos servi\u00e7os p\u00fablicos de radiodifus\u00e3o e televis\u00e3o, como a RTP. Ressalta-se a import\u00e2ncia do servi\u00e7o p\u00fablico na oferta de conte\u00fado diversificado, culturalmente relevante e informativo para a popula\u00e7\u00e3o, o qual pode n\u00e3o ser sustent\u00e1vel apenas por receitas comerciais.",
+        "tag_1": "Fiscalidade",
+        "tag_2": "Audiovisual",
+        "type": "Projeto de Lei",
+        "votes":{
+            "PS": 0,
+            "PSD": 0,
+            "CH": 2,
+            "IL": 1,
+            "PCP": 0,
+            "BE": 0,
+            "PAN": 0,
+            "L": 0
+        },
+        "final_result": "0"
     }
 ]

@@ -8,6 +8,7 @@ declare global {
 		interface Platform {
 			env: {
 				BUCKET: R2Bucket;
+				DB: R2DB;
 				ENV: string;
 			};
 			context: {
