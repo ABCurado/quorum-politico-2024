@@ -15,11 +15,20 @@ export const load = async () => {
 		} as Config);
 
 		// Set the environment property
-		mixpanel.set_config({
-			properties: {
-				environment: platform?.env.ENV
-			}
-		});
+		if (window.location.hostname.toLowerCase().search('dev.') < 0) {
+			mixpanel.set_config({
+				properties: {
+					environment: 'dev'
+				}
+			});
+		} else {
+			mixpanel.set_config({
+				properties: {
+					environment: 'prod'
+				}
+			});
+		}
+
 	}
 	return
 };

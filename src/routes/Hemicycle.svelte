@@ -30,7 +30,6 @@
 	function calculateOpacity(party: number | undefined) {
 		let defaultOpacity = 1.0;
 		if (party) {
-			console.log(partyRanking[party]);
 			return defaultOpacity * party;
 		} else if (random) {
 			return defaultOpacity * Math.random();

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import DevBanner from './DevBanner.svelte';
+	import DevBanner from './DevBanner.svelte';
 
 	import BarChart from './BarChart.svelte';
 
@@ -49,11 +49,23 @@
 			'top-party-proximity': proximity[0].proximity,
 			'user-votes': data.db
 		});
+
+		// Upload the results to the database
+		fetch('/votes', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				device_id: mixpanel.get_distinct_id(),
+				results: data.db.map((vote) => ({ id: vote.official_id, user_vote: vote.user_vote })),
+				top_party: proximity[0].party
+			})
+		})
 	}
-	$: console.log(data.env);
 </script>
 
-<DevBanner env={data.env}/>
+<DevBanner env={data.env} />
 
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
