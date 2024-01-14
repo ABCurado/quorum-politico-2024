@@ -1,18 +1,16 @@
 <script lang="ts">
-  import OthersResults from './OthersResults.svelte';
-
-  import VoteResults from './VoteResults.svelte';
-
-	import DevBanner from './DevBanner.svelte';
-
-	import BarChart from './BarChart.svelte';
-
 	import { fade } from 'svelte/transition';
-	import Welcome from './Welcome.svelte';
-	import Document from './Document.svelte';
 	import mixpanel from 'mixpanel-browser';
-	import SocialShare from './SocialShare.svelte';
+	
+	import BarChart from './BarChart.svelte';
+	import DevBanner from './DevBanner.svelte';
+	import Document from './Document.svelte';
 	import Hemicycle from './Hemicycle.svelte';
+	import OthersResults from './OthersResults.svelte';
+	import SocialShare from './SocialShare.svelte';
+	import VoteResults from './VoteResults.svelte';
+	import Welcome from './Welcome.svelte';
+
 	let showResults = false;
 
 	export let data;
@@ -47,7 +45,7 @@
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
 			.sort((a, b) => b.proximity - a.proximity);
 
-		const results = data.db.map((vote) => ({ id: vote.official_id, user_vote: vote.user_vote }))
+		const results = data.db.map((vote) => ({ id: vote.official_id, user_vote: vote.user_vote }));
 		mixpanel.track('quiz-finished', {
 			'quiz-size': quizSize,
 			'top-party': proximity[0].party,
@@ -66,7 +64,7 @@
 				results: results,
 				top_party: proximity[0].party
 			})
-		})
+		});
 	}
 </script>
 
@@ -91,9 +89,9 @@
 			</div>
 		</div>
 
-		<VoteResults votes={data.db}/>
-		<OthersResults/>
-		
+		<VoteResults votes={data.db} />
+		<OthersResults />
+
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
 			<button
