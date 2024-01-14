@@ -40,16 +40,16 @@ export async function POST({ request, platform }) {
     try {
         let body = await request.json();
         let result = await platform?.env.DB.prepare(
-            "INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) VALUES (@device_id, @env, @results, @top_party, @agrees, @created, @updated)"
-        ).run({
-            "@device_id": body.device_id,
-            "@env": platform?.env.ENV,
-            "@results": body.results,
-            "@top_party": body.top_party,
-            "@agrees": -1,
-            "@created": new Date().toISOString(),
-            "@updated": new Date().toISOString()
-        });
+            "INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)"
+        ).bind(
+            body.device_id, 
+            platform?.env.ENV, 
+            body.results, 
+            body.top_party, 
+            -1, 
+            new Date().toISOString(), 
+            new Date().toISOString()
+        ).run();
         return new Response(result, { status: 200 });
     } catch (error) {
         console.error(error);
