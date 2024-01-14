@@ -39,25 +39,18 @@ export async function GET({ request, platform }) {
 export async function POST({ request, platform }) {
     try {
         let body = await request.json();
-
-        // Input validation
-        if (!body.device_id || !body.results || !body.top_party) {
-            return new Response('Invalid input', { status: 400 });
-        }
-
-        // TODO: Add rate limiting and authentication here
-
         let result = await platform?.env.DB.prepare(
-            "INSERT INTO votes (device_id, env, results, top_party,  _created, _updated) VALUES (@device_id, @env, @results, @top_party, @created, @updated)"
+            "INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) VALUES (@device_id, @env, @results, @top_party, @agrees, @created, @updated)"
         ).run({
             "@device_id": body.device_id,
             "@env": platform?.env.ENV,
             "@results": body.results,
             "@top_party": body.top_party,
+            "@agrees": -1,
             "@created": new Date().toISOString(),
             "@updated": new Date().toISOString()
         });
-        return new Response(result , { status: 200 });
+        return new Response(result, { status: 200 });
     } catch (error) {
         console.error(error);
         return new Response(null, { status: 500 });
@@ -73,7 +66,7 @@ export async function PUT({ request, platform }) {
         ).run({
             "@device_id": body.device_id,
             "@env": platform?.env.ENV,
-            "@agrees": -1,
+            "@agrees": body.agrees,
             "@updated": new Date().toISOString()
         });
         return new Response(null, { status: 200 });
