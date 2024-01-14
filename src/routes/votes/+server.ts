@@ -39,14 +39,21 @@ export async function GET({ request, platform }) {
 export async function POST({ request, platform }) {
     try {
         let body = await request.json();
+
+        // Input validation
+        if (!body.device_id || !body.results || !body.top_party) {
+            return new Response('Invalid input', { status: 400 });
+        }
+
+        // TODO: Add rate limiting and authentication here
+
         let result = await platform?.env.DB.prepare(
-            "INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) VALUES (@device_id, @env, @results, @top_party, @agrees, @created, @updated)"
+            "INSERT INTO votes (device_id, env, results, top_party,  _created, _updated) VALUES (@device_id, @env, @results, @top_party, @created, @updated)"
         ).run({
             "@device_id": body.device_id,
             "@env": platform?.env.ENV,
             "@results": body.results,
             "@top_party": body.top_party,
-            "@agrees": undefined,
             "@created": new Date().toISOString(),
             "@updated": new Date().toISOString()
         });
