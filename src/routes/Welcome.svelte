@@ -5,15 +5,7 @@
 
 	let ticker = 0;
 
-	onMount(() => {
-		const interval = setInterval(() => {
-			ticker++;
-		}, 3000);
 
-		return () => {
-			clearInterval(interval);
-		};
-	});
 </script>
 
 {#if !readInstructions}
@@ -23,9 +15,9 @@
 
 		<h1 class="text-center text-4xl mb-4">Descobre que partido melhor te representa!</h1>
 		<p class="text-center text sm:text-base mb-4">Bem-vindo! Este simulador permite-te descobrir como votaram os partidos em algumas das Propostas apresentadas na Assembleia da República.</p>
-		{#key ticker}
+		<!-- {#key ticker} -->
 			<Hemicycle centerText="Decide" random={true} />
-		{/key}
+		<!-- {/key} -->
 
 		<div class="mt-4 mb-8">
 			As <b>instruções</b> são simples:

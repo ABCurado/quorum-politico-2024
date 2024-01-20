@@ -75,19 +75,19 @@
 				top_party: proximity[0].party
 			})
 		});
+
 	}
 </script>
 
 <DevBanner env={data.env} />
-<!-- {#if showToast} -->
-	<Toast
-		bind:open={showToast}
-		divClass="flex mt-3 fixed z-50 w-full p-4 text-gray-500 bg-white opacity-85 shadow dark:text-gray-400 dark:bg-gray-800 gap-3"
-		contentClass="w-full text-m font-normal text-center"
-	>
-		Chegaste a metade do Quiz! 🎉
-	</Toast>
-<!-- {/if} -->
+<Toast
+	bind:open={showToast}
+	divClass="flex mt-3 fixed z-50 w-full p-4 text-gray-500 bg-white opacity-85 shadow dark:text-gray-400 dark:bg-gray-800 gap-3"
+	contentClass="w-full text-m font-normal text-center"
+>
+	Chegaste a metade do Quiz! 🎉
+</Toast>
+
 
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">

@@ -47,7 +47,29 @@
 			<text x="175" y="175" class="text-3xl font-bold text-center" style="text-anchor:middle;"> {centerText} </text>
 
 			{#each parlimentData as seat}
-				<circle cx={seat[0]} cy={seat[1]} r={calculateRadius(partyRanking[seat[2]])} class={partyColors[seat[2]]} style="opacity: {calculateOpacity(partyRanking[seat[2]])};" />
+				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
+				{@const midOpacity = calculateOpacity(partyRanking[seat[2]])}
+				{@const minOpacity = calculateOpacity(partyRanking[seat[2]])}
+				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
+				{@const minRadius = calculateRadius(partyRanking[seat[2]])}
+
+				<circle cx={seat[0]} cy={seat[1]} r={calculateRadius(partyRanking[seat[2]])} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
+					<animate
+						attributeName="opacity"
+						dur="10s"
+						begin="{Math.random() * 1500}ms"
+
+						values="{minOpacity};{midOpacity}; {maxOpacity};{midOpacity};{minOpacity}"
+						repeatCount="indefinite"
+					/>
+					<animate
+						attributeName="r"
+						dur="10s"
+						begin="{Math.random() * 1500}ms"
+						values="{minRadius}; {maxRadius};{minRadius}"
+						repeatCount="indefinite"
+					/>
+				</circle>
 			{/each}
 		</g>
 	</svg>
