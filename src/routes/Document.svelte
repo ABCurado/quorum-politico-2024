@@ -60,13 +60,13 @@
 			<span
 				role="button"
 				tabindex="0"
-				class="underline text-gray-600 cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2"
+				class="underline text-gray-600 dark:text-gray-300  cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2"
 				on:click={() => (showInfo = !showInfo)}
 				on:keydown={() => (showInfo = !showInfo)}>{type}</span
 			>: {title}
 		</h3>
 	</div>
-	<div class="text-base sm:text-lg mb-2 min-h-52 w-full max-w-4xl p-4 rounded-lg bg-gray-100 summary-text">
+	<div class="text-base sm:text-lg mb-2 min-h-52 w-full max-w-4xl p-4 rounded-lg summary-text">
 		{summary}
 	</div>
 

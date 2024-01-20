@@ -39,13 +39,12 @@
 	}
 </script>
 
-<div class="flex flex-col justify-center items-center">
+<div class="flex flex-col justify-center items-center dark:text-gray-200">
 	<!-- <svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" height={window.innerWidth >= 768 ? 500 : 200}> -->
 	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" height={200}>
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
 		<g>
-			<text x="175" y="175" class="text-3xl font-bold text-center" style="text-anchor:middle;"> {centerText} </text>
-
+			<text x="175" y="175" class="text-3xl font-bold text-center dark:text-gray-200" style="text-anchor:middle;"> {centerText} </text>
 			{#each parlimentData as seat}
 				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
 				{@const midOpacity = calculateOpacity(partyRanking[seat[2]])}
@@ -54,7 +53,7 @@
 				{@const minRadius = calculateRadius(partyRanking[seat[2]])}
 
 				<circle cx={seat[0]} cy={seat[1]} r={calculateRadius(partyRanking[seat[2]])} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
-					<animate
+					<animate 
 						attributeName="opacity"
 						dur="10s"
 						begin="{Math.random() * 1500}ms"

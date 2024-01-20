@@ -92,15 +92,15 @@
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
-	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen dark:bg-blue-950">
+	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen  dark:text-white">
 		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
-		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
-		<p class="text-center text-base sm:text-lg mb-4">
-			O partido com que mais te identificas é: <strong>{proximity[0].party}</strong>
+		<h1 class="text-center text-4xl sm:text-6xl mb-8 dark:text-gray-200">Concordas?</h1>
+		<p class="text-center text-base sm:text-lg mb-4 dark:text-gray-300">
+			O partido com que mais te identificas é: <strong class="dark:text-gray-100">{proximity[0].party}</strong>
 		</p>
 		<BarChart {proximity} />
-		<div class="w-full flex flex-col gap-3 m-2 mt-6">
-			<p class="text-center">Partilha com amigos e compara as vossas tendências partidárias</p>
+		<div class="w-full flex flex-col gap-3 m-2 mt-6 ">
+			<p class="text-center dark:text-gray-300">Partilha com amigos e compara as vossas tendências partidárias</p>
 			<div class="flex items-center justify-center gap-3">
 				<SocialShare title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O Partido que mais te representa é: {proximity[0].party}" />
 			</div>
@@ -110,9 +110,9 @@
 		<OthersResults />
 
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
-			<p class="text-center text-base sm:text-lg mb-4">Se o resultado não foi o que esperavas, ...</p>
+			<p class="text-center text-base sm:text-lg mb-4 dark:text-gray-300">Se o resultado não foi o que esperavas, ...</p>
 			<button
-				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4"
+				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4 dark:bg-green-600"
 				on:click={() => {
 					currentVote = 0;
 					data.db.forEach((proposal) => {
@@ -125,20 +125,20 @@
 			<!-- Buttons to share the results in social media -->
 		</div>
 		<div class="m-4 px-4 sm:px-0">
-			<a href="/about" class="text-blue-500 hover:underline font-bold text-lg">Descobre mais sobre o projeto</a>
+			<a href="/about" class="text-blue-500 hover:underline font-bold text-lg dark:text-blue-400">Descobre mais sobre o projeto</a>
 		</div>
 	</div>
 {:else}
-	<div class="loading h-2 sm:h-4 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {(currentVote / quizSize) * 100}%" />
+	<div class="loading h-2 sm:h-4 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50 dark:bg-teal-400" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
-		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0">
+		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0  dark:text-white">
 			<Document {...data.db[currentVote]} />
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
-			<div class="left-0 right-0 flex justify-center space-x-4 m-8">
-				<button class="bg-green-400 hover:bg-green-700 text-gray-700 font-bold py-1 px-4 rounded-xl" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
-				<button class="bg-gray-400 hover:bg-gray-700 text-gray-700 font-bold px-4 rounded-xl" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
-				<button class="bg-red-400 hover:bg-red-700 text-gray-700 font-bold px-4 rounded-xl" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
+			<div class="left-0 right-0 flex justify-center space-x-4 m-">
+				<button class="bg-green-400 hover:bg-green-700 text-gray-700 font-bold py-1 px-4 rounded-xl dark:bg-green-600 dark:text-gray-200" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
+				<button class="bg-gray-400 hover:bg-gray-700 text-gray-700 font-bold px-4 rounded-xl dark:bg-gray-600 dark:text-gray-200" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
+				<button class="bg-red-400 hover:bg-red-700 text-gray-700 font-bold px-4 rounded-xl dark:bg-red-600 dark:text-gray-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>
 	{/key}

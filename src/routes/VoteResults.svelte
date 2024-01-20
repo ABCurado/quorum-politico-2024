@@ -5,7 +5,7 @@
 	let showResults = false;
 
 	$: if (vote_proposals) {
-		mixpanel.track("Click Vote Results", { vote_proposals });
+		mixpanel.track("Click Vote", { vote_proposals });
 	}
 </script>
 
@@ -13,28 +13,28 @@
 
 {#if showResults}
 	{#each vote_proposals as vote}
-		<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-full sm:w-3/4">
-			<div class="px-4 py-5 sm:px-6 border-b border-gray-200 w-full">
-				<h2 class="text-lg leading-6 font-medium text-gray-900">{vote.title} - {vote.author}</h2>
+		<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-full sm:w-3/4 dark:bg-gray-800">
+			<div class="px-4 py-5 sm:px-6 border-b border-gray-200 w-full dark:border-gray-700 dark:text-gray-200">
+				<h2 class="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">{vote.title} - {vote.author}</h2>
 			</div>
 
 			<div class="overflow-x-auto">
-				<table class="min-w-full divide-y divide-gray-200 shadow mb-4 w-full sm:w-3/4 mx-auto">
-					<thead class="bg-gray-50">
+				<table class="min-w-full divide-y divide-gray-200 shadow mb-4 w-full sm:w-3/4 mx-auto dark:divide-gray-700 dark:bg-gray-900">
+					<thead class="bg-gray-50 dark:bg-gray-700">
 						<tr>
-							<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Tu</th>
-							<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Resultado</th>
+							<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider dark:text-gray-200">Tu</th>
+							<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider dark:text-gray-200">Resultado</th>
 							{#each Object.keys(vote.votes) as party}
-								<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">{party}</th>
+								<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider dark:text-gray-200">{party}</th>
 							{/each}
 						</tr>
 					</thead>
-					<tbody class="bg-white divide-y divide-gray-200">
+					<tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-900 dark:divide-gray-700">
 						<tr>
-							<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center">{vote.user_vote === '0' ? '❌' : vote.user_vote === '1' ? '✅' : '🤷‍♂️'}</td>
-							<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center">{vote.final_result === '0' ? '❌' : vote.final_result === '1' ? '✅' : '🤷‍♂️'}</td>
+							<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center dark:text-gray-400">{vote.user_vote === '0' ? '❌' : vote.user_vote === '1' ? '✅' : '🤷‍♂️'}</td>
+							<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center dark:text-gray-400">{vote.final_result === '0' ? '❌' : vote.final_result === '1' ? '✅' : '🤷‍♂️'}</td>
 							{#each Object.values(vote.votes) as result}
-								<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center">{result == '0' ? '❌' : result == '1' ? '✅' : '🤷‍♂️'}</td>
+								<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center dark:text-gray-400">{result == '0' ? '❌' : result == '1' ? '✅' : '🤷‍♂️'}</td>
 							{/each}
 						</tr>
 					</tbody>
