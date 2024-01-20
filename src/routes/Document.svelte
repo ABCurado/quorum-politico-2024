@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Button, Modal } from 'flowbite-svelte';
 
-
 	export let title: string;
 	export let official_id: any;
 	export let summary: string;
@@ -42,9 +41,9 @@
 </script>
 
 {#if showInfo}
-<Modal title="{type}" bind:open={showInfo} autoclose outsideclose size="xs">
-	{@html glossary[type]}
-</Modal>
+	<Modal title={type} bind:open={showInfo} autoclose outsideclose size="xs">
+		{@html glossary[type]}
+	</Modal>
 {/if}
 
 <div class="flex flex-col items-center p-4 w-full sm:p-0">
@@ -59,7 +58,13 @@
 	<div class="max-w-4xl mx-auto">
 		<div class="max-w-4xl mx-auto">
 			<h3 class="text-xl sm:text-3xl min-h-12 font-bold mb-4 text-center">
-				<span class="underline text-gray-600 cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2" on:click={() => (showInfo = !showInfo)} on:keydown={() => (showInfo = !showInfo)}>{type}</span>: {title}
+				<span
+					role="button"
+					tabindex="0"
+					class="underline text-gray-600 cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2"
+					on:click={() => (showInfo = !showInfo)}
+					on:keydown={() => (showInfo = !showInfo)}>{type}</span
+				>: {title}
 			</h3>
 		</div>
 	</div>
