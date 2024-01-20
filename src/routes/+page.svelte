@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import mixpanel from 'mixpanel-browser';
-
+	import { blur } from 'svelte/transition';
+	import { Toast } from 'flowbite-svelte';
 	import BarChart from './BarChart.svelte';
 	import DevBanner from './DevBanner.svelte';
 	import Document from './Document.svelte';
@@ -11,7 +11,7 @@
 	import VoteResults from './VoteResults.svelte';
 	import Welcome from './Welcome.svelte';
 
-	let showResults = false;
+	let showToast: boolean = false;
 
 	export let data;
 	let readInstructions = false;
@@ -25,6 +25,16 @@
 	}
 
 	let proximity: { party: string; proximity: number }[] = [];
+
+	$: if (currentVote === quizSize / 2) {
+		mixpanel.track('Quiz Halfway', {
+			'quiz-size': quizSize
+		});
+		showToast = true;
+		setTimeout(() => {
+			showToast = false;
+		}, 2000);
+	}
 
 	$: if (currentVote === quizSize) {
 		let partyProximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
@@ -46,7 +56,7 @@
 			.sort((a, b) => b.proximity - a.proximity);
 
 		const results = data.db.map((vote) => ({ id: vote.official_id, user_vote: vote.user_vote }));
-		mixpanel.track('quiz-finished', {
+		mixpanel.track('Quiz Finished', {
 			'quiz-size': quizSize,
 			'top-party': proximity[0].party,
 			'top-party-proximity': proximity[0].proximity,
@@ -69,6 +79,15 @@
 </script>
 
 <DevBanner env={data.env} />
+<!-- {#if showToast} -->
+	<Toast
+		bind:open={showToast}
+		divClass="flex mt-3 fixed z-50 w-full p-4 text-gray-500 bg-white opacity-85 shadow dark:text-gray-400 dark:bg-gray-800 gap-3"
+		contentClass="w-full text-m font-normal text-center"
+	>
+		Chegaste a metade do Quiz! 🎉
+	</Toast>
+<!-- {/if} -->
 
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
@@ -93,7 +112,7 @@
 		<OthersResults />
 
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
-			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
+			<p class="text-center text-base sm:text-lg mb-4">Se o resultado não foi o que esperavas, ...</p>
 			<button
 				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4"
 				on:click={() => {
@@ -103,7 +122,7 @@
 					});
 				}}
 			>
-				Voltar atrás
+				Recomeça o Quiz
 			</button>
 			<!-- Buttons to share the results in social media -->
 		</div>
@@ -117,7 +136,7 @@
 		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0">
 			<Document {...data.db[currentVote]} />
 
-			<!-- <div class="fixed bottom-10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
+			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
 			<div class="left-0 right-0 flex justify-center space-x-4 m-8">
 				<button class="bg-green-400 hover:bg-green-700 text-gray-700 font-bold py-1 px-4 rounded-xl" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
 				<button class="bg-gray-400 hover:bg-gray-700 text-gray-700 font-bold px-4 rounded-xl" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal } from 'flowbite-svelte';
+	import { Modal } from 'flowbite-svelte';
 
 	export let title: string;
 	export let official_id: any;
@@ -56,25 +56,22 @@
 		</div>
 	</div>
 	<div class="max-w-4xl mx-auto">
-		<div class="max-w-4xl mx-auto">
-			<h3 class="text-xl sm:text-3xl min-h-12 font-bold mb-4 text-center">
-				<span
-					role="button"
-					tabindex="0"
-					class="underline text-gray-600 cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2"
-					on:click={() => (showInfo = !showInfo)}
-					on:keydown={() => (showInfo = !showInfo)}>{type}</span
-				>: {title}
-			</h3>
-		</div>
+		<h3 class="text-xl sm:text-3xl min-h-12 font-bold text-center">
+			<span
+				role="button"
+				tabindex="0"
+				class="underline text-gray-600 cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2"
+				on:click={() => (showInfo = !showInfo)}
+				on:keydown={() => (showInfo = !showInfo)}>{type}</span
+			>: {title}
+		</h3>
 	</div>
-	<h3 class="text-l sm:text-xl mb-2 text-left">Sumário do {type}:</h3>
 	<div class="text-base sm:text-lg mb-2 min-h-52 w-full max-w-4xl p-4 rounded-lg bg-gray-100 summary-text">
 		{summary}
 	</div>
-	<h3 class="text-l sm:text-xl mb-2 text-left">Possíveis contra-argumentos do {type}:</h3>
 
-	<div class="text-base sm:text-lg mb-6 min-h-52 w-full max-w-4xl p-4 border rounded-lg bg-gray-100">
+	<h3 class="text-l sm:text-xl mb-2 ">Possíveis contra-argumentos</h3>
+	<div class="text-base sm:text-lg mb-6 min-h-52 w-full max-w-4xl p-4 ">
 		{@html highlightTitles(counter)}
 	</div>
 

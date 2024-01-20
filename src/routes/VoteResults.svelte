@@ -1,6 +1,12 @@
 <script lang="ts">
+	import mixpanel from "mixpanel-browser";
+
 	export let vote_proposals: Array<{ party: string; proximity: number; title: string; author: string; final_result: string; user_vote: string }>;
 	let showResults = false;
+
+	$: if (vote_proposals) {
+		mixpanel.track("Click Vote Results", { vote_proposals });
+	}
 </script>
 
 <button on:click={() => (showResults = !showResults)} class="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 m-2 rounded"> Mostrar resultados </button>
@@ -17,7 +23,7 @@
 					<thead class="bg-gray-50">
 						<tr>
 							<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Tu</th>
-							<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Resultado Final</th>
+							<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Resultado</th>
 							{#each Object.keys(vote.votes) as party}
 								<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">{party}</th>
 							{/each}
