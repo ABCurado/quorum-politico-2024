@@ -1,7 +1,10 @@
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
 	darkMode: ['class', '[data-mode="dark"]'],
-	plugins: [require('tailwindcss-hero-patterns')],
+	plugins: [
+		require('tailwindcss-hero-patterns'),
+		require('flowbite/plugin')
+	],
 	theme: {
 		extend: {
 			colors: {}
@@ -41,7 +44,7 @@ export default {
 				'Segoe UI Symbol',
 				'Noto Color Emoji'
 			]
-		}, 
+		},
 		backdropBlur: {
 			'none': '0',
 			'blur': 'blur(40px)',

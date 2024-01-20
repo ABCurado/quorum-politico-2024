@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { Button, Modal } from 'flowbite-svelte';
+
+
 	export let title: string;
 	export let official_id: any;
 	export let summary: string;
@@ -38,6 +41,12 @@
 	let showInfo = false;
 </script>
 
+{#if showInfo}
+<Modal title="{type}" bind:open={showInfo} autoclose outsideclose size="xs">
+	{@html glossary[type]}
+</Modal>
+{/if}
+
 <div class="flex flex-col items-center p-4 w-full sm:p-0">
 	<div class="flex flex-row flex-wrap mb-2">
 		<div class="bg-gray-200 rounded-full px-4 py-2 text-sm font-semibold text-gray-700 mr-2 mb-2">
@@ -50,17 +59,8 @@
 	<div class="max-w-4xl mx-auto">
 		<div class="max-w-4xl mx-auto">
 			<h3 class="text-xl sm:text-3xl min-h-12 font-bold mb-4 text-center">
-				<span class="underline text-gray-400 cursor-pointer" on:click={() => (showInfo = !showInfo)} on:keydown={() => (showInfo = !showInfo)}>{type}</span>: {title}
+				<span class="underline text-gray-600 cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2" on:click={() => (showInfo = !showInfo)} on:keydown={() => (showInfo = !showInfo)}>{type}</span>: {title}
 			</h3>
-			{#if showInfo}
-				<div class="fixed inset-0 bg-gray-700 bg-opacity-75 z-10 backdrop-blur">
-					<!-- Your content here -->
-					<div class="fixed inset-0 z-20 flex items-center justify-center">
-						<span class="text-gray-800">{@html glossary[type]}</span>
-						<button class="absolute top-4 right-4 text-gray-500 z-30" on:click={() => (showInfo = false)}>Close</button>
-					</div>
-				</div>
-			{/if}
 		</div>
 	</div>
 	<h3 class="text-l sm:text-xl mb-2 text-left">Sumário do {type}:</h3>

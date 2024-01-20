@@ -1,5 +1,5 @@
 <script>
-	import '../app.css';
+	import "../app.pcss";
 </script>
 
 <!-- <footer class="sticky bottom-0 z-50 w-full">
@@ -29,4 +29,4 @@
 	}
 </style> -->
 
-<slot />
+<slot></slot>
