@@ -3,8 +3,8 @@
 
 	let partyColors: { [key: string]: string } = {
 		PCP: 'fill-current text-red-800',
-		BE: 'fill-current text-red-600',
-		L: 'fill-current text-red-500',
+		BE: 'fill-current text-red-500',
+		L: 'fill-current text-red-700',
 		PAN: 'fill-current text-green-500',
 		IL: 'fill-current text-blue-300',
 		PS: 'fill-current text-pink-600',
