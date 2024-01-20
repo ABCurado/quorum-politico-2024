@@ -79,7 +79,7 @@
 		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
 		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
 		<p class="text-center text-base sm:text-lg mb-4">
-			O partido mais próximo a ti é o: <strong>{proximity[0].party}</strong>
+			O partido com que mais te identificas é: <strong>{proximity[0].party}</strong>
 		</p>
 		<BarChart {proximity} />
 		<div class="w-full flex flex-col gap-3 m-2 mt-6">

@@ -41,6 +41,10 @@ export default {
 				'Segoe UI Symbol',
 				'Noto Color Emoji'
 			]
+		}, 
+		backdropBlur: {
+			'none': '0',
+			'blur': 'blur(40px)',
 		}
 	}
 };
