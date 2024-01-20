@@ -1,6 +1,7 @@
+/** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
-	darkMode: ['class', '[data-mode="dark"]'],
+	darkMode: 'media', // or 'media' if you want to use the OS color scheme
 	plugins: [
 		require('tailwindcss-hero-patterns'),
 		require('flowbite/plugin')
@@ -44,10 +45,6 @@ export default {
 				'Segoe UI Symbol',
 				'Noto Color Emoji'
 			]
-		},
-		backdropBlur: {
-			'none': '0',
-			'blur': 'blur(40px)',
 		}
 	}
 };

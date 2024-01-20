@@ -75,7 +75,6 @@
 				top_party: proximity[0].party
 			})
 		});
-
 	}
 </script>
 
@@ -88,13 +87,12 @@
 	Chegaste a metade do Quiz! 🎉
 </Toast>
 
-
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
-	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen">
+	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen dark:bg-blue-950">
 		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
 		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
 		<p class="text-center text-base sm:text-lg mb-4">

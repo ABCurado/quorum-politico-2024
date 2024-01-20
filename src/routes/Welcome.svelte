@@ -5,7 +5,16 @@
 
 	let ticker = 0;
 
-
+	function getPreferredColorScheme() {
+		if (window.matchMedia) {
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				return 'dark';
+			} else {
+				return 'light';
+			}
+		}
+		return 'light';
+	}
 </script>
 
 {#if !readInstructions}
@@ -16,7 +25,7 @@
 		<h1 class="text-center text-4xl mb-4">Descobre que partido melhor te representa!</h1>
 		<p class="text-center text sm:text-base mb-4">Bem-vindo! Este simulador permite-te descobrir como votaram os partidos em algumas das Propostas apresentadas na Assembleia da República.</p>
 		<!-- {#key ticker} -->
-			<Hemicycle centerText="Decide" random={true} />
+		<Hemicycle centerText="Decide" random={true} />
 		<!-- {/key} -->
 
 		<div class="mt-4 mb-8">
@@ -33,7 +42,7 @@
 			class="bg-green-400 hover:bg-green-700 text-white font-bold py-3 px-3 sm:px-4 rounded-full"
 			on:click={() => {
 				readInstructions = true;
-				window.scrollTo(0,0);
+				window.scrollTo(0, 0);
 			}}>Estás preparado para ser <b><i>Deputado por 5 minutos</i></b>?</button
 		>
 	</div>
