@@ -17,8 +17,8 @@
 
 	let partyRanking = Object.fromEntries(partyRankingList.map((party) => [party.party, party.proximity]));
 
+	let defaultRadiusBase = 6;
 	function calculateRadius(party: number | undefined) {
-		let defaultRadiusBase = 6;
 		if (party) {
 			return defaultRadiusBase * party;
 		} else if (random) {
@@ -27,8 +27,9 @@
 			return defaultRadiusBase;
 		}
 	}
+
+	let defaultOpacity = 1.0;
 	function calculateOpacity(party: number | undefined) {
-		let defaultOpacity = 1.0;
 		if (party) {
 			return defaultOpacity * party;
 		} else if (random) {
@@ -48,26 +49,25 @@
 
 			{#each parlimentData as seat}
 				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
-				{@const midOpacity = calculateOpacity(partyRanking[seat[2]])}
-				{@const minOpacity = calculateOpacity(partyRanking[seat[2]])}
+				{@const midOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : maxOpacity}
+				{@const minOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : defaultOpacity}
 				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
-				{@const minRadius = calculateRadius(partyRanking[seat[2]])}
+				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : defaultRadiusBase}
 
 				<circle cx={seat[0]} cy={seat[1]} r={calculateRadius(partyRanking[seat[2]])} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
 					<animate
 						attributeName="opacity"
 						dur="10s"
 						begin="{Math.random() * 1500}ms"
-
 						values="{minOpacity};{midOpacity}; {maxOpacity};{midOpacity};{minOpacity}"
-						repeatCount="indefinite"
+						repeatCount={random ? 'indefinite' : ''}
 					/>
-					<animate
-						attributeName="r"
-						dur="10s"
-						begin="{Math.random() * 1500}ms"
-						values="{minRadius}; {maxRadius};{minRadius}"
-						repeatCount="indefinite"
+					<animate 
+						attributeName="r" 
+						dur="10s" 
+						begin="{Math.random() * 1500}ms" 
+						values="{minRadius}; {maxRadius};{minRadius}" 
+						repeatCount={random ? 'indefinite' : ''} 
 					/>
 				</circle>
 			{/each}
