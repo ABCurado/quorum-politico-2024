@@ -30,9 +30,25 @@ interface Vote {
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ request, platform }) => {
     let result = await platform?.env.DB.prepare(
-        "SELECT agrees, COUNT(*) AS votes FROM votes GROUP BY 1"
-    ).run();
-    return new Response(JSON.stringify(result.results));
+        `
+        SELECT 
+            top_party, 
+            agrees,
+            COUNT(*) AS votes 
+        FROM votes 
+        GROUP BY 1 ,2
+        `).run();
+    
+    const transformedResult = result.reduce((acc: any, row: any) => {
+        const { top_party, agrees, votes } = row;
+        if (!acc[top_party]) {
+            acc[top_party] = [];
+        }
+        acc[top_party].push({ agrees, votes });
+        return acc;
+    }, {});
+
+    return new Response(JSON.stringify(transformedResult));
 }
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
