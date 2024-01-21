@@ -16,11 +16,12 @@
 	export let partyRankingList: { party: string; proximity: number }[] = [];
 
 	let partyRanking = Object.fromEntries(partyRankingList.map((party) => [party.party, party.proximity]));
+	$: console.log(partyRanking);
 
 	let defaultRadiusBase = 6;
 	function calculateRadius(party: number | undefined) {
-		if (party) {
-			return defaultRadiusBase * party;
+		if (party !== undefined) {
+			return defaultRadiusBase * (party === 0 ? 0.1 : party);
 		} else if (random) {
 			return defaultRadiusBase * Math.random();
 		} else {
@@ -29,10 +30,10 @@
 	}
 
 	let defaultOpacity = 1.0;
-	function calculateOpacity(party: number | undefined) {
-		if (party) {
-			return defaultOpacity * party;
-		} else if (random) {
+	function calculateOpacity(party: number | undefined, forceRandom = false) {
+		if (party !== undefined) {
+			return defaultOpacity * (party === 0 ? 0.1 : party);
+		} else if (random || forceRandom) {
 			return defaultOpacity * Math.random();
 		} else {
 			return defaultOpacity;
@@ -49,26 +50,25 @@
 
 			{#each parlimentData as seat}
 				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
-				{@const midOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : maxOpacity}
-				{@const minOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : defaultOpacity}
+				{@const midOpacity = calculateOpacity(partyRanking[seat[2]], true) }
+				{@const minOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : (partyRanking[seat[2]] == 1.0)? defaultOpacity/2 : defaultOpacity}
 				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
-				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : defaultRadiusBase}
+				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : (partyRanking[seat[2]] == 1.0)? defaultRadiusBase/2 : defaultRadiusBase}
 
-				<circle cx={seat[0]} cy={seat[1]} r={calculateRadius(partyRanking[seat[2]])} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
+				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
 					<animate
 						attributeName="opacity"
 						dur="10s"
 						begin="{Math.random() * 1500}ms"
-						values="{minOpacity};{midOpacity}; {maxOpacity};{midOpacity};{minOpacity}"
+						values="{minOpacity};{midOpacity};{maxOpacity};{midOpacity};{minOpacity}"
 						repeatCount={random ? 'indefinite' : ''}
 					/>
 					<animate 
 						attributeName="r" 
 						dur="10s" 
 						begin="{Math.random() * 1500}ms" 
-						values="{minRadius}; {maxRadius};{minRadius}" 
-						repeatCount={random ? 'indefinite' : ''} 
-					/>
+						values="{minRadius};{maxRadius};{minRadius}" 
+						repeatCount={random ? 'indefinite' : ''} />
 				</circle>
 			{/each}
 		</g>
