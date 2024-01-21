@@ -1,11 +1,11 @@
-import db from './db.json';
 import type { PageServerLoad } from './$types';
+import db from './db.json';
 
 export const load: PageServerLoad = async ({ request: any, platform }) => {
     // Pick 10 random items from the database
-    let questions_number: number = 10;
-    if(platform?.env.ENV ===  "dev") {
-        questions_number=2;
+    let questions_number: number = 2;
+    if(platform?.env.ENV ===  "production") {
+        questions_number=15;
     }
 
     const items = db.sort(() => Math.random() - 0.5).slice(0, questions_number);

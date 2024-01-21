@@ -1,15 +1,17 @@
 <script lang="ts">
-  import DevBanner from './DevBanner.svelte';
-
-	import BarChart from './BarChart.svelte';
-
-	import { fade } from 'svelte/transition';
-	import Welcome from './Welcome.svelte';
-	import Document from './Document.svelte';
 	import mixpanel from 'mixpanel-browser';
-	import SocialShare from './SocialShare.svelte';
+	import { blur } from 'svelte/transition';
+	import { Toast } from 'flowbite-svelte';
+	import BarChart from './BarChart.svelte';
+	import DevBanner from './DevBanner.svelte';
+	import Document from './Document.svelte';
 	import Hemicycle from './Hemicycle.svelte';
-	let showResults = false;
+	import OthersResults from './OthersResults.svelte';
+	import SocialShare from './SocialShare.svelte';
+	import VoteResults from './VoteResults.svelte';
+	import Welcome from './Welcome.svelte';
+
+	let showToast: boolean = false;
 
 	export let data;
 	let readInstructions = false;
@@ -23,6 +25,16 @@
 	}
 
 	let proximity: { party: string; proximity: number }[] = [];
+
+	$: if (currentVote === quizSize / 2) {
+		mixpanel.track('Quiz Halfway', {
+			'quiz-size': quizSize
+		});
+		showToast = true;
+		setTimeout(() => {
+			showToast = false;
+		}, 2000);
+	}
 
 	$: if (currentVote === quizSize) {
 		let partyProximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
@@ -43,17 +55,39 @@
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
 			.sort((a, b) => b.proximity - a.proximity);
 
-		mixpanel.track('quiz-finished', {
+		const results = data.db.map((vote) => ({ id: vote.official_id, user_vote: vote.user_vote }));
+		mixpanel.track('Quiz Finished', {
 			'quiz-size': quizSize,
 			'top-party': proximity[0].party,
 			'top-party-proximity': proximity[0].proximity,
-			'user-votes': data.db
+			'user-votes': results
 		});
+
+		// Upload the results to the database
+		fetch('/votes', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				device_id: mixpanel.get_distinct_id(),
+				results: results,
+				top_party: proximity[0].party
+			})
+		});
+
 	}
-	$: console.log(data.env);
 </script>
 
-<DevBanner env={data.env}/>
+<DevBanner env={data.env} />
+<Toast
+	bind:open={showToast}
+	divClass="flex mt-3 fixed z-50 w-full p-4 text-gray-500 bg-white opacity-85 shadow dark:text-gray-400 dark:bg-gray-800 gap-3"
+	contentClass="w-full text-m font-normal text-center"
+>
+	Chegaste a metade do Quiz! 🎉
+</Toast>
+
 
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
@@ -64,7 +98,7 @@
 		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
 		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
 		<p class="text-center text-base sm:text-lg mb-4">
-			O partido mais próximo a ti é o: <strong>{proximity[0].party}</strong>
+			O partido com que mais te identificas é: <strong>{proximity[0].party}</strong>
 		</p>
 		<BarChart {proximity} />
 		<div class="w-full flex flex-col gap-3 m-2 mt-6">
@@ -74,25 +108,11 @@
 			</div>
 		</div>
 
-		<button on:click={() => (showResults = !showResults)} class="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 m-2 rounded"> Mostrar resultados </button>
-
-		{#if showResults}
-			{#each data.db as vote}
-				<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-3/4">
-					<div class="px-4 py-5 sm:px-6 border-b border-gray-200 w-full">
-						<h2 class="text-lg leading-6 font-medium text-gray-900">{vote.title} - {vote.author}</h2>
-					</div>
-					<div class="px-4 py-4 sm:px-6 w-full">
-						<p class="text-sm text-gray-500">⁠O que decidiste tu: {vote.user_vote === '0' ? 'Rejeitar' : vote.user_vote === '1' ? 'Aceitar' : 'Abestençao'}</p>
-						<p class="text-sm text-gray-500">⁠O que decidiu a average das pessoas:</p>
-						<p class="text-sm text-gray-500">⁠Qual foi o outcome real: {vote.final_result === '0' ? 'Rejeitar' : vote.final_result === '1' ? 'Aceitar' : 'Abestençao'}</p>
-					</div>
-				</div>
-			{/each}
-		{/if}
+		<VoteResults vote_proposals={data.db} />
+		<OthersResults />
 
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
-			<p class="text-center text-base sm:text-lg mb-4">Se não concordas com o resultado, podes sempre voltar atrás e mudar o teu voto.</p>
+			<p class="text-center text-base sm:text-lg mb-4">Se o resultado não foi o que esperavas, ...</p>
 			<button
 				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4"
 				on:click={() => {
@@ -102,7 +122,7 @@
 					});
 				}}
 			>
-				Voltar atrás
+				Recomeça o Quiz
 			</button>
 			<!-- Buttons to share the results in social media -->
 		</div>
@@ -116,7 +136,7 @@
 		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0">
 			<Document {...data.db[currentVote]} />
 
-			<!-- <div class="fixed bottom-10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
+			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
 			<div class="left-0 right-0 flex justify-center space-x-4 m-8">
 				<button class="bg-green-400 hover:bg-green-700 text-gray-700 font-bold py-1 px-4 rounded-xl" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
 				<button class="bg-gray-400 hover:bg-gray-700 text-gray-700 font-bold px-4 rounded-xl" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
