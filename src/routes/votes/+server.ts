@@ -38,16 +38,16 @@ export const GET: RequestHandler = async ({ request, platform }) => {
         FROM votes 
         GROUP BY 1 ,2
         `).run();
-    // const transformedResult = result.reduce((acc: any, row: any) => {
-    //     const { top_party, agrees, votes } = row;
-    //     if (!acc[top_party]) {
-    //         acc[top_party] = [];
-    //     }
-    //     acc[top_party].push({ agrees, votes });
-    //     return acc;
-    // }, {});
+    const transformedResult = result.results.reduce((acc: any, row: any) => {
+        const { top_party, agrees, votes } = row;
+        if (!acc[top_party]) {
+            acc[top_party] = [];
+        }
+        acc[top_party].push({ agrees, votes });
+        return acc;
+    }, {});
 
-    return new Response(JSON.stringify(result));
+    return new Response(JSON.stringify(transformedResult));
 }
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
