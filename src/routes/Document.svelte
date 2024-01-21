@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { Modal } from 'flowbite-svelte';
 
-	export let title: string;
+	export let title_reduced: string;
+	export let summary_reduced: string;
+	export let counter_reduced: string;
+	
 	export let official_id: any;
-	export let summary: string;
 	export let proposal_link: string;
-	export let counter: string;
 	export let type: string;
 	export let vote_link: string;
 	export let tag_1: string;
@@ -67,16 +68,16 @@
 				class="underline text-gray-600 cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2"
 				on:click={() => (showInfo = !showInfo)}
 				on:keydown={() => (showInfo = !showInfo)}>{type}</span
-			>: {title}
+			>: {title_reduced}
 		</h3>
 	</div>
 	<div class="text-base sm:text-lg mb-2 min-h-52 w-full max-w-4xl p-4 rounded-lg bg-gray-100 summary-text">
-		{summary}
+		{summary_reduced}
 	</div>
 
 	<h3 class="text-l sm:text-xl mb-2">Possíveis contra-argumentos</h3>
 	<div class="text-base sm:text-lg mb-6 min-h-52 w-full max-w-4xl p-4">
-		{@html highlightTitles(counter)}
+		{@html highlightTitles(counter_reduced)}
 	</div>
 
 	<a href={proposal_link} target="_blank" class="text-blue-500 underline">Ver documento oficial {official_id} (Votado a {vote_link})</a>
