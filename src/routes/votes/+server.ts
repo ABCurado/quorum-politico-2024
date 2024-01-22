@@ -29,25 +29,25 @@ interface Vote {
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ request, platform }) => {
-	// let result = await platform?.env.DB.prepare(
-	// 	`
-    //     SELECT 
-    //         top_party, 
-    //         agrees,
-    //         COUNT(*) AS votes 
-    //     FROM votes 
-    //     GROUP BY 1 ,2
-    //     `
-	// ).run();
-	// let transformedResult = result.results.reduce((acc: any, row: any) => {
-	// 	const { top_party, agrees, votes } = row;
-	// 	if (!acc[top_party]) {
-	// 		acc[top_party] = [];
-	// 	}
-	// 	acc[top_party].push({ agrees, votes });
-	// 	return acc;
-	// }, {});
-    let transformedResult ={"BE":[{"agrees":-1,"votes":1},{"agrees":0,"votes":2},{"agrees":1,"votes":4},{"agrees":2,"votes":5}],"CH":[{"agrees":-1,"votes":1},{"agrees":0,"votes":5},{"agrees":1,"votes":3},{"agrees":2,"votes":5}],"IL":[{"agrees":0,"votes":5},{"agrees":2,"votes":3}],"L":[{"agrees":1,"votes":2}],"PAN":[{"agrees":2,"votes":1}],"PCP":[{"agrees":0,"votes":2},{"agrees":1,"votes":2},{"agrees":2,"votes":3}],"PS":[{"agrees":0,"votes":2},{"agrees":1,"votes":2},{"agrees":2,"votes":6}]}
+	let result = await platform?.env.DB.prepare(
+		`
+        SELECT 
+            top_party, 
+            agrees,
+            COUNT(*) AS votes 
+        FROM votes 
+        GROUP BY 1 ,2
+        `
+	).run();
+	const transformedResult = result.results.reduce((acc: any, row: any) => {
+		const { top_party, agrees, votes } = row;
+		if (!acc[top_party]) {
+			acc[top_party] = [];
+		}
+		acc[top_party].push({ agrees, votes });
+		return acc;
+	}, {});
+    
 	return new Response(JSON.stringify(transformedResult), { headers: { 'Content-Type': 'application/json' } });
 };
 
