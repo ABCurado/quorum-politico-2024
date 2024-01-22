@@ -47,7 +47,7 @@
 		// 	})
 		// });
 		voteResults = await fetchData();
-		
+
 		loading = false;
 		showResults = true;
 	}
@@ -74,47 +74,48 @@
 	};
 </script>
 
-<div class="container mx-auto px-4">
-	<h2 class="text-m font-bold mb-4 text-center">Concordas? (Vê os resultados dos outros)</h2>
-	<div class="flex justify-center mb-4">
-		<button on:click={showResultsFunction} id="1" class="flex-1 bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 m-2 rounded" title="Click to agree"
-			>Sim, votei neste partido desde que nasci</button
-		>
-		<button on:click={showResultsFunction} id="0" class="flex-1 bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 m-2 rounded" title="Click to disagree"
-			>Odeio. Vou ter que repensar a minha vida</button
-		>
+<div class="sm:w-2/3 l:w-1/3">
+	<div class="container mx-auto px-4">
+		<h2 class="text-m font-bold mb-4 text-center">Concordas? (Vê os resultados dos outros)</h2>
+		<div class="flex justify-center mb-4">
+			<button on:click={showResultsFunction} id="1" class="flex-1 bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 m-2 rounded" title="Click to agree"
+				>Sim, votei neste partido desde que nasci</button
+			>
+			<button on:click={showResultsFunction} id="0" class="flex-1 bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 m-2 rounded" title="Click to disagree"
+				>Odeio. Vou ter que repensar a minha vida</button
+			>
+		</div>
 	</div>
-</div>
-{#if loading}
-	<div class="flex justify-center">
-		<div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900" />
-	</div>
-{:else if showResults}
-	<Bar
-		{data}
-		class="sm:w-1/2"
-		options={{
-			responsive: true,
-			plugins: {
-				legend: {
-					position: 'bottom'
+	{#if loading}
+		<div class="flex justify-center">
+			<div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900" />
+		</div>
+	{:else if showResults}
+		<Bar
+			{data}
+			options={{
+				responsive: true,
+				plugins: {
+					legend: {
+						position: 'bottom'
+					},
+					title: {
+						display: false,
+						text: 'Resultados das votações'
+					}
 				},
-				title: {
-					display: false,
-					text: 'Resultados das votações'
-				}
-			},
 
-			scales: {
-				x: {
-					// display: false,
-					stacked: true
-				},
-				y: {
-					display: false,
-					stacked: true
+				scales: {
+					x: {
+						// display: false,
+						stacked: true
+					},
+					y: {
+						display: false,
+						stacked: true
+					}
 				}
-			}
-		}}
-	/>
-{/if}
+			}}
+		/>
+	{/if}
+</div>
