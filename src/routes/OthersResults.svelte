@@ -36,18 +36,17 @@
 
 	async function showResultsFunction(event: { target: { id: string } }) {
 		loading = true;
-		// await fetch('/votes', {
-		// 	method: 'PUT',
-		// 	headers: {
-		// 		'Content-Type': 'application/json'
-		// 	},
-		// 	body: JSON.stringify({
-		// 		device_id: mixpanel.get_distinct_id(),
-		// 		agrees: event.target.id === '1' ? 1 : 0
-		// 	})
-		// });
+		await fetch('/votes', {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				device_id: mixpanel.get_distinct_id(),
+				agrees: event.target.id === '1' ? 1 : 0
+			})
+		});
 		voteResults = await fetchData();
-
 		loading = false;
 		showResults = true;
 	}
