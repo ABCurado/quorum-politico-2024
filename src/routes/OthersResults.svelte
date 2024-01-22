@@ -73,7 +73,7 @@
 	};
 </script>
 
-<div class="sm:w-2/3 l:w-1/3">
+<div class="sm:w-2/3 lg:w-1/2 xl:w-1/3">
 	<div class="container mx-auto px-4">
 		<h2 class="text-m font-bold mb-4 text-center">Concordas? (Vê os resultados dos outros)</h2>
 		<div class="flex justify-center mb-4">
