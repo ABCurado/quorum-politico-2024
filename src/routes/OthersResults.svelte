@@ -92,6 +92,7 @@
 {:else if showResults}
 	<Bar
 		{data}
+		class="sm:w-1/2"
 		options={{
 			responsive: true,
 			plugins: {
