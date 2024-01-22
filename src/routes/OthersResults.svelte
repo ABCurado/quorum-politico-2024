@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Bar } from 'svelte-chartjs';
+	import 'chart.js/auto';
 	import mixpanel from 'mixpanel-browser';
 
 	// agrees: 1 - Means agree
@@ -34,20 +36,42 @@
 
 	async function showResultsFunction(event: { target: { id: string } }) {
 		loading = true;
-		await fetch('/votes', {
-			method: 'PUT',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				device_id: mixpanel.get_distinct_id(),
-				agrees: event.target.id === '1' ? 1 : 0
-			})
-		});
-		const voteResults = await fetchData();
+		// await fetch('/votes', {
+		// 	method: 'PUT',
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	},
+		// 	body: JSON.stringify({
+		// 		device_id: mixpanel.get_distinct_id(),
+		// 		agrees: event.target.id === '1' ? 1 : 0
+		// 	})
+		// });
+		voteResults = await fetchData();
+		
 		loading = false;
 		showResults = true;
 	}
+
+	$: data = {
+		labels: Object.keys(voteResults),
+		datasets: [
+			{
+				label: 'Sim',
+				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 1).reduce((acc, cur) => acc + cur.votes, 0)),
+				backgroundColor: 'rgb(16, 185, 129, 0.6)'
+			},
+			{
+				label: 'Não',
+				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 0).reduce((acc, cur) => acc + cur.votes, 0)),
+				backgroundColor: 'rgb(239, 68, 68, 0.6)'
+			},
+			{
+				label: 'Sem opiniāo',
+				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 2).reduce((acc, cur) => acc + cur.votes, 0)),
+				backgroundColor: 'rgb(125, 125, 125,0.6)'
+			}
+		]
+	};
 </script>
 
 <div class="container mx-auto px-4">
@@ -66,50 +90,30 @@
 		<div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900" />
 	</div>
 {:else if showResults}
-	<div class="container mx-auto px-4">
-		{#each Object.keys(voteResults) as party}
-			<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-full sm:w-3/4">
-				<div class="px-4 py-5 sm:px-6 border-b border-gray-200 w-full">
-					<h2 class="text-lg leading-6 font-medium text-gray-900">{party}</h2>
-				</div>
+	<Bar
+		{data}
+		options={{
+			responsive: true,
+			plugins: {
+				legend: {
+					position: 'bottom'
+				},
+				title: {
+					display: false,
+					text: 'Resultados das votações'
+				}
+			},
 
-				<div class="overflow-x-auto">
-					<table class="min-w-full divide-y divide-gray-200 shadow mb-4 w-full sm:w-3/4 mx-auto">
-						<thead class="bg-gray-50">
-							<tr>
-								<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Voto</th>
-								<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">Resultado votaçāo final</th>
-							</tr></thead
-						>
-						<tbody class="bg-white divide-y divide-gray-200">
-							<tr>
-								<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center"
-									>{voteResults[party][0].agrees === 0 ? '❌' : voteResults[party][0].agrees === 1 ? '✅' : '🤷‍♂️'}</td
-								>
-								<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center"
-									>{voteResults[party][0].votes === 0 ? '❌' : voteResults[party][0].votes === 1 ? '✅' : '🤷‍♂️'}</td
-								>
-							</tr>
-						</tbody>
-					</table>
-					<table class="min-w-full divide-y divide-gray-200 shadow mb-4 w-full sm:w-3/4 mx-auto">
-						<thead class="bg-gray-50">
-							<tr>
-								{#each Object.keys(voteResults[party][1]) as party}
-									<th class="px-2 sm:px-6 py-3 text-xs sm:text-sm font-medium text-gray-500 uppercase tracking-wider">{party}</th>
-								{/each}
-							</tr>
-						</thead>
-						<tbody class="bg-white divide-y divide-gray-200">
-							<tr>
-								{#each Object.values(voteResults[party][1]) as result}
-									<td class="px-2 sm:px-6 py-2 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-gray-500 text-center">{result == 0 ? '❌' : result == 1 ? '✅' : '🤷‍♂️'}</td>
-								{/each}
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		{/each}
-	</div>
+			scales: {
+				x: {
+					// display: false,
+					stacked: true
+				},
+				y: {
+					display: false,
+					stacked: true
+				}
+			}
+		}}
+	/>
 {/if}
