@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import db from './db.json';
+import db from './proposals/db.json';
 
 export const load: PageServerLoad = async ({ request: any, platform }) => {
     // Pick 10 random items from the database

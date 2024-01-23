@@ -1,13 +1,14 @@
 <script lang="ts">
 	export let readInstructions = false;
 	import Hemicycle from './Hemicycle.svelte';
-	import { onMount } from 'svelte';
+	import TagPicker from './tags/TagPicker.svelte';
 
 	let ticker = 0;
 
 
 </script>
 
+<TagPicker />
 {#if !readInstructions}
 	<div class="flex flex-col items-center p-6 sm:p-8">
 		<!-- <h1 class="text-center text-4xl mb-4">Descobre em quem votar</h1> -->

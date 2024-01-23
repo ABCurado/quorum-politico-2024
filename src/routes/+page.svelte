@@ -10,12 +10,16 @@
 	import SocialShare from './SocialShare.svelte';
 	import VoteResults from './VoteResults.svelte';
 	import Welcome from './Welcome.svelte';
-
-	let showToast: boolean = false;
+	import TagPicker from './tags/TagPicker.svelte';
 
 	export let data;
-	let readInstructions = false;
 	let quizSize: number = data.db.length;
+
+	let showToast: boolean = false;
+	let showCategoriesPicker: boolean = false;
+	let readInstructions = false;
+	let selectedTags = [];
+
 	let currentVote = 0;
 
 	function handleVoteClick(event) {
@@ -75,7 +79,23 @@
 				top_party: proximity[0].party
 			})
 		});
+	}
 
+	async function getNewQuiz() {
+		let tagsParam = Array.from(selectedTags).join(',');
+
+		let response = await fetch(`/proposals?tags=${tagsParam}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+		let new_data = await response.json();
+		data.db = new_data.proposals;
+		quizSize = data.db.length;
+		currentVote = 0;
+		showCategoriesPicker = false;
+		selectedTags = [];
 	}
 </script>
 
@@ -87,7 +107,6 @@
 >
 	Chegaste a metade do Quiz! 🎉
 </Toast>
-
 
 {#if !readInstructions}
 	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
@@ -110,20 +129,20 @@
 
 		<VoteResults vote_proposals={data.db} />
 		<OthersResults />
-
 		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
 			<p class="text-center text-base sm:text-lg mb-4">Se o resultado não foi o que esperavas, ...</p>
 			<button
 				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4"
 				on:click={() => {
-					currentVote = 0;
-					data.db.forEach((proposal) => {
-						proposal.user_vote = null;
-					});
+					showCategoriesPicker = true;
 				}}
 			>
-				Recomeça o Quiz
+				Escolhe outras categorias
 			</button>
+			{#if showCategoriesPicker}
+				<TagPicker bind:show={showCategoriesPicker} bind:selectedTags onButtonClick={getNewQuiz} />
+			{/if}
+
 			<!-- Buttons to share the results in social media -->
 		</div>
 		<div class="m-4 px-4 sm:px-0">
