@@ -84,7 +84,7 @@
 	async function getNewQuiz() {
 		let tagsParam = Array.from(selectedTags).join(',');
 
-		let response = await fetch(`/proposals?tags=${tagsParam}`, {
+		let response = await fetch(`/proposals?tags=${tagsParam}&pageSize=6`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'

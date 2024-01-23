@@ -18,8 +18,10 @@ export const GET: RequestHandler = async ({ request, platform, url }) => {
         });
     }); 
 
-    // Paginate the filtered proposals
-    const paginatedProposals = filteredProposals.slice(0,pageSize );
+    // Randomize the order of filtered proposals
+    const randomizedProposals = filteredProposals.sort(() => Math.random() - 0.5);
+    // Paginate the randomized proposals
+    const paginatedProposals = randomizedProposals.slice(0, pageSize);
     return new Response(JSON.stringify({
         proposals: paginatedProposals,
         total: filteredProposals.length,
