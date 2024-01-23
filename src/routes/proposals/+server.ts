@@ -14,7 +14,7 @@ export const GET: RequestHandler = async ({ request, platform, url }) => {
     // Filter proposals atribute tag_1 and tag_2 by tags
     const filteredProposals = db.filter((proposal: Proposal) => {
         return tags.some((tag: string) => {
-            return proposal.tag_1 === tag || proposal.tag_2 === tag;
+            return proposal.tag_1 === tag || proposal.tag_2 === tag || proposal.official_id=="3/XV-2";
         });
     }); 
 
