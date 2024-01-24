@@ -57,12 +57,17 @@
 				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
 					<animate
 						attributeName="opacity"
-						dur="10s"
+						dur={random ? '7s' : '10s'}
 						begin="{Math.random() * 1500}ms"
 						values="{minOpacity};{midOpacity};{maxOpacity};{midOpacity};{minOpacity}"
 						repeatCount={random ? 'indefinite' : ''}
 					/>
-					<animate attributeName="r" dur="10s" begin="{Math.random() * 1500}ms" values="{minRadius};{maxRadius};{minRadius}" repeatCount={random ? 'indefinite' : ''} />
+					<animate 
+						attributeName="r" 
+						dur={random ? '7s' : '10s'} 
+						begin="{Math.random() * 1500}ms" 
+						values="{minRadius};{maxRadius};{minRadius}" 
+						repeatCount={random ? 'indefinite' : ''} />
 				</circle>
 			{/each}
 		</g>
