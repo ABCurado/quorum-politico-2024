@@ -45,7 +45,9 @@
 	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" height={200}>
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
 		<g>
-			<text x="175" y="175" class="text-3xl font-bold text-center" style="text-anchor:middle;"> {centerText} </text>
+			{#if !random}
+				<text x="175" y="175" class="text-3xl font-bold text-center" style="text-anchor:middle;"> {centerText} </text>
+			{/if}
 
 			{#each parlimentData as seat}
 				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
@@ -62,12 +64,7 @@
 						values="{minOpacity};{midOpacity};{maxOpacity};{midOpacity};{minOpacity}"
 						repeatCount={random ? 'indefinite' : ''}
 					/>
-					<animate 
-						attributeName="r" 
-						dur={random ? '7s' : '10s'} 
-						begin="{Math.random() * 1500}ms" 
-						values="{minRadius};{maxRadius};{minRadius}" 
-						repeatCount={random ? 'indefinite' : ''} />
+					<animate attributeName="r" dur={random ? '7s' : '10s'} begin="{Math.random() * 1500}ms" values="{minRadius};{maxRadius};{minRadius}" repeatCount={random ? 'indefinite' : ''} />
 				</circle>
 			{/each}
 		</g>
