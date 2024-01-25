@@ -75,7 +75,7 @@
 		{summary_reduced}
 	</div>
 
-	<h3 class="text-l sm:text-xl mb-2">Riscos e Críticas</h3>
+	<h3 class="text-l sm:text-xl mb-2 font-semibold">Riscos e Críticas:</h3>
 	<div class="text-base sm:text-lg mb-6 min-h-52 w-full max-w-4xl p-4">
 		{@html highlightTitles(counter_reduced)}
 	</div>
