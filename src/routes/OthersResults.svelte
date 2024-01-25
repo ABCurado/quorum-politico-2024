@@ -75,13 +75,13 @@
 
 <div class="sm:w-2/3 lg:w-1/2 xl:w-1/3">
 	<div class="container mx-auto px-4">
-		<h2 class="text-m font-bold mb-4 text-center">Concordas? (Vê os resultados dos outros)</h2>
+		<h2 class="text-m font-bold mb-4 text-center">Estavas à espera deste resultado? Responde para teres acesso aos resultados de outros utilizadores?</h2>
 		<div class="flex justify-center mb-4">
 			<button on:click={showResultsFunction} id="1" class="flex-1 bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 m-2 rounded" title="Click to agree"
-				>Sim, votei neste partido desde que nasci</button
+				>Sim</button
 			>
 			<button on:click={showResultsFunction} id="0" class="flex-1 bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 m-2 rounded" title="Click to disagree"
-				>Odeio. Vou ter que repensar a minha vida</button
+				>Não</button
 			>
 		</div>
 	</div>

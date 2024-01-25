@@ -14,10 +14,10 @@
 		<!-- <h1 class="text-center text-4xl mb-4">Descobre em quem votar</h1> -->
 		<!--Olá! Bem-vindo ao <strong>Concordas?</strong>, um jogo que te permite descobrir em quem votar nas próximas eleições. O jogo é baseado nas votaçõoes que aconteceram no parlamento europeu de 2022-2023. -->
 
-		<h1 class="text-center text-4xl mb-4">Descobre que partido melhor te representa!</h1>
-		<p class="text-center text sm:text-base mb-4">Bem-vindo! Este simulador permite-te descobrir como votaram os partidos em algumas das Propostas apresentadas na Assembleia da República.</p>
+		<h1 class="text-center text-4xl mb-4">Bem-vindo ao Plebiscito!</h1>
+		<p class="text-center text sm:text-base mb-4">Pronuncia-te diretamente sobre as propostas de legislação e defende os teus interesses no parlamento. Sê o teu próprio representante partidário. Sê plebeu.</p>
 		<!-- {#key ticker} -->
-			<Hemicycle centerText="Decide" random={true} />
+			<Hemicycle centerText="" random={true} /> 
 		<!-- {/key} -->
 
 		<div class="mt-4 mb-8">
@@ -35,7 +35,7 @@
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0,0);
-			}}>Estás preparado para ser <b><i>Deputado por 5 minutos</i></b>?</button
+			}}>Entra na Assembleia, Plebeu</button
 		>
 	</div>
 {/if}
