@@ -16,7 +16,7 @@
 		<h1 class="text-center text-4xl mb-4">Bem-vindo ao Plebiscito!</h1>
 		<p class="text-center text sm:text-base mb-4">Pronuncia-te diretamente sobre as propostas de legislação e defende os teus interesses no parlamento. Sê o teu próprio representante partidário. Sê plebeu.</p>
 		<!-- {#key ticker} -->
-		<!--	<Hemicycle centerText="Decide" random={true} /> -->
+			<Hemicycle centerText="" random={true} /> 
 		<!-- {/key} -->
 
 		<div class="mt-4 mb-8">
