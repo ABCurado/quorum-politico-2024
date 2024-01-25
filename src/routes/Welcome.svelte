@@ -34,7 +34,7 @@
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0,0);
-			}}>Estás preparado para ser <b><i>Deputado por 5 minutos</i></b>?</button
+			}}>Entra na Assembleia, Plebeu</button
 		>
 	</div>
 {/if}
