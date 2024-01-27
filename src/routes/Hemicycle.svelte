@@ -20,7 +20,7 @@
 	let defaultRadiusBase = 6;
 	function calculateRadius(party: number | undefined) {
 		if (party !== undefined) {
-			return defaultRadiusBase * (party === 0 ? 0.1 : party);
+			return defaultRadiusBase * (party < 0.20 ? 0.20 : party);
 		} else if (random) {
 			return defaultRadiusBase * Math.random();
 		} else {
@@ -28,10 +28,10 @@
 		}
 	}
 
-	let defaultOpacity = 1.0;
+	let defaultOpacity = 0.9;
 	function calculateOpacity(party: number | undefined, forceRandom = false) {
 		if (party !== undefined) {
-			return defaultOpacity * (party === 0 ? 0.1 : party);
+			return defaultOpacity * (party < 0.1 ? 0.1 : party);
 		} else if (random || forceRandom) {
 			return defaultOpacity * Math.random();
 		} else {
@@ -52,19 +52,26 @@
 			{#each parlimentData as seat}
 				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
 				{@const midOpacity = calculateOpacity(partyRanking[seat[2]], true)}
-				{@const minOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultOpacity / 2 : defaultOpacity}
+				{@const minOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultOpacity*(2/3) : defaultOpacity}
+				
 				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
-				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase / 2 : defaultRadiusBase}
+				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase*(2/3) : defaultRadiusBase}
 
-				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
+				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={partyColors[seat[2]]} style="opacity: {maxRadius};">
 					<animate
 						attributeName="opacity"
 						dur={random ? '7s' : '10s'}
 						begin="{Math.random() * 1500}ms"
-						values="{minOpacity};{midOpacity};{maxOpacity};{midOpacity};{minOpacity}"
+						values="{maxRadius};{midOpacity};{minOpacity};{midOpacity};{maxRadius}"
 						repeatCount={random ? 'indefinite' : ''}
 					/>
-					<animate attributeName="r" dur={random ? '7s' : '10s'} begin="{Math.random() * 1500}ms" values="{minRadius};{maxRadius};{minRadius}" repeatCount={random ? 'indefinite' : ''} />
+					<animate 
+						attributeName="r" 
+						dur={random ? '7s' : '10s'} 
+						begin="{Math.random() * 1500}ms" 
+						values="{maxRadius};{minRadius};{maxRadius}" 
+						repeatCount={random ? 'indefinite' : ''} 
+					/>
 				</circle>
 			{/each}
 		</g>
