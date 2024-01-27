@@ -17,14 +17,20 @@
 		await window.navigator.share({
 			title: title,
 			files: filesArray,
-			text: 'Beautiful images',
+			text: `${title} ${desc}`,
 			url: url
 		});
 	}
 </script>
 
 {#if supportsNavigatorShare}
-	<button class="share-button rounded" on:click={() => {navigatorShare()}}>Navigator Share</button>
+	<button class="share-button rounded" on:click={() => navigatorShare()}>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share">
+			<path d="M17 8.517a3.5 3.5 0 0 0-5 0L7.5 11.5M12 4.5v11" />
+			<path d="M3 12h2m4 0h10" />
+		</svg>
+		Share with Friends
+	</button>
 {:else}
 	<!-- <Email subject={title} body="{desc} {url}" /> -->
 	<!-- <HackerNews class="share-button" {title} {url} /> -->
