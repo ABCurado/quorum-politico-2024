@@ -2,7 +2,7 @@
 	export let readInstructions = false;
 	import Hemicycle from './Hemicycle.svelte';
 	import TagPicker from './tags/TagPicker.svelte';
-
+	import { IconHeart } from '@tabler/icons-svelte';
 	let ticker = 0;
 
 
@@ -22,12 +22,10 @@
 
 		<div class="mt-4 mb-8">
 			As <b>instruções</b> são simples:
-			<ul
-				class="list-disc list-inside ml-5 text-slate-900 dark:text-slate-200 list-image-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNCAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjMzhiZGY4Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMy42ODUuMTUzYS43NTIuNzUyIDAgMCAxIC4xNDMgMS4wNTJsLTggMTAuNWEuNzUuNzUgMCAwIDEtMS4xMjcuMDc1bC00LjUtNC41YS43NS43NSAwIDAgMSAxLjA2LTEuMDZsMy44OTQgMy44OTMgNy40OC05LjgxN2EuNzUuNzUgMCAwIDEgMS4wNS0uMTQzWiIgLz48L3N2Zz4=')]"
-			>
-				<li>Lê a proposta que te é apresentada, sumário, riscos e críticas.</li>
-				<li>Usa os poderes do partido: vota a favor, contra, ou abstem-te.</li>
-				<li>No final, dizemos-te que partido melhor te representou.</li>
+			<ul>
+				<li><IconHeart size={48} stroke={1} /> Lê a proposta que te é apresentada, sumário, riscos e críticas.</li>
+				<li><IconHeart size={48} stroke={1} />Usa os poderes do partido: vota a favor, contra, ou abstem-te.</li>
+				<li><IconHeart size={48} stroke={1} />No final, dizemos-te que partido melhor te representou.</li>
 			</ul>
 		</div>
 		<button

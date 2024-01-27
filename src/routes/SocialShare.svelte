@@ -23,15 +23,11 @@
 	}
 </script>
 
-{#if supportsNavigatorShare}
-	<button class="share-button rounded" on:click={() => navigatorShare()}>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share">
-			<path d="M17 8.517a3.5 3.5 0 0 0-5 0L7.5 11.5M12 4.5v11" />
-			<path d="M3 12h2m4 0h10" />
-		</svg>
-		Share with Friends
+<!-- {#if supportsNavigatorShare} -->
+	<button class="share-button rounded bg-blue-500 text-white border-none px-4 py-2 cursor-pointer flex items-center" on:click={() => navigatorShare()}>
+		Partilhar
 	</button>
-{:else}
+<!-- {:else} -->
 	<!-- <Email subject={title} body="{desc} {url}" /> -->
 	<!-- <HackerNews class="share-button" {title} {url} /> -->
 	<!-- <Reddit class="share-button" {title} {url} /> -->
@@ -46,4 +42,4 @@
 	<X class="share-button rounded" text={title} {desc} {url} related="other,users" {hashtags} />
 	<!-- <Line class="share-button" {url} /> -->
 	<!-- <button class="share-button rounded" on:click={() => window.navigator.clipboard.writeText(url)}>Copy Link</button> -->
-{/if}
+<!-- {/if} -->
