@@ -18,19 +18,16 @@
 			return;
 		}
 
-		if (window.navigator.canShare({  })) {
-			try {
-				await window.navigator.share({
-					title: 'Images',
-					text: 'Beautiful images'
-				});
-				textContent = 'Shared!';
-			} catch (error) {
-				textContent = `Error: ${error.message}`;
-			}
-		} else {
-			textContent = `Your system doesn't support sharing these files.`;
+		try {
+			await window.navigator.share({
+				title: 'Images',
+				text: 'Beautiful images'
+			});
+			textContent = 'Shared!';
+		} catch (error) {
+			textContent = `Error: ${error.message}`;
 		}
+
 	}
 </script>
 
