@@ -1,11 +1,37 @@
 <script lang="ts">
 	// @ts-ignore
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
-
 	export let url = 'https://em-quem-votar-2023.pages.dev/';
 	export let title = '';
 	export let desc = '';
 	export let hashtags = 'em-quem-votar-2023';
+
+	let textContent;
+
+	$: console.log('textContent', textContent);
+	async function navigatorShare() {
+		console.log('navigatorShare');
+		// feature detecting navigator.canShare() also implies
+		// the same for the navigator.share()
+		if (!window.navigator.canShare) {
+			textContent = `Your browser doesn't support the Web Share API.`;
+			return;
+		}
+
+		if (window.navigator.canShare({  })) {
+			try {
+				await window.navigator.share({
+					title: 'Images',
+					text: 'Beautiful images'
+				});
+				textContent = 'Shared!';
+			} catch (error) {
+				textContent = `Error: ${error.message}`;
+			}
+		} else {
+			textContent = `Your system doesn't support sharing these files.`;
+		}
+	}
 </script>
 
 <!-- <Email subject={title} body="{desc} {url}" /> -->
@@ -21,3 +47,7 @@
 <Facebook class="share-button rounded" quote={title} {url} />
 <X class="share-button rounded" text={title} {desc} {url} related="other,users" {hashtags} />
 <!-- <Line class="share-button" {url} /> -->
+<button class="share-button rounded" on:click={() => window.navigator.clipboard.writeText(url)}>Copy Link</button>
+<button class="share-button rounded" on:click={() => {console.log("KKKK");navigatorShare()}}>Navigator Share</button>
+<br/>
+{@html textContent}
