@@ -133,7 +133,7 @@
 					showPartyInfo = true;
 				}
 			}}
-		>Descobre mais sobre o teu partido
+		>Descobre mais sobre o partido
 		</button>
 		<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
 		<BarChart {proximity} />
