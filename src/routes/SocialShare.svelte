@@ -10,9 +10,9 @@
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	async function navigatorShare() {
-		let response = await fetch("https://dev.em-quem-votar-2023.pages.dev/example.png")
+		let response = await fetch("https://dev.em-quem-votar-2023.pages.dev/images")
 		let blob = await response.blob();
-		var file = new File([blob], "example.png", {type: 'image/png'});
+		var file = new File([blob], "images.svg", {type: 'image/svg+xml'});
 
 		var filesArray = [file];
 		await window.navigator.share({

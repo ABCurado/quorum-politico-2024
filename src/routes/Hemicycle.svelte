@@ -3,14 +3,14 @@
 	import { onMount } from 'svelte';
 
 	let partyColors: { [key: string]: string } = {
-		PCP: 'fill-current text-red-800',
-		BE: 'fill-current text-red-500',
-		L: 'fill-current text-red-700',
-		PAN: 'fill-current text-green-500',
-		IL: 'fill-current text-blue-300',
-		PS: 'fill-current text-pink-600',
-		PSD: 'fill-current text-orange-600',
-		CH: 'fill-current text-blue-600'
+		PCP: 'red-800',
+		BE: 'red-500',
+		L: 'red-700',
+		PAN: 'green-500',
+		IL: 'blue-300',
+		PS: 'pink',
+		PSD: 'orange',
+		CH: 'blue-600'
 	};
 	export let random = false;
 	export let centerText = '';
@@ -67,7 +67,7 @@
 				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
 				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
 
-				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
+				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} fill={partyColors[seat[2]]} style="opacity: {maxOpacity};">
 					<animate
 						attributeName="opacity"
 						dur={random ? '7s' : '10s'}
@@ -78,8 +78,8 @@
 					<animate attributeName="r" dur={random ? '7s' : '10s'} begin="{Math.random() * 1500}ms" values="{maxRadius};{minRadius};{maxRadius}" repeatCount={random ? 'indefinite' : ''} />
 				</circle>
 			{/each}
-			<!-- <circle cx={360 / 2} cy={185} r={180} class="stroke-current text-gray-500" fill="transparent" stroke-width="3" />
-			<circle cx={360 / 2} cy={185} r={72} class="stroke-current text-gray-500" fill="transparent" stroke-width="3" /> -->
+			<!-- <circle cx={360 / 2} cy={185} r={180} class="stroke-gray-500" fill="transparent" stroke-width="3" />
+			<circle cx={360 / 2} cy={185} r={72} class="stroke-gray-500" fill="transparent" stroke-width="3" /> -->
 		</g>
 	</svg>
 </div>
