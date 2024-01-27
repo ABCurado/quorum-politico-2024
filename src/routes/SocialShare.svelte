@@ -20,8 +20,9 @@
 
 		try {
 			await window.navigator.share({
-				title: 'Images',
-				text: 'Beautiful images'
+				title: title,
+				text: 'Beautiful images',
+				url: url
 			});
 			textContent = 'Shared!';
 		} catch (error) {
