@@ -2,6 +2,7 @@
 	import { Bar } from 'svelte-chartjs';
 	import 'chart.js/auto';
 	import mixpanel from 'mixpanel-browser';
+	import { tick } from 'svelte';
 
 	// agrees: 1 - Means agree
 	// agrees: 0 - Means disagree
@@ -36,28 +37,37 @@
 
 	async function showResultsFunction(event: { target: { id: string } }) {
 		loading = true;
-		await fetch('/votes', {
-			method: 'PUT',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				device_id: mixpanel.get_distinct_id(),
-				agrees: event.target.id === '1' ? 1 : 0
-			})
-		});
+		// await fetch('/votes', {
+		// 	method: 'PUT',
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	},
+		// 	body: JSON.stringify({
+		// 		device_id: mixpanel.get_distinct_id(),
+		// 		agrees: event.target.id === '1' ? 1 : 0
+		// 	})
+		// });
 		voteResults = await fetchData();
+
+		voteResults = Object.fromEntries(
+			Object.entries(voteResults).sort((a, b) => {
+				const totalVotesA = a[1].reduce((acc, cur) => acc + cur.votes, 0);
+				const totalVotesB = b[1].reduce((acc, cur) => acc + cur.votes, 0);
+				return totalVotesB - totalVotesA;
+			})
+		);
 		loading = false;
 		showResults = true;
 	}
 
 	$: data = {
-		labels: Object.keys(voteResults),
+		labels: Object.keys(voteResults).map(key => `${key} (${voteResults[key].reduce((acc, cur) => acc + cur.votes, 0)})`),
 		datasets: [
 			{
 				label: 'Sim',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 1).reduce((acc, cur) => acc + cur.votes, 0)),
-				backgroundColor: 'rgb(16, 185, 129, 0.6)'
+				backgroundColor: 'rgb(16, 185, 129, 0.6)',
+				order: 1
 			},
 			{
 				label: 'Não',
@@ -67,53 +77,61 @@
 			{
 				label: 'Sem opiniāo',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 2).reduce((acc, cur) => acc + cur.votes, 0)),
-				backgroundColor: 'rgb(125, 125, 125,0.6)'
+				backgroundColor: 'rgb(200, 200, 200, 0.6)'
 			}
 		]
 	};
 </script>
 
-<div class="sm:w-2/3 lg:w-1/2 xl:w-1/3">
+<div class="w-3/4 lg:w-1/2 xl:w-1/3">
 	<div class="container mx-auto px-4">
-		<h2 class="text-m font-bold mb-4 text-center">Estavas à espera deste resultado? Responde para teres acesso aos resultados de outros utilizadores?</h2>
-		<div class="flex justify-center mb-4">
-			<button on:click={showResultsFunction} id="1" class="flex-1 bg-green-300 hover:bg-green-500 text-white font-bold py-2 px-4 m-2 rounded" title="Click to agree"
-				>Sim</button
-			>
-			<button on:click={showResultsFunction} id="0" class="flex-1 bg-red-300 hover:bg-red-500 text-white font-bold py-2 px-4 m-2 rounded" title="Click to disagree"
-				>Não</button
-			>
+		<h2 class="text-m mb-4 text-center font-bold">Estavas à espera deste resultado? Responde para teres acesso aos resultados de outros utilizadores?</h2>
+		<div class="mb-4 flex justify-center">
+			<button on:click={showResultsFunction} id="1" class="m-2 flex-1 rounded bg-green-300 px-4 py-2 font-bold text-white hover:bg-green-500" title="Click to agree">Sim</button>
+			<button on:click={showResultsFunction} id="0" class="m-2 flex-1 rounded bg-red-300 px-4 py-2 font-bold text-white hover:bg-red-500" title="Click to disagree">Não</button>
 		</div>
 	</div>
 	{#if loading}
 		<div class="flex justify-center">
-			<div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900" />
+			<div class="h-32 w-32 animate-spin rounded-full border-b-2 border-gray-900" />
 		</div>
 	{:else if showResults}
 		<Bar
 			{data}
 			options={{
-				responsive: true,
 				plugins: {
 					legend: {
-						position: 'bottom'
+						position: 'top',
+						labels: {
+							font: {
+								size: 0
+							}
+						}
 					},
 					title: {
 						display: false,
 						text: 'Resultados das votações'
 					}
 				},
-
+				responsive: true,
 				scales: {
 					x: {
-						// display: false,
-						stacked: true
+						stacked: true,
+						grid: {
+							display: false
+						},
+						ticks: {
+							font: {
+								size: 10
+							}
+						}
 					},
 					y: {
 						display: false,
 						stacked: true
 					}
-				}
+				},
+				maxBarThickness: 25
 			}}
 		/>
 	{/if}
