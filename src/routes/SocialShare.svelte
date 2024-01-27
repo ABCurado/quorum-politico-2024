@@ -17,10 +17,15 @@
 			textContent = `Your browser doesn't support the Web Share API.`;
 			return;
 		}
+		let blob = await fetch("https://em-quem-votar-2023.pages.dev/example.png").then(function(response) { return response.blob()});
+  
 
+		var file = new File([blob], "picture.jpg", {type: 'image/jpeg'});
+		var filesArray = [file];
 		try {
 			await window.navigator.share({
 				title: title,
+				files: filesArray,
 				text: 'Beautiful images',
 				url: url
 			});
