@@ -1,11 +1,12 @@
 <script lang="ts">
 	// @ts-ignore
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
+	import {IconShare} from '@tabler/icons-svelte';
+
 	export let url = 'https://em-quem-votar-2023.pages.dev/';
 	export let title = '';
 	export let desc = '';
 	export let hashtags = 'em-quem-votar-2023';
-
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	async function navigatorShare() {
@@ -23,11 +24,11 @@
 	}
 </script>
 
-<!-- {#if supportsNavigatorShare} -->
-	<button class="share-button rounded bg-blue-500 text-white border-none px-4 py-2 cursor-pointer flex items-center" on:click={() => navigatorShare()}>
-		Partilhar
+{#if supportsNavigatorShare}
+	<button class="share-button rounded-full bg-gray-200 bg-opacity-30 px-4 py-4 cursor-pointer flex items-center border-2  shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
+		<IconShare size={48} stroke={2} class="text-sky-500 opacity-75"/>		
 	</button>
-<!-- {:else} -->
+{:else}
 	<!-- <Email subject={title} body="{desc} {url}" /> -->
 	<!-- <HackerNews class="share-button" {title} {url} /> -->
 	<!-- <Reddit class="share-button" {title} {url} /> -->
@@ -42,4 +43,4 @@
 	<X class="share-button rounded" text={title} {desc} {url} related="other,users" {hashtags} />
 	<!-- <Line class="share-button" {url} /> -->
 	<!-- <button class="share-button rounded" on:click={() => window.navigator.clipboard.writeText(url)}>Copy Link</button> -->
-<!-- {/if} -->
+{/if}

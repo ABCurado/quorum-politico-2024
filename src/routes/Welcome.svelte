@@ -2,10 +2,8 @@
 	export let readInstructions = false;
 	import Hemicycle from './Hemicycle.svelte';
 	import TagPicker from './tags/TagPicker.svelte';
-	import { IconHeart } from '@tabler/icons-svelte';
+	import { IconCheckbox } from '@tabler/icons-svelte';
 	let ticker = 0;
-
-
 </script>
 
 <TagPicker />
@@ -14,25 +12,36 @@
 		<!-- <h1 class="text-center text-4xl mb-4">Descobre em quem votar</h1> -->
 		<!--Olá! Bem-vindo ao <strong>Concordas?</strong>, um jogo que te permite descobrir em quem votar nas próximas eleições. O jogo é baseado nas votaçõoes que aconteceram no parlamento europeu de 2022-2023. -->
 
-		<h1 class="text-center text-4xl mb-4">Descobre o teu ADN Político!</h1>
-		<p class="text-center text sm:text-base mb-4">Pronuncia-te diretamente sobre as propostas de legislação e defende os teus interesses no parlamento. Sê o teu próprio representante partidário. E vê que partido melhor te representou.</p>
+		<h1 class="mb-4 text-center text-4xl">Descobre o teu ADN Político!</h1>
+		<p class="text mb-4 text-center sm:text-base">
+			Pronuncia-te diretamente sobre as propostas de legislação e defende os teus interesses no parlamento. Sê o teu próprio representante partidário. E vê que partido melhor te representou.
+		</p>
 		<!-- {#key ticker} -->
-			<Hemicycle centerText="" random={true} /> 
+		<Hemicycle centerText="" random={true} />
 		<!-- {/key} -->
 
-		<div class="mt-4 mb-8">
+		<div class="mb-8 mt-4">
 			As <b>instruções</b> são simples:
 			<ul>
-				<li><IconHeart size={48} stroke={1} /> Lê a proposta que te é apresentada, sumário, riscos e críticas.</li>
-				<li><IconHeart size={48} stroke={1} />Usa os poderes do partido: vota a favor, contra, ou abstem-te.</li>
-				<li><IconHeart size={48} stroke={1} />No final, dizemos-te que partido melhor te representou.</li>
+				<li class="flex items-center ml-3">
+					<IconCheckbox size={16} stroke={3} color="green" /> 
+					<span class="ml-2">Lê a proposta que te é apresentada, sumário, riscos e críticas.</span>
+				</li>
+				<li class="flex items-center ml-3">
+					<IconCheckbox size={16} stroke={3} color="green" />
+					<span class="ml-2">Usa os poderes do partido: vota a favor, contra, ou abstem-te.</span>
+				</li>
+				<li class="flex items-center ml-3">
+					<IconCheckbox size={16} stroke={3} color="green" />
+					<span class="ml-2">No final, dizemos-te que partido melhor te representou.</span>
+				</li>
 			</ul>
 		</div>
 		<button
-			class="bg-green-400 hover:bg-green-700 text-white font-bold py-3 px-3 sm:px-4 rounded"
+			class="rounded bg-green-400 px-3 py-3 font-bold text-white hover:bg-green-700 sm:px-4"
 			on:click={() => {
 				readInstructions = true;
-				window.scrollTo(0,0);
+				window.scrollTo(0, 0);
 			}}>Entra na Assembleia</button
 		>
 	</div>
