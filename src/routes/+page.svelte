@@ -11,12 +11,15 @@
 	import VoteResults from './VoteResults.svelte';
 	import Welcome from './Welcome.svelte';
 	import TagPicker from './tags/TagPicker.svelte';
+	import PartyInfo from './party/PartyInfo.svelte';
 
 	export let data;
 	let quizSize: number = data.db.length;
 
 	let showToast: boolean = false;
 	let showCategoriesPicker: boolean = false;
+	let showPartyInfo: boolean = false;
+
 	let readInstructions = false;
 	let selectedTags = [];
 
@@ -119,7 +122,10 @@
 		<p class="mb-4 mt-4 text-center text-base sm:text-lg">
 			Tens uma proximidade de <span class="font-bold">{(Number(proximity[0].proximity.toFixed(2)) * 100)}%</span> com o partido{' '}
 		</p>
-		<p class="mb-4 text-center text-base sm:text-lg">Mais informação sobre o partido aqui</p>
+		<p class="mb-4 text-center text-base sm:text-lg">
+			<button on:click={() => {showPartyInfo=true}}>Mais informação sobre o partido aqui</button>
+		</p>
+		<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
 		<BarChart {proximity} />
 		<OthersResults />
 		<VoteResults vote_proposals={data.db} />
