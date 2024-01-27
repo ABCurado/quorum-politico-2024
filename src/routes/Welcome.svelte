@@ -15,7 +15,7 @@
 		<!--Olá! Bem-vindo ao <strong>Concordas?</strong>, um jogo que te permite descobrir em quem votar nas próximas eleições. O jogo é baseado nas votaçõoes que aconteceram no parlamento europeu de 2022-2023. -->
 
 		<h1 class="text-center text-4xl mb-4">Descobre o teu ADN Político!</h1>
-		<p class="text-center text sm:text-base mb-4">Pronuncia-te diretamente sobre as propostas de legislação e defende os teus interesses no parlamento. Sê o teu próprio representante partidário, e vê quem melhor te representou.</p>
+		<p class="text-center text sm:text-base mb-4">Pronuncia-te diretamente sobre as propostas de legislação e defende os teus interesses no parlamento. Sê o teu próprio representante partidário. E vê que partido melhor te representou.</p>
 		<!-- {#key ticker} -->
 			<Hemicycle centerText="" random={true} /> 
 		<!-- {/key} -->
@@ -25,9 +25,9 @@
 			<ul
 				class="list-disc list-inside ml-5 text-slate-900 dark:text-slate-200 list-image-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNCAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjMzhiZGY4Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMy42ODUuMTUzYS43NTIuNzUyIDAgMCAxIC4xNDMgMS4wNTJsLTggMTAuNWEuNzUuNzUgMCAwIDEtMS4xMjcuMDc1bC00LjUtNC41YS43NS43NSAwIDAgMSAxLjA2LTEuMDZsMy44OTQgMy44OTMgNy40OC05LjgxN2EuNzUuNzUgMCAwIDEgMS4wNS0uMTQzWiIgLz48L3N2Zz4=')]"
 			>
-				<li>Lê a proposta que te é apresentada, sumário e contra argumentos.</li>
-				<li>Usa os poderes do partido: decide se votarias a favor, contra, ou se te irias abster.</li>
-				<li>No final, o jogo vai-te dizer qual o partido com que mais te assemelhas.</li>
+				<li>Lê a proposta que te é apresentada, sumário, riscos e críticas.</li>
+				<li>Usa os poderes do partido: vota a favor, contra, ou abstem-te.</li>
+				<li>No final, dizemos-te que partido melhor te representou.</li>
 			</ul>
 		</div>
 		<button
