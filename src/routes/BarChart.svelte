@@ -19,7 +19,7 @@
 			<div class="text-sm text-gray-500">{(Number(party.proximity.toFixed(2)) * 100)}%</div>
 		</div>
 		<div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-			<div style="width: {party.proximity * 100}%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center {partyColors[party.party]} opacity-75"></div>
+			<div style="width: {party.proximity * 100}%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center {partyColors[party.party]} opacity-75 mx-auto"></div>
 		</div>
 	{/each}
 </div>

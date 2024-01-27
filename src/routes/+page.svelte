@@ -115,10 +115,11 @@
 {:else if currentVote == quizSize}
 	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
 		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
-		<h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1>
-		<p class="mb-4 text-center text-base sm:text-lg">
-			O partido com que mais te identificas é: <strong>{proximity[0].party}</strong>
+		<!-- <h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1> -->
+		<p class="mb-4 mt-4 text-center text-base sm:text-lg">
+			Tens uma proximidade de <span class="font-bold">{(Number(proximity[0].proximity.toFixed(2)) * 100)}%</span> com o partido{' '}
 		</p>
+		<p class="mb-4 text-center text-base sm:text-lg">Mais informação sobre o partido aqui</p>
 		<BarChart {proximity} />
 		<OthersResults />
 		<VoteResults vote_proposals={data.db} />
