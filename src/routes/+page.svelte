@@ -119,17 +119,22 @@
 	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
 		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
 		<!-- <h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1> -->
-		<p class="mb-1 mt-4 text-center text-base sm:text-lg">
+		<!-- <p class="mb-1 mt-4 text-center text-base sm:text-lg">
 			Tens uma proximidade de <span class="font-bold">{Number(proximity[0].proximity.toFixed(2)) * 100}%</span> com o partido{' '}
-		</p>
-		<span
-			role="button"
-			class="mb-4 cursor-pointer text-center text-xs md:text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-600 sm:text-lg"
+		</p> -->
+		<button
+			tabindex="0"
+			class="mb-4 mt-2 cursor-pointer text-center text-xs md:text-sm text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg"
 			on:click={() => {
 				showPartyInfo = true;
 			}}
-			>Mais informação sobre o partido aqui
-		</span>
+			on:keydown={(event) => {
+				if (event.key === 'Enter') {
+					showPartyInfo = true;
+				}
+			}}
+		>Mais informação sobre o partido aqui
+		</button>
 		<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
 		<BarChart {proximity} />
 		<OthersResults />
