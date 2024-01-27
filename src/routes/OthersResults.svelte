@@ -84,18 +84,21 @@
 </script>
 
 <div class="w-3/4 lg:w-1/2 xl:w-1/3">
-	<div class="container mx-auto px-4">
-		<h2 class="text-m mb-4 text-center font-bold">Estavas à espera deste resultado? Responde para teres acesso aos resultados de outros utilizadores?</h2>
-		<div class="mb-4 flex justify-center">
-			<button on:click={showResultsFunction} id="1" class="m-2 flex-1 rounded bg-green-300 px-4 py-2 font-bold text-white hover:bg-green-500" title="Click to agree">Sim</button>
-			<button on:click={showResultsFunction} id="0" class="m-2 flex-1 rounded bg-red-300 px-4 py-2 font-bold text-white hover:bg-red-500" title="Click to disagree">Não</button>
+	{#if !showResults}
+		<div class="container mx-auto px-4">
+			<h2 class="text-m mb-4 text-center font-bold">Estavas à espera deste resultado? Responde para teres acesso aos resultados de outros utilizadores?</h2>
+			<div class="mb-4 flex justify-center">
+				<button on:click={showResultsFunction} id="1" class="m-2 flex-1 rounded bg-green-300 px-4 py-2 font-bold text-white hover:bg-green-500" title="Click to agree">Sim</button>
+				<button on:click={showResultsFunction} id="0" class="m-2 flex-1 rounded bg-red-300 px-4 py-2 font-bold text-white hover:bg-red-500" title="Click to disagree">Não</button>
+			</div>
 		</div>
-	</div>
+	{/if}
 	{#if loading}
 		<div class="flex justify-center">
 			<div class="h-32 w-32 animate-spin rounded-full border-b-2 border-gray-900" />
 		</div>
 	{:else if showResults}
+	<h2 class="text-m mb-4 text-center font-bold">Obrigado por partilhares.</h2>
 		<Bar
 			{data}
 			options={{

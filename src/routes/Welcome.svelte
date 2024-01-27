@@ -31,7 +31,7 @@
 			</ul>
 		</div>
 		<button
-			class="bg-green-400 hover:bg-green-700 text-white font-bold py-3 px-3 sm:px-4 rounded-full"
+			class="bg-green-400 hover:bg-green-700 text-white font-bold py-3 px-3 sm:px-4 rounded"
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0,0);

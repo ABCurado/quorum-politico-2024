@@ -127,7 +127,7 @@
 		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0">
 			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas, ...</p>
 			<button
-				class="mb-4 rounded-full bg-green-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+				class="mb-4 rounded bg-green-500 px-6 py-3 font-bold text-white hover:bg-green-700"
 				on:click={() => {
 					showCategoriesPicker = true;
 				}}
@@ -157,9 +157,9 @@
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
 			<div class="left-0 right-0 m-8 flex justify-center space-x-4">
-				<button class="rounded-xl bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
-				<button class="rounded-xl bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
-				<button class="rounded-xl bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
+				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
+				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
+				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>
 	{/key}

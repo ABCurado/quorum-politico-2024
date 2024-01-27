@@ -11,8 +11,8 @@
                 O projeto ainda está em desenvolvimento, mas podes ver o progresso no <a href="">Github</a> ou no <a href="">Figma</a>.
             </p>
             <div class="flex items-center justify-center">
-                <a href="" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full mr-6">Github</a>
-                <a href="" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full">Figma</a>
+                <a href="" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded mr-6">Github</a>
+                <a href="" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded">Figma</a>
         </div>
     </div>
 </main>

@@ -1,5 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import db from '../proposals/db.json';
+import db from '../proposals/proposals_db.json';
 
 // A get route that returns for 2 urls. One called /tags another called /proposals
 // The /tags route returns a list of tags, the /proposals route returns a list of proposals

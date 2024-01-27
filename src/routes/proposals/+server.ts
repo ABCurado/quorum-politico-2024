@@ -1,6 +1,6 @@
 import type { Proposal } from './types'; // Import the Proposal type
 import type { RequestHandler } from '@sveltejs/kit';
-import db from './db.json';
+import db from './proposals_db.json';
 
 // The /proposals route can be filtered by tag
 // The /proposals route can be filtered by search term

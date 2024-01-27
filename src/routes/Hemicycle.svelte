@@ -78,8 +78,8 @@
 					<animate attributeName="r" dur={random ? '7s' : '10s'} begin="{Math.random() * 1500}ms" values="{maxRadius};{minRadius};{maxRadius}" repeatCount={random ? 'indefinite' : ''} />
 				</circle>
 			{/each}
-			<circle cx={360 / 2} cy={185} r={180} class="stroke-current text-gray-500" fill="transparent" stroke-width="3" />
-			<circle cx={360 / 2} cy={185} r={72} class="stroke-current text-gray-500" fill="transparent" stroke-width="3" />
+			<!-- <circle cx={360 / 2} cy={185} r={180} class="stroke-current text-gray-500" fill="transparent" stroke-width="3" />
+			<circle cx={360 / 2} cy={185} r={72} class="stroke-current text-gray-500" fill="transparent" stroke-width="3" /> -->
 		</g>
 	</svg>
 </div>

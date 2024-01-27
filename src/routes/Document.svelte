@@ -53,10 +53,10 @@
 
 <div class="flex flex-col items-center p-4 w-full sm:p-0 {official_id=="3/XV-2"? "heropattern-skulls-red-300/50":""}">
 	<div class="flex flex-row flex-wrap mb-2">
-		<div class="rounded-full px-4 py-2 text-sm font-semibold text-gray-700 mr-2 mb-2">
+		<div class="rounded px-4 py-2 text-sm font-semibold text-gray-700 mr-2 mb-2">
 			{tag_1}
 		</div>
-		<div class="rounded-full px-4 py-2 text-sm font-semibold text-gray-700 mr-2 mb-2">
+		<div class="rounded px-4 py-2 text-sm font-semibold text-gray-700 mr-2 mb-2">
 			{tag_2}
 		</div>
 	</div>

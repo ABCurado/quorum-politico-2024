@@ -1,5 +1,5 @@
 
-cat data-08-01.csv | python3 -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))' > db.json 
+cat data-08-01.csv | python3 -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))' > proposals_db.json 
 
         # "PS": "(.*)",
         # "PSD": "(.*)",
