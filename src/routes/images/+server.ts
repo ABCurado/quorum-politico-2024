@@ -1,4 +1,3 @@
-import ConvertApi from 'convertapi';
 import Example from './Example.svelte';
 import Hemicycle from '../Hemicycle.svelte';
 import type { RequestHandler } from '@sveltejs/kit';

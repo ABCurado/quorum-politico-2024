@@ -45,7 +45,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"convertapi": "^1.14.0",
 		"eslint-config-prettier": "^8.5.0",
 		"mixpanel-browser": "^2.47.0",
 		"n3": "^1.17.1",
