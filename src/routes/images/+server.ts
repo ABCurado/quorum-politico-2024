@@ -1,19 +1,17 @@
-import * as resvg from '@resvg/resvg-wasm';
-
-import Document from '../Document.svelte';
+import ConvertApi from 'convertapi';
+import Example from './Example.svelte';
 import Hemicycle from '../Hemicycle.svelte';
 import type { RequestHandler } from '@sveltejs/kit';
-import db from '../proposals/proposals_db.json';
+import fs from 'fs';
 import { html } from 'satori-html';
-// @ts-ignore
 import satori from 'satori';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ url }) => {
-	const result = Hemicycle.render({ ...db[0], random: true });
-	const markup = html(`${result.html}<style>${result.css.code}</style>`);
-	await fetch('https://dev.em-quem-votar-2023.pages.dev/resvg_bg.wasm?module').then((res) => resvg.initWasm(res))
+	
+	const result = Example.render({ random: true });
 
+	const markup = html(`${result.html}<style>${result.css.code}</style>`);
 	const svg = await satori(markup, {
 		fonts: [
 			{
@@ -22,25 +20,37 @@ export const GET: RequestHandler = async ({ url }) => {
 				style: 'normal'
 			}
 		],
-		height: 500,
-		width: 500
+		height: 600,
+		width: 400
 	});
 	try {
-		const resvgJS = new resvg.Resvg(svg, {
-			fitTo: {
-				mode: 'width',
-				value: 1280
+		const body = {
+			Parameters: [
+				{
+					Timeout: 300,
+					Name: 'File',
+					FileValue: {
+						Name: 'share.svg',
+						Data: btoa(svg)
+					}
+				}
+			]
+		};
+
+		const res = await fetch('https://v2.convertapi.com/convert/svg/to/png?Secret=02nOtN0Pm2rT7hnA', {
+			method: 'POST',
+			body: JSON.stringify(body),
+			headers: {
+				'content-type': 'application/json'
 			}
-		});
-		const pngData = resvgJS.render();
-		const pngBuffer = pngData.asPng();
-		return new Response(pngBuffer, {
+		}).then((res) => res.json());
+
+		return new Response(Buffer.from(res.Files[0].FileData, 'base64'), {
 			headers: {
 				'content-type': 'image/png'
 			}
 		});
 	} catch (error) {
-		console.error(error);
 		return new Response(error.message, {
 			status: 500
 		});
