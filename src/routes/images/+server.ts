@@ -5,9 +5,10 @@ import { html } from 'satori-html';
 import satori from 'satori';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export const GET: RequestHandler = async ({ url }) => {
+export const POST: RequestHandler = async ({ request }) => {
+	let body = await request.json();
 	
-	const result = Example.render({ random: true });
+	const result = Example.render({ proximity: body.proximity });
 
 	const markup = html(`${result.html}<style>${result.css.code}</style>`);
 	const svg = await satori(markup, {

@@ -7,20 +7,32 @@
 	export let title = '';
 	export let desc = '';
 	export let hashtags = 'em-quem-votar-2023';
+	export let proximity: { party: string; proximity: number }[] = [];
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	async function navigatorShare() {
-		let response = await fetch("https://dev.em-quem-votar-2023.pages.dev/images")
+		let response = await fetch(
+			"/images",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					proximity: proximity,
+				}),
+			}
+		)
 		let blob = await response.blob();
 		var file = new File([blob], "images.svg", {type: 'image/svg+xml'});
 
 		var filesArray = [file];
-		await window.navigator.share({
-			title: title,
-			files: filesArray,
-			text: `${title} ${desc}`,
-			url: url
-		});
+		// await window.navigator.share({
+		// 	title: title,
+		// 	files: filesArray,
+		// 	text: `${title} ${desc}`,
+		// 	url: url
+		// });
 	}
 </script>
 
