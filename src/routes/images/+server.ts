@@ -1,4 +1,3 @@
-import { Buffer } from 'node:buffer';
 import Example from './Example.svelte';
 import Hemicycle from '../Hemicycle.svelte';
 import type { RequestHandler } from '@sveltejs/kit';
