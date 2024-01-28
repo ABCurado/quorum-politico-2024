@@ -3,14 +3,14 @@
 	import { onMount } from 'svelte';
 
 	let partyColors: { [key: string]: string } = {
-		PCP: 'red-800',
-		BE: 'red-500',
-		L: 'red-700',
-		PAN: 'green-500',
-		IL: 'blue-300',
-		PS: 'pink',
-		PSD: 'orange',
-		CH: 'blue-600'
+		PCP: 'fill-red-800',
+		BE: 'fill-red-500',
+		L: 'fill-red-700',
+		PAN: 'fill-green-500',
+		IL: 'fill-blue-300',
+		PS: 'fill-pink-600',
+		PSD: 'fill-orange-600',
+		CH: 'fill-blue-600'
 	};
 	export let random = false;
 	export let centerText = '';
@@ -67,7 +67,7 @@
 				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
 				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
 
-				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} fill={partyColors[seat[2]]} style="opacity: {maxOpacity};">
+				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
 					<animate
 						attributeName="opacity"
 						dur={random ? '7s' : '10s'}
