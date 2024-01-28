@@ -27,12 +27,12 @@
 		var file = new File([blob], "images.svg", {type: 'image/svg+xml'});
 
 		var filesArray = [file];
-		// await window.navigator.share({
-		// 	title: title,
-		// 	files: filesArray,
-		// 	text: `${title} ${desc}`,
-		// 	url: url
-		// });
+		await window.navigator.share({
+			title: title,
+			files: filesArray,
+			text: `${title} ${desc}`,
+			url: url
+		});
 	}
 </script>
 
