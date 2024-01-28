@@ -24,9 +24,9 @@
 			}
 		)
 		let blob = await response.blob();
-		var file = new File([blob], "images.svg", {type: 'image/svg+xml'});
+		var file = new File([blob], "adn.png", {type: 'image/.png'});
 
-		var filesArray = [file];
+		var filesArray = [file];	
 		await window.navigator.share({
 			title: title,
 			files: filesArray,
