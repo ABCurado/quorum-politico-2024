@@ -2,7 +2,6 @@ import ConvertApi from 'convertapi';
 import Example from './Example.svelte';
 import Hemicycle from '../Hemicycle.svelte';
 import type { RequestHandler } from '@sveltejs/kit';
-import fs from 'fs';
 import { html } from 'satori-html';
 import satori from 'satori';
 
