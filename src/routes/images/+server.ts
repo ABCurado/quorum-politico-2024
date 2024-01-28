@@ -43,8 +43,14 @@ export const GET: RequestHandler = async ({ url }) => {
 				'content-type': 'application/json'
 			}
 		}).then((res) => res.json());
+		var binaryData = atob(res.Files[0].FileData);
 
-		return new Response(Buffer.from(res.Files[0].FileData, 'base64'), {
+		// Now, you can manipulate the binary data as needed, for example, create a Uint8Array
+		var byteArray = new Uint8Array(binaryData.length);
+		for (var i = 0; i < binaryData.length; i++) {
+		  byteArray[i] = binaryData.charCodeAt(i);
+		}
+		return new Response(byteArray, {
 			headers: {
 				'content-type': 'image/png',
 			}
