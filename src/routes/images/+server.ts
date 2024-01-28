@@ -1,3 +1,4 @@
+import { Buffer } from 'node:buffer';
 import Example from './Example.svelte';
 import Hemicycle from '../Hemicycle.svelte';
 import type { RequestHandler } from '@sveltejs/kit';
@@ -45,7 +46,7 @@ export const GET: RequestHandler = async ({ url }) => {
 
 		return new Response(Buffer.from(res.Files[0].FileData, 'base64'), {
 			headers: {
-				'content-type': 'image/png'
+				'content-type': 'image/png',
 			}
 		});
 	} catch (error) {
