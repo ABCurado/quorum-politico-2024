@@ -66,7 +66,7 @@
 
 <div class="flex w-full flex-col items-center bg-gray-50 p-4 sm:p-0">
 	<div class="mb-2 flex flex-row flex-wrap">
-		<div class="mb-2 mr-2 inline-block rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-700">
+		<div class="mb-2 inline-block rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-700">
 			{tag_1}
 		</div>
 	</div>

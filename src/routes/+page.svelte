@@ -172,10 +172,10 @@
 			<Document {...data.db[currentVote]} />
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
-			<div class="left-0 right-0 m-8 flex justify-center space-x-4">
-				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
-				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
-				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
+			<div class="fixed bottom-0 sm:flex left-0 right-0 m-8 flex justify-center space-x-4">
+				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
+				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700 hover:text-gray-200" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
+				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>
 	{/key}
