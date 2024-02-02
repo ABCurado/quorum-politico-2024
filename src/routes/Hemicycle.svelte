@@ -50,7 +50,7 @@
 </script>
 
 <div class="flex flex-col items-center justify-center">
-	<svg class="w-full" viewBox="0 0 355 185" preserveAspectRatio="xMidYMid meet" height={svgHeight}>
+	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" height={svgHeight}>
 		<!-- SVG content here -->
 
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
