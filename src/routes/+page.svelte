@@ -168,11 +168,11 @@
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
-		<div class="mt-5 flex flex-col items-center justify-center px-4 sm:mt-16 sm:px-0">
+		<div class="flex flex-col items-center justify-center px-4 sm:mt-8 sm:px-0">
 			<Document {...data.db[currentVote]} />
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
-			<div class="fixed bottom-0 sm:flex left-0 right-0 m-8 flex justify-center space-x-4">
+			<div class="fixed bottom-0 sm:relative left-0 right-0 m-8 sm:mt-2 flex justify-center space-x-4">
 				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
 				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700 hover:text-gray-200" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
 				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
