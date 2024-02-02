@@ -12,6 +12,8 @@
 	import Welcome from './Welcome.svelte';
 	import TagPicker from './tags/TagPicker.svelte';
 	import PartyInfo from './party/PartyInfo.svelte';
+	import { IconIcons } from '@tabler/icons-svelte';
+	import AboutButton from './AboutButton.svelte';
 
 	export let data;
 	let quizSize: number = data.db.length;
@@ -124,7 +126,7 @@
 		</p> -->
 		<button
 			tabindex="0"
-			class="mb-4 mt-2 cursor-pointer text-center text-xs md:text-sm text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg"
+			class="mb-4 mt-2 cursor-pointer text-center text-xs text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
 			on:click={() => {
 				showPartyInfo = true;
 			}}
@@ -133,7 +135,7 @@
 					showPartyInfo = true;
 				}
 			}}
-		>Descobre mais sobre o partido
+			>Descobre mais sobre o partido
 		</button>
 		<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
 		<BarChart {proximity} />
@@ -158,12 +160,10 @@
 		<div class="m-2 mt-6 flex w-full flex-col gap-3">
 			<p class="text-center">Partilha com amigos e compara as vossas tendências partidárias</p>
 			<div class="flex items-center justify-center gap-3">
-				<SocialShare title="Concordas?" url='https://{data.env?"dev.": ""}em-quem-votar-2023.pages.dev/' desc="O Partido que mais te representa é: {proximity[0].party}" proximity={proximity} />
+				<SocialShare title="Concordas?" url="https://{data.env ? 'dev.' : ''}em-quem-votar-2023.pages.dev/" desc="O Partido que mais te representa é: {proximity[0].party}" {proximity} />
 			</div>
 		</div>
-		<div class="m-4 px-4 sm:px-0">
-			<a href="/about" class="text-lg font-bold text-blue-500 hover:underline">Descobre mais sobre o projeto</a>
-		</div>
+		<AboutButton/>
 	</div>
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
@@ -172,9 +172,13 @@
 			<Document {...data.db[currentVote]} />
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
-			<div class="fixed bottom-0 sm:relative left-0 right-0 m-8 sm:mt-2 flex justify-center space-x-4">
-				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
-				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700 hover:text-gray-200" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
+			<div class="fixed bottom-0 left-0 right-0 m-8 flex justify-center space-x-4 sm:relative sm:mt-2">
+				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}
+					>Aprovar<span class="hidden sm:block">👍</span></button
+				>
+				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700 hover:text-gray-200" id="2" on:click={handleVoteClick}
+					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
+				>
 				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>

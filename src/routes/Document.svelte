@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Modal } from 'flowbite-svelte';
-
+	import { IconHelpHexagonFilled } from '@tabler/icons-svelte';
 	export let title_reduced: string;
 	export let summary_reduced: string;
 	export let counter_reduced: string;
@@ -25,13 +25,14 @@
 			.join('');
 	}
 	function transformBulletsToHTML(text) {
-		return text.split('\n')
-			.map(line => {
+		return text
+			.split('\n')
+			.map((line) => {
 				if (line.startsWith('- ')) {
-						return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
-					} else if (line.endsWith(':')) {
-						return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br><br>`;
-					} else {
+					return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
+				} else if (line.endsWith(':')) {
+					return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br><br>`;
+				} else {
 					return line;
 				}
 			})
@@ -64,36 +65,40 @@
 	</Modal>
 {/if}
 
-<div class="flex w-full mb-12 sm:mb-4 flex-col items-center bg-gray-50 p-4 bg-opacity-80 rounded-3xl sm:p-0 sm:w-8/12 md:w-10/12 lg:w-8/12">
-	<div class="flex w-full flex-col items-center sm:w-8/12 md:w-9/12 lg:w-6/12">
-	<div class="mb-2 mt-6 flex flex-row flex-wrap">
-		<div class="mb-2 inline-block rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-700">
-			{tag_1}
+<div class="mb-12 flex w-full flex-col items-center rounded-3xl bg-gray-50 bg-opacity-80 p-4 sm:mb-4 sm:w-8/12 sm:p-0 md:w-10/12 lg:w-8/12">
+	<div class="flex w-full flex-col items-center sm:w-8/12 md:w-9/12 lg:w-8/12">
+		<div class="mb-2 mt-6 flex flex-row flex-wrap">
+			<div class="mb-2 inline-block rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-700">
+				{tag_1}
+			</div>
 		</div>
-	</div>
-	<div
-		role="button"
-		tabindex="0"
-		class="cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
-		on:click={() => (showInfo = !showInfo)}
-		on:keydown={() => (showInfo = !showInfo)}
-	>
-		{type}
-	</div>
-	<div class="mx-auto max-w-4xl">
-		<h3 class="min-h-12 text-center text-2xl font-bold text-gray-800 mb-2 sm:mb-6 sm:text-4xl">
-			{title_reduced}
+		<div
+			role="button"
+			tabindex="0"
+			class="cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
+			on:click={() => (showInfo = !showInfo)}
+			on:keydown={() => (showInfo = !showInfo)}
+		>
+			{type}
+		</div>
+		<div class="mx-auto max-w-4xl">
+			<h3 class="mb-2 min-h-12 text-center text-2xl font-bold text-gray-800 sm:mb-6 sm:text-4xl">
+				{title_reduced}
+			</h3>
+		</div>
+		<div class="summary-text mb-4 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:p-8 sm:text-lg">
+			{@html transformBulletsToHTML(summary_reduced)}
+		</div>
+
+		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl flex items-center">
+			Riscos e Críticas <a href="https://www.google.com/forms/about/" target="_blank" class="text-gray-400 ml-1"><IconHelpHexagonFilled size={22}/></a>:
 		</h3>
-	</div>
-	<div class="summary-text mb-2 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 sm:p-8 text-base shadow-md sm:text-lg">
-		{@html transformBulletsToHTML(summary_reduced)}
-	</div>
+		<div class="mb-6 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:text-lg">
+			<!-- Your content here -->
 
-	<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">Riscos e Críticas:</h3>
-	<div class="mb-6 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:text-lg">
-		{@html highlightTitles(counter_reduced)}
-	</div>
+			{@html highlightTitles(counter_reduced)}
+		</div>
 
-	<a href={proposal_link} target="_blank" class="text-blue-500 underline text-xs sm:text-base mb-8">Ver documento oficial {official_id} (Votado a {vote_link})</a>
-</div>
+		<a href={proposal_link} target="_blank" class="mb-8 text-xs text-blue-500 underline sm:text-base">Ver documento oficial {official_id} (Votado a {vote_link})</a>
+	</div>
 </div>
