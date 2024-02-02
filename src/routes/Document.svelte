@@ -4,13 +4,13 @@
 	export let title_reduced: string;
 	export let summary_reduced: string;
 	export let counter_reduced: string;
-	
+
 	export let official_id: any;
 	export let proposal_link: string;
 	export let type: string;
 	export let vote_link: string;
 	export let tag_1: string;
-	export let tag_2: string;
+	// export let tag_2: string;
 
 	function highlightTitles(text) {
 		return text
@@ -23,6 +23,19 @@
 				}
 			})
 			.join('');
+	}
+	function transformBulletsToHTML(text) {
+		return text.split('\n')
+			.map(line => {
+				if (line.startsWith('- ')) {
+					return `<li>${line.slice(2)}</li>`;
+				} else if (line.endsWith(':')) {
+						return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br><br>`;
+					} else {
+					return line;
+				}
+			})
+			.join('\n');
 	}
 	const glossary = {
 		Deliberação: 'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
@@ -51,32 +64,32 @@
 	</Modal>
 {/if}
 
-<div class="flex flex-col items-center p-4 w-full sm:p-0 {official_id=="3/XV-2"? "heropattern-skulls-red-300/50":""}">
-	<div class="flex flex-row flex-wrap mb-2">
-		<div class="rounded px-4 py-2 text-sm font-semibold text-gray-700 mr-2 mb-2">
+<div class="flex w-full flex-col items-center bg-gray-50 p-4 sm:p-0">
+	<div class="mb-2 flex flex-row flex-wrap">
+		<div class="mb-2 mr-2 inline-block rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-700">
 			{tag_1}
 		</div>
-		<div class="rounded px-4 py-2 text-sm font-semibold text-gray-700 mr-2 mb-2">
-			{tag_2}
-		</div>
 	</div>
-	<div class="max-w-4xl mx-auto">
-		<h3 class="text-xl sm:text-3xl min-h-12 font-bold text-center">
-			<span
-				role="button"
-				tabindex="0"
-				class="underline text-gray-600 cursor-pointer decoration-dashed decoration-2 decoration-slate-400 hover:decoration-slate-600 underline-offset-2"
-				on:click={() => (showInfo = !showInfo)}
-				on:keydown={() => (showInfo = !showInfo)}>{type}</span
-			>: {title_reduced}
+	<div
+		role="button"
+		tabindex="0"
+		class="cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
+		on:click={() => (showInfo = !showInfo)}
+		on:keydown={() => (showInfo = !showInfo)}
+	>
+		{type}
+	</div>
+	<div class="mx-auto max-w-4xl">
+		<h3 class="min-h-12 text-center text-2xl font-bold text-gray-800 sm:text-4xl">
+			{title_reduced}
 		</h3>
 	</div>
-	<div class="text-base sm:text-lg mb-2 min-h-52 w-full max-w-4xl p-4 rounded-lg summary-text">
-		{summary_reduced}
+	<div class="summary-text mb-2 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:text-lg">
+		{@html transformBulletsToHTML(summary_reduced)}
 	</div>
 
-	<h3 class="text-l sm:text-xl mb-2 font-semibold">Riscos e Críticas:</h3>
-	<div class="text-base sm:text-lg mb-6 min-h-52 w-full max-w-4xl p-4">
+	<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">Riscos e Críticas:</h3>
+	<div class="mb-6 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:text-lg">
 		{@html highlightTitles(counter_reduced)}
 	</div>
 
