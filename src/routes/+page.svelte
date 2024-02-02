@@ -11,12 +11,17 @@
 	import VoteResults from './VoteResults.svelte';
 	import Welcome from './Welcome.svelte';
 	import TagPicker from './tags/TagPicker.svelte';
+	import PartyInfo from './party/PartyInfo.svelte';
+	import { IconIcons } from '@tabler/icons-svelte';
+	import AboutButton from './AboutButton.svelte';
 
 	export let data;
 	let quizSize: number = data.db.length;
 
 	let showToast: boolean = false;
 	let showCategoriesPicker: boolean = false;
+	let showPartyInfo: boolean = false;
+
 	let readInstructions = false;
 	let selectedTags = [];
 
@@ -109,30 +114,38 @@
 </Toast>
 
 {#if !readInstructions}
-	<div class="absolute mx-auto w-full z-20 flex items-center justify-center">
+	<div class="absolute z-20 mx-auto flex w-full items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
-	<div class="flex flex-col justify-center items-center px-4 sm:px-0 min-h-screen">
+	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
 		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
-		<h1 class="text-center text-4xl sm:text-6xl mb-8">Concordas?</h1>
-		<p class="text-center text-base sm:text-lg mb-4">
-			O partido com que mais te identificas é: <strong>{proximity[0].party}</strong>
-		</p>
+		<!-- <h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1> -->
+		<!-- <p class="mb-1 mt-4 text-center text-base sm:text-lg">
+			Tens uma proximidade de <span class="font-bold">{Number(proximity[0].proximity.toFixed(2)) * 100}%</span> com o partido{' '}
+		</p> -->
+		<button
+			tabindex="0"
+			class="mb-4 mt-2 cursor-pointer text-center text-xs text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
+			on:click={() => {
+				showPartyInfo = true;
+			}}
+			on:keydown={(event) => {
+				if (event.key === 'Enter') {
+					showPartyInfo = true;
+				}
+			}}
+			>Descobre mais sobre o partido
+		</button>
+		<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
 		<BarChart {proximity} />
-		<div class="w-full flex flex-col gap-3 m-2 mt-6">
-			<p class="text-center">Partilha com amigos e compara as vossas tendências partidárias</p>
-			<div class="flex items-center justify-center gap-3">
-				<SocialShare title="Concordas?" url="https://em-quem-votar-2023.pages.dev/" desc="O Partido que mais te representa é: {proximity[0].party}" />
-			</div>
-		</div>
-
-		<VoteResults vote_proposals={data.db} />
 		<OthersResults />
-		<div class="flex flex-col justify-center items-center mt-4 px-4 sm:px-0">
-			<p class="text-center text-base sm:text-lg mb-4">Se o resultado não foi o que esperavas, ...</p>
+		<VoteResults vote_proposals={data.db} />
+
+		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0">
+			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas, ...</p>
 			<button
-				class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full mb-4"
+				class="mb-4 rounded bg-green-500 px-6 py-3 font-bold text-white hover:bg-green-700"
 				on:click={() => {
 					showCategoriesPicker = true;
 				}}
@@ -142,24 +155,31 @@
 			{#if showCategoriesPicker}
 				<TagPicker bind:show={showCategoriesPicker} bind:selectedTags onButtonClick={getNewQuiz} />
 			{/if}
+		</div>
 
-			<!-- Buttons to share the results in social media -->
+		<div class="m-2 mt-6 flex w-full flex-col gap-3">
+			<p class="text-center">Partilha com amigos e compara as vossas tendências partidárias</p>
+			<div class="flex items-center justify-center gap-3">
+				<SocialShare title="Concordas?" url="https://{data.env ? 'dev.' : ''}em-quem-votar-2023.pages.dev/" desc="O Partido que mais te representa é: {proximity[0].party}" {proximity} />
+			</div>
 		</div>
-		<div class="m-4 px-4 sm:px-0">
-			<a href="/about" class="text-blue-500 hover:underline font-bold text-lg">Descobre mais sobre o projeto</a>
-		</div>
+		<AboutButton/>
 	</div>
 {:else}
-	<div class="loading h-2 sm:h-4 bg-teal-500 transition-all duration-200 absolute z-40 top-0 opacity-50" style="width: {(currentVote / quizSize) * 100}%" />
+	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
-		<div class="flex flex-col justify-center items-center mt-5 sm:mt-16 px-4 sm:px-0">
+		<div class="flex flex-col items-center justify-center px-4 sm:mt-8 sm:px-0">
 			<Document {...data.db[currentVote]} />
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
-			<div class="left-0 right-0 flex justify-center space-x-4 m-8">
-				<button class="bg-green-400 hover:bg-green-700 text-gray-700 font-bold py-1 px-4 rounded-xl" id="1" on:click={handleVoteClick}>Aprovar<span class="hidden sm:block">👍</span></button>
-				<button class="bg-gray-400 hover:bg-gray-700 text-gray-700 font-bold px-4 rounded-xl" id="2" on:click={handleVoteClick}>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button>
-				<button class="bg-red-400 hover:bg-red-700 text-gray-700 font-bold px-4 rounded-xl" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
+			<div class="fixed bottom-0 left-0 right-0 m-8 flex justify-center space-x-4 sm:relative sm:mt-2">
+				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}
+					>Aprovar<span class="hidden sm:block">👍</span></button
+				>
+				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700 hover:text-gray-200" id="2" on:click={handleVoteClick}
+					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
+				>
+				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>
 	{/key}
