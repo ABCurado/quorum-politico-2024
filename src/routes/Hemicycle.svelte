@@ -44,7 +44,7 @@
 
 	onMount(() => {
 		if (window.innerWidth >= 768) {
-			svgHeight = 350;
+			svgHeight = 385;
 		}
 	});
 </script>
