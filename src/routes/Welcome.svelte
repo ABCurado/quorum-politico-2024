@@ -16,8 +16,9 @@
 		<!-- <h1 class="text-center text-4xl mb-4">Descobre em quem votar</h1> -->
 		<!--Olá! Bem-vindo ao <strong>Concordas?</strong>, um jogo que te permite descobrir em quem votar nas próximas eleições. O jogo é baseado nas votaçõoes que aconteceram no parlamento europeu de 2022-2023. -->
 
-		<h1 class="text-center text-4xl mb-4"><strong>ADN Político</strong> - Descobre que partido melhor te representa.</h1>
-		<p class="text-center text sm:text-base mb-4">Defende os <strong>teus</strong> interesses no parlamento. Sê o teu próprio representante partidário.</p>
+		<h1 class="text-center text-4xl mb-4"><strong>ADN Político</strong>: descobre que partido melhor te representa.</h1>
+		<p class="text-center text sm:text-base mb-4">Sê o teu próprio representante partidário e vota diretamente nas propostas parlamentares. Confia Joca, não é mais um quiz ou bússola política.</p>
+		
 		<!-- {#key ticker} -->
 		<Hemicycle centerText="" random={true} />
 		<!-- {/key} -->
@@ -27,15 +28,15 @@
 			<ul>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
-					<span class="ml-2">Lê o sumário, riscos e críticas de cada proposta que te é apresentada.</span>
+					<span class="ml-2">Lê a <strong>motivação, riscos e críticas</strong> de cada proposta que te é apresentada.</span>
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
-					<span class="ml-2">Decide se és a favor, contra ou simplesmente abstem-te.</span>
+					<span class="ml-2">Decide se és a <strong>favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstem-te</strong>.</span>
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
-					<span class="ml-2">No final, dizemos-te que partido melhor te representou.</span>
+					<span class="ml-2">No final, <strong>ignoramos todas a promessas partidárias</strong> e dizemos-te que <strong>partido realmente te representou</strong>.</span>
 				</li>
 			</ul>
 		</div>
