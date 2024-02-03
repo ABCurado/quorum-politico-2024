@@ -36,7 +36,7 @@
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
-					<span class="ml-2">No final, (ignorando todas a promessas partidárias) dizemos-te que <strong>partido realmente te representou</strong>.</span>
+					<span class="ml-2">No final, (ignorando promessas partidárias) dizemos-te que <strong>partido realmente te representou</strong>.</span>
 				</li>
 			</ul>
 		</div>
