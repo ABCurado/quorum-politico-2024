@@ -113,7 +113,7 @@
 					},
 					title: {
 						display: false,
-						text: 'Resultados das votações'
+						text: 'Compara-te com as votações parlamentares'
 					}
 				},
 				responsive: true,
