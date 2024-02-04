@@ -26,14 +26,14 @@
 								Podes também explorar os documentos oficiais de cada proposta e como cada partido votou nas propostas em que votaste.</p>
 			<p class="mt-2 text-lg text-gray-700">No total recolhemos 62 propostas parlamentares apresentadas desde Janeiro de 2023 (considerando sempre a versão mais recente). 
 								Consideramos 3 fatores na seleção das propostas: unanimidade (se uma proposta for unânime, não contribui para distinção das posições de cada partido, por isso temos apenas propostas em que pelo menos 1 partido diverge no voto); uniformidade (tentamos garantir representatividade de propostas de todos os espetros partidários e de vários temas relevantes); simplicidade (eliminamos propostas demasiado técnicas e que uma pessoa normal não iria ter interesse de investigar e interagir em tempo útil).
-								Cada voto coincidente (tu votas a favor e partido vota a favor) resulta numa correlação de 100%. Cada voto totalmente divergente (tu votas contra e partido a favor) resulta em 0% de correlação. Cada abstenção conta como correlação parcial a cada voto a favor (ex: abstenção tua e partido está a favor ou partido abstêm-se e tu votas a favor).
-								Disclaimer típico: não precisas de criar conta e não guardamos nenhuns dados pessoais.</p>
+								Cada voto coincidente (tu votas a favor e partido vota a favor) resulta numa correlação de 100%. Cada voto totalmente divergente (tu votas contra e partido a favor) resulta em 0% de correlação. Cada abstenção conta como correlação parcial a cada voto a favor (ex: abstenção tua e partido está a favor ou partido abstêm-se e tu votas a favor).</p>
+			<p class="mt-2 text-lg text-gray-700">Não precisas de criar conta e não guardamos nenhuns dados pessoais..</p>
 			<p class="mt-2 text-lg text-gray-700">Todo o código de base deste projeto está no nosso <a href="https://github.com/ABCurado/em-quem-votar-2023" target="_blank"><u>repositório do GitHub</u></a>.</p>
 		</div>
 	</div>
 
-	<div class="mt-8 space-y-4">6
-		<h2 class="text-2xl font-bold text-gray-700">limitações:</h2>
+	<div class="mt-8 space-y-4">
+		<h2 class="text-2xl font-bold text-gray-700">Limitações:</h2>
 		<ul class="mt-4 list-inside list-disc space-y-2 text-lg text-gray-700">
 			<li>Votos contra dos partidos nem sempre se prendem com divergências com a motivação da proposta em si, mas sim em alguma discordância no plano de implementação ou salvaguardas legislativas que acham necessárias. Isto pode levar a que alguns votos não sigam a doutrina ideológica do partido.</li>
 			<li>Riscos e críticas foram maioritariamente construídos por nós. Apesar de apartidários, podem refletir algum enviesamento.</li>
