@@ -37,7 +37,7 @@
 
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Quem somos?</h2>
-		<p class="text-lg text-gray-700">Insert texto Tiago a esquerda + Linkedin's pessoais?</p>
+		<p class="text-lg text-gray-700"><a href="https://twitter.com/tiagomfurtado">twitter.com/tiagomfurtado</a></p>
 	</div>
 
 	<div class="mt-8 space-y-4">
