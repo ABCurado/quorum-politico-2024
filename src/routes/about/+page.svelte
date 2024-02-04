@@ -37,7 +37,9 @@
 
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Quem somos?</h2>
-		<p class="text-lg text-gray-700"><a href="https://twitter.com/tiagomfurtado">twitter.com/tiagomfurtado</a></p>
+		<p class="text-lg text-gray-700"><a href="https://twitter.com/ab_curado" target="_blank">twitter.com/ab_curado</a></p>
+		<p class="text-lg text-gray-700"><a href="https://twitter.com/RicardoPinho96" target="_blank">twitter.com/RicardoPinho96</a></p>
+		<p class="text-lg text-gray-700"><a href="https://twitter.com/tiagomfurtado" target="_blank">twitter.com/tiagomfurtado</a></p>
 	</div>
 
 	<div class="mt-8 space-y-4">
