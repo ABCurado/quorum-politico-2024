@@ -32,7 +32,7 @@
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
-					<span class="ml-2">Decide se és a <strong>favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstem-te</strong>.</span>
+					<span class="ml-2">Decide se és a <strong>favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstém-te</strong>.</span>
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
