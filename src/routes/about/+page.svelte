@@ -8,12 +8,10 @@
 <div class="relative mx-auto w-10/12 space-y-8 py-3 sm:mx-auto">
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">ADN Político:</h2>
-		<div class="space-y-2">
-			<p class="mt-2 text-lg text-gray-700">Iniciativa apartidária para votares diretamente em propostas parlamentares e perceberes que partido melhor te representa. 
-								Ignoramos agendas políticas e partidárias, o que se diz em entrevistas e o que se promete em programas eleitoriais. 
-								Queremos avaliar objetivamente como cada partido utiliza o seu poder de voto.
-								Queremos contribuir para interações políticas menos populistas e polarizadas melhorando a transparência sobre a atividade parlamentar.</p>
-		</div>
+		<ul class="mt-4 list-inside list-disc space-y-2 text-lg text-gray-700">
+			<li>Iniciativa apartidária para votares diretamente em propostas parlamentares e perceberes que partido melhor te representa.</li>
+			<li>Ignoramos agendas políticas e partidárias, o que se diz em entrevistas e o que se promete em programas eleitoriais. Queremos avaliar objetivamente como cada partido utiliza o seu poder de voto.</li>
+		</ul>
 	</div>
 
 	<div class="space-y-4">
