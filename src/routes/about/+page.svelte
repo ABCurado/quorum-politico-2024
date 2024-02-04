@@ -11,10 +11,8 @@
 		<div class="space-y-2">
 			<p class="mt-2 text-lg text-gray-700">Iniciativa/Ferramenta apartidaria</p>
 			<p class="mt-2 text-lg text-gray-700">Entender semelhanças entre perfil político pessoal e a realidade das agendas dos partidos (tendência de voto)</p>
-			<p class="mt-2 text-lg text-gray-700">
-				Explicar o conceito de Plebiscito - porque é literalmente o que estamos a fazer, a simular uma "Democracia Direta" ao transferir o poder de voto do representante (deputado/partido) para o
-				eleitor.
-			</p>
+			<p class="mt-2 text-lg text-gray-700">Explicar o conceito de Plebiscito - porque é literalmente o que estamos a fazer, a simular uma "Democracia Direta" ao transferir o poder de voto do representante (deputado/partido) para o
+				eleitor.</p>
 			<p class="mt-2 text-lg text-gray-700">Dicotomia entre o fácil e rápido acesso a informação hoje, mas dificuldade em "digerir" facilmente a informação Política em PT</p>
 			<p class="mt-2 text-lg text-gray-700">Consiste na simulação de voto em 15 medidas apresentadas na AR, com possibilidade de repetição personalizando os assuntos de voto</p>
 			<p class="mt-2 text-lg text-gray-700">(Link para o repositório de perguntas / open source code) -> acho importante abrir isto (perguntas, contra argumentos, tags, etc...)</p>
