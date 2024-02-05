@@ -89,7 +89,7 @@ function transformBulletsToHTML(text) {
 		<div
 			role="button"
 			tabindex="0"
-			class="cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
+			class="cursor-pointer mb-4 text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
 			on:click={() => (showInfo = !showInfo)}
 			on:keydown={() => (showInfo = !showInfo)}
 		>
@@ -106,9 +106,19 @@ function transformBulletsToHTML(text) {
 		</div>
 
 
+/*		 
 		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl flex items-center">
 			Riscos e Críticas <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="text-gray-400 ml-1">
 						<IconHelpHexagonFilled size={22}/></a>:
+		</h3>
+*/
+
+		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl flex items-center">
+		    	Riscos e Críticas:  <br> <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="text-gray-400 ml-1">
+		       				 <IconHelpHexagonFilled size={22}/>
+		        <br> <!-- Line break after the icon -->
+		        <span class="ml-1 text-sm">Esquecemo-nos de algum?</span>
+		    </a>
 		</h3>
 
 
