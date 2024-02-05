@@ -107,9 +107,9 @@ function transformBulletsToHTML(text) {
 
 
 		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl flex items-center">
-			Riscos e Críticas <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="text-gray-400 ml-1">
-						<IconHelpHexagonFilled size={22}/></a>:
-						<span class="text-sm ml-1">Esquecemo-nos de algum? Clica aqui</span>
+			Riscos e Críticas: <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="text-gray-400 ml-1">
+						<IconHelpHexagonFilled size={22}/>
+						<span class="text-sm ml-1">Esquecemo-nos de algum? Ajuda-nos aqui!</span></a>
 		</h3>
 
 
