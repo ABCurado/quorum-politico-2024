@@ -19,8 +19,8 @@
 				if (/^\d+\./.test(point)) {
 					return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
 				} else {
-					/* return `<p>${point}</p><br>`; */
-					 return `<p>${point}</p>${index < array.length - 1 ? '<br>' : ''}`;
+					 return `<p>${point}</p><br>`; 
+					/* return `<p>${point}</p>${index < array.length - 1 ? '<br>' : ''}`; */
 				}
 			})
 			.join('');
@@ -105,11 +105,10 @@ function transformBulletsToHTML(text) {
 			{@html transformBulletsToHTML(summary_reduced)}
 		</div>
 
-		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl flex items-center">
+		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">
 		    Riscos e Críticas 
 		    <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="text-gray-400 ml-1">
-		        <IconHelpHexagonFilled size={22}/>
-		        <br> <!-- Line break after the icon -->
+		        <br> <!-- Line break -->
 		        <span class="ml-1 text-sm">Esquecemo-nos de algum? Contribui aqui</span>
 		    </a>:
 		</h3>
