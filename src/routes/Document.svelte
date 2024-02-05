@@ -13,22 +13,6 @@
 	// export let tag_2: string;
 
 
-/*
-	function highlightTitles(text) {
-		return text
-			.split('\n')
-			.map((point) => {
-				if (/^\d+\./.test(point)) {
-					return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
-				} else {
-					   return `<p>${point}</p><br>`; 
-					/*   return `<p>${point}</p>${index < array.length - 1 ? '<br>' : ''}`;  */
-				}
-			})
-			.join('');
-	}
-*/
-
 	function highlightTitles(text) {
 		  return text
 		    	.split('\n')
