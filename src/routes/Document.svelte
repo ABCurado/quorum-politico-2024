@@ -30,16 +30,20 @@
 			.map((line) => {
 				if (line.startsWith('- ')) {
 					return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
-				} /* else if (line.endsWith(':')) {
-					return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br><br>`;
-				} */ else {
+				} 
+/* else if (line.endsWith(':')) {
+return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br><br>`;
+} */ 
+
+				else {
 					return line;
 				}
 			})
 			.join('\n');
 	}
 	const glossary = {
-		Deliberação (carrega para mais info): 'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
+		'Deliberação (carrega para mais info)': 
+			'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
 		'Moção de Censura (carrega para mais info)':
 			'Instrumento de fiscalização típico de sistemas em que o Governo é responsável perante o Parlamento, visa reprovar a execução do Programa do Governo ou a gestão de assunto de relevante interesse nacional. Pode ser apresentada por um quarto dos Deputados em efetividade de funções ou por qualquer grupo parlamentar. A sua aprovação requer a maioria absoluta dos Deputados em efetividade de funções (número de votos superior a metade dos Deputados em efetividade de funções) e provoca a demissão do Governo.',
 		'Projeto de Lei (carrega para mais info)':
