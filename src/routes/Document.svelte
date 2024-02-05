@@ -94,7 +94,7 @@ function transformBulletsToHTML(text) {
 			on:keydown={() => (showInfo = !showInfo)}
 		>
 			{type}
-			<p style="display: inline;">(ver mais info)</p>
+			<p style="display: inline;">(ver mais info)</p><br>
 		</div>
 		<div class="mx-auto max-w-4xl">
 			<h3 class="mb-2 min-h-12 text-center text-2xl font-bold text-gray-800 sm:mb-6 sm:text-4xl">
