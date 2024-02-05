@@ -19,7 +19,8 @@
 				if (/^\d+\./.test(point)) {
 					return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
 				} else {
-					return `<p>${point}</p>`;
+					return `<p>${point}</p><br>`;
+					/* return `<p>${point}</p>${index < array.length - 1 ? '<br>' : ''}`; */
 				}
 			})
 			.join('');
@@ -53,7 +54,7 @@ function transformBulletsToHTML(text) {
 	const glossary = {
 		'Deliberação': 
 			'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
-		'Moção de Censura':
+		'Moção de censura':
 			'Instrumento de fiscalização típico de sistemas em que o Governo é responsável perante o Parlamento, visa reprovar a execução do Programa do Governo ou a gestão de assunto de relevante interesse nacional. Pode ser apresentada por um quarto dos Deputados em efetividade de funções ou por qualquer grupo parlamentar. A sua aprovação requer a maioria absoluta dos Deputados em efetividade de funções (número de votos superior a metade dos Deputados em efetividade de funções) e provoca a demissão do Governo.',
 		'Projeto de Lei':
 			'Iniciativa legislativa apresentada por qualquer Deputado, pelo grupo parlamentar ou ainda por grupos de cidadãos eleitores sobre matéria da competência legislativa da Assembleia da República. Não são admitidos nem projetos que infrinjam a Constituição ou os princípios nela consignados e não definam concretamente o sentido das modificações a introduzir na ordem legislativa, nem projetos de lei que envolvam, no ano económico em curso, aumento das despesas ou diminuição das receitas do Estado previstas no Orçamento.',
