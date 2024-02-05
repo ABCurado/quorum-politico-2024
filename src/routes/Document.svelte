@@ -39,21 +39,21 @@
 			.join('\n');
 	}
 	const glossary = {
-		Deliberação: 'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
-		'Moção de Censura':
+		Deliberação (carrega para mais info): 'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
+		'Moção de Censura (carrega para mais info)':
 			'Instrumento de fiscalização típico de sistemas em que o Governo é responsável perante o Parlamento, visa reprovar a execução do Programa do Governo ou a gestão de assunto de relevante interesse nacional. Pode ser apresentada por um quarto dos Deputados em efetividade de funções ou por qualquer grupo parlamentar. A sua aprovação requer a maioria absoluta dos Deputados em efetividade de funções (número de votos superior a metade dos Deputados em efetividade de funções) e provoca a demissão do Governo.',
-		'Projeto de Lei':
+		'Projeto de Lei (carrega para mais info)':
 			'Iniciativa legislativa apresentada por qualquer Deputado, pelo grupo parlamentar ou ainda por grupos de cidadãos eleitores sobre matéria da competência legislativa da Assembleia da República. Não são admitidos nem projetos que infrinjam a Constituição ou os princípios nela consignados e não definam concretamente o sentido das modificações a introduzir na ordem legislativa, nem projetos de lei que envolvam, no ano económico em curso, aumento das despesas ou diminuição das receitas do Estado previstas no Orçamento.',
-		'Projeto de Resolução': 'Destinado a regular as matérias da competência privativa da Assembleia e as de caráter político, processual, legislativo ou administrativo.',
-		'Reapreciação de Decreto':
+		'Projeto de Resolução (carrega para mais info)': 'Destinado a regular as matérias da competência privativa da Assembleia e as de caráter político, processual, legislativo ou administrativo.',
+		'Reapreciação de Decreto (carrega para mais info)':
 			'O decreto que seja objecto de reformulação ou de expurgo das normas inconstitucionais pode, se a Assembleia assim o deliberar, voltar à comissão parlamentar competente para efeito de redacção final.',
-		'Votação Final na Especialidade Global':
+		'Votação Final na Especialidade Global (carrega para mais info)':
 			'Fase do processo de tramitação das iniciativas legislativas a seguir à sua aprovação na generalidade. O debate na especialidade é feito, em regra, na comissão competente em razão da matéria, versa sobre cada artigo, ou mais de um artigo simultaneamente. A requerimento de, pelo menos, 10 Deputados ou de um grupo parlamentar, pode o Plenário deliberar chamar a si a votação na especialidade. Há matérias que são obrigatoriamente votadas na especialidade em Plenário.',
-		'Votação na Generalidade':
+		'Votação na Generalidade (carrega para mais info)':
 			'Fase do processo de tramitação das iniciativas legislativas em que a discussão incide sobre os princípios e o sistema de cada projeto ou proposta de lei. O debate e a votação na generalidade decorrem no Plenário no prazo de 18 reuniões plenárias a contar da aprovação do parecer da comissão competente.',
-		'Voto de Saudação':
+		'Voto de Saudação (carrega para mais info)':
 			'Manifestação de congratulação, protesto, condenação, saudação, solidariedade, preocupação ou pesar que pode ser proposta pela Mesa, pelos grupos parlamentares ou por Deputados. A discussão e votação dos projetos de voto apresentados pelo Presidente da Assembleia da República são feitas, em regra, no início de cada período regimental de votações, dispondo cada grupo parlamentar de dois minutos e cada Deputado único representante de um partido de um minuto para uso da palavra.',
-		'Voto de Solidariedade':
+		'Voto de Solidariedade (carrega para mais info)':
 			'Manifestação de congratulação, protesto, condenação, saudação, solidariedade, preocupação ou pesar que pode ser proposta pela Mesa, pelos grupos parlamentares ou por Deputados. A discussão e votação dos projetos de voto apresentados pelo Presidente da Assembleia da República são feitas, em regra, no início de cada período regimental de votações, dispondo cada grupo parlamentar de dois minutos e cada Deputado único representante de um partido de um minuto para uso da palavra.'
 	};
 	let showInfo = false;
