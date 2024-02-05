@@ -36,7 +36,11 @@
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
-					<span class="ml-2">No final, (ignorando promessas partidárias) dizemos-te que <strong>partido realmente te representou</strong>.</span>
+					<span class="ml-2">No final, (estimamos que demores 15 minutos, aproximadamente um por pergunta) dizemos-te que <strong>partido realmente te representou</strong>.</span>
+				</li>
+				<li class="ml-3 flex items-center">
+					<IconCheckbox size={16} stroke={3} color="green" />
+					<span class="ml-2">Fica descansado, não guardamos quaisquer dados! Podes, no entanto, ajudar-nos ao partilhar com os teus amigos!</span>
 				</li>
 			</ul>
 		</div>
