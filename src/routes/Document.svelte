@@ -19,8 +19,8 @@
 				if (/^\d+\./.test(point)) {
 					return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
 				} else {
-					/* return `<p>${point}</p><br>`; */
-					   return `<p>${point}</p>${index < array.length - 1 ? '<br>' : ''}`; 
+					   return `<p>${point}</p><br>`; 
+					/*   return `<p>${point}</p>${index < array.length - 1 ? '<br>' : ''}`;  */
 				}
 			})
 			.join('');
