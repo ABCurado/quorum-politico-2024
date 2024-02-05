@@ -94,7 +94,7 @@ function transformBulletsToHTML(text) {
 			on:keydown={() => (showInfo = !showInfo)}
 		>
 			{type}
-			<p style="display: inline;">(ver mais info)</p><br>
+			<p style="display: inline;">(ver mais info)</p>
 		</div>
 		<div class="mx-auto max-w-4xl">
 			<h3 class="mb-2 min-h-12 text-center text-2xl font-bold text-gray-800 sm:mb-6 sm:text-4xl">
@@ -105,13 +105,12 @@ function transformBulletsToHTML(text) {
 			{@html transformBulletsToHTML(summary_reduced)}
 		</div>
 
-		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">
-		    Riscos e Críticas 
-		    <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="text-gray-400 ml-1">
-		        <br> <!-- Line break -->
-		        <span class="ml-1 text-sm">Esquecemo-nos de algum? Contribui aqui</span>
-		    </a>:
+
+		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl flex items-center">
+			Riscos e Críticas <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="text-gray-400 ml-1">
+						<IconHelpHexagonFilled size={22}/></a>:
 		</h3>
+
 
 		<div class="mb-6 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:text-lg">
 			<!-- Your content here -->
