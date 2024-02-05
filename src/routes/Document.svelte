@@ -24,23 +24,27 @@
 			})
 			.join('');
 	}
-	function transformBulletsToHTML(text) {
-		return text
-			.split('\n')
-			.map((line) => {
-				if (line.startsWith('- ')) {
-					return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
-				} 
- else if (line.endsWith(':')) {
-return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br><br>`;
-} 
 
-				else {
-					return line;
-				}
-			})
-			.join('\n');
-	}
+function transformBulletsToHTML(text) {
+    return text
+        .split('\n')
+        .map((line) => {
+            // Check if the line starts with '- '
+            if (line.startsWith('- ')) {
+                // If true, transform the line into an HTML list item
+                return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
+            } 
+            // Removed the else if logic for lines ending with ':'
+            else {
+                return line;
+            }
+        })
+        // Join the lines back together with line breaks
+        .join('\n');
+}
+
+
+
 	const glossary = {
 		'Deliberação': 
 			'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
@@ -65,8 +69,10 @@ return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br
 
 {#if showInfo}
 	<Modal title={type} bind:open={showInfo} autoclose outsideclose size="xs">
-		{@html glossary[type]}
+		
 		<p>(ver mais info)</p>
+		{@html glossary[type]}
+		
 	</Modal>
 {/if}
 
