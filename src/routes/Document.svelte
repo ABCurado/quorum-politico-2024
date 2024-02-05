@@ -37,7 +37,7 @@ function transformBulletsToHTML(text) {
             } 
             // Add a line break after lines ending with ':'
             else if (line.endsWith(':')) {
-                return `${line}<br>`;
+                return `${line}<br><br>`;
             }
             // If the line does not start with '- ' or end with ':', return it unchanged
             else {
@@ -93,7 +93,7 @@ function transformBulletsToHTML(text) {
 			on:keydown={() => (showInfo = !showInfo)}
 		>
 			{type}
-			<p>(ver mais info)</p>
+			<p style="display: inline;">(ver mais info)</p>
 		</div>
 		<div class="mx-auto max-w-4xl">
 			<h3 class="mb-2 min-h-12 text-center text-2xl font-bold text-gray-800 sm:mb-6 sm:text-4xl">
