@@ -25,6 +25,7 @@
 			.join('');
 	}
 
+
 function transformBulletsToHTML(text) {
     return text
         .split('\n')
@@ -34,7 +35,11 @@ function transformBulletsToHTML(text) {
                 // If true, transform the line into an HTML list item
                 return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
             } 
-            // Removed the else if logic for lines ending with ':'
+            // Add a line break after lines ending with ':'
+            else if (line.endsWith(':')) {
+                return `${line}<br>`;
+            }
+            // If the line does not start with '- ' or end with ':', return it unchanged
             else {
                 return line;
             }
@@ -69,10 +74,7 @@ function transformBulletsToHTML(text) {
 
 {#if showInfo}
 	<Modal title={type} bind:open={showInfo} autoclose outsideclose size="xs">
-		
-		<p>(ver mais info)</p>
 		{@html glossary[type]}
-		
 	</Modal>
 {/if}
 
@@ -91,6 +93,7 @@ function transformBulletsToHTML(text) {
 			on:keydown={() => (showInfo = !showInfo)}
 		>
 			{type}
+			<p>(ver mais info)</p>
 		</div>
 		<div class="mx-auto max-w-4xl">
 			<h3 class="mb-2 min-h-12 text-center text-2xl font-bold text-gray-800 sm:mb-6 sm:text-4xl">
