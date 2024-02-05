@@ -30,9 +30,9 @@
 			.map((line) => {
 				if (line.startsWith('- ')) {
 					return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
-				} else if (line.endsWith(':')) {
+				} /* else if (line.endsWith(':')) {
 					return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br><br>`;
-				} else {
+				} */ else {
 					return line;
 				}
 			})
