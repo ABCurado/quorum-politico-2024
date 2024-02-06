@@ -17,7 +17,7 @@
 		<!--Olá! Bem-vindo ao <strong>Concordas?</strong>, um jogo que te permite descobrir em quem votar nas próximas eleições. O jogo é baseado nas votaçõoes que aconteceram no parlamento europeu de 2022-2023. -->
 
 		<h1 class="text-center text-4xl mb-4"><strong>ADN Político</strong>: descobre que partido melhor te representa.</h1>
-		<p class="text-center text sm:text-base mb-4">Juro Joca, não é mais um quiz político. Sê o teu próprio representante partidário e <strong>vota diretamente nas propostas parlamentares</strong>.</p>
+		<p class="text-center text sm:text-base mb-4">Não é só mais um quiz político. Sê o teu próprio representante partidário e <strong>vota diretamente nas propostas parlamentares</strong>.</p>
 		
 		<!-- {#key ticker} -->
 		<Hemicycle centerText="" random={true} />
