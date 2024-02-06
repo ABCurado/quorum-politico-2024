@@ -40,7 +40,7 @@
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
-					<span class="ml-2">Fica descansado, não guardamos quaisquer dados! Podes, no entanto, ajudar-nos ao partilhar com os teus amigos!</span>
+					<span class="ml-2">Não guardamos quaisquer dados pessoais.</span>
 				</li>
 			</ul>
 		</div>
