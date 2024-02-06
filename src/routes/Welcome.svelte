@@ -45,14 +45,14 @@
 			</ul>
 		</div>
 		<button
-			class="rounded bg-green-400 px-3 py-3 font-bold text-white hover:bg-green-700 sm:px-4"
+			class="rounded bg-green-400 px-3 py-3 font-bold mb-4 text-white hover:bg-green-700 sm:px-4"
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0, 0);
 			}}>Entra na Assembleia</button
 		>
 
-		<p class="text-center text sm:text-base mb-4">Demora ~15min</p>
+		<p class="text-center text sm:text-base mb-4 text-gray-700">Demora ~15min</p>
 
 		<AboutButton />
 	</div>
