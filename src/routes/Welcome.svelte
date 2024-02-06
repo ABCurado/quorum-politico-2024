@@ -36,7 +36,7 @@
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
-					<span class="ml-2">No final, (estimamos que demores 15 minutos, aproximadamente um por pergunta) dizemos-te que <strong>partido realmente te representou</strong>.</span>
+					<span class="ml-2">No final, dizemos-te que <strong>partido realmente te representou</strong>.</span>
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} color="green" />
@@ -51,6 +51,9 @@
 				window.scrollTo(0, 0);
 			}}>Entra na Assembleia</button
 		>
+
+		<p class="text-center text sm:text-base mb-4">Demora ~15min</p>
+
 		<AboutButton />
 	</div>
 {/if}
