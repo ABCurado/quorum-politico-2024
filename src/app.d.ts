@@ -10,10 +10,10 @@ declare global {
 		// interface PageData {}
 		interface Platform {
 			env: {
+				AI?: unknown;				
 				BUCKET: R2Bucket;
 				DB: R2DB;
 				ENV: string;
-				AI: "AI";
 			};
 			context: {
 				waitUntil(promise: Promise<any>): void;
