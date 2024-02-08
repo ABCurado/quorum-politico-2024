@@ -1,4 +1,7 @@
 // See https://kit.svelte.dev/docs/types#app
+
+import type { Ai } from "@cloudflare/ai";
+
 // for information about these interfaces
 declare global {
 	namespace App {
@@ -10,6 +13,7 @@ declare global {
 				BUCKET: R2Bucket;
 				DB: R2DB;
 				ENV: string;
+				AI: "AI";
 			};
 			context: {
 				waitUntil(promise: Promise<any>): void;

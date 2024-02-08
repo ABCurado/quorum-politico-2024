@@ -1,4 +1,5 @@
 <script lang="ts">
+	import mixpanel from 'mixpanel-browser';
 	import AboutButton from './AboutButton.svelte';
 
 	export let readInstructions = false;
@@ -49,6 +50,7 @@
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0, 0);
+				mixpanel.track('Quiz Star');
 			}}>Entra na Assembleia</button
 		>
 
