@@ -60,6 +60,20 @@
 			}
 		}
 
+		/*
+		for (let proposal of data.db) {
+			for (const [party, result] of Object.entries(proposal.votes)) {
+				if (result == proposal.user_vote) {
+					partyProximity[party] += 1;
+				} else if (proposal.user_vote == 2) {
+					partyProximity[party] += 0.5;
+				} else {
+					// console.log(proposal.id, ' VOTE NOT FOUND');
+				}
+			}
+		}
+		*/
+
 		proximity = Object.entries(partyProximity)
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
 			.sort((a, b) => b.proximity - a.proximity);
