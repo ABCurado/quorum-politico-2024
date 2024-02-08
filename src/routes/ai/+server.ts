@@ -14,5 +14,5 @@ export const GET: RequestHandler = async ({ platform, url }) => {
 	};
 	let response = await ai.run('@cf/meta/llama-2-7b-chat-int8', chat);
 	console.log('response.outputs', response);
-	return new Response(JSON.stringify(chat, response), { headers: { 'Content-Type': 'application/json' } });
+	return new Response(JSON.stringify(response, ), { headers: { 'Content-Type': 'application/json' } });
 };
