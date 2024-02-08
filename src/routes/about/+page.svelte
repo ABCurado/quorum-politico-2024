@@ -7,65 +7,43 @@
 </div>
 <div class="relative mx-auto w-10/12 space-y-8 py-3 sm:mx-auto">
 	<div class="space-y-4">
-		<h2 class="text-2xl font-bold text-gray-700">O que é o ADN Politico?</h2>
-		<div class="space-y-2">
-			<p class="mt-2 text-lg text-gray-700">Iniciativa/Ferramenta apartidaria</p>
-			<p class="mt-2 text-lg text-gray-700">Entender semelhanças entre perfil político pessoal e a realidade das agendas dos partidos (tendência de voto)</p>
-			<p class="mt-2 text-lg text-gray-700">
-				Explicar o conceito de Plebiscito - porque é literalmente o que estamos a fazer, a simular uma "Democracia Direta" ao transferir o poder de voto do representante (deputado/partido) para o
-				eleitor.
-			</p>
-			<p class="mt-2 text-lg text-gray-700">Dicotomia entre o fácil e rápido acesso a informação hoje, mas dificuldade em "digerir" facilmente a informação Política em PT</p>
-			<p class="mt-2 text-lg text-gray-700">Consiste na simulação de voto em 15 medidas apresentadas na AR, com possibilidade de repetição personalizando os assuntos de voto</p>
-			<p class="mt-2 text-lg text-gray-700">(Link para o repositório de perguntas / open source code) -> acho importante abrir isto (perguntas, contra argumentos, tags, etc...)</p>
-			<p class="mt-2 text-lg text-gray-700">Explicar que os contra argumentos foram construídos por nós, com o nosso entendimento / interpretação da medida</p>
-			<p class="mt-2 text-lg text-gray-700">Possibilidade de partilhar com amigos interessados + ver o que outros votaram, mas aviso de que não guardamos dados individuais</p>
-			<p class="mt-2 text-lg text-gray-700">
-				Explicar o resultado final: Coincidência entre orientação de voto do partido, e do utilizador + Explicar que é possível entrar no detalhe da proposta através do link direto + ver facilmente em
-				tabela qual partido votou a favor, dando acesso a uma granularidade interessante de comparação não só na generalidade, mas para cada proposta individual
-			</p>
-		</div>
-	</div>
-	<div class="space-y-4">
-		<h2 class="text-2xl font-bold text-gray-700">Objetivos TLDR</h2>
+		<h2 class="text-2xl font-bold text-gray-700">ADN Político:</h2>
 		<ul class="mt-4 list-inside list-disc space-y-2 text-lg text-gray-700">
-			<li>(i) mobilizar os eleitores portugueses para o voto</li>
-			<li>(ii) incentivo a um voto informado, munido de argumentos e fatos</li>
-			<li>(iii) auxílio na melhor caracterização e entendimento de cada agenda partidária política, através do registro histórico da sua tendência de voto na AR</li>
+			<li>Iniciativa apartidária para votares diretamente em propostas parlamentares e perceberes que partido melhor te representa.</li>
+			<li>Ignoramos agendas políticas e partidárias, o que se diz em entrevistas e o que se promete em programas eleitoriais. Queremos avaliar objetivamente como cada partido utiliza o seu poder de voto.</li>
 		</ul>
 	</div>
 
 	<div class="space-y-4">
-		<h2 class="text-2xl font-bold text-gray-700">Quem somos?</h2>
-		<p class="text-lg text-gray-700">Insert texto Tiago a esquerda + Linkedin's pessoais?</p>
+		<h2 class="text-2xl font-bold text-gray-700">Como funciona:</h2>
+		<div class="space-y-2">
+			<p class="mt-2 text-lg text-gray-700">Apresentamos-te 15 propostas onde podes simular ser o teu próprio representante partidário, votando a favor, contra ou abstendo-te.
+								Em cada uma delas terás acesso à motivação para o partido a ter apresentado, bem como alguns riscos e críticas que a proposta pode ter.
+								O objetivo é mostrar que até propostas que parecem de aprovação óbvia têm impactos diretos e indiretos que é preciso considerar, discutir e mitigar (algo que raramente é exposto nas propostas de cada partido).
+								No final, apresentamos o partido que mais se assemelha ao teu padrão de voto e tens também a oportunidade de repetir a votação selecionando os teus temas preferidos. 
+								Podes também explorar os documentos oficiais de cada proposta e como cada partido votou nas propostas em que votaste através do link direto associado.</p>
+			<p class="mt-2 text-lg text-gray-700">No total recolhemos 62 propostas parlamentares apresentadas desde Janeiro de 2023 (considerando sempre a versão mais recente). 
+								Consideramos 3 fatores na seleção das propostas: unanimidade (se uma proposta for unânime, não contribui para distinção das posições de cada partido, por isso temos apenas propostas em que pelo menos 1 partido diverge no voto); uniformidade (tentamos garantir representatividade de propostas de todos os espetros partidários e de vários temas relevantes); simplicidade (eliminamos propostas demasiado técnicas e que uma pessoa normal não iria ter interesse de investigar e interagir em tempo útil).
+								Cada voto coincidente (tu votas a favor e partido vota a favor) resulta numa correlação de 100%. Cada voto totalmente divergente (tu votas contra e partido a favor) resulta em 0% de correlação. Cada abstenção conta como correlação parcial a cada voto a favor (ex: abstenção tua e partido está a favor ou partido abstêm-se e tu votas a favor).</p>
+			<p class="mt-2 text-lg text-gray-700">Não precisas de criar conta e não guardamos nenhuns dados pessoais.</p>
+			<p class="mt-2 text-lg text-gray-700">Código do projeto no <a href="https://github.com/ABCurado/em-quem-votar-2023" target="_blank"><u>GitHub</u></a>.</p>
+		</div>
 	</div>
 
 	<div class="mt-8 space-y-4">
-		<h2 class="text-2xl font-bold text-gray-700">Como esta plataforma se distingue do clássico Quiz</h2>
+		<h2 class="text-2xl font-bold text-gray-700">Limitações:</h2>
 		<ul class="mt-4 list-inside list-disc space-y-2 text-lg text-gray-700">
-			<li>Possibilidade de deep dive em cada proposta</li>
-			<li>Objetividade da análise (vs subjetividade de uma "pergunta" num quiz)</li>
-			<li>Open Source</li>
+			<li>Votos contra dos partidos nem sempre se prendem com divergências com a motivação da proposta em si, mas sim em alguma discordância no plano de implementação ou salvaguardas legislativas que acham necessárias. Isto pode levar a que alguns votos não sigam a doutrina ideológica do partido.</li>
+			<li>Riscos e críticas foram maioritariamente construídos por nós. Apesar de apartidários, podem refletir algum enviesamento.</li>
+			<li>Apesar da representatividade das propostas recolhidas, cada seleção individual de 15 propostas pode estar enviesada para determinados temas ou ser maioritariamente de partidos de um espetro político.</li>
 		</ul>
 	</div>
 
-	<div class="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
-		<div class="mt-10 space-y-4 sm:mt-12 md:mt-16 lg:mt-20 xl:mt-28">
-			<h2 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl md:text-4xl">Falhas na metodologia</h2>
-			<ul class="mt-3 space-y-2 text-base text-gray-500 sm:mt-5 sm:text-lg md:mt-8">
-				<li class="mt-2">
-					<span class="text-gray-700">e.g. os contra argumentos podem estar biased</span>
-				</li>
-				<li class="mt-2">
-					<span class="text-gray-700">Apenas contém as que achamos "mais importantes" de 2023 - total 63</span>
-				</li>
-				<li class="mt-2">
-					<span class="text-gray-700">Apenas contém os "bullets de cada partido" das Legislativas de 2022 -> still to update</span>
-				</li>
-				<li class="mt-2">
-					<span class="text-gray-700">Retiramos as unânimes</span>
-				</li>
-			</ul>
-		</div>
+	<div class="space-y-4">
+		<h2 class="text-2xl font-bold text-gray-700">Para sugestões, elogios ou reclamações:</h2>
+		<p class="text-lg text-gray-700"><a href="https://twitter.com/ab_curado" target="_blank"><u>twitter.com/ab_curado</u></a></p>
+		<p class="text-lg text-gray-700"><a href="https://twitter.com/RicardoPinho96" target="_blank"><u>twitter.com/RicardoPinho96</u></a></p>
+		<p class="text-lg text-gray-700"><a href="https://twitter.com/tiagomfurtado" target="_blank"><u>twitter.com/tiagomfurtado</u></a></p>
 	</div>
+
 </div>

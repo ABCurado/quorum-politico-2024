@@ -12,35 +12,49 @@
 	export let tag_1: string;
 	// export let tag_2: string;
 
+
 	function highlightTitles(text) {
-		return text
-			.split('\n')
-			.map((point) => {
-				if (/^\d+\./.test(point)) {
-					return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
-				} else {
-					return `<p>${point}</p>`;
-				}
-			})
-			.join('');
+		  return text
+		    	.split('\n')
+		   	.map((point, index, array) => {
+			      if (/^\d+\./.test(point)) {
+			        return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
+			      } else {
+	        			return `<p>${point}</p>${index < array.length - 1 && /^\d+\./.test(array[index + 1]) ? '' : '<br>'}`;
+	      }
+	    })
+	    .join('');
 	}
-	function transformBulletsToHTML(text) {
-		return text
-			.split('\n')
-			.map((line) => {
-				if (line.startsWith('- ')) {
-					return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
-				} else if (line.endsWith(':')) {
-					return `${line.split('.').slice(0, -1).join('.')}<br>${line.split('.').pop()}<br><br>`;
-				} else {
-					return line;
-				}
-			})
-			.join('\n');
-	}
+
+
+function transformBulletsToHTML(text) {
+    return text
+        .split('\n')
+        .map((line) => {
+            // Check if the line starts with '- '
+            if (line.startsWith('- ')) {
+                // If true, transform the line into an HTML list item
+                return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
+            } 
+            // Add a line break after lines ending with ':'
+            else if (line.endsWith(':')) {
+                return `${line}<br><br>`;
+            }
+            // If the line does not start with '- ' or end with ':', return it unchanged
+            else {
+                return line;
+            }
+        })
+        // Join the lines back together with line breaks
+        .join('\n');
+}
+
+
+
 	const glossary = {
-		Deliberação: 'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
-		'Moção de Censura':
+		'Deliberação': 
+			'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
+		'Moção de censura':
 			'Instrumento de fiscalização típico de sistemas em que o Governo é responsável perante o Parlamento, visa reprovar a execução do Programa do Governo ou a gestão de assunto de relevante interesse nacional. Pode ser apresentada por um quarto dos Deputados em efetividade de funções ou por qualquer grupo parlamentar. A sua aprovação requer a maioria absoluta dos Deputados em efetividade de funções (número de votos superior a metade dos Deputados em efetividade de funções) e provoca a demissão do Governo.',
 		'Projeto de Lei':
 			'Iniciativa legislativa apresentada por qualquer Deputado, pelo grupo parlamentar ou ainda por grupos de cidadãos eleitores sobre matéria da competência legislativa da Assembleia da República. Não são admitidos nem projetos que infrinjam a Constituição ou os princípios nela consignados e não definam concretamente o sentido das modificações a introduzir na ordem legislativa, nem projetos de lei que envolvam, no ano económico em curso, aumento das despesas ou diminuição das receitas do Estado previstas no Orçamento.',
@@ -75,11 +89,12 @@
 		<div
 			role="button"
 			tabindex="0"
-			class="cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
+			class="cursor-pointer mb-4 text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
 			on:click={() => (showInfo = !showInfo)}
 			on:keydown={() => (showInfo = !showInfo)}
 		>
 			{type}
+			<p style="display: inline;">(ver mais info)</p>
 		</div>
 		<div class="mx-auto max-w-4xl">
 			<h3 class="mb-2 min-h-12 text-center text-2xl font-bold text-gray-800 sm:mb-6 sm:text-4xl">
@@ -90,9 +105,13 @@
 			{@html transformBulletsToHTML(summary_reduced)}
 		</div>
 
-		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl flex items-center">
-			Riscos e Críticas <a href="https://www.google.com/forms/about/" target="_blank" class="text-gray-400 ml-1"><IconHelpHexagonFilled size={22}/></a>:
+		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">
+		  	Riscos e Críticas:  <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="flex items-center text-gray-400 ml-1">
+		  				<IconHelpHexagonFilled size={22}/>
+		    				<span class="text-sm ml-1">Esquecemo-nos de algum?</span>
+		  </a>
 		</h3>
+
 		<div class="mb-6 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:text-lg">
 			<!-- Your content here -->
 

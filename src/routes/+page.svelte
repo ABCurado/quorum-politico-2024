@@ -143,7 +143,7 @@
 		<VoteResults vote_proposals={data.db} />
 
 		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0">
-			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas, ...</p>
+			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas:</p>
 			<button
 				class="mb-4 rounded bg-green-500 px-6 py-3 font-bold text-white hover:bg-green-700"
 				on:click={() => {
@@ -158,7 +158,7 @@
 		</div>
 
 		<div class="m-2 mt-6 flex w-full flex-col gap-3">
-			<p class="text-center">Partilha com amigos e compara as vossas tendências partidárias</p>
+			<p class="text-center text-base">Compara as tua representação partidária com amigos:</p>
 			<div class="flex items-center justify-center gap-3">
 				<SocialShare title="Concordas?" url="https://{data.env ? 'dev.' : ''}em-quem-votar-2023.pages.dev/" desc="O Partido que mais te representa é: {proximity[0].party}" {proximity} />
 			</div>
