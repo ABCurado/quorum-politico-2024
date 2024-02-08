@@ -25,5 +25,17 @@
 </div>
 
 /*
-
+<div class="w-2/3 lg:w-1/2 xl:w-1/3">
+    {#each proximity as party}
+        <div class="flex items-center justify-between">
+            <div class="text-sm font-medium text-gray-900">{party.party}</div>
+            <div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0)) }%</div>
+        </div>
+        <div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200">
+            <div style="width: {Math.abs(party.proximity)}%" class="shadow-none flex text-center whitespace-nowrap text-white justify-{party.proximity >= 0 ? 'left' : 'right'} {partyColors[party.party]} opacity-75 ">
+                {party.proximity >= 0 ? '' : ' '}
+            </div>
+        </div>
+    {/each}
+</div>
 */
