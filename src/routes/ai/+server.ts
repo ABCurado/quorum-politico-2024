@@ -7,7 +7,7 @@ export const GET: RequestHandler = async ({ platform, url }) => {
     const ai = new Ai(platform?.env.AI);
     const inputs = {
       // text: "I don't like you. I hate you",
-      text: 'I like you. I love you'
+      text: 'I like you. I love you.'
     };
 
     const response = await ai.run(
