@@ -16,7 +16,7 @@
 		fetch('/ai')
 			.then((res) => res.json())
 			.then((data) => {
-				aiQuote = data.reponse;
+				aiQuote = data.response;
 			});
 	});
 </script>
