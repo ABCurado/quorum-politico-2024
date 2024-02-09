@@ -26,6 +26,15 @@
 </div>
 -->
 
+<script lang="ts">
+    function getBarStyle(proximity) {
+        const leftPosition = '50%';
+        const translateX = proximity >= 0 ? proximity * 50 : -Math.abs(proximity * 50);
+        const width = Math.abs(proximity * 50) + '%';
+        return `<div style="position: absolute; left: ${leftPosition}; transform: translateX(${translateX}%); width: ${width};"></div>`;
+    }
+</script>
+
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
     {#each proximity as party}
         <div class="flex items-center justify-between">
@@ -41,11 +50,4 @@
     {/each}
 </div>
 
-<script lang="ts">
-    function getBarStyle(proximity) {
-        const leftPosition = '50%';
-        const translateX = proximity >= 0 ? proximity * 50 : -Math.abs(proximity * 50);
-        const width = Math.abs(proximity * 50) + '%';
-        return `<div style="position: absolute; left: ${leftPosition}; transform: translateX(${translateX}%); width: ${width};"></div>`;
-    }
-</script>
+
