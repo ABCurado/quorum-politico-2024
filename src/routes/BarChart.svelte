@@ -26,7 +26,6 @@
 </div>
 -->
 
-
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
     {#each proximity as party}
         <div class="flex items-center justify-between">
@@ -34,7 +33,7 @@
             <div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0)) }%</div>
         </div>
         <div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200" style="position: relative;">
-            <div style="position: absolute; left: 50%; transform: translateX({(party.proximity >= 0 ? 0 : -Math.abs(party.proximity * 50))}%); width: {Math.abs(party.proximity * 50)}%" class="shadow-none flex text-center whitespace-nowrap text-white justify-start {partyColors[party.party]} opacity-75">
+            <div style="position: absolute; left: {(party.proximity >= 0 ? 50 : 50 + party.proximity * 50)}%; transform: translateX({(party.proximity >= 0 ? -50 : 0)}%); width: {Math.abs(party.proximity * 50)}%" class="shadow-none flex text-center whitespace-nowrap text-white justify-start {partyColors[party.party]} opacity-75">
                 &nbsp;
             </div>
         </div>
