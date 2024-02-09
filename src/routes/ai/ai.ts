@@ -69,7 +69,7 @@ export async function randomPolicialSentence(platform: any) {
     ];
     let randomWords = politics.sort(() => 0.5 - Math.random()).slice(0, 2);
     let chat = {
-        prompt: `Return a short and funny sentence about the politics that must contain the following orders ${randomWords.join(', ')}. The answer must be in Portuguese. Only one sentence, nothing else.`,
+        prompt: `Return a short and funny sentence about the politics that must contain the following orders ${randomWords.join(', ')}. The answer must be in Portuguese. Only one sentence, nothing else. Do not return the english version of the sentence.`,
     };
     let response = await ai.run('@cf/meta/llama-2-7b-chat-int8', chat);
     console.log('response', response);
