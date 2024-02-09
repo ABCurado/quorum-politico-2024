@@ -17,7 +17,7 @@
 	{#each proximity as party}
 		<div class="flex items-center justify-between">
 			<div class="text-sm font-medium text-gray-900">{party.party}</div>
-			<div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0)) }%</div>
+			<div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0))}%</div>
 		</div>
 		<div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200">
 			<div style="width: {party.proximity * 100}%" class="shadow-none flex text-center whitespace-nowrap text-white justify-right {partyColors[party.party]} opacity-75 "/>
