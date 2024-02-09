@@ -33,7 +33,7 @@
             		<div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0))}%</div>
         	</div>
         	<div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200" style="position: relative;">
-    			<div style="left: calc(50% + {party.proximity >= 0 ? '-50% + ' + party.proximity * 50 + '%' : '0% - ' + Math.abs(party.proximity * 50) + '%'}); width: {Math.abs(party.proximity * 50)}%;" class="{partyColors[party.party]} opacity-75"></div>
+			<div style="position: absolute; left: calc(50% + {party.proximity >= 0 ? '0%' : '-50% + ' + Math.abs(party.proximity * 50) + '%'}); width: {Math.abs(party.proximity * 50)}%;" class="{partyColors[party.party]} opacity-75"></div>
         	</div>
     	{/each}
 </div>
