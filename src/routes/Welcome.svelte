@@ -11,7 +11,7 @@
 
 	let ticker = 0;
 	let aiQuote = '';
-
+	$: console.log('AI QUOTE', aiQuote);	
 	onMount(() => {
 		fetch('/ai')
 			.then((res) => res.json())
