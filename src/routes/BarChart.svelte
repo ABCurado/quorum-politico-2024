@@ -29,9 +29,9 @@
 <script lang="ts">
     function getBarStyle(proximity) {
         const leftPosition = '50%';
-        const translateX = proximity >= 0 ? proximity * 50 : -Math.abs(proximity * 50);
-        const width = Math.abs(proximity * 50) + '%';
-	return `position: absolute; left: ${leftPosition}; transform: translateX(${translateX}%); width: ${width};`;
+        const translateX = proximity >= 0 ? `${proximity * 50}%` : `${-Math.abs(proximity * 50)}%`;
+        const width = `${Math.abs(proximity * 50)}%`;
+        return `position: absolute; left: ${leftPosition}; transform: translateX(${translateX}); width: ${width};`;
     }
 </script>
 
