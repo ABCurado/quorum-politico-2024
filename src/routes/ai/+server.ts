@@ -1,24 +1,20 @@
-import { Ai } from '@cloudflare/ai';
 import type { RequestHandler } from '@sveltejs/kit';
+import { runAi } from './ai';
 
 // A get route that returns information about a specific party
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ platform, url }) => {
     let party = url.searchParams.get('party');
 
-    if (party && party.length > 12) {
+    if (!party) {
+        return new Response(JSON.stringify({ error: 'Party name is required' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
+    }
+
+    if (party.length > 12) {
         return new Response(JSON.stringify({ error: 'Party name should not exceed 12 characters' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
 
-    const ai = new Ai(platform?.env.AI);
-    // messages - chat style input
-    let chat = {
-        messages: [
-            { role: 'system', content: 'You are a helpful comical assistant that knows about portuguese politics. I will send you a sentiment and a political party and you have to reply a sentente. The response should be a single sentence in Portuguese from Portugal' },
-            { role: 'user', content: `Funny ${party}` }
-        ]
-    };
-    let response = await ai.run('@cf/meta/llama-2-7b-chat-int8', chat);
+    let response = runAi(platform, party);
     console.log('response.outputs', response);
     return new Response(JSON.stringify(response), { headers: { 'Content-Type': 'application/json' } });
 };
