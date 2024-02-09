@@ -28,10 +28,9 @@
 
 <script lang="ts">
     function getBarStyle(proximity) {
-        const leftPosition = '50%';
         const translateX = proximity >= 0 ? `${proximity * 50}%` : `${-Math.abs(proximity * 50)}%`;
         const width = `${Math.abs(proximity * 50)}%`;
-        return `position: absolute; left: ${leftPosition}; transform: translateX(${translateX}); width: ${width};`;
+        return `position: absolute; left: 50%; transform: translateX(${translateX}); width: ${width};`;
     }
 </script>
 
@@ -42,8 +41,7 @@
             <div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0))}%</div>
         </div>
         <div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200" style="position: relative;">
-            {@html getBarStyle(party.proximity)}
-            <div style="{getBarStyle(party.proximity)}" class="shadow-none flex text-center whitespace-nowrap text-white justify-start {partyColors[party.party]} opacity-75">
+            <div style="{getBarStyle(party.proximity)}" class="{partyColors[party.party]} opacity-75">
                 &nbsp;
             </div>
         </div>
