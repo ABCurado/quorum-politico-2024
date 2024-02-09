@@ -26,7 +26,7 @@
 </div>
 -->
 
-<script lang="ts">
+<script>
     function getBarStyle(proximity) {
         const translateX = proximity >= 0 ? `${proximity * 50}%` : `${-Math.abs(proximity * 50)}%`;
         const width = `${Math.abs(proximity * 50)}%`;
