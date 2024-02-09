@@ -33,7 +33,7 @@
             		<div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0))}%</div>
         	</div>
         	<div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200">
-			<div style="left: 50%; width: {Math.abs(party.proximity * 50)}%;" class="{partyColors[party.party]} opacity-75"></div>
+			<div style="position: relative; left: 50%; {party.proximity < 0 ? 'transform: translateX(-100%);' : ''}; width: {Math.abs(party.proximity * 50)}%;" class="{partyColors[party.party]} opacity-75"></div>
         	</div>
     	{/each}
 </div>
