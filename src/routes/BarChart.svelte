@@ -46,5 +46,5 @@
         const leftPosition = '50%';
         const width = Math.abs(proximity * 50) + '%';
         return `<div style="position: absolute; left: ${leftPosition}; transform: translateX({(party.proximity * 50)}%); width: ${width};"></div>`;
-    }
+    };
 </script>
