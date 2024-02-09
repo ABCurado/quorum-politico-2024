@@ -12,7 +12,7 @@
 	};
 </script>
 
-<!--
+
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
 	{#each proximity as party}
 		<div class="flex items-center justify-between">
@@ -24,8 +24,8 @@
 		</div>
 	{/each}
 </div>
--->
 
+<!--
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
     {#each proximity as party}
         <div class="flex items-center justify-between">
@@ -47,3 +47,4 @@
         return "position: absolute; left: 50%; transform: translateX(${translateX}); width: ${width};";
     }
 </script>
+-->
