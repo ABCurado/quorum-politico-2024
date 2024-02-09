@@ -3,14 +3,14 @@
 	import { onMount } from 'svelte';
 
 	let partyColors: { [key: string]: string } = {
-		PCP: 'fill-red-800',
-		BE: 'fill-red-500',
-		L: 'fill-red-700',
+		PCP: 'fill-blue-700',
+		BE: 'fill-red-600',
+		L: 'fill-lime-400',
 		PAN: 'fill-green-500',
-		IL: 'fill-blue-300',
+		IL: 'fill-sky-500',
 		PS: 'fill-pink-600',
 		PSD: 'fill-orange-600',
-		CH: 'fill-blue-600'
+		CH: 'fill-indigo-950'
 	};
 	export let random = false;
 	export let centerText = '';
