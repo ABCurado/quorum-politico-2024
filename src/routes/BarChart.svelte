@@ -31,7 +31,7 @@
         const leftPosition = '50%';
         const translateX = proximity >= 0 ? proximity * 50 : -Math.abs(proximity * 50);
         const width = Math.abs(proximity * 50) + '%';
-        return `<div style="position: absolute; left: ${leftPosition}; transform: translateX(${translateX}%); width: ${width};"></div>`;
+	return `position: absolute; left: ${leftPosition}; transform: translateX(${translateX}%); width: ${width};`;
     }
 </script>
 
@@ -43,7 +43,7 @@
         </div>
         <div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200" style="position: relative;">
             {@html getBarStyle(party.proximity)}
-            <div class="shadow-none flex text-center whitespace-nowrap text-white justify-start {partyColors[party.party]} opacity-75">
+            <div style="{getBarStyle(party.proximity)}" class="shadow-none flex text-center whitespace-nowrap text-white justify-start {partyColors[party.party]} opacity-75">
                 &nbsp;
             </div>
         </div>
