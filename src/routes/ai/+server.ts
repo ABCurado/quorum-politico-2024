@@ -14,7 +14,7 @@ export const GET: RequestHandler = async ({ platform, url }) => {
         return new Response(JSON.stringify({ error: 'Party name should not exceed 12 characters' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
 
-    let response = runAi(platform, party);
+    let response = await runAi(platform, party);
     console.log('response.outputs', response);
-    return new Response(JSON.stringify(response), { headers: { 'Content-Type': 'application/json' } });
+    return new Response(JSON.stringify({"response": response}), { headers: { 'Content-Type': 'application/json' } });
 };
