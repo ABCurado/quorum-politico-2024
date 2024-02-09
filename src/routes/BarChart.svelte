@@ -44,7 +44,8 @@
 <script>
     function getBarStyle(proximity) {
         const leftPosition = '50%';
+        const translateX = proximity >= 0 ? proximity * 50 : -Math.abs(proximity * 50);
         const width = Math.abs(proximity * 50) + '%';
-        return `<div style="position: absolute; left: ${leftPosition}; transform: translateX({(party.proximity * 50)}%); width: ${width};"></div>`;
+        return `<div style="position: absolute; left: ${leftPosition}; transform: translateX(${translateX}%); width: ${width};"></div>`;
     }
 </script>
