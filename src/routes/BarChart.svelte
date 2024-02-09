@@ -12,7 +12,7 @@
 	};
 </script>
 
-
+<!--
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
 	{#each proximity as party}
 		<div class="flex items-center justify-between">
@@ -24,27 +24,17 @@
 		</div>
 	{/each}
 </div>
+-->
 
-<!--
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
-    {#each proximity as party}
-        <div class="flex items-center justify-between">
-            <div class="text-sm font-medium text-gray-900">{party.party}</div>
-            <div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0))}%</div>
-        </div>
-        <div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200" style="position: relative;">
-            <div style={getBarStyle(party.proximity)} class="{partyColors[party.party]} opacity-75">
-                &nbsp;
-            </div>
-        </div>
-    {/each}
+    	{#each proximity as party}
+	        <div class="flex items-center justify-between">
+            		<div class="text-sm font-medium text-gray-900">{party.party}</div>
+            		<div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0))}%</div>
+        	</div>
+        	<div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200" style="position: relative;">
+            		<div style="left: 50%; width: {Math.abs(party.proximity) * 50}%; transform: translateX(party.proximity >= 0 ? `${party.proximity * 50}%` : `${-Math.abs(party.proximity * 50)}%`);" class="{partyColors[party.party]} opacity-75"></div>
+        	</div>
+    	{/each}
 </div>
 
-<script lang="ts">
-    function getBarStyle(proximity) {
-        const translateX = proximity >= 0 ? `${proximity * 50}%` : `${-Math.abs(proximity * 50)}%`;
-        const width = `${Math.abs(proximity * 50)}%`;
-        return "position: absolute; left: 50%; transform: translateX(${translateX}); width: ${width};";
-    }
-</script>
--->
