@@ -106,15 +106,14 @@ function transformBulletsToHTML(text) {
 		</div>
 
 		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">
-		  	Riscos e Críticas:  <a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank" class="flex items-center text-gray-400 ml-1">
-		  				<IconHelpHexagonFilled size={22}/>
-		    				<span class="text-sm ml-1">Esquecemo-nos de algum?</span>
-		  </a>
+		  	Riscos e Críticas:
 		</h3>
 
-		<div class="mb-6 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:text-lg">
-			<!-- Your content here -->
+		<div class="cursor-pointer mb-4 text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600">
+			<a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank"> Esquecemo-nos de algum? </a>
+		</div>
 
+		<div class="mb-6 min-h-52 w-full max-w-4xl rounded-md bg-white p-4 text-base shadow-md sm:text-lg">
 			{@html highlightTitles(counter_reduced)}
 		</div>
 
