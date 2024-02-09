@@ -1,7 +1,7 @@
 <script lang="ts">
 	import mixpanel from 'mixpanel-browser';
 
-	export let vote_proposals: Array<{ party: string; proximity: number; title: string; author: string; final_result: string; user_vote: string }>;
+	export let vote_proposals: Array<{ party: string; proximity: number; title_reduced: string; author: string; final_result: string; user_vote: string }>;
 	let showResults = false;
 
 	$: if (vote_proposals) {
