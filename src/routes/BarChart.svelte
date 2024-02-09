@@ -12,7 +12,7 @@
 	};
 </script>
 
-
+<!--
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
 	{#each proximity as party}
 		<div class="flex items-center justify-between">
@@ -24,8 +24,8 @@
 		</div>
 	{/each}
 </div>
+-->
 
-<!--
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
     {#each proximity as party}
         <div class="flex items-center justify-between">
@@ -33,10 +33,18 @@
             <div class="text-sm text-gray-500">{(Number((party.proximity * 100)).toFixed(0))}%</div>
         </div>
         <div class="overflow-hidden h-2 md:h-3 mb-4 text-xs flex rounded bg-gray-200" style="position: relative;">
-            <div style="position: absolute; left: 50%; transform: translateX({(party.proximity * 50)}%); width: {Math.abs(party.proximity * 50)}%" class="shadow-none flex text-center whitespace-nowrap text-white justify-start {partyColors[party.party]} opacity-75">
+            {@html getBarStyle(party.proximity)}
+            <div class="shadow-none flex text-center whitespace-nowrap text-white justify-start {partyColors[party.party]} opacity-75">
                 &nbsp;
             </div>
         </div>
     {/each}
 </div>
--->
+
+<script>
+    function getBarStyle(proximity) {
+        const leftPosition = '50%';
+        const width = Math.abs(proximity * 50) + '%';
+        return `<div style="position: absolute; left: ${leftPosition}; transform: translateX({(party.proximity * 50)}%); width: ${width};"></div>`;
+    }
+</script>
