@@ -177,7 +177,7 @@
 		<div class="m-2 mt-6 flex w-full flex-col gap-3">
 			<p class="text-center text-base">Compara as tua representação partidária com amigos:</p>
 			<div class="flex items-center justify-center gap-3">
-				<SocialShare title="Concordas?" url="https://{data.env ? 'dev.' : ''}em-quem-votar-2023.pages.dev/" desc="O Partido que mais te representa é: {proximity[0].party}" {proximity} />
+				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {proximity[0].party}" {proximity} />
 			</div>
 		</div>
 		<AboutButton/>
