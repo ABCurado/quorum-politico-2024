@@ -89,7 +89,7 @@ export async function aiPersonaSummary(platform: any, proposals: [{ title: strin
 		'És um assistente cómico que conhece a política portuguesa. O teu objectivo é criares um perfil generico e humoristico na primeira pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera na descrição de forma comica. A resposta nao pode ter mais de 3 frases curtas. Nao menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
 	let content = `
         O partido que votou mais alinhado com esta pessoa é o ${winningPartyShortDescription}. 
-        As opinioes sobre as propostas são as seguintes:
+        As opinioes desta pessoa são as seguintes:
 		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ': "' + proposal.title+'"').join('\n')}`;
 		console.log('content', content);
 	let chat = {
@@ -114,7 +114,7 @@ function getVoteDescription(vote: number, lang: string): string {
 		} else if (vote == 0) {
 			return 'Discorda de';
 		} else if (vote == 2) {
-			return 'Não se intressa por';
+			return 'Não se interessa por';
 		} else {
 			return 'Inválido';
 		}
