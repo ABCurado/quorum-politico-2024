@@ -86,7 +86,7 @@ export async function aiPersonaSummary(platform: any, proposals: [{ title: strin
 	console.log('proposals', proposals);
 
 	let systemPrompt =
-		'És um assistente cómico que conhece a política portuguesa. O teu objectivo é criares um perfil muito curto, generico e humoristico sobre a pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera na descrição de forma comica mantem a resposta muito curta. A resposta tem que ter no máximo 3 frases curtas. Nao menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
+		'És um assistente cómico que conhece a política portuguesa. O teu objectivo é criares um perfil muito curto, generico e humoristico sobre a pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera na descrição de forma comica mantem a resposta muito curta. A resposta não pode ter mais de 3 pequenas frases. Nao menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
 	let content = `
         O partido mais alinhado é o ${winningPartyShortDescription}. 
         As opinioes desta pessoa são as seguintes:
