@@ -88,10 +88,10 @@ export async function aiPersonaSummary(platform: any, proposals: [{ title: strin
 	let systemPrompt =
 		'És um assistente cómico e útil que conhece a política portuguesa. Vou enviar-te frases com as quais a pessoa concorda ou discorda e tu deves descrever essa pessoa na primeira pessoa de uma forma comica. Exagera na descrição de forma comica. A resposta devem ser uma ou duas frases curtas no máximo. Nao menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
 	let content = `
-        O partido mais próximo desta pessoa é o ${winningPartyShortDescription}. 
+        O partido que votou mais alinhado com esta pessoa é o ${winningPartyShortDescription}. 
         As opinioes sobre as propostas são as seguintes:
-            ${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.title).join('\n')}`;
-	console.log('content', content);
+		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ': "' + proposal.title+'"').join('\n')}`;
+		console.log('content', content);
 	let chat = {
 		messages: [
 			{ role: 'system', content: systemPrompt },
