@@ -3,7 +3,7 @@
 	import { aiPersonaSummary } from './ai';
 	export let proposals: [{ title: string; vote: number }];
 	export let winningPartyShortDescription: string;
-
+	import { Spinner } from 'flowbite-svelte';
 	let data: string;
 
 	onMount(async () => {
@@ -22,8 +22,6 @@
 		<p class="text mb-4 text-center sm:text-base"><i>{data}</i></p>
 	</div>
 {:else}
-	<div>
-		<h1>A preparar descrição AI...</h1>
-	</div>
+	<Spinner color="gray" />
 {/if}
 ```

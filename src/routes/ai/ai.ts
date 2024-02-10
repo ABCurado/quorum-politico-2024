@@ -78,7 +78,8 @@ export async function randomPolicialSentence(platform: any) {
 
 export async function aiPersonaSummary(platform: any, proposals: [{ title: string; vote: number }], winningPartyShortDescription: string) {
 	const openai = new OpenAI({
-		apiKey: platform.env.OPENAI_API_KEY, // This is the default and can be omitted
+		// apiKey: platform.env.OPENAI_API_KEY'], // This is the default and can be omitted
+		apiKey: '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'// This is the default and can be omitted
 	});
 	// const ai = new Ai(platform?.env.AI);
 	// messages - chat style input
