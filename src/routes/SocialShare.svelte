@@ -3,10 +3,10 @@
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
 	import {IconShare} from '@tabler/icons-svelte';
 
-	export let url = 'https://em-quem-votar-2023.pages.dev/';
+	export let url = 'https://adn-politico.com/';
 	export let title = '';
 	export let desc = '';
-	export let hashtags = 'em-quem-votar-2023';
+	export let hashtags = 'adn-politico-2024';
 	export let proximity: { party: string; proximity: number }[] = [];
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 

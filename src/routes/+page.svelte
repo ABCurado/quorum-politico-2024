@@ -47,6 +47,7 @@
 	$: if (currentVote === quizSize) {
 		let partyProximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
 
+		/*
 		for (let proposal of data.db) {
 			for (const [party, result] of Object.entries(proposal.votes)) {
 				if (result == proposal.user_vote) {
@@ -58,6 +59,22 @@
 				}
 			}
 		}
+		*/
+		
+		for (let proposal of data.db) {
+			for (const [party, result] of Object.entries(proposal.votes)) {
+				if (result == proposal.user_vote) {
+					partyProximity[party] += 1;
+				} else if ((result == 0 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 0)) {
+					partyProximity[party] -= 1;
+				} else if ((result == 1 && proposal.user_vote == 0) || (result == 0 && proposal.user_vote == 1)) {
+					partyProximity[party] += 0.5;
+				} else {
+					// console.log(proposal.id, ' VOTE NOT FOUND');
+				}
+			}
+		}
+		
 
 		proximity = Object.entries(partyProximity)
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
@@ -161,7 +178,7 @@
 		<div class="m-2 mt-6 flex w-full flex-col gap-3">
 			<p class="text-center text-base">Compara as tua representação partidária com amigos:</p>
 			<div class="flex items-center justify-center gap-3">
-				<SocialShare title="Concordas?" url="https://adn-politico.com/" desc="O Partido que mais te representa é: {proximity[0].party}" {proximity} />
+				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {proximity[0].party}" {proximity} />
 			</div>
 		</div>
 		<AboutButton/>
