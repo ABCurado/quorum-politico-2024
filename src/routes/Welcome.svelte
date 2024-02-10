@@ -6,12 +6,10 @@
 	import Hemicycle from './Hemicycle.svelte';
 	import TagPicker from './tags/TagPicker.svelte';
 	import { IconCheckbox } from '@tabler/icons-svelte';
-	import { IconIcons } from '@tabler/icons-svelte';
 	import { onMount } from 'svelte';
 
 	let ticker = 0;
 	let aiQuote = '';
-	$: console.log('AI QUOTE', aiQuote);	
 	onMount(() => {
 		fetch('/ai')
 			.then((res) => res.json())
