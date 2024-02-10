@@ -1,4 +1,10 @@
 import { Ai } from '@cloudflare/ai';
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+    // apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
+    apiKey: "my-key", // This is the default and can be omitted
+  });
 
 export async function randomPartyDescription(platform: any, party: string) {
     const ai = new Ai(platform?.env.AI);
@@ -73,14 +79,14 @@ export async function randomPolicialSentence(platform: any) {
     };
     // let response = await ai.run('@cf/meta/llama-2-7b-chat-int8', chat);
     let response = await ai.run('@cf/meta/llama-2-7b-chat-fp16', chat);
-
+    console.log('response', response);
     let response2 = await ai.run('@cf/meta/m2m100-1.2b', {
         text: response.response,
         source_lang: "english", // defaults to english
         target_lang: "portuguese"
       }
     );
-    // Do something with the response
+    console.log('response2', response2);
     return response2.response;
 }
 

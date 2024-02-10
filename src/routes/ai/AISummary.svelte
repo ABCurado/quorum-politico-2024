@@ -3,11 +3,11 @@
 	import { aiPersonaSummary } from './ai';
 	export let proposals: [{ title: string; vote: number }];
 	export let winningPartyShortDescription: string;
-
-    let data: string;
+	
+	let data: string;
 
 	onMount(async () => {
-		data = await aiPersonaSummary(null,proposals, winningPartyShortDescription);
+		data = await aiPersonaSummary(null, proposals, winningPartyShortDescription);
 	});
 </script>
 
