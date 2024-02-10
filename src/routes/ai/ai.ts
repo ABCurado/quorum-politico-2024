@@ -114,7 +114,7 @@ function getVoteDescription(vote: number, lang: string): string {
 		} else if (vote == 0) {
 			return 'Discorda de';
 		} else if (vote == 2) {
-			return 'Não quer saber de';
+			return 'Não se intressa por';
 		} else {
 			return 'Inválido';
 		}
