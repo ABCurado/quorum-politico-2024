@@ -89,7 +89,7 @@ export async function aiPersonaSummary(platform: any, proposals: [{title:string,
     // messages - chat style input
     console.log('proposals', proposals);
     let content = `
-        O partido mais próximo é o ${winningPartyShortDescription}. 
+        O partido mais próximo é ${winningPartyShortDescription}. 
         As opinioes sobre as propostas são as seguintes:
             ${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.title).join('\n')}`;
     console.log('content', content);
@@ -105,21 +105,21 @@ export async function aiPersonaSummary(platform: any, proposals: [{title:string,
 
 function getVoteDescription(vote: number, lang: string): string {
     if (lang === 'pt') {
-        if (vote === 1) {
+        if (vote == 1) {
             return "Concorda com";
-        } else if (vote === 0) {
+        } else if (vote == 0) {
             return "Discorda de";
-        } else if (vote === 2) {
+        } else if (vote == 2) {
             return "Não tem opinião sobre";
         } else {
             return "Inválido";
         }
     } else if (lang === 'en') {
-        if (vote === 1) {
+        if (vote == 1) {
             return "Agrees with";
-        } else if (vote === 0) {
+        } else if (vote == 0) {
             return "Disagrees with";
-        } else if (vote === 2) {
+        } else if (vote == 2) {
             return "Has no opinion on";
         } else {
             return "Invalid";
