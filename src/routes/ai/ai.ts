@@ -62,7 +62,7 @@ export async function randomPolicialSentence(platform: any) {
 	];
 	let randomWords = politics.sort(() => 0.5 - Math.random()).slice(0, 2);
 	let chat = {
-		prompt: `Return a short and humorous sentence about the politics that must contain the following topics ${randomWords.join(', ')}. Only one sentence, nothing else.`
+		prompt: `Return a short and humorous sentence about the politics that could contain the following topics ${randomWords.join(', ')}. You can add historical random facts. Only one sentence, nothing else.`
 	};
 	// let response = await ai.run('@cf/meta/llama-2-7b-chat-int8', chat);
 	let response = await ai.run('@cf/meta/llama-2-7b-chat-fp16', chat);
