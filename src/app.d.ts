@@ -1,4 +1,7 @@
 // See https://kit.svelte.dev/docs/types#app
+
+import type { Ai } from "@cloudflare/ai";
+
 // for information about these interfaces
 declare global {
 	namespace App {
@@ -7,6 +10,7 @@ declare global {
 		// interface PageData {}
 		interface Platform {
 			env: {
+				AI?: unknown;				
 				BUCKET: R2Bucket;
 				DB: R2DB;
 				ENV: string;

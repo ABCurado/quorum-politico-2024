@@ -43,9 +43,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@cloudflare/ai": "^1.0.50",
 		"eslint-config-prettier": "^8.5.0",
 		"mixpanel-browser": "^2.47.0",
 		"n3": "^1.17.1",
+		"openai": "^4.27.0",
 		"tailwindcss-hero-patterns": "^0.1.2"
 	},
 	"overrides": {

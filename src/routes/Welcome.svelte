@@ -1,13 +1,22 @@
 <script lang="ts">
+	import mixpanel from 'mixpanel-browser';
 	import AboutButton from './AboutButton.svelte';
 
 	export let readInstructions = false;
 	import Hemicycle from './Hemicycle.svelte';
 	import TagPicker from './tags/TagPicker.svelte';
 	import { IconCheckbox } from '@tabler/icons-svelte';
-	import { IconIcons } from '@tabler/icons-svelte';
+	import { onMount } from 'svelte';
 
 	let ticker = 0;
+	let aiQuote = '';
+	// onMount(() => {
+	// 	fetch('/ai')
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			aiQuote = data.response;
+	// 		});
+	// });
 </script>
 
 <TagPicker />
@@ -44,11 +53,17 @@
 				</li>
 			</ul>
 		</div>
+
+		{#if aiQuote}
+			<p class="text-center text sm:text-base mb-4"><i>{aiQuote}</i></p>
+		{/if}
+
 		<button
 			class="rounded bg-green-400 px-3 py-3 font-bold mb-4 text-white hover:bg-green-700 sm:px-4"
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0, 0);
+				mixpanel.track('Quiz Star');
 			}}>Entra na Assembleia</button
 		>
 

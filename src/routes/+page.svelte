@@ -1,6 +1,5 @@
 <script lang="ts">
 	import mixpanel from 'mixpanel-browser';
-	import { blur } from 'svelte/transition';
 	import { Toast } from 'flowbite-svelte';
 	import BarChart from './BarChart.svelte';
 	import DevBanner from './DevBanner.svelte';
@@ -12,8 +11,8 @@
 	import Welcome from './Welcome.svelte';
 	import TagPicker from './tags/TagPicker.svelte';
 	import PartyInfo from './party/PartyInfo.svelte';
-	import { IconIcons } from '@tabler/icons-svelte';
 	import AboutButton from './AboutButton.svelte';
+	import AiSummary from './ai/AISummary.svelte';
 
 	export let data;
 	let quizSize: number = data.db.length;
@@ -68,7 +67,7 @@
 					partyProximity[party] += 1;
 				} else if ((result == 0 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 0)) {
 					partyProximity[party] -= 1;
-				} else if ((result == 1 && proposal.user_vote == 0) || (result == 0 && proposal.user_vote == 1)) {
+				} else if ((result == 1 && proposal.user_vote == 2) || (result == 2 && proposal.user_vote == 1)) {
 					partyProximity[party] += 0.5;
 				} else {
 					partyProximity[party] += 0;
@@ -155,9 +154,11 @@
 			>Descobre mais sobre o partido
 		</button>
 		<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
+		<AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote}))} winningPartyShortDescription={proximity[0].party}/>
 		<BarChart {proximity} />
 		<OthersResults />
 		<VoteResults vote_proposals={data.db} />
+
 
 		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0">
 			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas:</p>
