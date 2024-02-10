@@ -57,7 +57,7 @@
 
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Agradecimentos:</h2>
-		<p class="text-lg text-gray-700">twitter.com/ab_curado</p>
+		<p class="text-sm text-gray-700">Maria R. Gonçalves, Rui Maciel, Catarina Ribero Lopes, Pedro Gonzalez</p>
 	</div>
 
 </div>
