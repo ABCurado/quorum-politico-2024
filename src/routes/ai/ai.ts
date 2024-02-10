@@ -86,7 +86,7 @@ export async function aiPersonaSummary(platform: any, proposals: [{ title: strin
 	console.log('proposals', proposals);
 
 	let systemPrompt =
-		'És um assistente cómico e útil que conhece a política portuguesa. Vou enviar-te frases com as quais a pessoa concorda ou discorda e tu deves descrever essa pessoa de uma forma comica numa ou duas frases curtas. Exagera na descrição de forma comica. Nao menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
+		'És um assistente cómico e útil que conhece a política portuguesa. Vou enviar-te frases com as quais a pessoa concorda ou discorda e tu deves descrever essa pessoa na primeira pessoa de uma forma comica numa ou duas frases curtas. Exagera na descrição de forma comica. Nao menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
 	let content = `
         O partido mais próximo é ${winningPartyShortDescription}. 
         As opinioes sobre as propostas são as seguintes:
@@ -114,7 +114,7 @@ function getVoteDescription(vote: number, lang: string): string {
 		} else if (vote == 0) {
 			return 'Discorda de';
 		} else if (vote == 2) {
-			return 'Não tem opinião sobre';
+			return 'Não quer saber de';
 		} else {
 			return 'Inválido';
 		}
@@ -124,7 +124,7 @@ function getVoteDescription(vote: number, lang: string): string {
 		} else if (vote == 0) {
 			return 'Disagrees with';
 		} else if (vote == 2) {
-			return 'Has no opinion on';
+			return 'Doesnt care about';
 		} else {
 			return 'Invalid';
 		}
