@@ -1,11 +1,6 @@
 import { Ai } from '@cloudflare/ai';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-    // apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
-    apiKey: "my-key", // This is the default and can be omitted
-  });
-
 export async function randomPartyDescription(platform: any, party: string) {
     const ai = new Ai(platform?.env.AI);
     // messages - chat style input
@@ -91,7 +86,11 @@ export async function randomPolicialSentence(platform: any) {
 }
 
 export async function aiPersonaSummary(platform: any, proposals: [{title:string, vote: number}], winningPartyShortDescription: string) {
-    // const ai = new Ai(platform?.env.AI);
+    const openai = new OpenAI({
+        // apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
+        apiKey: "my-key", // This is the default and can be omitted
+      });
+    const ai = new Ai(platform?.env.AI);
     // messages - chat style input
     console.log('proposals', proposals);
     let content = `
