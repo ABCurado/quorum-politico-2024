@@ -36,6 +36,7 @@
 			<li>Votos contra dos partidos nem sempre se prendem com divergências com a motivação da proposta em si, mas sim em alguma discordância no plano de implementação ou salvaguardas legislativas que acham necessárias. Isto pode levar a que alguns votos não sigam a doutrina ideológica do partido.</li>
 			<li>Riscos e críticas foram maioritariamente construídos por nós. Apesar de apartidários, podem refletir algum enviesamento.</li>
 			<li>Apesar da representatividade das propostas recolhidas, cada seleção individual de 15 propostas pode estar enviesada para determinados temas ou ser maioritariamente de partidos de um espetro político.</li>
+			<li>Esta ferramenta não substitui a leitura dos programas eleitorais.</li>
 		</ul>
 	</div>
 
