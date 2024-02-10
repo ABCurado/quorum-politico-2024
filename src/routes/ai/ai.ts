@@ -36,22 +36,15 @@ export async function randomPolicialSentence(platform: any) {
 		'Civilization',
 		'Empire',
 		'Revolution',
-		'Renaissance',
 		'Industrialization',
 		'Colonialism',
-		'World War',
-		'Dynasty',
-		'Archaeology',
-		'Monarchy',
+		'War',
 		'Continent',
 		'European Union (EU)',
 		'Brexit',
 		'Eurozone',
 		'Schengen Area',
-		'Renaissance',
 		'Mediterranean',
-		'Baltic States',
-		'Balkans',
 		'Portugal',
 		'Spain',
 		'Iberian Peninsula',
@@ -61,11 +54,6 @@ export async function randomPolicialSentence(platform: any) {
 		'Angola',
 		'Mozambique',
 		'Cape Verde',
-		'Guinea-Bissau',
-		'East Timor',
-		'Macau',
-		'Goa',
-		'Daman and Diu',
 		'Portuguese India',
 		'Portuguese Empire',
 		'Portuguese language',
@@ -74,7 +62,7 @@ export async function randomPolicialSentence(platform: any) {
 	];
 	let randomWords = politics.sort(() => 0.5 - Math.random()).slice(0, 2);
 	let chat = {
-		prompt: `Return a short and funny sentence about the politics that must contain the following orders ${randomWords.join(', ')}. Only one sentence, nothing else.`
+		prompt: `Return a short and humorous sentence about the politics that must contain the following topics ${randomWords.join(', ')}. Only one sentence, nothing else.`
 	};
 	// let response = await ai.run('@cf/meta/llama-2-7b-chat-int8', chat);
 	let response = await ai.run('@cf/meta/llama-2-7b-chat-fp16', chat);
