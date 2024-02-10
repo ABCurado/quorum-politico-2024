@@ -1,4 +1,4 @@
-import { Ai } from '@cloudflare/ai';
+// import { Ai } from '@cloudflare/ai';
 import OpenAI from 'openai';
 
 export async function randomPartyDescription(platform: any, party: string) {
@@ -78,12 +78,14 @@ export async function randomPolicialSentence(platform: any) {
 
 export async function aiPersonaSummary(platform: any, proposals: [{ title: string; vote: number }], winningPartyShortDescription: string) {
 	const openai = new OpenAI({
-		// apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
-		apiKey: 'my-key' // This is the default and can be omitted
+		apiKey: platform.env.OPENAI_API_KEY, // This is the default and can be omitted
 	});
-	const ai = new Ai(platform?.env.AI);
+	// const ai = new Ai(platform?.env.AI);
 	// messages - chat style input
 	console.log('proposals', proposals);
+
+	let systemPrompt =
+		'És um assistente cómico e útil que conhece a política portuguesa. Vou enviar-te frases com as quais a pessoa concorda ou discorda e tu deves descrever essa pessoa de uma forma comica numa ou duas frases curtas. Exagera na descrição de forma comica. Nao menciones nada sem ser a descrição da pessoa.';
 	let content = `
         O partido mais próximo é ${winningPartyShortDescription}. 
         As opinioes sobre as propostas são as seguintes:
@@ -91,16 +93,17 @@ export async function aiPersonaSummary(platform: any, proposals: [{ title: strin
 	console.log('content', content);
 	let chat = {
 		messages: [
-			{
-				role: 'system',
-				content:
-					'És um assistente cómico e útil que conhece a política portuguesa. Vou enviar-te frases com as quais a pessoa concorda ou discorda e tu deves descrever essa pessoa numa ou duas frases curtas.'
-			},
+			{ role: 'system', content: systemPrompt },
 			{ role: 'user', content: content }
 		]
 	};
-	let response = await ai.run('@cf/meta/llama-2-7b-chat-fp16', chat);
-	return response.response;
+	// let response = await ai.run('@cf/meta/llama-2-7b-chat-fp16', chat);
+	const chatCompletion = await openai.chat.completions.create({
+		messages: chat.messages,
+		model: 'gpt-3.5-turbo'
+	});
+    console.log('chatCompletion', chatCompletion.choices[0].message.content);
+	return chatCompletion.choices[0].message.content;
 }
 
 function getVoteDescription(vote: number, lang: string): string {

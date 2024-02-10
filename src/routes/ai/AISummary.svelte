@@ -3,7 +3,7 @@
 	import { aiPersonaSummary } from './ai';
 	export let proposals: [{ title: string; vote: number }];
 	export let winningPartyShortDescription: string;
-	
+
 	let data: string;
 
 	onMount(async () => {
@@ -13,7 +13,7 @@
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({ proposals: proposals, winningPartyShortDescription: winningPartyShortDescription })
-		}).then((res) => res.json());
+		}).then((res) => res.json().then((data) => data.response));
 	});
 </script>
 

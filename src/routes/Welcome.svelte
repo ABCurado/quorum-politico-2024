@@ -10,13 +10,13 @@
 
 	let ticker = 0;
 	let aiQuote = '';
-	onMount(() => {
-		fetch('/ai')
-			.then((res) => res.json())
-			.then((data) => {
-				aiQuote = data.response;
-			});
-	});
+	// onMount(() => {
+	// 	fetch('/ai')
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			aiQuote = data.response;
+	// 		});
+	// });
 </script>
 
 <TagPicker />
