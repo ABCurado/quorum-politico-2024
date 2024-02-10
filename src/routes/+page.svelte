@@ -56,7 +56,7 @@
 				} else if (proposal.user_vote == 2) {
 					partyProximity[party] += 0.5;
 				} else {
-					// console.log(proposal.id, ' VOTE NOT FOUND');
+					partyProximity[party] += 0;
 				}
 			}
 		}
@@ -71,7 +71,7 @@
 				} else if ((result == 1 && proposal.user_vote == 0) || (result == 0 && proposal.user_vote == 1)) {
 					partyProximity[party] += 0.5;
 				} else {
-					// console.log(proposal.id, ' VOTE NOT FOUND');
+					partyProximity[party] += 0;
 				}
 			}
 		}
