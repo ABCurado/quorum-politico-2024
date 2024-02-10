@@ -7,7 +7,13 @@
 	let data: string;
 
 	onMount(async () => {
-		data = await aiPersonaSummary(null, proposals, winningPartyShortDescription);
+		data = await fetch('/ai', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ proposals: proposals, winningPartyShortDescription: winningPartyShortDescription })
+		}).then((res) => res.json());
 	});
 </script>
 
