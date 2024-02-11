@@ -50,12 +50,12 @@
 		for (let proposal of data.db) {
 			for (const [party, result] of Object.entries(proposal.votes)) {
 				if (result == proposal.user_vote) {
-            				partyProximity[party]++;
-        			} else if ((result == 0 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 0)) {
-            				partyProximity[party]--;
-        			} else if ((result == 2 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 2)) {
-            				partyProximity[party] += 0.5;
-        			}
+					partyProximity[party]++;
+				} else if ((result == 0 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 0)) {
+					partyProximity[party]--;
+				} else if ((result == 2 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 2)) {
+					partyProximity[party] += 0.5;
+				}
 			}
 		}
 
@@ -172,7 +172,7 @@
 			<Document {...data.db[currentVote]} />
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
-			<div class="fixed bottom-0 left-0 right-0 m-8 flex justify-center space-x-4 sm:relative sm:mt-2">
+			<div class="fixed bottom-0 left-0 right-0 p-4 flex justify-center space-x-4 bg-gray-100 bg-opacity-95 sm:relative sm:mt-2">
 				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}
 					>Aprovar<span class="hidden sm:block">👍</span></button
 				>
