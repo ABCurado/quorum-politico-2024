@@ -3,8 +3,7 @@
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
 	import { IconShare } from '@tabler/icons-svelte';
 	import mixpanel from 'mixpanel-browser';
-	import * as htmlToImage from 'html-to-image';
-	import { toPng } from 'html-to-image';
+	import { toBlob } from 'html-to-image';
 
 	export let url = 'https://adn-politico.com/';
 	export let title = '';
@@ -17,7 +16,7 @@
 		let filesArray: File[] = [];
 		try {
 			let node = document.getElementById('share');	
-			let blob = await htmlToImage.toBlob(node)
+			let blob = await toBlob(node, {backgroundColor: 'white'})
 			var file = new File([blob], 'adn.png', { type: blob.type });
 			filesArray = [file];
 		} catch (e) {
