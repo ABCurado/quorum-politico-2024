@@ -60,7 +60,7 @@
 				} else if (result == 1 && proposal.user_vote == 2) {
 					partyProximity[party] += 1;
 				} else {
-					partyProximity[party] += 1;
+					partyProximity[party] += 0;
 				}
 			}
 		}
