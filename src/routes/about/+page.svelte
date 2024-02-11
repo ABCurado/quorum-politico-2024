@@ -1,8 +1,45 @@
 <script>
 	import Hemicycle from '../Hemicycle.svelte';
-	import { IconRotate2 } from '@tabler/icons-svelte';
-
 </script>
+
+
+
+
+
+
+<script>
+    import { onMount } from 'svelte';
+    import { IconArrowBack } from '@tabler/icons-svelte';
+
+    let goBack = () => {
+        // Function to handle the back button click event
+        window.history.back();
+    };
+
+    onMount(() => {
+        // Add any additional logic on component mount if needed
+    });
+</script>
+
+<div class="flex w-full justify-center">
+    <!-- Your existing content -->
+    <Hemicycle random={true} />
+</div>
+
+<!-- Back button -->
+<div class="absolute top-4 left-4 cursor-pointer">
+    <a on:click={goBack}>
+        <IconArrowBack name="IconArrowBack" class="text-gray-700" size={24} />
+    </a>
+</div>
+
+
+
+
+
+
+
+
 
 <div class="flex w-full justify-center">
 	<Hemicycle random={true} />
