@@ -15,7 +15,7 @@
 <!-- Back button -->
 <div class="absolute top-4 left-4 cursor-pointer">
     <a on:click={goBack}>
-        <IconArrowBack name="IconArrowBack" class="text-gray-700" size={24} />
+        <IconArrowBack name="IconArrowBack" class="text-gray-700" size={48} />
     </a>
 </div>
 
