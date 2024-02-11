@@ -14,9 +14,9 @@
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	async function navigatorShare() {
-		let node = document.getElementById('share');	
 		let filesArray: File[] = [];
 		try {
+			let node = document.getElementById('share');	
 			let blob = await htmlToImage.toBlob(node)
 			var file = new File([blob], 'adn.png', { type: blob.type });
 			filesArray = [file];
