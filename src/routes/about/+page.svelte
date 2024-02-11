@@ -1,19 +1,16 @@
 <script>
 	import Hemicycle from '../Hemicycle.svelte';
-</script>
 
 
 
-
-
-
-<script>
     import { IconArrowBack } from '@tabler/icons-svelte';
-
     let goBack = () => {
         window.history.back();
     };
+
+
 </script>
+
 
 <!-- Back button -->
 <div class="absolute top-4 left-4 cursor-pointer">
@@ -21,8 +18,6 @@
         <IconArrowBack name="IconArrowBack" class="text-gray-700" size={24} />
     </a>
 </div>
-
-
 
 
 
