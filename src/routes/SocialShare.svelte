@@ -3,7 +3,7 @@
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
 	import { IconShare } from '@tabler/icons-svelte';
 	import mixpanel from 'mixpanel-browser';
-	import { toSVG } from 'html-to-image';
+	import { toSvg } from 'html-to-image';
 	import { onMount } from 'svelte';
 	import { Spinner } from 'flowbite-svelte';
 
@@ -18,7 +18,7 @@
 	onMount(async () => {
 		try {
 			let node = document.getElementById('share');
-			let blob = await toSVG(node, { backgroundColor: 'white' });
+			let blob = await toSvg(node, { backgroundColor: 'white' });
 			var file = new File([blob], 'adn.svg', { type: blob.type });
 			filesArray = [file];
 		} catch (e) {
