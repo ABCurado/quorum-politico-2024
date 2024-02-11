@@ -8,7 +8,7 @@ How it Works:
 
     Vote on proposals.
     ADN Politico analyzes your choices.
-    Get a clear picture of your political alignment.
+    Get a picture of your political alignment.
 
 Why ADN Politico?
 
@@ -18,7 +18,7 @@ Simplify your voting experience. Navigate the political landscape with ease. Joi
 
 This is a Svelte project styled with tailwind and build from the start to run on cloudflare pages.
 
-To start the project locally you just need to:
+To start the project locally:
 
 Install npm modules
 ```
