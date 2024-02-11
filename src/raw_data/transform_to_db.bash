@@ -1,6 +1,7 @@
 
 cat data-2-2-22.csv | python3 -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))' > proposals_db.json 
 
+# TODO: make this a script instead of a manual process
         # "PS": "(.*)",
         # "PSD": "(.*)",
         # "CH": "(.*)",
