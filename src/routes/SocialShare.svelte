@@ -5,6 +5,7 @@
 	import mixpanel from 'mixpanel-browser';
 	import { toBlob } from 'html-to-image';
 	import { onMount } from 'svelte';
+	import { Spinner } from 'flowbite-svelte';
 
 	export let url = 'https://adn-politico.com/';
 	export let title = '';
@@ -14,10 +15,10 @@
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	let filesArray: File[] = [];
-	onMount(async() => {
+	onMount(async () => {
 		try {
-			let node = document.getElementById('share');	
-			let blob = await toBlob(node, {backgroundColor: 'white'})
+			let node = document.getElementById('share');
+			let blob = await toBlob(node, { backgroundColor: 'white' });
 			var file = new File([blob], 'adn.png', { type: blob.type });
 			filesArray = [file];
 		} catch (e) {
@@ -48,11 +49,15 @@
 	}
 </script>
 
-
 {#if supportsNavigatorShare}
-	<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
-		<IconShare size={48} stroke={2} class="text-sky-500 opacity-75" />
-	</button>
+	{#if filesArray.length > 0}
+		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
+			<IconShare size={48} stroke={2} class="text-sky-500 opacity-75" />
+		</button>
+	{:else}
+		//Loading
+		<Spinner color="gray" />
+	{/if}
 {:else}
 	<!-- <Email subject={title} body="{desc} {url}" /> -->
 	<!-- <HackerNews class="share-button" {title} {url} /> -->
