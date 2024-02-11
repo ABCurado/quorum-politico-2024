@@ -12,7 +12,7 @@
 	import TagPicker from './tags/TagPicker.svelte';
 	import PartyInfo from './party/PartyInfo.svelte';
 	import AboutButton from './AboutButton.svelte';
-	import AiSummary from './ai/AISummary.svelte';
+	// import AiSummary from './ai/AISummary.svelte';
 
 	export let data;
 	let quizSize: number = data.db.length;
@@ -52,10 +52,12 @@
 				if (result == proposal.user_vote) {
 					partyProximity[party] += 1;
 				} else if (result == 0 && proposal.user_vote == 1) {
-					partyProximity[party] -= 1;
+					partyProximity[party] += -1;
 				} else if (result == 1 && proposal.user_vote == 0) {
-					partyProximity[party] -= 1;
+					partyProximity[party] += -1;
 				} else if (result == 2 && proposal.user_vote == 1) {
+					partyProximity[party] += 0.5;
+				} else if (result == 1 && proposal.user_vote == 2) {
 					partyProximity[party] += 0.5;
 				} else if (result == 1 && proposal.user_vote == 2) {
 					partyProximity[party] += 0.5;
@@ -64,7 +66,6 @@
 				}
 			}
 		}
-		
 
 		proximity = Object.entries(partyProximity)
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
@@ -149,7 +150,6 @@
 		<OthersResults />
 		<VoteResults vote_proposals={data.db} />
 
-
 		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0">
 			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas:</p>
 			<button
@@ -171,7 +171,7 @@
 				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {proximity[0].party}" {proximity} />
 			</div>
 		</div>
-		<AboutButton/>
+		<AboutButton />
 	</div>
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />

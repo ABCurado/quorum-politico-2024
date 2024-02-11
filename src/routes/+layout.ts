@@ -1,6 +1,5 @@
-import mixpanel from 'mixpanel-browser';
 import { browser } from '$app/environment';
-
+import mixpanel from 'mixpanel-browser';
 
 export const load = async () => {
 	type Config = {

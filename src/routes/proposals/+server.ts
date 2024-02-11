@@ -2,10 +2,6 @@ import type { Proposal } from './types'; // Import the Proposal type
 import type { RequestHandler } from '@sveltejs/kit';
 import db from './proposals_db.json';
 
-// The /proposals route can be filtered by tag
-// The /proposals route can be filtered by search term
-// The /proposals route can be filtered by tag and number of records
-
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ request, platform, url }) => {
 	const tags = url.searchParams.get('tags')?.split(',') ?? [];

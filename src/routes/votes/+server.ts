@@ -47,7 +47,7 @@ export const GET: RequestHandler = async ({ request, platform }) => {
 		acc[top_party].push({ agrees, votes });
 		return acc;
 	}, {});
-    
+
 	return new Response(JSON.stringify(transformedResult), { headers: { 'Content-Type': 'application/json' } });
 };
 
@@ -61,13 +61,16 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 			return new Response('Invalid input', { status: 400 });
 		}
 
-		// Rate limiting
+		// TODO: Add rate limiting
 		// const lastInsertTime = await platform?.env.CACHE.get(body.device_id);
 		// if (lastInsertTime) {
 		//     return new Response('Too many requests, please try again later.', { status: 429 });
 		// }
 
-		let result = await platform?.env.DB.prepare('INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)')
+		let result = await platform?.env.DB.prepare(`
+			INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) 
+			VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)`
+		)
 			.bind(body.device_id, platform?.env.ENV, JSON.stringify(body.results), body.top_party, 2, new Date().toISOString(), new Date().toISOString())
 			.run();
 
@@ -85,7 +88,18 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 export const PUT: RequestHandler = async ({ request, platform }) => {
 	try {
 		let body = await request.json();
-		let result = await platform?.env.DB.prepare('UPDATE votes SET agrees = ?1, _updated = ?2 WHERE rowid = (SELECT rowid FROM votes WHERE device_id = ?3 AND env = ?4 ORDER BY _updated DESC LIMIT 1)')
+		await platform?.env.DB.prepare(
+			`
+			UPDATE votes 
+			SET agrees = ?1, _updated = ?2 
+			WHERE rowid = (
+				SELECT rowid 
+				FROM votes 
+				WHERE device_id = ?3 AND env = ?4 
+				ORDER BY _updated DESC 
+				LIMIT 1
+			)`
+		)
 			.bind(body.agrees, new Date().toISOString(), body.device_id, platform?.env.ENV)
 			.run();
 		return new Response(null, { status: 200 });

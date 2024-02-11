@@ -17,7 +17,7 @@
         "tag_1": "Seguran\u00e7a Social",
         "tag_2": "Educa\u00e7\u00e3o",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 2,
             "CH": 1,
@@ -26,7 +26,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "65",
         "LEN_summary": "605",
@@ -50,7 +51,7 @@
         "tag_1": "Seguran\u00e7a Social",
         "tag_2": "Cidadania",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -59,7 +60,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "57",
         "LEN_summary": "475",
@@ -83,7 +85,7 @@
         "tag_1": "Animais",
         "tag_2": "",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 2,
@@ -92,7 +94,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "50",
         "LEN_summary": "568",
@@ -116,7 +119,7 @@
         "tag_1": "Infraestruturas",
         "tag_2": "",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 0,
             "CH": 0,
@@ -125,7 +128,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "65",
         "LEN_summary": "640",
@@ -149,7 +153,7 @@
         "tag_1": "Prote\u00e7\u00e3o Civil",
         "tag_2": "Privacidade",
         "type": "Reaprecia\u00e7\u00e3o do Decreto",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 1,
             "CH": 2,
@@ -158,7 +162,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 2
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "87",
         "LEN_summary": "349",
@@ -182,7 +187,7 @@
         "tag_1": "Cidadania",
         "tag_2": "Igualdade de G\u00e9nero",
         "type": "Vota\u00e7\u00e3o Final Global",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 0,
             "CH": 0,
@@ -191,7 +196,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "72",
         "LEN_summary": "542",
@@ -215,7 +221,7 @@
         "tag_1": "Educa\u00e7\u00e3o",
         "tag_2": "Finan\u00e7as",
         "type": "Delibera\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -224,7 +230,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 2
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "64",
         "LEN_summary": "697",
@@ -248,7 +255,7 @@
         "tag_1": "Rela\u00e7\u00f5es internacionais",
         "tag_2": "Estado",
         "type": "Vota\u00e7\u00e3o na Generalidade",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 1,
             "CH": 2,
@@ -257,7 +264,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "82",
         "LEN_summary": "584",
@@ -281,7 +289,7 @@
         "tag_1": "Cidadania",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -290,7 +298,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "71",
         "LEN_summary": "682",
@@ -314,7 +323,7 @@
         "tag_1": "Cultura",
         "tag_2": "",
         "type": "Vota\u00e7\u00e3o Final Global",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 0,
             "CH": 2,
@@ -323,7 +332,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "55",
         "LEN_summary": "618",
@@ -347,7 +357,7 @@
         "tag_1": "Animais",
         "tag_2": "",
         "type": "Vota\u00e7\u00e3o na Generalidade",
-        "votes":{
+        "votes": {
             "PS": 2,
             "PSD": 2,
             "CH": 2,
@@ -356,7 +366,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "98",
         "LEN_summary": "639",
@@ -380,7 +391,7 @@
         "tag_1": "Administra\u00e7\u00e3o P\u00fablica",
         "tag_2": "Cidadania",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -389,7 +400,8 @@
             "BE": 1,
             "PAN": 2,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "63",
         "LEN_summary": "556",
@@ -413,7 +425,7 @@
         "tag_1": "Educa\u00e7\u00e3o",
         "tag_2": "Sa\u00fade",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 1,
             "CH": 2,
@@ -422,7 +434,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "N\u00e3o adoro esta",
         "LEN_title": "55",
         "LEN_summary": "347",
@@ -446,7 +459,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "Cidadania",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -455,7 +468,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "52",
         "LEN_summary": "538",
@@ -479,7 +493,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "Cidadania",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -488,7 +502,8 @@
             "BE": 1,
             "PAN": 2,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "39",
         "LEN_summary": "330",
@@ -512,7 +527,7 @@
         "tag_1": "Seguran\u00e7a Social",
         "tag_2": "Sa\u00fade",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 2,
             "CH": 1,
@@ -521,7 +536,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "96",
         "LEN_summary": "613",
@@ -545,7 +561,7 @@
         "tag_1": "Fiscalidade",
         "tag_2": "Energia",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -554,7 +570,8 @@
             "BE": 1,
             "PAN": 2,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "83",
         "LEN_summary": "512",
@@ -578,7 +595,7 @@
         "tag_1": "Seguran\u00e7a Social",
         "tag_2": "Estado",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -587,7 +604,8 @@
             "BE": 1,
             "PAN": 2,
             "L": 2
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "76",
         "LEN_summary": "479",
@@ -611,7 +629,7 @@
         "tag_1": "Finan\u00e7as",
         "tag_2": "Cidadania",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 2,
             "CH": 1,
@@ -620,7 +638,8 @@
             "BE": 2,
             "PAN": 1,
             "L": 2
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "67",
         "LEN_summary": "480",
@@ -644,7 +663,7 @@
         "tag_1": "Finan\u00e7as",
         "tag_2": "Europa",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 1,
             "CH": 2,
@@ -653,7 +672,8 @@
             "BE": 2,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "62",
         "LEN_summary": "466",
@@ -677,7 +697,7 @@
         "tag_1": "Finan\u00e7as",
         "tag_2": "Cidadania",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 1,
             "CH": 2,
@@ -686,7 +706,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "46",
         "LEN_summary": "633",
@@ -710,7 +731,7 @@
         "tag_1": "Educa\u00e7\u00e3o",
         "tag_2": "Finan\u00e7as",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -719,7 +740,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "44",
         "LEN_summary": "638",
@@ -743,7 +765,7 @@
         "tag_1": "Economia",
         "tag_2": "Sal\u00e1rios",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -752,7 +774,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "82",
         "LEN_summary": "385",
@@ -776,7 +799,7 @@
         "tag_1": "Educa\u00e7\u00e3o",
         "tag_2": "",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 2,
             "CH": 1,
@@ -785,7 +808,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "69",
         "LEN_summary": "572",
@@ -809,7 +833,7 @@
         "tag_1": "Sa\u00fade",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -818,7 +842,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "134",
         "LEN_summary": "543",
@@ -842,7 +867,7 @@
         "tag_1": "Fiscalidade",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -851,7 +876,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "62",
         "LEN_summary": "393",
@@ -875,7 +901,7 @@
         "tag_1": "Fiscalidade",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -884,7 +910,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "45",
         "LEN_summary": "431",
@@ -908,7 +935,7 @@
         "tag_1": "Administra\u00e7\u00e3o P\u00fablica",
         "tag_2": "",
         "type": "Mo\u00e7\u00e3o de censura",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 2,
             "CH": 1,
@@ -917,7 +944,8 @@
             "BE": 0,
             "PAN": 0,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "63",
         "LEN_summary": "326",
@@ -941,7 +969,7 @@
         "tag_1": "Justi\u00e7a",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 1,
             "CH": 0,
@@ -950,7 +978,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "92",
         "LEN_summary": "473",
@@ -974,7 +1003,7 @@
         "tag_1": "Cidadania",
         "tag_2": "",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 2,
             "CH": 2,
@@ -983,7 +1012,8 @@
             "BE": 2,
             "PAN": 2,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "87",
         "LEN_summary": "454",
@@ -1007,7 +1037,7 @@
         "tag_1": "Fiscalidade",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -1016,7 +1046,8 @@
             "BE": 1,
             "PAN": 2,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "84",
         "LEN_summary": "697",
@@ -1040,7 +1071,7 @@
         "tag_1": "Sa\u00fade",
         "tag_2": "Cidadania",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -1049,7 +1080,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "37",
         "LEN_summary": "555",
@@ -1073,7 +1105,7 @@
         "tag_1": "Educa\u00e7\u00e3o",
         "tag_2": "",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -1082,7 +1114,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "42",
         "LEN_summary": "499",
@@ -1106,7 +1139,7 @@
         "tag_1": "Seguran\u00e7a Social",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -1115,7 +1148,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 2
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "56",
         "LEN_summary": "502",
@@ -1139,7 +1173,7 @@
         "tag_1": "Rela\u00e7\u00f5es internacionais",
         "tag_2": "Estado",
         "type": "Voto de Sauda\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 1,
             "CH": 1,
@@ -1148,7 +1182,8 @@
             "BE": 0,
             "PAN": 2,
             "L": 2
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "50",
         "LEN_summary": "370",
@@ -1172,7 +1207,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 2,
@@ -1181,7 +1216,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "49",
         "LEN_summary": "191",
@@ -1205,7 +1241,7 @@
         "tag_1": "Sa\u00fade",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -1214,7 +1250,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "89",
         "LEN_summary": "535",
@@ -1238,7 +1275,7 @@
         "tag_1": "Cidadania",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 2,
             "CH": 0,
@@ -1247,7 +1284,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 2
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "63",
         "LEN_summary": "371",
@@ -1271,7 +1309,7 @@
         "tag_1": "Cidadania",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 2,
             "CH": 1,
@@ -1280,7 +1318,8 @@
             "BE": 2,
             "PAN": 2,
             "L": 2
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "143",
         "LEN_summary": "439",
@@ -1304,7 +1343,7 @@
         "tag_1": "Economia",
         "tag_2": "Sal\u00e1rios",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -1313,7 +1352,8 @@
             "BE": 1,
             "PAN": 2,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "104",
         "LEN_summary": "499",
@@ -1337,7 +1377,7 @@
         "tag_1": "Sa\u00fade",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -1346,7 +1386,8 @@
             "BE": 0,
             "PAN": 0,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "118",
         "LEN_summary": "416",
@@ -1370,7 +1411,7 @@
         "tag_1": "Sa\u00fade",
         "tag_2": "Cidadania",
         "type": "Decreto",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 0,
             "CH": 0,
@@ -1379,7 +1420,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "51",
         "LEN_summary": "341",
@@ -1403,7 +1445,7 @@
         "tag_1": "Prote\u00e7\u00e3o Civil",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -1412,7 +1454,8 @@
             "BE": 0,
             "PAN": 0,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "57",
         "LEN_summary": "483",
@@ -1436,7 +1479,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 2,
             "PSD": 2,
             "CH": 1,
@@ -1445,7 +1488,8 @@
             "BE": 0,
             "PAN": 0,
             "L": 0
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "111",
         "LEN_summary": "630",
@@ -1469,7 +1513,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "Cidadania",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 2,
             "PSD": 1,
             "CH": 1,
@@ -1478,7 +1522,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 0
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "100",
         "LEN_summary": "665",
@@ -1502,7 +1547,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "Fiscalidade",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 2,
             "CH": 1,
@@ -1511,7 +1556,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 2
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "82",
         "LEN_summary": "354",
@@ -1535,7 +1581,7 @@
         "tag_1": "Habita\u00e7\u00e3o",
         "tag_2": "Fiscalidade",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 2,
             "PSD": 1,
             "CH": 2,
@@ -1544,7 +1590,8 @@
             "BE": 0,
             "PAN": 2,
             "L": 2
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "54",
         "LEN_summary": "699",
@@ -1568,7 +1615,7 @@
         "tag_1": "Animais",
         "tag_2": "",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -1577,7 +1624,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "41",
         "LEN_summary": "283",
@@ -1601,7 +1649,7 @@
         "tag_1": "Fiscalidade",
         "tag_2": "Audiovisual",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 2,
@@ -1610,7 +1658,8 @@
             "BE": 0,
             "PAN": 0,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "84",
         "LEN_summary": "380",
@@ -1634,7 +1683,7 @@
         "tag_1": "Rela\u00e7\u00f5es internacionais",
         "tag_2": "Estado",
         "type": "Voto de Solidariedade",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 1,
             "CH": 1,
@@ -1643,7 +1692,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "110",
         "LEN_summary": "665",
@@ -1667,7 +1717,7 @@
         "tag_1": "Educa\u00e7\u00e3o",
         "tag_2": "",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -1676,7 +1726,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "67",
         "LEN_summary": "442",
@@ -1700,7 +1751,7 @@
         "tag_1": "Infraestruturas",
         "tag_2": "PPP",
         "type": "Projeto de Resolu\u00e7\u00e3o",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -1709,7 +1760,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 2
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "100",
         "LEN_summary": "602",
@@ -1733,7 +1785,7 @@
         "tag_1": "Cidadania",
         "tag_2": "Igualdade de G\u00e9nero",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 2,
@@ -1742,7 +1794,8 @@
             "BE": 2,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "91",
         "LEN_summary": "342",
@@ -1766,7 +1819,7 @@
         "tag_1": "Cidadania",
         "tag_2": "Jogos de Sorte",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 2,
             "CH": 0,
@@ -1775,7 +1828,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "72",
         "LEN_summary": "570",
@@ -1799,7 +1853,7 @@
         "tag_1": "Sal\u00e1rios",
         "tag_2": "Empresas",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -1808,7 +1862,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "63",
         "LEN_summary": "549",
@@ -1832,7 +1887,7 @@
         "tag_1": "Ambiente",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -1841,7 +1896,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "49",
         "LEN_summary": "612",
@@ -1865,7 +1921,7 @@
         "tag_1": "Sal\u00e1rios",
         "tag_2": "Cidadania",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 2,
@@ -1874,7 +1930,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "42",
         "LEN_summary": "350",
@@ -1898,7 +1955,7 @@
         "tag_1": "Fiscalidade",
         "tag_2": "Inova\u00e7\u00e3o",
         "type": "Vota\u00e7\u00e3o na Generalidade",
-        "votes":{
+        "votes": {
             "PS": 1,
             "PSD": 2,
             "CH": 2,
@@ -1907,7 +1964,8 @@
             "BE": 0,
             "PAN": 2,
             "L": 2
-        },        "final_result": "1",
+        },
+        "final_result": "1",
         "Comments": "",
         "LEN_title": "50",
         "LEN_summary": "343",
@@ -1931,7 +1989,7 @@
         "tag_1": "Fiscalidade",
         "tag_2": "Empresas",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 1,
             "CH": 1,
@@ -1940,7 +1998,8 @@
             "BE": 0,
             "PAN": 1,
             "L": 0
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "103",
         "LEN_summary": "339",
@@ -1964,7 +2023,7 @@
         "tag_1": "Finan\u00e7as",
         "tag_2": "Alimenta\u00e7\u00e3o",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 0,
@@ -1973,7 +2032,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "49",
         "LEN_summary": "523",
@@ -1997,7 +2057,7 @@
         "tag_1": "Cidadania",
         "tag_2": "",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 2,
             "CH": 1,
@@ -2006,7 +2066,8 @@
             "BE": 2,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "44",
         "LEN_summary": "410",
@@ -2030,7 +2091,7 @@
         "tag_1": "Administra\u00e7\u00e3o P\u00fablica",
         "tag_2": "Emprego",
         "type": "Projeto de Lei",
-        "votes":{
+        "votes": {
             "PS": 0,
             "PSD": 0,
             "CH": 1,
@@ -2039,7 +2100,8 @@
             "BE": 1,
             "PAN": 1,
             "L": 1
-        },        "final_result": "0",
+        },
+        "final_result": "0",
         "Comments": "",
         "LEN_title": "108",
         "LEN_summary": "305",

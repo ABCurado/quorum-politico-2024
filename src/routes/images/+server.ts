@@ -1,21 +1,21 @@
-import Example from './Example.svelte';
 import Hemicycle from '../Hemicycle.svelte';
 import type { RequestHandler } from '@sveltejs/kit';
+import ShareImage from './ShareImage.svelte';
 import { html } from 'satori-html';
 import satori from 'satori';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export const POST: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ platform, request }) => {
 	let body = await request.json();
 	
-	const result = Example.render({ proximity: body.proximity });
+	const result = ShareImage.render({ proximity: body.proximity });
 
 	const markup = html(`${result.html}<style>${result.css.code}</style>`);
 	const svg = await satori(markup, {
 		fonts: [
 			{
 				name: 'Source Serif Pro',
-				data: await fetch('https://dev.em-quem-votar-2023.pages.dev/fonts/Satoshi-Medium.otf').then((res) => res.arrayBuffer()),
+				data: await fetch('https://adn-politico.com/fonts/Satoshi-Medium.otf').then((res) => res.arrayBuffer()),
 				style: 'normal'
 			}
 		],
@@ -23,6 +23,8 @@ export const POST: RequestHandler = async ({ request }) => {
 		width: 400
 	});
 	try {
+		// Convert the SVG to PNG
+		// TODO: find a way to avoid this http and do it either here or in the client
 		const body = {
 			Parameters: [
 				{
@@ -36,7 +38,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			]
 		};
 
-		const res = await fetch('https://v2.convertapi.com/convert/svg/to/png?Secret=02nOtN0Pm2rT7hnA', {
+		const res = await fetch(`https://v2.convertapi.com/convert/svg/to/png?Secret=${platform?.env.CONVERT_API_TOKEN}`, {
 			method: 'POST',
 			body: JSON.stringify(body),
 			headers: {
@@ -44,7 +46,6 @@ export const POST: RequestHandler = async ({ request }) => {
 			}
 		}).then((res) => res.json());
 		var binaryData = atob(res.Files[0].FileData);
-
 		// Now, you can manipulate the binary data as needed, for example, create a Uint8Array
 		var byteArray = new Uint8Array(binaryData.length);
 		for (var i = 0; i < binaryData.length; i++) {

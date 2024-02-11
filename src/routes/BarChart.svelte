@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let proximity: Array<{ party: string, proximity: number }>;
+	export let proximity: Array<{ party: string; proximity: number }>;
 	let partyColors: { [key: string]: string } = {
 		PCP: 'fill-current bg-blue-700',
 		BE: 'fill-current bg-red-600',
