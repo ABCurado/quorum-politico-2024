@@ -19,7 +19,7 @@
 		try {
 			let node = document.getElementById('share');
 			let blob = await toSvg(node, { backgroundColor: 'white' });
-			var file = new File([blob], 'adn.svg', { type: blob.type });
+			var file = new File([blob], 'adn.svg', { type: 'image/svg+xml' });
 			filesArray = [file];
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
