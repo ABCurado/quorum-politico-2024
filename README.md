@@ -1,42 +1,42 @@
-# Decontructed-ptlc
+# ADN Politico 2024
+## Motivation
 
-Main Doc: https://www.figma.com/file/qvWmDadmNvrcoSSvSdLTlI/Projeto-Politica-Descontruida-2?type=whiteboard&node-id=44-142&t=9Y2Gd7xtIVs17G7C-0
+Project meant to help voting decisions based on previous parlimentarian decisions.
 
-# create-svelte
+## Project Structure
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Describe how the codebase is structured in this section. Provide an overview of the main directories and files, and explain their purpose. You can also include any conventions or patterns used in the project.
 
-## Creating a project
+### Directory 1
 
-If you're seeing this, you've probably already done this step. Congrats!
+Explain the purpose of this directory and list any important files or subdirectories it contains.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+### Directory 2
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Explain the purpose of this directory and list any important files or subdirectories it contains.
 
-## Developing
+...
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Getting Started
 
-```bash
-npm run dev
+Provide instructions on how to get started with the project. Include any prerequisites, installation steps, and configuration instructions. You can also provide examples or code snippets to help the reader understand how to use the project.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Usage
 
-## Building
+Explain how to use the project in this section. Provide examples or code snippets to demonstrate the functionality of the project. You can also include screenshots or diagrams if necessary.
 
-To create a production version of your app:
+## Contributing
 
-```bash
-npm run build
-```
+Explain how others can contribute to the project. Provide guidelines for submitting bug reports, feature requests, or pull requests. You can also include information about the development workflow and coding conventions.
 
-You can preview the production build with `npm run preview`.
+## License
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Specify the license under which the project is distributed. Include any additional terms or conditions if necessary.
+
+## Acknowledgements
+
+If applicable, acknowledge any individuals or organizations that have contributed to the project or provided support.
+
+## Contact
+
+Provide contact information for the project maintainer or team. This can include email addresses, social media profiles, or links to a community forum or chat room.
