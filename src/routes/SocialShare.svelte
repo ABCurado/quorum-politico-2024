@@ -4,6 +4,7 @@
 	import { IconShare } from '@tabler/icons-svelte';
 	import mixpanel from 'mixpanel-browser';
 	import { toBlob } from 'html-to-image';
+	import { onMount } from 'svelte';
 
 	export let url = 'https://adn-politico.com/';
 	export let title = '';
@@ -12,8 +13,8 @@
 	export let proximity: { party: string; proximity: number }[] = [];
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
-	async function navigatorShare() {
-		let filesArray: File[] = [];
+	let filesArray: File[] = [];
+	onMount(async() => {
 		try {
 			let node = document.getElementById('share');	
 			let blob = await toBlob(node, {backgroundColor: 'white'})
@@ -22,6 +23,9 @@
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
 		}
+	});
+
+	async function navigatorShare() {
 		try {
 			await window.navigator.share({
 				title: title,
