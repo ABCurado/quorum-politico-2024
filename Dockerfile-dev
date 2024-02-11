@@ -1,3 +1,0 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:0-20
-
-EXPOSE 5173
