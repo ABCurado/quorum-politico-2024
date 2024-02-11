@@ -39,6 +39,7 @@
 		else svgWidth = window.innerWidth * 0.9;
 	});
 </script>
+<div class="hidden fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L bg-BE bg-PS bg-PSD bg-PAN bg-PCP bg-CH bg-IL bg-L" />
 
 <div class="flex flex-col items-center justify-center">
 	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" width={svgWidth}>

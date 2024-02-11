@@ -11,6 +11,7 @@
 		CH: 'fill-current bg-indigo-950'
 	};
 </script>
+<div class="hidden fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L bg-BE bg-PS bg-PSD bg-PAN bg-PCP bg-CH bg-IL bg-L" />
 
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
     	{#each proximity as party}
