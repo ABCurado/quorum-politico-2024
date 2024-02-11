@@ -52,15 +52,15 @@
 				if (result == proposal.user_vote) {
 					partyProximity[party] += 1;
 				} else if (result == 0 && proposal.user_vote == 1) {
-					partyProximity[party] -= 1;
+					partyProximity[party] += 1;
 				} else if (result == 1 && proposal.user_vote == 0) {
-					partyProximity[party] -= 1;
+					partyProximity[party] += 1;
 				} else if (result == 2 && proposal.user_vote == 1) {
-					partyProximity[party] += 0.5;
+					partyProximity[party] += 1;
 				} else if (result == 1 && proposal.user_vote == 2) {
-					partyProximity[party] += 0.5;
+					partyProximity[party] += 1;
 				} else {
-					partyProximity[party] += 0;
+					partyProximity[party] += 1;
 				}
 			}
 		}
