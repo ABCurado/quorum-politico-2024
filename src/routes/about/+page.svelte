@@ -11,7 +11,6 @@
     import { IconArrowBack } from '@tabler/icons-svelte';
 
     let goBack = () => {
-        // Function to handle the back button click event
         window.history.back();
     };
 </script>
