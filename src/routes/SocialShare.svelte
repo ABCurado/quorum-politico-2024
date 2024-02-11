@@ -3,7 +3,7 @@
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
 	import { IconShare } from '@tabler/icons-svelte';
 	import mixpanel from 'mixpanel-browser';
-	import { toBlob } from 'html-to-image';
+	import { toSVG } from 'html-to-image';
 	import { onMount } from 'svelte';
 	import { Spinner } from 'flowbite-svelte';
 
@@ -18,8 +18,8 @@
 	onMount(async () => {
 		try {
 			let node = document.getElementById('share');
-			let blob = await toBlob(node, { backgroundColor: 'white' });
-			var file = new File([blob], 'adn.png', { type: blob.type });
+			let blob = await toSVG(node, { backgroundColor: 'white' });
+			var file = new File([blob], 'adn.svg', { type: blob.type });
 			filesArray = [file];
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
@@ -55,7 +55,6 @@
 			<IconShare size={48} stroke={2} class="text-sky-500 opacity-75" />
 		</button>
 	{:else}
-		//Loading
 		<Spinner color="gray" />
 	{/if}
 {:else}
