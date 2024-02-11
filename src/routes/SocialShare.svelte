@@ -24,7 +24,7 @@
 				})
 			});
 			let blob = await response.blob();
-			var file = new File([blob], 'adn.png', { type: 'image/.png' });
+			var file = new File([blob], 'adn.png',{type: blob.type});
 
 			filesArray = [file];
 		} catch (e) {
@@ -39,6 +39,11 @@
 			});
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Navigator Share', error: e.message });
+			await window.navigator.share({
+				title: title,
+				text: `${title} ${desc}`,
+				url: url
+			});
 		}
 	}
 </script>
