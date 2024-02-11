@@ -55,7 +55,7 @@
 				} else if (proposal.user_vote == 2) {
 					partyProximity[party] += 0.5;
 				} else {
-					// console.log(proposal.id, ' VOTE NOT FOUND');
+					partyProximity[party] += 0;
 				}
 			}
 		}
@@ -154,7 +154,7 @@
 			>Descobre mais sobre o partido
 		</button>
 		<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
-		<AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote}))} winningPartyShortDescription={proximity[0].party}/>
+		<!-- <AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote}))} winningPartyShortDescription={proximity[0].party}/> -->
 		<BarChart {proximity} />
 		<OthersResults />
 		<VoteResults vote_proposals={data.db} />

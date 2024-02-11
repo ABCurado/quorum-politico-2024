@@ -86,12 +86,12 @@ export async function aiPersonaSummary(platform: any, proposals: [{ title: strin
 	console.log('proposals', proposals);
 
 	let systemPrompt =
-		'És um assistente cómico e útil que conhece a política portuguesa. Vou enviar-te frases com as quais a pessoa concorda ou discorda e tu deves descrever essa pessoa na primeira pessoa de uma forma comica numa ou duas frases curtas. Exagera na descrição de forma comica. Nao menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
+		'O teu objectivo é criares um perfil extremamente generico e humoristico sobre uma pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera de forma comica, muito divertido. A tua resposta deve ser MUITO CURTA e não pode ter mais de 3 pequenas frases. A pessoa dever falar na primeria pessoa. Não menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
 	let content = `
-        O partido mais próximo é ${winningPartyShortDescription}. 
-        As opinioes sobre as propostas são as seguintes:
-            ${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.title).join('\n')}`;
-	console.log('content', content);
+        O partido mais alinhado é o ${winningPartyShortDescription}. 
+        As opinioes desta pessoa são as seguintes:
+		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.title).join('\n')}`;
+		console.log('content', content);
 	let chat = {
 		messages: [
 			{ role: 'system', content: systemPrompt },
@@ -114,7 +114,7 @@ function getVoteDescription(vote: number, lang: string): string {
 		} else if (vote == 0) {
 			return 'Discorda de';
 		} else if (vote == 2) {
-			return 'Não quer saber de';
+			return 'Não se interessa por';
 		} else {
 			return 'Inválido';
 		}
