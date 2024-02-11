@@ -2,8 +2,6 @@
 
 ![hemicycle](./static/hemicycle.png)
 
-🗳️ Welcome to ADN Politico 2024: A Voting Compass
-
 Make informed voting decisions effortlessly with ADN Politico – your digital guide through the political maze.
 
 How it Works:
