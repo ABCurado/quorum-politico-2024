@@ -1,7 +1,8 @@
 <script lang="ts">
 	// @ts-ignore
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
-	import {IconShare} from '@tabler/icons-svelte';
+	import { IconShare } from '@tabler/icons-svelte';
+	import mixpanel from 'mixpanel-browser';
 
 	export let url = 'https://adn-politico.com/';
 	export let title = '';
@@ -11,34 +12,40 @@
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	async function navigatorShare() {
-		let response = await fetch(
-			"/images",
-			{
-				method: "POST",
+		let filesArray: File[] = [];
+		try {
+			let response = await fetch('/images', {
+				method: 'POST',
 				headers: {
-					"Content-Type": "application/json",
+					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
-					proximity: proximity,
-				}),
-			}
-		)
-		let blob = await response.blob();
-		var file = new File([blob], "adn.png", {type: 'image/.png'});
+					proximity: proximity
+				})
+			});
+			let blob = await response.blob();
+			var file = new File([blob], 'adn.png', { type: 'image/.png' });
 
-		var filesArray = [file];	
-		await window.navigator.share({
-			title: title,
-			files: filesArray,
-			text: `${title} ${desc}`,
-			url: url
-		});
+			filesArray = [file];
+		} catch (e) {
+			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
+		}
+		try {
+			await window.navigator.share({
+				title: title,
+				files: filesArray,
+				text: `${title} ${desc}`,
+				url: url
+			});
+		} catch (e) {
+			mixpanel.track('Error Detected', { error_type: 'Navigator Share', error: e.message });
+		}
 	}
 </script>
 
 {#if supportsNavigatorShare}
-	<button class="share-button rounded-full bg-gray-200 bg-opacity-30 px-4 py-4 cursor-pointer flex items-center border-2  shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
-		<IconShare size={48} stroke={2} class="text-sky-500 opacity-75"/>		
+	<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
+		<IconShare size={48} stroke={2} class="text-sky-500 opacity-75" />
 	</button>
 {:else}
 	<!-- <Email subject={title} body="{desc} {url}" /> -->
