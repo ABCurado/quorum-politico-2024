@@ -1,42 +1,40 @@
 # ADN Politico 2024
-## Motivation
 
-Project meant to help voting decisions based on previous parlimentarian decisions.
+![hemicycle](./static/hemicycle.png)
 
-## Project Structure
+🗳️ Welcome to ADN Politico 2024: A Voting Compass
 
-Describe how the codebase is structured in this section. Provide an overview of the main directories and files, and explain their purpose. You can also include any conventions or patterns used in the project.
+Make informed voting decisions effortlessly with ADN Politico – your digital guide through the political maze.
 
-### Directory 1
+How it Works:
 
-Explain the purpose of this directory and list any important files or subdirectories it contains.
+    Vote on proposals.
+    ADN Politico analyzes your choices.
+    Get a clear picture of your political alignment.
 
-### Directory 2
+Why ADN Politico?
 
-Explain the purpose of this directory and list any important files or subdirectories it contains.
-
-...
+Simplify your voting experience. Navigate the political landscape with ease. Join the movement towards a more informed democracy.
 
 ## Getting Started
 
-Provide instructions on how to get started with the project. Include any prerequisites, installation steps, and configuration instructions. You can also provide examples or code snippets to help the reader understand how to use the project.
+This is a Svelte project styled with tailwind and build from the start to run on cloudflare pages.
 
-## Usage
+To start the project locally you just need to:
 
-Explain how to use the project in this section. Provide examples or code snippets to demonstrate the functionality of the project. You can also include screenshots or diagrams if necessary.
+Install npm modules
+```
+ npm install
+```
+
+Run with node
+```
+ npm run dev
+```
+
+Certain functionalities like the database will not work unless connected to a cloudflare environment.
 
 ## Contributing
 
-Explain how others can contribute to the project. Provide guidelines for submitting bug reports, feature requests, or pull requests. You can also include information about the development workflow and coding conventions.
+You can help with the project by raising an Issue in Github or by submiting code changes with a Pull Request.
 
-## License
-
-Specify the license under which the project is distributed. Include any additional terms or conditions if necessary.
-
-## Acknowledgements
-
-If applicable, acknowledge any individuals or organizations that have contributed to the project or provided support.
-
-## Contact
-
-Provide contact information for the project maintainer or team. This can include email addresses, social media profiles, or links to a community forum or chat room.
