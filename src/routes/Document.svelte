@@ -12,48 +12,45 @@
 	export let tag_1: string;
 	// export let tag_2: string;
 
-
 	function highlightTitles(text) {
-		  return text
-		    	.split('\n')
-		   	.map((point, index, array) => {
-			      if (/^\d+\./.test(point)) {
-			        return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
-			      } else {
-	        			return `<p>${point}</p>${index < array.length - 1 && /^\d+\./.test(array[index + 1]) ? '' : '<br>'}`;
-	      }
-	    })
-	    .join('');
+		return text
+			.split('\n')
+			.map((point, index, array) => {
+				if (/^\d+\./.test(point)) {
+					return `<p class="font-bold">${point.split(':')[0]}</p>${point.split(':')[1]}`;
+				} else {
+					return `<p>${point}</p>${index < array.length - 1 && /^\d+\./.test(array[index + 1]) ? '' : '<br>'}`;
+				}
+			})
+			.join('');
 	}
 
-
-function transformBulletsToHTML(text) {
-    return text
-        .split('\n')
-        .map((line) => {
-            // Check if the line starts with '- '
-            if (line.startsWith('- ')) {
-                // If true, transform the line into an HTML list item
-                return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
-            } 
-            // Add a line break after lines ending with ':'
-            else if (line.endsWith(':')) {
-                return `${line}<br><br>`;
-            }
-            // If the line does not start with '- ' or end with ':', return it unchanged
-            else {
-                return line;
-            }
-        })
-        // Join the lines back together with line breaks
-        .join('\n');
-}
-
-
+	function transformBulletsToHTML(text) {
+		return (
+			text
+				.split('\n')
+				.map((line) => {
+					// Check if the line starts with '- '
+					if (line.startsWith('- ')) {
+						// If true, transform the line into an HTML list item
+						return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
+					}
+					// Add a line break after lines ending with ':'
+					else if (line.endsWith(':')) {
+						return `${line}<br><br>`;
+					}
+					// If the line does not start with '- ' or end with ':', return it unchanged
+					else {
+						return line;
+					}
+				})
+				// Join the lines back together with line breaks
+				.join('\n')
+		);
+	}
 
 	const glossary = {
-		'Deliberação': 
-			'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
+		Deliberação: 'Trata-se de uma forma de deliberação em que se prescinde da reunião (vulgo, “assembleia geral”)',
 		'Moção de censura':
 			'Instrumento de fiscalização típico de sistemas em que o Governo é responsável perante o Parlamento, visa reprovar a execução do Programa do Governo ou a gestão de assunto de relevante interesse nacional. Pode ser apresentada por um quarto dos Deputados em efetividade de funções ou por qualquer grupo parlamentar. A sua aprovação requer a maioria absoluta dos Deputados em efetividade de funções (número de votos superior a metade dos Deputados em efetividade de funções) e provoca a demissão do Governo.',
 		'Projeto de Lei':
@@ -89,7 +86,7 @@ function transformBulletsToHTML(text) {
 		<div
 			role="button"
 			tabindex="0"
-			class="cursor-pointer mb-4 text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
+			class="mb-4 cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
 			on:click={() => (showInfo = !showInfo)}
 			on:keydown={() => (showInfo = !showInfo)}
 		>
@@ -105,11 +102,9 @@ function transformBulletsToHTML(text) {
 			{@html transformBulletsToHTML(summary_reduced)}
 		</div>
 
-		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">
-		  	Riscos e Críticas:
-		</h3>
+		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">Riscos e Críticas:</h3>
 
-		<div class="cursor-pointer mb-4 text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600">
+		<div class="mb-4 cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600">
 			<a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank"> Esquecemo-nos de algum? </a>
 		</div>
 

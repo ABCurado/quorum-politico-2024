@@ -1,5 +1,5 @@
 <script lang="ts">
-	import parlimentData from './parlimentData.json';
+	import parlimentData from './hemicycleData.json';
 	import { onMount } from 'svelte';
 
 	let partyColors: { [key: string]: string } = {
@@ -40,17 +40,18 @@
 		}
 	}
 
-	let svgHeight = 200;
+	let svgWidth = 200;
 
 	onMount(() => {
-		if (window.innerWidth >= 768) {
-			svgHeight = 385;
-		}
+		if (window.innerWidth > 768) svgWidth = window.innerWidth * 0.5;
+		else if (window.innerWidth > 640) svgWidth = window.innerWidth * 0.7;
+		else if (window.innerWidth > 480) svgWidth = window.innerWidth * 0.8;
+		else svgWidth = window.innerWidth * 0.9;
 	});
 </script>
 
 <div class="flex flex-col items-center justify-center">
-	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" height={svgHeight}>
+	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" width={svgWidth}>
 		<!-- SVG content here -->
 
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
@@ -78,6 +79,7 @@
 					<animate attributeName="r" dur={random ? '7s' : '10s'} begin="{Math.random() * 1500}ms" values="{maxRadius};{minRadius};{maxRadius}" repeatCount={random ? 'indefinite' : ''} />
 				</circle>
 			{/each}
+			<!-- TODO: Make it possible to have highlights around the parties -->
 			<!-- <circle cx={360 / 2} cy={185} r={180} class="stroke-gray-500" fill="transparent" stroke-width="3" />
 			<circle cx={360 / 2} cy={185} r={72} class="stroke-gray-500" fill="transparent" stroke-width="3" /> -->
 		</g>

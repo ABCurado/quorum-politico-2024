@@ -1,12 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import db from '../proposals/proposals_db.json';
 
-// A get route that returns for 2 urls. One called /tags another called /proposals
-// The /tags route returns a list of tags, the /proposals route returns a list of proposals
-// The /proposals route can be filtered by tag
-// The /proposals route can be filtered by search term
-// The /proposals route can be filtered by tag and search term and page number
-
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ request, platform, url, params }) => {
     const tags = db.map((item: any) => [item.tag_1]).flat();
