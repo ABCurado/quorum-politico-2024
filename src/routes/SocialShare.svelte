@@ -38,12 +38,16 @@
 				url: url
 			});
 		} catch (e) {
-			mixpanel.track('Error Detected', { error_type: 'Navigator Share', error: e.message });
+			mixpanel.track('Error Detected', { error_type: 'Navigator Share With Files', error: e.message });
+		}
+		try {
 			await window.navigator.share({
 				title: title,
 				text: `${title} ${desc}`,
 				url: url
 			});
+		} catch (e) {
+			mixpanel.track('Error Detected', { error_type: 'Navigator Share Without Files', error: e.message });
 		}
 	}
 </script>
