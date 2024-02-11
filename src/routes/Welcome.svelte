@@ -63,7 +63,7 @@
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0, 0);
-				mixpanel.track('Quiz Star');
+				mixpanel.track('Quiz Start');
 			}}>Entra na Assembleia</button
 		>
 
