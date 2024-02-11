@@ -2,16 +2,6 @@
 	import parlimentData from './parlimentData.json';
 	import { onMount } from 'svelte';
 
-	let partyColors: { [key: string]: string } = {
-		PCP: 'fill-blue-700',
-		BE: 'fill-red-600',
-		L: 'fill-lime-400',
-		PAN: 'fill-green-500',
-		IL: 'fill-sky-500',
-		PS: 'fill-pink-600',
-		PSD: 'fill-orange-600',
-		CH: 'fill-indigo-950'
-	};
 	export let random = false;
 	export let centerText = '';
 	export let partyRankingList: { party: string; proximity: number }[] = [];
@@ -67,7 +57,7 @@
 				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
 				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
 
-				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
+				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={`fill-${seat[2]}`} style="opacity: {maxOpacity};">
 					<animate
 						attributeName="opacity"
 						dur={random ? '7s' : '10s'}

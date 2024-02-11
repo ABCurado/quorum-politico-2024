@@ -7,43 +7,21 @@ export default {
 	],
 	theme: {
 		extend: {
-			colors: {}
+			colors: {
+				transparent: 'transparent',
+				PCP: '#1d4ed8',
+				BE: '#dc2626',
+				L: '#a3e635',
+				PAN: '#22c55e',
+				IL: '#0ea5e9',
+				PS: '#db2777',
+				PSD: '#ea580c',
+				CH: '#1e1b4b'
+			  },
 		},
 		fontFamily: {
-			body: [
-				'Inter',
-				'ui-sans-serif',
-				'system-ui',
-				'-apple-system',
-				'system-ui',
-				'Segoe UI',
-				'Roboto',
-				'Helvetica Neue',
-				'Arial',
-				'Noto Sans',
-				'sans-serif',
-				'Apple Color Emoji',
-				'Segoe UI Emoji',
-				'Segoe UI Symbol',
-				'Noto Color Emoji'
-			],
-			sans: [
-				'Inter',
-				'ui-sans-serif',
-				'system-ui',
-				'-apple-system',
-				'system-ui',
-				'Segoe UI',
-				'Roboto',
-				'Helvetica Neue',
-				'Arial',
-				'Noto Sans',
-				'sans-serif',
-				'Apple Color Emoji',
-				'Segoe UI Emoji',
-				'Segoe UI Symbol',
-				'Noto Color Emoji'
-			]
+			body: [],
+			sans: []
 		},
 		backdropBlur: {
 			'none': '0',
