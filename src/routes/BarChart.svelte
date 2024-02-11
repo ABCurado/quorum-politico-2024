@@ -1,17 +1,8 @@
 <script lang="ts">
 	export let proximity: Array<{ party: string; proximity: number }>;
-	let partyColors: { [key: string]: string } = {
-		PCP: 'fill-current bg-blue-700',
-		BE: 'fill-current bg-red-600',
-		L: 'fill-current bg-lime-400',
-		PAN: 'fill-current bg-green-500',
-		IL: 'fill-current bg-sky-500',
-		PS: 'fill-current bg-pink-600',
-		PSD: 'fill-current bg-orange-600',
-		CH: 'fill-current bg-indigo-950'
-	};
+
 </script>
-<div class="hidden fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L bg-BE bg-PS bg-PSD bg-PAN bg-PCP bg-CH bg-IL bg-L" />
+<div class="hidden bg-BE bg-PS bg-PSD bg-PAN bg-PCP bg-CH bg-IL bg-L" />
 
 <div class="w-2/3 lg:w-1/2 xl:w-1/3">
     	{#each proximity as party}
