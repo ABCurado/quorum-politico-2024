@@ -45,11 +45,13 @@
 	}
 
 	$: if (currentVote === quizSize) {
-
+		/*
 		let partyProximity: { party: string; proximity: number }[] = [];
 		partyProximity.forEach(item => {
     			item.proximity = 0;
 		});
+		*/
+		let partyProximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
 		
 		for (let proposal of data.db) {
 			for (const [party, result] of Object.entries(proposal.votes)) {
