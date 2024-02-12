@@ -47,14 +47,15 @@
 	$: if (currentVote === quizSize) {
 
 		// Initialize partyProximity object
-		let partyProximity = { BE: 0
-					, PS: 0
-					, PSD: 0
-					, PCP: 0
-					, PAN: 0
-					, L: 0 
-					, CH: 0
-					, IL: 0 };
+		let partyProximity: { party: string; proximity: number }[] = [];
+		partyProximity.push({ party: "PS", proximity: 0 });
+		partyProximity.push({ party: "PSD", proximity: 0 });
+		partyProximity.push({ party: "PCP", proximity: 0 });
+		partyProximity.push({ party: "IL", proximity: 0 });
+		partyProximity.push({ party: "CH", proximity: 0 });
+		partyProximity.push({ party: "BE", proximity: 0 });
+		partyProximity.push({ party: "L", proximity: 0 });
+		partyProximity.push({ party: "PAN", proximity: 0 });
 
 		for (let proposal of data.db) {
 			for (const [party, result] of Object.entries(proposal.votes)) {
