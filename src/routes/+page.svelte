@@ -48,6 +48,7 @@
 
 		// Initialize partyProximity object
 		let partyProximity: { party: string; proximity: number }[] = [];
+		/*
 		partyProximity.push({ party: "PS", proximity: 0 });
 		partyProximity.push({ party: "PSD", proximity: 0 });
 		partyProximity.push({ party: "PCP", proximity: 0 });
@@ -56,8 +57,8 @@
 		partyProximity.push({ party: "BE", proximity: 0 });
 		partyProximity.push({ party: "L", proximity: 0 });
 		partyProximity.push({ party: "PAN", proximity: 0 });
-
-		/*
+		*/
+		
 		for (let proposal of data.db) {
 			for (const [party, result] of Object.entries(proposal.votes)) {
 				if (result == proposal.user_vote) {
@@ -71,7 +72,7 @@
         			}
 			}
 		}
-		*/
+		
 
 		proximity = Object.entries(partyProximity)
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
