@@ -45,16 +45,7 @@
 	}
 
 	$: if (currentVote === quizSize) {
-		// Initialize partyProximity object
-		let partyProximity = {};
-
-		// Initialize partyProximity counts to 0
-		for (const proposal of data.db) {
-    			for (const party of Object.keys(proposal.votes)) {
-        			partyProximity[party] = 0;
-    			}
-		}
-
+		
 		for (let proposal of data.db) {
 			for (const [party, result] of Object.entries(proposal.votes)) {
 				if (result == proposal.user_vote) {
@@ -110,6 +101,16 @@
 		currentVote = 0;
 		showCategoriesPicker = false;
 		selectedTags = [];
+		
+		// Initialize partyProximity object
+		let partyProximity = {};
+
+		// Initialize partyProximity counts to 0
+		for (const proposal of data.db) {
+    			for (const party of Object.keys(proposal.votes)) {
+        			partyProximity[party] = 0;
+    			}
+		}
 	}
 </script>
 
