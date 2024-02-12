@@ -1,8 +1,24 @@
 <script>
 	import Hemicycle from '../Hemicycle.svelte';
-	import { IconRotate2 } from '@tabler/icons-svelte';
+
+
+
+    import { IconArrowBack } from '@tabler/icons-svelte';
+    let goBack = () => {
+        window.history.back();
+    };
+
 
 </script>
+
+
+<!-- Back button -->
+<div class="absolute top-4 left-4 cursor-pointer">
+    <a on:click={goBack}>
+        <IconArrowBack name="IconArrowBack" class="text-gray-700" size={48} />
+    </a>
+</div>
+
 
 <div class="flex w-full justify-center mb-4">
 	<Hemicycle random={true} />

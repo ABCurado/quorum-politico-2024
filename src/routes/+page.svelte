@@ -32,6 +32,7 @@
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
+	//let proximity: { party: string; proximity: number }[] = [];
 	let proximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
 
 	$: if (currentVote === quizSize / 2) {
@@ -60,6 +61,7 @@
         			}
 			}
 		}
+		
 
 		proximity = Object.entries(partyProximity)
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))

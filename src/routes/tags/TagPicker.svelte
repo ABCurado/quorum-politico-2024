@@ -52,7 +52,11 @@
 		</ul>
 		<svelte:fragment slot="footer">
 			<div class="flex justify-between items-center h-12">
-				<GradientButton color="tealToLime" disabled={selectedTagsSize !== 3} on:click={onButtonClick} class={selectedTagsSize === 3 ? 'border-2 border-green-500' : ''}>Vamos a isso!</GradientButton>
+
+<button on:click={onButtonClick} class="mb-4 rounded bg-green-500 px-6 py-3 font-bold text-white hover:bg-green-700" disabled={selectedTagsSize !== 3}>
+    Vamos a isso!
+</button>
+
 			</div>
 		</svelte:fragment>
 	</Modal>
