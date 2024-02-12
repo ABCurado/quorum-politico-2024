@@ -1,6 +1,7 @@
 <script lang="ts">
 	import parlimentData from './hemicycleData.json';
 	import { onMount } from 'svelte';
+	import logo from '@static/favicon.png'
 
 	let partyColors: { [key: string]: string } = {
 		PCP: 'fill-blue-700',
@@ -58,7 +59,7 @@
 		<g>
 			<!--{#if !random} -->
 				<!-- <text x="175" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
-				<image href = "/static/favicon.png"/>
+				<img src={logo}/>
 			<!-- {/if} -->
 
 			{#each parlimentData as seat}
