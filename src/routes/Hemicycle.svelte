@@ -56,10 +56,10 @@
 
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
 		<g>
-			{#if !random}
+			<!--{#if !random} -->
 				<!-- <text x="175" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
 				<image x="175" y="175" href = "/static/favicon.png"/>
-			{/if}
+			<!-- {/if} -->
 
 			{#each parlimentData as seat}
 				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
