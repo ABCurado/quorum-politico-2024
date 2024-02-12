@@ -1,7 +1,7 @@
 <script lang="ts">
 	import parlimentData from './hemicycleData.json';
 	import { onMount } from 'svelte';
-	import logo from '@static/favicon.png'
+	import logo from '@static/favicon.png';
 
 	let partyColors: { [key: string]: string } = {
 		PCP: 'fill-blue-700',
