@@ -1,42 +1,38 @@
-# Decontructed-ptlc
+# ADN Politico 2024
 
-Main Doc: https://www.figma.com/file/qvWmDadmNvrcoSSvSdLTlI/Projeto-Politica-Descontruida-2?type=whiteboard&node-id=44-142&t=9Y2Gd7xtIVs17G7C-0
+![hemicycle](./static/hemicycle.png)
 
-# create-svelte
+Make informed voting decisions effortlessly with ADN Politico – your digital guide through the political maze.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+How it Works:
 
-## Creating a project
+    Vote on proposals.
+    ADN Politico analyzes your choices.
+    Get a picture of your political alignment.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Why ADN Politico?
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+Simplify your voting experience. Navigate the political landscape with ease. Join the movement towards a more informed democracy.
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## Getting Started
+
+This is a Svelte project styled with tailwind and build from the start to run on cloudflare pages.
+
+To start the project locally:
+
+Install npm modules
+```
+ npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+Run with node
+```
+ npm run dev
 ```
 
-## Building
+Certain functionalities like the database will not work unless connected to a cloudflare environment.
 
-To create a production version of your app:
+## Contributing
 
-```bash
-npm run build
-```
+You can help with the project by raising an Issue in Github or by submiting code changes with a Pull Request.
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

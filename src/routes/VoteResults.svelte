@@ -15,7 +15,7 @@
 	{#each vote_proposals as vote}
 		<div class="shadow overflow-hidden sm:rounded-lg mb-4 w-full lg:w-1/2 xl:w-1/3">
 			<div class="px-4 py-5 sm:px-6 border-b border-gray-200 w-full">
-				<h2 class="text-lg leading-6 font-medium text-gray-900">({vote.author}) {vote.title}</h2>
+				<h2 class="text-lg leading-6 font-medium text-gray-900">[{vote.author}] {vote.title_reduced}</h2>
 			</div>
 
 			<div class="overflow-x-auto">

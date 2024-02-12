@@ -121,28 +121,30 @@
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
-	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
-		<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
-		<!-- <h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1> -->
-		<!-- <p class="mb-1 mt-4 text-center text-base sm:text-lg">
-			Tens uma proximidade de <span class="font-bold">{Number(proximity[0].proximity.toFixed(2)) * 100}%</span> com o partido{' '}
-		</p> -->
-		<button
-			tabindex="0"
-			class="mb-4 mt-2 cursor-pointer text-center text-xs text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
-			on:click={() => {
-				showPartyInfo = true;
-			}}
-			on:keydown={(event) => {
-				if (event.key === 'Enter') {
+	<div class="flex min-h-screen flex-col px-4 sm:px-0 items-center justify-center ">
+		<div id="share" class="flex flex-col items-center justify-center ">
+			<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
+			<!-- <h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1> -->
+			<!-- <p class="mb-1 mt-4 text-center text-base sm:text-lg">
+				Tens uma proximidade de <span class="font-bold">{Number(proximity[0].proximity.toFixed(2)) * 100}%</span> com o partido{' '}
+			</p> -->
+			<button
+				tabindex="0"
+				class="mb-4 mt-2 cursor-pointer text-center text-xs text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
+				on:click={() => {
 					showPartyInfo = true;
-				}
-			}}
-			>Descobre mais sobre o partido
-		</button>
-		<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
-		<!-- <AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote}))} winningPartyShortDescription={proximity[0].party}/> -->
-		<BarChart {proximity} />
+				}}
+				on:keydown={(event) => {
+					if (event.key === 'Enter') {
+						showPartyInfo = true;
+					}
+				}}
+				>Descobre mais sobre o partido
+			</button>
+			<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
+			<!-- <AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote}))} winningPartyShortDescription={proximity[0].party}/> -->
+			<BarChart {proximity} />
+		</div>
 		<OthersResults />
 		<VoteResults vote_proposals={data.db} />
 
@@ -176,7 +178,7 @@
 			<Document {...data.db[currentVote]} />
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
-			<div class="fixed bottom-0 left-0 right-0 m-8 flex justify-center space-x-4 sm:relative sm:mt-2">
+			<div class="fixed bottom-0 left-0 right-0 p-4 flex justify-center space-x-4 bg-gray-100 bg-opacity-95 sm:relative sm:mt-2">
 				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}
 					>Aprovar<span class="hidden sm:block">👍</span></button
 				>

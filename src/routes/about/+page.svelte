@@ -20,8 +20,7 @@
 </div>
 
 
-
-<div class="flex w-full justify-center">
+<div class="flex w-full justify-center mb-4">
 	<Hemicycle random={true} />
 </div>
 <div class="relative mx-auto w-10/12 space-y-8 py-3 sm:mx-auto">
@@ -29,10 +28,7 @@
 		<h2 class="text-2xl font-bold text-gray-700">ADN Político:</h2>
 		<ul class="mt-4 list-inside list-disc space-y-2 text-lg text-gray-700">
 			<li>Iniciativa apartidária para votares diretamente em propostas parlamentares e perceberes que partido melhor te representa.</li>
-			<li>
-				Ignoramos agendas políticas e partidárias, o que se diz em entrevistas e o que se promete em programas eleitoriais. Queremos avaliar objetivamente como cada partido utiliza o seu poder de
-				voto.
-			</li>
+			<li> Ignoramos agendas políticas e partidárias, o que se diz em entrevistas e o que se promete em programas eleitoriais. Queremos avaliar objetivamente como cada partido utiliza o seu poder de voto.</li>
 		</ul>
 	</div>
 
@@ -61,7 +57,7 @@
 			</li>
 			<li>Riscos e críticas foram maioritariamente construídos por nós. Apesar de apartidários, podem refletir algum enviesamento.</li>
 			<li>Apesar da representatividade das propostas recolhidas, cada seleção individual de 15 propostas pode estar enviesada para determinados temas ou ser maioritariamente de partidos de um espetro político.</li>
-			<li>Esta ferramenta não substitui a leitura dos programas eleitorais como preparação do voto.</li>
+			<li>Esta ferramenta não substitui a leitura dos programas eleitorais como preparação do voto (até porque só inclui partidos com representação parlamentar).</li>
 		</ul>
 	</div>
 
@@ -74,7 +70,7 @@
 
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Agradecimentos:</h2>
-		<!-- <p class="text-sm text-gray-700">Maria R. Gonçalves, Rui Maciel, Catarina Ribero Lopes, Pedro Gonzalez</p> -->
+		<p class="text-sm text-gray-700">Maria R. Gonçalves, Rui Maciel, Catarina Ribero Lopes, Pedro Gonzalez</p>
 	</div>
 
 </div>

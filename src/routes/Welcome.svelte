@@ -36,19 +36,19 @@
 			<!--As <b>instruções</b> são simples:-->
 			<ul>
 				<li class="ml-3 flex items-center">
-					<IconCheckbox size={16} stroke={3} color="green" />
+					<IconCheckbox size={16} stroke={3} class="text-green-400" />
 					<span class="ml-2">Lê a <strong>motivação, riscos e críticas</strong> de cada proposta que te é apresentada.</span>
 				</li>
 				<li class="ml-3 flex items-center">
-					<IconCheckbox size={16} stroke={3} color="green" />
+					<IconCheckbox size={16} stroke={3} class="text-green-400" />
 					<span class="ml-2">Decide se és a <strong>favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstém-te</strong>.</span>
 				</li>
 				<li class="ml-3 flex items-center">
-					<IconCheckbox size={16} stroke={3} color="green" />
+					<IconCheckbox size={16} stroke={3} class="text-green-400" />
 					<span class="ml-2">No final, dizemos-te que <strong>partido realmente te representou</strong>.</span>
 				</li>
 				<li class="ml-3 flex items-center">
-					<IconCheckbox size={16} stroke={3} color="green" />
+					<IconCheckbox size={16} stroke={3} class="text-green-400" />
 					<span class="ml-2">Não guardamos quaisquer dados pessoais.</span>
 				</li>
 			</ul>
@@ -63,7 +63,7 @@
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0, 0);
-				mixpanel.track('Quiz Star');
+				mixpanel.track('Quiz Start');
 			}}>Entra na Assembleia</button
 		>
 

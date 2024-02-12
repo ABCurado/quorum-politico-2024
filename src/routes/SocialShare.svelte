@@ -3,6 +3,9 @@
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
 	import { IconShare } from '@tabler/icons-svelte';
 	import mixpanel from 'mixpanel-browser';
+	import { toSvg } from 'html-to-image';
+	import { onMount } from 'svelte';
+	import { Spinner } from 'flowbite-svelte';
 
 	export let url = 'https://adn-politico.com/';
 	export let title = '';
@@ -11,25 +14,19 @@
 	export let proximity: { party: string; proximity: number }[] = [];
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
-	async function navigatorShare() {
-		let filesArray: File[] = [];
+	let filesArray: File[] = [];
+	onMount(async () => {
 		try {
-			let response = await fetch('/images', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					proximity: proximity
-				})
-			});
-			let blob = await response.blob();
-			var file = new File([blob], 'adn.png', { type: 'image/.png' });
-
+			let node = document.getElementById('share');
+			let blob = await toSvg(node, { backgroundColor: 'white' });
+			var file = new File([blob], 'adn.svg', { type: 'image/svg+xml' });
 			filesArray = [file];
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
 		}
+	});
+
+	async function navigatorShare() {
 		try {
 			await window.navigator.share({
 				title: title,
@@ -38,15 +35,28 @@
 				url: url
 			});
 		} catch (e) {
-			mixpanel.track('Error Detected', { error_type: 'Navigator Share', error: e.message });
+			mixpanel.track('Error Detected', { error_type: 'Navigator Share With Files', error: e.message });
+		}
+		try {
+			await window.navigator.share({
+				title: title,
+				text: `${title} ${desc}`,
+				url: url
+			});
+		} catch (e) {
+			mixpanel.track('Error Detected', { error_type: 'Navigator Share Without Files', error: e.message });
 		}
 	}
 </script>
 
 {#if supportsNavigatorShare}
-	<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
-		<IconShare size={48} stroke={2} class="text-sky-500 opacity-75" />
-	</button>
+	{#if filesArray.length > 0}
+		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
+			<IconShare size={48} stroke={2} class="text-sky-500 opacity-75" />
+		</button>
+	{:else}
+		<Spinner color="gray" />
+	{/if}
 {:else}
 	<!-- <Email subject={title} body="{desc} {url}" /> -->
 	<!-- <HackerNews class="share-button" {title} {url} /> -->

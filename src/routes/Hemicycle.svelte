@@ -2,16 +2,6 @@
 	import parlimentData from './hemicycleData.json';
 	import { onMount } from 'svelte';
 
-	let partyColors: { [key: string]: string } = {
-		PCP: 'fill-blue-700',
-		BE: 'fill-red-600',
-		L: 'fill-lime-400',
-		PAN: 'fill-green-500',
-		IL: 'fill-sky-500',
-		PS: 'fill-pink-600',
-		PSD: 'fill-orange-600',
-		CH: 'fill-indigo-950'
-	};
 	export let random = false;
 	export let centerText = '';
 	export let party_logo = '';
@@ -50,6 +40,7 @@
 		else svgWidth = window.innerWidth * 0.9;
 	});
 </script>
+<div class="hidden fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L" />
 
 <div class="flex flex-col items-center justify-center">
 	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" width={svgWidth}>
@@ -58,8 +49,7 @@
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
 		<g>
 			{#if !random}
-				<!-- <text x=180 y=175 class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
-				<image href="../psd.png" x="100" y="100" width="160" height="100"/>
+				<text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text>
 			{/if}
 
 			{#each parlimentData as seat}
@@ -70,7 +60,7 @@
 				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
 				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
 
-				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={partyColors[seat[2]]} style="opacity: {maxOpacity};">
+				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={`fill-${seat[2]}`} style="opacity: {maxOpacity};">
 					<animate
 						attributeName="opacity"
 						dur={random ? '7s' : '10s'}
