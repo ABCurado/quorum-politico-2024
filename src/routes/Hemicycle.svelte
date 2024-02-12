@@ -58,7 +58,7 @@
 		<g>
 			<!--{#if !random} -->
 				<!-- <text x="175" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
-				<image href = "static/favicon.png"/>
+				<image href = "/static/favicon.png"/>
 			<!-- {/if} -->
 
 			{#each parlimentData as seat}
