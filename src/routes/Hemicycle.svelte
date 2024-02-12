@@ -57,7 +57,8 @@
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
 		<g>
 			{#if !random}
-				<text x="175" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text>
+				<!-- <text x="175" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
+				<image href = "../static/logos/PS.png"/>
 			{/if}
 
 			{#each parlimentData as seat}
