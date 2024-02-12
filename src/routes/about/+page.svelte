@@ -57,7 +57,7 @@
 			</li>
 			<li>Riscos e críticas foram maioritariamente construídos por nós. Apesar de apartidários, podem refletir algum enviesamento.</li>
 			<li>Apesar da representatividade das propostas recolhidas, cada seleção individual de 15 propostas pode estar enviesada para determinados temas ou ser maioritariamente de partidos de um espetro político.</li>
-			<li>Esta ferramenta não substitui a leitura dos programas eleitorais como preparação do voto.</li>
+			<li>Esta ferramenta não substitui a leitura dos programas eleitorais como preparação do voto (até porque só inclui partidos com representação parlamentar).</li>
 		</ul>
 	</div>
 
