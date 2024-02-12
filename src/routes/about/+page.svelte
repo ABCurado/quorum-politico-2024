@@ -4,7 +4,7 @@
 
 </script>
 
-<div class="flex w-full justify-center">
+<div class="flex w-full justify-center mb-4">
 	<Hemicycle random={true} />
 </div>
 <div class="relative mx-auto w-10/12 space-y-8 py-3 sm:mx-auto">
@@ -12,10 +12,7 @@
 		<h2 class="text-2xl font-bold text-gray-700">ADN Político:</h2>
 		<ul class="mt-4 list-inside list-disc space-y-2 text-lg text-gray-700">
 			<li>Iniciativa apartidária para votares diretamente em propostas parlamentares e perceberes que partido melhor te representa.</li>
-			<li>
-				Ignoramos agendas políticas e partidárias, o que se diz em entrevistas e o que se promete em programas eleitoriais. Queremos avaliar objetivamente como cada partido utiliza o seu poder de
-				voto.
-			</li>
+			<li> Ignoramos agendas políticas e partidárias, o que se diz em entrevistas e o que se promete em programas eleitoriais. Queremos avaliar objetivamente como cada partido utiliza o seu poder de voto.</li>
 		</ul>
 	</div>
 
