@@ -14,6 +14,7 @@
 	};
 	export let random = false;
 	export let centerText = '';
+	export let party_logo = '';
 	export let partyRankingList: { party: string; proximity: number }[] = [];
 
 	let partyRanking = Object.fromEntries(partyRankingList.map((party) => [party.party, party.proximity]));
