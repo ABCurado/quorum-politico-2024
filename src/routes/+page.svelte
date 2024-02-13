@@ -123,7 +123,7 @@
 {:else if currentVote == quizSize}
 	<div class="flex min-h-screen flex-col px-4 sm:px-0 items-center justify-center ">
 		<div id="share" class="flex flex-col items-center justify-center ">
-			<Hemicycle partyRankingList={proximity} centerText={proximity[0].party} />
+			<Hemicycle partyRankingList={proximity} party_logo={proximity[0].party} />
 			<!-- <h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1> -->
 			<!-- <p class="mb-1 mt-4 text-center text-base sm:text-lg">
 				Tens uma proximidade de <span class="font-bold">{Number(proximity[0].proximity.toFixed(2)) * 100}%</span> com o partido{' '}
