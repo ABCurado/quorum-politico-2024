@@ -27,7 +27,7 @@
 			
 			let blob = await toBlob(node, { backgroundColor: 'white',width:400, height:600});
 			// const blob = await (await fetch(await toPng(node, {}))).blob(); 
-			var file = new File([blob], 'adn.png', { type: "image/png" });
+			var file = new File([blob], 'adn.png', { type: "image/png"});
 			filesArray = [file];
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
