@@ -19,18 +19,15 @@
 		try {
 			let node = document.getElementById('share');
 
-			await toPng(node).then(function (dataUrl) {
-				var img = new Image();
-				img.src = dataUrl;
-				document.body.appendChild(img);
-			});
-			await toSvg(node, {}).then(function (dataUrl) {
-				var img = new Image();
-				img.src = dataUrl;
-				document.body.appendChild(img);
-			});
-			let blob = await toBlob(node, { backgroundColor: 'white' });
-			var file = new File([blob], 'adn.png', { type: blob.type });
+			// await toPng(node).then(function (dataUrl) {
+			// 	var img = new Image();
+			// 	img.src = dataUrl;
+			// 	document.body.appendChild(img);
+			// });
+			let blob = await toSvg(node, {})
+			
+			// let blob = await toBlob(node, { backgroundColor: 'white' });
+			var file = new File([blob], 'adn.svg', { type: "image/svg+xml" });
 			filesArray = [file];
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
