@@ -32,13 +32,6 @@
 			let blob = await toBlob(node, { backgroundColor: 'white' });
 			var file = new File([blob], 'adn.png', { type: blob.type });
 			filesArray = [file];
-			document.body.appendChild(file);
-
-			browser.downloads.download({
-				url: URL.createObjectURL(blob),
-				filename: 'adn.png',
-				saveAs: true
-			});
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
 		}
