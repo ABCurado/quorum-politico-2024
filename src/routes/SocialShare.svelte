@@ -27,7 +27,7 @@
 			function filter (node) {
   return (node.id !== 'descobre');
 }
-			let blob = await toBlob(node, { backgroundColor: 'white',width:380, height:600,filter: filter });
+			let blob = await toBlob(node, { backgroundColor: 'white',width:360, height:600,filter: filter });
 			// const blob = await (await fetch(await toPng(node, {}))).blob(); 
 			var file = new File([blob], 'adn.png', { type: "image/png"});
 			filesArray = [file];
