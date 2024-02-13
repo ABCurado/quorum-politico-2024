@@ -50,7 +50,8 @@
 		<g>
 			{#if !random}
 				<!-- <text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
-				<image href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image/mdn_logo_only_color.png" x="150" y="120" width="60" height="60" />
+				<!-- href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image/mdn_logo_only_color.png" -->
+				<image href="../psd.png" x="150" y="120" width="60" height="60" />
 			{/if}
 
 			{#each parlimentData as seat}
