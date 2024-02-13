@@ -24,9 +24,9 @@
 			// 	img.src = dataUrl;
 			// 	document.body.appendChild(img);
 			// });
-			let blob = await toSvg(node, {})
 			
 			// let blob = await toBlob(node, { backgroundColor: 'white' });
+			const blob = await (await fetch(await toSvg(node, {}))).blob(); 
 			var file = new File([blob], 'adn.svg', { type: "image/svg+xml" });
 			filesArray = [file];
 		} catch (e) {
