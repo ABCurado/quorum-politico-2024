@@ -3,7 +3,7 @@
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
 	import { IconShare } from '@tabler/icons-svelte';
 	import mixpanel from 'mixpanel-browser';
-	import { toSvg } from 'html-to-image';
+	import { toSvg, toBlob, toPng } from 'html-to-image';
 	import { onMount } from 'svelte';
 	import { Spinner } from 'flowbite-svelte';
 
@@ -18,9 +18,18 @@
 	onMount(async () => {
 		try {
 			let node = document.getElementById('share');
-			let blob = await toSvg(node, { backgroundColor: 'white' });
-			var file = new File([blob], 'adn.svg', { type: 'image/svg+xml' });
+
+			let blob = await toBlob(node, { backgroundColor: 'white' });
+			var file = new File([blob], 'adn.png', { type: blob.type });
 			filesArray = [file];
+			document.body.appendChild(file);
+
+			browser.downloads.download({
+				url: URL.createObjectURL(blob),
+				filename: 'adn.png',
+				saveAs: true
+			});
+
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
 		}
@@ -51,10 +60,10 @@
 
 {#if supportsNavigatorShare}
 	{#if filesArray.length > 0}
-		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
-			<IconShare size={48} stroke={2} class="text-sky-500 opacity-75" />
-		</button>
-	{:else}
+	<button class="flex items-center rounded-full border border-gray-200 bg-opacity-50 p-4 text-sm font-medium text-gray-500 shadow-inner transition-colors duration-300 ease-in-out hover:bg-gray-100" on:click={() => navigatorShare()}>
+		<IconShare size={48} stroke={2} class="" />
+	</button>
+{:else}
 		<Spinner color="gray" />
 	{/if}
 {:else}
