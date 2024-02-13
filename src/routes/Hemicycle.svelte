@@ -50,7 +50,7 @@
 		<g>
 			{#if !random}
 				<!-- <text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
-				<image href="psd.png" width="100" height="100" />
+				<image href="psd.png" x="180" y="175" width="100" height="100" />
 			{/if}
 
 			{#each parlimentData as seat}
