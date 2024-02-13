@@ -1,7 +1,6 @@
 <script lang="ts">
 	import parlimentData from './hemicycleData.json';
 	import { onMount } from 'svelte';
-	import logo from './psd.png';
 
 	export let random = false;
 	export let centerText = '';
@@ -52,7 +51,7 @@
 			{#if !random}
 				<!-- <text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
 				<!-- href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image/mdn_logo_only_color.png" -->
-				<image href=logo x="150" y="120" width="60" height="60" />
+				<image href="./psd.png" x="150" y="120" width="60" height="60" />
 			{/if}
 
 			{#each parlimentData as seat}
