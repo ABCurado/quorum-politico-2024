@@ -15,6 +15,7 @@
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	let filesArray: File[] = [];
+	let blob = '';
 	onMount(async () => {
 		try {
 			let node = document.getElementById('share');
@@ -24,12 +25,12 @@
 			// 	img.src = dataUrl;
 			// 	document.body.appendChild(img);
 			// });
-			function filter (node) {
-  return (node.id !== 'descobre');
-}
-			let blob = await toBlob(node, { backgroundColor: 'white',width:360, height:600,filter: filter });
-			// const blob = await (await fetch(await toPng(node, {}))).blob(); 
-			var file = new File([blob], 'adn.png', { type: "image/png"});
+			function filter(node) {
+				return node.id !== 'descobre';
+			}
+			blob = await toSvg(node, { backgroundColor: 'white', width: 360, height: 600, filter: filter });
+			// const blob = await (await fetch(await toPng(node, {}))).blob();
+			var file = new File([blob], 'adn.png', { type: 'image/png' });
 			filesArray = [file];
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
@@ -41,8 +42,8 @@
 			await window.navigator.share({
 				title: title,
 				text: `${title} ${desc}`,
-				url: url,
-				files: filesArray
+				url: blob,
+				// files: filesArray
 			});
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Navigator Share With Files', error: e.message });
