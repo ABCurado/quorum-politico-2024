@@ -48,7 +48,7 @@
 		<g>
 			{#if !random}
 				<!-- <text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
-				<image href="logos/{party_logo}.png" x="155" y="130" width="150" height="150" />
+				<image href="logos/{party_logo}.png" x="125" y="125" width="110" height="110" />
 			{/if}
 
 			{#each parlimentData as seat}
