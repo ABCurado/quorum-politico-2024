@@ -11,7 +11,7 @@ type PartyInfo = {
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ url }) => {
 	try {
-		const parties: Array<{ party: string; link: string; rank: number; text: string; length: number }> = db.filter((item: any) => item.party === url.searchParams.get('party')) || [];
+		const parties: Array<{ party: string; link: string; rank: string; text: string; length: string }> = db.filter((item: any) => item.party === url.searchParams.get('party')) || [];
 		const partyInfo: PartyInfo = {
 			party: parties[0]?.party,
 			link: parties[0]?.link,
