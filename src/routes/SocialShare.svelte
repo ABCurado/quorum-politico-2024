@@ -26,8 +26,8 @@
 			// });
 			
 			// let blob = await toBlob(node, { backgroundColor: 'white' });
-			const blob = await (await fetch(await toSvg(node, {}))).blob(); 
-			var file = new File([blob], 'adn.svg', { type: "image/svg+xml" });
+			const blob = await (await fetch(await toPng(node, {}))).blob(); 
+			var file = new File([blob], 'adn.png', { type: "image/png" });
 			filesArray = [file];
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
