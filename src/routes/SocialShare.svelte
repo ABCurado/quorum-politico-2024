@@ -19,6 +19,11 @@
 		try {
 			let node = document.getElementById('share');
 
+			await toPng(node).then(function (dataUrl) {
+				var img = new Image();
+				img.src = dataUrl;
+				document.body.appendChild(img);
+			})
 			let blob = await toBlob(node, { backgroundColor: 'white' });
 			var file = new File([blob], 'adn.png', { type: blob.type });
 			filesArray = [file];
@@ -58,27 +63,10 @@
 	}
 </script>
 
-{#if supportsNavigatorShare}
-	{#if filesArray.length > 0}
+{#if filesArray.length > 0}
 	<button class="flex items-center rounded-full border border-gray-200 bg-opacity-50 p-4 text-sm font-medium text-gray-500 shadow-inner transition-colors duration-300 ease-in-out hover:bg-gray-100" on:click={() => navigatorShare()}>
 		<IconShare size={48} stroke={2} class="" />
 	</button>
 {:else}
-		<Spinner color="gray" />
-	{/if}
-{:else}
-	<!-- <Email subject={title} body="{desc} {url}" /> -->
-	<!-- <HackerNews class="share-button" {title} {url} /> -->
-	<!-- <Reddit class="share-button" {title} {url} /> -->
-	<LinkedIn class="share-button rounded" {url} />
-	<!-- <Tumblr class="share-button" {title} {url} caption={title} /> -->
-	<!-- <Pinterest class="share-button" {url} media="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/200px-Svelte_Logo.svg.png" description={title} /> -->
-	<Telegram class="share-button rounded" text={title} - {desc} {url} />
-	<!-- <Vk class="share-button" {title} {url} /> -->
-	<WhatsApp class="share-button rounded" text="{title} {url}" />
-	<!-- <Xing class="share-button" {title} {url} /> -->
-	<Facebook class="share-button rounded" quote={title} {url} />
-	<X class="share-button rounded" text={title} {desc} {url} related="other,users" {hashtags} />
-	<!-- <Line class="share-button" {url} /> -->
-	<!-- <button class="share-button rounded" on:click={() => window.navigator.clipboard.writeText(url)}>Copy Link</button> -->
+	<Spinner color="gray" />
 {/if}
