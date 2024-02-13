@@ -23,7 +23,12 @@
 				var img = new Image();
 				img.src = dataUrl;
 				document.body.appendChild(img);
-			})
+			});
+			await toSvg(node, {}).then(function (dataUrl) {
+				var img = new Image();
+				img.src = dataUrl;
+				document.body.appendChild(img);
+			});
 			let blob = await toBlob(node, { backgroundColor: 'white' });
 			var file = new File([blob], 'adn.png', { type: blob.type });
 			filesArray = [file];
@@ -34,7 +39,6 @@
 				filename: 'adn.png',
 				saveAs: true
 			});
-
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
 		}
@@ -64,7 +68,10 @@
 </script>
 
 {#if filesArray.length > 0}
-	<button class="flex items-center rounded-full border border-gray-200 bg-opacity-50 p-4 text-sm font-medium text-gray-500 shadow-inner transition-colors duration-300 ease-in-out hover:bg-gray-100" on:click={() => navigatorShare()}>
+	<button
+		class="flex items-center rounded-full border border-gray-200 bg-opacity-50 p-4 text-sm font-medium text-gray-500 shadow-inner transition-colors duration-300 ease-in-out hover:bg-gray-100"
+		on:click={() => navigatorShare()}
+	>
 		<IconShare size={48} stroke={2} class="" />
 	</button>
 {:else}
