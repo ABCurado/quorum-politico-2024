@@ -15,7 +15,6 @@
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	let filesArray: File[] = [];
-	let blob = '';
 	onMount(async () => {
 		try {
 			let node = document.getElementById('share');
@@ -28,7 +27,7 @@
 			function filter(node) {
 				return node.id !== 'descobre';
 			}
-			blob = await toSvg(node, { backgroundColor: 'white', width: 360, height: 600, filter: filter });
+			let blob = await toSvg(node, { backgroundColor: 'white', width: 360, height: 600, filter: filter });
 			// const blob = await (await fetch(await toPng(node, {}))).blob();
 			var file = new File([blob], 'adn.png', { type: 'image/png' });
 			filesArray = [file];
@@ -42,8 +41,8 @@
 			await window.navigator.share({
 				title: title,
 				text: `${title} ${desc}`,
-				url: blob,
-				// files: filesArray
+				url: url,
+				files: filesArray
 			});
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Navigator Share With Files', error: e.message });
