@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 
 	export let random = false;
-	export let centerText = '';
+	// export let centerText = '';
 	export let party_logo = '';
 	export let partyRankingList: { party: string; proximity: number }[] = [];
 
@@ -43,13 +43,12 @@
 <div class="hidden fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L" />
 
 <div class="flex flex-col items-center justify-center">
-	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" width={svgWidth}>
-		<!-- SVG content here -->
-
+	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" width={svgWidth} xmlns="http://www.w3.org/2000/svg">
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
 		<g>
 			{#if !random}
-				<text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text>
+				<!-- <text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
+				<image href="logos/{party_logo}.png" x="155" y="130" width="50" height="50" />
 			{/if}
 
 			{#each parlimentData as seat}
