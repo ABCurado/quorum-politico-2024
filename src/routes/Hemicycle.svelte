@@ -1,6 +1,7 @@
 <script lang="ts">
 	import parlimentData from './hemicycleData.json';
 	import { onMount } from 'svelte';
+	import logo from './psd.png';
 
 	export let random = false;
 	export let centerText = '';
