@@ -51,7 +51,7 @@
 			{#if !random}
 				<!-- <text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
 				<!-- href="https://raw.githubusercontent.com/ABCurado/adn-politico-2024/dev/static/logos/PSD.png" -->
-				<image href="../static/logos/PSD.png" x="155" y="130" width="50" height="50" />
+				<img src="../../static/logos/PSD.png" x="155" y="130" width="50" height="50" />
 			{/if}
 
 			{#each parlimentData as seat}
