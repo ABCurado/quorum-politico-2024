@@ -25,7 +25,7 @@
 			// 	document.body.appendChild(img);
 			// });
 			
-			let blob = await toBlob(node, { backgroundColor: 'white',width:400, height:600});
+			let blob = await toBlob(node, { backgroundColor: 'white',width:800, height:1200});
 			// const blob = await (await fetch(await toPng(node, {}))).blob(); 
 			var file = new File([blob], 'adn.png', { type: "image/png"});
 			filesArray = [file];
@@ -38,9 +38,9 @@
 		try {
 			await window.navigator.share({
 				title: title,
-				files: filesArray,
 				text: `${title} ${desc}`,
-				url: url
+				url: url,
+				files: filesArray
 			});
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Navigator Share With Files', error: e.message });
