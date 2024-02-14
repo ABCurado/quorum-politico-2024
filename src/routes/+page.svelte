@@ -22,7 +22,7 @@
 	let showPartyInfo: boolean = false;
 
 	let readInstructions = false;
-	let selectedTags = [];
+	let selectedTags: string [] = [];
 
 	let currentVote = 0;
 
