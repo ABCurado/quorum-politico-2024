@@ -43,12 +43,10 @@
 	"type": "module",
 	"dependencies": {
 		"@cloudflare/ai": "^1.0.50",
-		"eslint-config-prettier": "^8.5.0",
 		"html-to-image": "^1.11.11",
 		"mixpanel-browser": "^2.47.0",
 		"n3": "^1.17.1",
 		"openai": "^4.27.0",
-		"satori-html": "^0.3.2",
 		"tailwindcss-hero-patterns": "^0.1.2"
 	},
 	"overrides": {
