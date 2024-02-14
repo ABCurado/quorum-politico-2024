@@ -30,21 +30,16 @@
 			text
 				.split('\n')
 				.map((line) => {
-					// Check if the line starts with '- '
 					if (line.startsWith('- ')) {
-						// If true, transform the line into an HTML list item
 						return `<li class="list-disc ml-4">${line.slice(2)}</li>`;
 					}
-					// Add a line break after lines ending with ':'
 					else if (line.endsWith(':')) {
 						return `${line}<br><br>`;
 					}
-					// If the line does not start with '- ' or end with ':', return it unchanged
 					else {
 						return line;
 					}
 				})
-				// Join the lines back together with line breaks
 				.join('\n')
 		);
 	}
