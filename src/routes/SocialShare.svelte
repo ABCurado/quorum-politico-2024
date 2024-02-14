@@ -14,7 +14,28 @@
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	let filesArray: File[] = [];
-	onMount(async () => {
+	// onMount(async () => {
+	// 	try {
+	// 		let node = document.getElementById('share');
+
+	// 		// await toPng(node).then(function (dataUrl) {
+	// 		// 	var img = new Image();
+	// 		// 	img.src = dataUrl;
+	// 		// 	document.body.appendChild(img);
+	// 		// });
+	// 		function filter(node) {
+	// 			return node.id !== 'descobre';
+	// 		}
+	// 		let blob = await toBlob(node, { backgroundColor: 'white', width: 360, height: 600, filter: filter });
+	// 		// const blob = await (await fetch(await toPng(node, {}))).blob();
+	// 		var file = new File([blob], 'adn.png', { type: 'image/png' });
+	// 		filesArray = [file];
+	// 	} catch (e) {
+	// 		mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
+	// 	}
+	// });
+
+	async function navigatorShare() {
 		try {
 			let node = document.getElementById('share');
 
@@ -33,9 +54,6 @@
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
 		}
-	});
-
-	async function navigatorShare() {
 		try {
 			await window.navigator.share({
 				title: title,
@@ -43,6 +61,7 @@
 				url: url,
 				files: filesArray
 			});
+			return;
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Navigator Share With Files', error: e.message });
 		}
