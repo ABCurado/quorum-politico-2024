@@ -1,16 +1,11 @@
 <script>
 	import Hemicycle from '../Hemicycle.svelte';
-
-
-
-    import { IconArrowBack } from '@tabler/icons-svelte';
-    let goBack = () => {
-        window.history.back();
-    };
-
-
+	import { IconArrowBack } from '@tabler/icons-svelte';
+    	
+	let goBack = () => {
+        	window.history.back();
+    	};
 </script>
-
 
 <!-- Back button -->
 <div class="absolute top-4 left-4 cursor-pointer">
@@ -19,10 +14,10 @@
     </a>
 </div>
 
-
 <div class="flex w-full justify-center mb-4">
 	<Hemicycle random={true} />
 </div>
+
 <div class="relative mx-auto w-10/12 space-y-8 py-3 sm:mx-auto">
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">ADN Político:</h2>
