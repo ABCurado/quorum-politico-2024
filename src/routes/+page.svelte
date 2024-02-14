@@ -12,7 +12,7 @@
 	import TagPicker from './tags/TagPicker.svelte';
 	import PartyInfo from './party/PartyInfo.svelte';
 	import AboutButton from './AboutButton.svelte';
-	// import AiSummary from './ai/AISummary.svelte';
+	import AiSummary from './ai/AISummary.svelte';
 
 	export let data;
 	let quizSize: number = data.db.length;
@@ -47,21 +47,20 @@
 
 	$: if (currentVote === quizSize) {
 		let partyProximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
-		
+
 		for (let proposal of data.db) {
 			for (const [party, result] of Object.entries(proposal.votes)) {
 				if (result == proposal.user_vote) {
-            				partyProximity[party] += 1;
-        			} else if ((result == 0 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 0)) {
-            				partyProximity[party] -= 1;
-        			} else if ((result == 2 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 2)) {
-            				partyProximity[party] += 0.5;
-        			} else if ((result == 2 && proposal.user_vote == 0) || (result == 0 && proposal.user_vote == 2)) {
-            				partyProximity[party] += 0;
-        			}
+					partyProximity[party] += 1;
+				} else if ((result == 0 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 0)) {
+					partyProximity[party] -= 1;
+				} else if ((result == 2 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 2)) {
+					partyProximity[party] += 0.5;
+				} else if ((result == 2 && proposal.user_vote == 0) || (result == 0 && proposal.user_vote == 2)) {
+					partyProximity[party] += 0;
+				}
 			}
 		}
-		
 
 		proximity = Object.entries(partyProximity)
 			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
@@ -121,8 +120,8 @@
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote == quizSize}
-	<div class="flex min-h-screen flex-col px-4 sm:px-0 items-center justify-center ">
-		<div id="share" class="flex flex-col items-center justify-center ">
+	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
+		<div id="share" class="flex flex-col items-center justify-center">
 			<Hemicycle partyRankingList={proximity} party_logo={proximity[0].party} />
 			<!-- <h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1> -->
 			<!-- <p class="mb-1 mt-4 text-center text-base sm:text-lg">
@@ -143,7 +142,10 @@
 				>Descobre mais sobre o partido
 			</button>
 			<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
-			<!-- <AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote}))} winningPartyShortDescription={proximity[0].party}/> -->
+			{#if data.env === 'dev'}
+				<AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote }))} winningPartyShortDescription={proximity[0].party} />
+			{/if}
+
 			<BarChart {proximity} />
 		</div>
 		<OthersResults />
@@ -167,7 +169,7 @@
 		<div class="m-2 mt-6 flex w-full flex-col gap-3">
 			<p class="text-center text-base">Compara as tua representação partidária com amigos:</p>
 			<div class="flex items-center justify-center gap-3">
-				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {proximity[0].party}" {proximity} />
+				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {proximity[0].party}" />
 			</div>
 		</div>
 		<AboutButton />
@@ -179,7 +181,7 @@
 			<Document {...data.db[currentVote]} />
 
 			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
-			<div class="fixed bottom-0 left-0 right-0 p-4 flex justify-center space-x-4 bg-gray-100 bg-opacity-95 sm:relative sm:mt-2">
+			<div class="fixed bottom-0 left-0 right-0 flex justify-center space-x-4 bg-gray-100 bg-opacity-95 p-4 sm:relative sm:mt-2">
 				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}
 					>Aprovar<span class="hidden sm:block">👍</span></button
 				>

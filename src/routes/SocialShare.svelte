@@ -11,7 +11,6 @@
 	export let title = '';
 	export let desc = '';
 	export let hashtags = 'adn-politico-2024';
-	export let proximity: { party: string; proximity: number }[] = [];
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	let filesArray: File[] = [];
@@ -27,7 +26,7 @@
 			function filter(node) {
 				return node.id !== 'descobre';
 			}
-			let blob = await toSvg(node, { backgroundColor: 'white', width: 360, height: 600, filter: filter });
+			let blob = await toBlob(node, { backgroundColor: 'white', width: 360, height: 600, filter: filter });
 			// const blob = await (await fetch(await toPng(node, {}))).blob();
 			var file = new File([blob], 'adn.png', { type: 'image/png' });
 			filesArray = [file];
