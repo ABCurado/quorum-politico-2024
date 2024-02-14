@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	export let proximity = [];
 </script>
 
@@ -8,4 +8,4 @@
         <h3 class="m-4">{party.party}</h3>
         <p>{party.proximity * 100}%</p>
     {/each}
-</div>
+</div> -->
