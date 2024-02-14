@@ -9,7 +9,7 @@
 	}
 </script>
 
-<button on:click={() => (showResults = !showResults)} class="bg-gray-400 hover:bg-gray-800 text-white font-bold py-2 px-4 m-2 rounded"> Clica para ver os Resultados das votações </button>
+<button on:click={() => (showResults = !showResults)} class="bg-gray-400 hover:bg-gray-800 text-white text-base font-bold py-2 px-4 m-2 rounded"> Clica para ver os Resultados das votações </button>
 
 {#if showResults}
 	{#each vote_proposals as vote}

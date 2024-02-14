@@ -3,7 +3,6 @@
 	import { onMount } from 'svelte';
 
 	export let random = false;
-	// export let centerText = '';
 	export let party_logo = '';
 	export let partyRankingList: { party: string; proximity: number }[] = [];
 
@@ -47,7 +46,6 @@
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
 		<g>
 			{#if !random}
-				<!-- <text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
 				<image href="logos/{party_logo}.png" x="125" y="100" width="110" height="110" />
 			{/if}
 

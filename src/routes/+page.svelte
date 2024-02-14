@@ -148,10 +148,10 @@
 		<OthersResults />
 		<VoteResults vote_proposals={data.db} />
 
-		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0">
+		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0 text-base">
 			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas:</p>
 			<button
-				class="mb-4 rounded bg-green-500 px-6 py-3 font-bold text-white hover:bg-green-700"
+				class="mb-4 rounded bg-green-500 px-6 py-3 font-bold text-white text-base hover:bg-green-700"
 				on:click={() => {
 					showCategoriesPicker = true;
 				}}
