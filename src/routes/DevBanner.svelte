@@ -1,5 +1,5 @@
-<script>
-	export let env;
+<script lang="ts">
+	export let env: string;
 </script>
 
 {#if env === 'dev'}

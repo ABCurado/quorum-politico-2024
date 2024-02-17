@@ -9,7 +9,7 @@ export default {
 		extend: {
 			colors: {
 				transparent: 'transparent',
-				PCP: '#1d4ed8',
+				PCP: '#0160bc',
 				BE: '#dc2626',
 				L: '#a3e635',
 				PAN: '#22c55e',

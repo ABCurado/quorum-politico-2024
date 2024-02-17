@@ -7,6 +7,7 @@
 	// agrees: 1 - Means agree
 	// agrees: 0 - Means disagree
 	// aggres: 2 - Means no vote
+	
 	type Vote = {
 		agrees: number;
 		votes: number;

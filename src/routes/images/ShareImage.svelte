@@ -1,11 +1,12 @@
-<!-- <script>
-	export let proximity = [];
+<script lang = "ts">
+	import { Proximity } from "../../types";
+    export let pr: Proximity[] = [];
 </script>
 
 <div class="flex flex-col bg-green-400 items-center">
     <h1 class="flex items-center">My ADN Politico Wrapped</h1>
-    {#each proximity as party}
-        <h3 class="m-4">{party.party}</h3>
-        <p>{party.proximity * 100}%</p>
+    {#each pr as party}
+        <h3 class="m-4">{party.party.name}</h3>
+        <p>{party.value * 100}%</p>
     {/each}
 </div> -->

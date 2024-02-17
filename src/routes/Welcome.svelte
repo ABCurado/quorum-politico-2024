@@ -22,18 +22,13 @@
 <TagPicker />
 {#if !readInstructions}
 	<div class="flex flex-col items-center p-6 sm:p-8">
-		<!-- <h1 class="text-center text-4xl mb-4">Descobre em quem votar</h1> -->
-		<!--Olá! Bem-vindo ao <strong>Concordas?</strong>, um jogo que te permite descobrir em quem votar nas próximas eleições. O jogo é baseado nas votaçõoes que aconteceram no parlamento europeu de 2022-2023. -->
 
 		<h1 class="text-center text-4xl mb-4"><strong>ADN Político</strong>: descobre que partido melhor te representa.</h1>
 		<p class="text-center text sm:text-base mb-4">Não é só mais um quiz político. Sê o teu próprio representante partidário e <strong>vota diretamente nas propostas parlamentares</strong>.</p>
 		
-		<!-- {#key ticker} -->
-		<Hemicycle centerText="" random={true} />
-		<!-- {/key} -->
+		<Hemicycle random={true} />
 
-		<div class="mb-8 mt-4">
-			<!--As <b>instruções</b> são simples:-->
+		<div class="mb-8 mt-4 text-base" >
 			<ul>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} class="text-green-400" />

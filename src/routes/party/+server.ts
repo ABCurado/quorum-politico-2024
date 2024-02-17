@@ -2,11 +2,12 @@ import { FooterLink } from 'flowbite-svelte';
 import type { RequestHandler } from '@sveltejs/kit';
 import db from '../party/party_db.json';
 
-type PartyInfo = {
+export type PartyInfo = {
 	party: string | undefined;
 	link: string | undefined;
 	proposals: string[];
 };
+
 // A get route that returns information about a specific party
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ url }) => {

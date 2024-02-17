@@ -1,13 +1,11 @@
 <script lang="ts">
 	import parlimentData from './hemicycleData.json';
 	import { onMount } from 'svelte';
+	import type { Party, Proximity, Proposal, UserVote } from '../types';
 
 	export let random = false;
-	// export let centerText = '';
 	export let party_logo = '';
-	export let partyRankingList: { party: string; proximity: number }[] = [];
-
-	let partyRanking = Object.fromEntries(partyRankingList.map((party) => [party.party, party.proximity]));
+	export let partyRankingList: Proximity[] = [];
 
 	let defaultRadiusBase = 6;
 	function calculateRadius(party: number | undefined) {
@@ -31,6 +29,14 @@
 		}
 	}
 
+	function set_proximity(s: string | number) {
+		for (let p of partyRankingList) {
+			if (p.party.name === s) {
+				return p.value
+			}
+		}
+	}
+
 	let svgWidth = 200;
 
 	onMount(() => {
@@ -40,6 +46,7 @@
 		else svgWidth = window.innerWidth * 0.9;
 	});
 </script>
+
 <div class="hidden fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L" />
 
 <div class="flex flex-col items-center justify-center">
@@ -47,17 +54,16 @@
 		<!-- Created with the Wikimedia parliament diagram creator (http://tools.wmflabs.org/parliamentdiagram/parliamentinputform.html) -->
 		<g>
 			{#if !random}
-				<!-- <text x="180" y="175" class="text-center text-3xl font-bold" style="text-anchor:middle;"> {centerText} </text> -->
 				<image href="logos/{party_logo}.png" x="125" y="100" width="110" height="110" />
 			{/if}
 
 			{#each parlimentData as seat}
-				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
-				{@const midOpacity = calculateOpacity(partyRanking[seat[2]], true)}
-				{@const minOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultOpacity * (2 / 3) : defaultOpacity}
+				{@const maxOpacity = calculateOpacity(set_proximity(seat[2]))}
+				{@const midOpacity = calculateOpacity(set_proximity(seat[2]), true)}
+				{@const minOpacity = random ? calculateOpacity(set_proximity(seat[2])) : set_proximity(seat[2]) == 1.0 ? defaultOpacity * (2 / 3) : defaultOpacity}
 
-				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
-				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
+				{@const maxRadius = calculateRadius(set_proximity(seat[2]))}
+				{@const minRadius = random ? calculateRadius(set_proximity(seat[2])) : set_proximity(seat[2]) == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
 
 				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={`fill-${seat[2]}`} style="opacity: {maxOpacity};">
 					<animate
