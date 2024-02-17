@@ -61,7 +61,7 @@
 			}}>Entra na Assembleia</button
 		>
 
-		<p class="text mb-4 text-center text-gray-500 sm:text-base"><i>Demora ~15min</i></p>
+		<p class="text mb-4 text-center text-slate-500 sm:text-base"><i>Demora ~15min</i></p>
 
 		<AboutButton />
 	</div>

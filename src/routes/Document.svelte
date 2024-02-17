@@ -98,17 +98,17 @@
 	</Modal>
 {/if}
 
-<div class="mb-12 flex w-full flex-col items-center rounded-3xl bg-gray-50 bg-opacity-80 p-4 sm:mb-4 sm:w-8/12 sm:p-0 md:w-10/12 lg:w-8/12">
-	<div class="flex w-full flex-col items-center sm:w-8/12 md:w-9/12 lg:w-8/12">
+<div class="mb-20 mt-4 flex w-full flex-col items-center rounded-2xl bg-slate-50 bg-opacity-80 p-4 shadow-2xl sm:mb-4 sm:w-8/12  md:w-10/12 lg:w-8/12">
+	<div class="items-center sm:w-8/12 flex w-full flex-col md:w-9/12 lg:w-8/12">
 		<div class="mb-2 mt-6 flex flex-row flex-wrap">
-			<div class="mb-2 inline-block rounded-full bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-700">
+			<div class="mb-2 inline-block rounded-full bg-slate-200 px-4 py-2 text-sm font-semibold text-slate-700">
 				{tag}
 			</div>
 		</div>
 		<div
 			role="button"
 			tabindex="0"
-			class="mb-4 cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
+			class="mb-4 cursor-pointer text-center text-sm text-slate-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600"
 			on:click={() => (showInfo = !showInfo)}
 			on:keydown={() => (showInfo = !showInfo)}
 		>
@@ -116,7 +116,7 @@
 			<p style="display: inline;">(o que é?)</p>
 		</div>
 		<div class="mx-auto max-w-4xl">
-			<h3 class="mb-2 min-h-12 text-center text-2xl font-bold text-gray-800 sm:mb-6 sm:text-4xl">
+			<h3 class="mb-2 min-h-12 text-center text-2xl font-bold text-slate-800 sm:mb-6 sm:text-4xl">
 				{title_reduced}
 			</h3>
 		</div>
@@ -124,9 +124,9 @@
 			{@html transformBulletsToHTML(summary_reduced)}
 		</div>
 
-		<h3 class="mb-2 text-xl font-semibold text-gray-800 sm:text-2xl">Riscos e Críticas:</h3>
+		<h3 class="mb-2 text-xl font-semibold text-slate-800 sm:text-2xl">Riscos e Críticas:</h3>
 
-		<div class="mb-4 cursor-pointer text-center text-sm text-gray-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600">
+		<div class="mb-4 cursor-pointer text-center text-sm text-slate-600 underline decoration-slate-400 decoration-dashed decoration-2 underline-offset-2 opacity-75 hover:decoration-slate-600">
 			<a href="https://forms.gle/kT4ktnhZtRppQVon8" target="_blank"> Esquecemo-nos de algum? </a>
 		</div>
 
@@ -134,6 +134,6 @@
 			{@html highlightTitles(counter_reduced)}
 		</div>
 
-		<a href={proposal_link} target="_blank" class="mb-8 text-xs text-blue-500 underline sm:text-base">Ver documento oficial {official_id} (Votado a {vote_link})</a>
+		<a href={proposal_link} target="_blank" class="text-xs text-blue-500 underline mb-4 sm:text-base">Ver documento oficial {official_id} (Votado a {vote_link})</a>
 	</div>
 </div>

@@ -77,8 +77,8 @@
 				</circle>
 			{/each}
 			<!-- TODO: Make it possible to have highlights around the parties -->
-			<!-- <circle cx={360 / 2} cy={185} r={180} class="stroke-gray-500" fill="transparent" stroke-width="3" />
-			<circle cx={360 / 2} cy={185} r={72} class="stroke-gray-500" fill="transparent" stroke-width="3" /> -->
+			<!-- <circle cx={360 / 2} cy={185} r={180} class="stroke-slate-500" fill="transparent" stroke-width="3" />
+			<circle cx={360 / 2} cy={185} r={72} class="stroke-slate-500" fill="transparent" stroke-width="3" /> -->
 		</g>
 	</svg>
 </div>

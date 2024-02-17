@@ -16,6 +16,7 @@
 	import { aprovingParties, rejectingParties, abstainingParties, finalResultMapping, calculateProximity } from '../dbAbstraction';
 	//import Proximity from './party/+server.ts';
 	import AiSummary from './ai/AISummary.svelte';
+	import { IconRefresh } from '@tabler/icons-svelte';
 
 	export let data;
 	let quizSize: number = data.db.length;
@@ -171,7 +172,7 @@
 
 <Toast
 	bind:open={showToast}
-	divClass="flex mt-3 fixed z-50 w-full p-4 text-gray-500 bg-white opacity-85 shadow dark:text-gray-400 dark:bg-gray-800 gap-3"
+	divClass="flex mt-3 fixed z-50 w-full p-4 text-slate-500 bg-white opacity-85 shadow dark:text-slate-400 dark:bg-slate-800 gap-3"
 	contentClass="w-full text-m font-normal text-center"
 >
 	Chegaste a metade do Quiz! 🎉
@@ -188,7 +189,7 @@
 
 			<button
 				tabindex="0"
-				class="mb-4 mt-2 cursor-pointer text-center text-xs text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
+				class="mb-4 mt-2 cursor-pointer text-center text-xs text-slate-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
 				id="descobre"
 				on:click={() => {
 					showPartyInfo = true;
@@ -209,20 +210,20 @@
 
 			<BarChart proximity={userProximity} />
 		</div>
+		<VoteResults vote_proposals={userVote} />
 
 		<OthersResults />
 
-		<VoteResults vote_proposals={userVote} />
-
-		<div class="mt-4 flex flex-col items-center justify-center px-4 text-base sm:px-0">
-			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas:</p>
+		<div class="mt-2 flex flex-col items-center justify-center px-4 text-base sm:px-0">
+			<h2 class="text-m  text-center text-base font-bold">Os temas não te diziam muito?</h2> 
+			<p class="text-center text-xs">Recomeça com as categorias que te interessam.</p>
 			<button
-				class="mb-4 rounded bg-green-500 px-6 py-3 text-base font-bold text-white hover:bg-green-700"
+				class="mb-4 mt-4 rounded-2xl bg-green-400 px-6 py-3 text-base font-bold text-slate-200 hover:bg-green-700"
 				on:click={() => {
 					showCategoriesPicker = true;
 				}}
 			>
-				Escolhe outras categorias
+				<IconRefresh size={32} stroke={2} />
 			</button>
 			{#if showCategoriesPicker}
 				<TagPicker bind:show={showCategoriesPicker} bind:selectedTags onButtonClick={getNewQuiz} />
@@ -241,17 +242,17 @@
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
-		<div class="flex flex-col items-center justify-center px-4 sm:mt-8 sm:px-0">
+		<div class="flex flex-col items-center justify-center px-4 sm:mt-8 sm:px-0 sm:bg-opacity-100">
 			<Document proposal_document={proposals[currentVote]} />
 
-			<div class="fixed bottom-0 left-0 right-0 flex justify-center space-x-4 bg-gray-100 bg-opacity-95 p-4 sm:relative sm:mt-2">
-				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}
+			<div class="fixed bottom-0 left-0 right-0 flex justify-center space-x-4 bg-slate-100 bg-opacity-95 p-4 sm:relative sm:mt-2 sm:bg-opacity-0">
+				<button class="rounded bg-green-400 px-4 py-1 font-bold text-slate-700 hover:bg-green-700 hover:text-slate-200" id="1" on:click={handleVoteClick}
 					>Aprovar<span class="hidden sm:block">👍</span></button
 				>
-				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700 hover:text-gray-200" id="2" on:click={handleVoteClick}
+				<button class="rounded bg-slate-400 px-4 font-bold text-slate-700 hover:bg-slate-700 hover:text-slate-200" id="2" on:click={handleVoteClick}
 					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
 				>
-				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
+				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>
 	{/key}

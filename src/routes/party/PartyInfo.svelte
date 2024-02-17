@@ -18,9 +18,9 @@
 
 <Modal title={party} bind:open={show} autoclose outsideclose>
 	{#each info.proposals as proposal, index}
-		<div class="mb-4 w-full overflow-hidden shadow sm:rounded-lg {index % 2 === 0 ? '' : 'bg-gray-100'}">
-			<div class="w-full border-b border-gray-200 px-4 py-5 sm:px-6">
-				<h2 class="text font-medium leading-6 text-gray-700">{proposal}</h2>
+		<div class="mb-4 w-full overflow-hidden shadow sm:rounded-lg {index % 2 === 0 ? '' : 'bg-slate-100'}">
+			<div class="w-full border-b border-slate-200 px-4 py-5 sm:px-6">
+				<h2 class="text font-medium leading-6 text-slate-700">{proposal}</h2>
 			</div>
 		</div>
 	{/each}

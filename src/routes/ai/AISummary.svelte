@@ -25,6 +25,6 @@
 		<p class="text mb-4 text-center sm:text-base"><i>{data}</i></p>
 	</div>
 {:else}
-	<Spinner color="gray" />
+	<Spinner color="slate" />
 {/if}
 ```

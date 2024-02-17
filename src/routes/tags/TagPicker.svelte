@@ -39,10 +39,10 @@
 					<input type="checkbox" id={tag} value="" class="hidden peer" on:click={handleCheckboxClick} />
 					<label
 						for={tag}
-						class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:bg-gray-100 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+						class="inline-flex items-center justify-between w-full p-5 text-slate-500 bg-white border-2 border-slate-200 rounded-lg cursor-pointer dark:hover:text-slate-300 dark:border-slate-700 peer-checked:bg-slate-100 hover:text-slate-600 dark:peer-checked:text-slate-300 peer-checked:text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:bg-slate-800 dark:hover:bg-slate-700">
 						<div class="block">
 							<div class="w-full text-lg font-semibold flex items-center">
-								{tag} <span class="text-xs text-gray-300 ml-1">({tags[tag]})</span>
+								{tag} <span class="text-xs text-slate-300 ml-1">({tags[tag]})</span>
 							</div>
 						</div>
 					</label>
