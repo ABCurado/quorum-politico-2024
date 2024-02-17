@@ -1,5 +1,6 @@
 // import { Ai } from '@cloudflare/ai';
 import OpenAI from 'openai';
+import type { UserVote } from '../../types';
 
 export async function randomPartyDescription(platform: any, party: string) {
 	const ai = new Ai(platform?.env.AI);
@@ -76,7 +77,7 @@ export async function randomPolicialSentence(platform: any) {
 	return response2.translated_text;
 }
 
-export async function aiPersonaSummary(platform: any, proposals: [{ title: string; vote: number }], winningPartyShortDescription: string) {
+export async function aiPersonaSummary(platform: any, proposals: UserVote[], winningPartyShortDescription: string) {
 	const openai = new OpenAI({
 		apiKey: platform.env.OPENAI_API_KEY
 	});
@@ -89,7 +90,7 @@ export async function aiPersonaSummary(platform: any, proposals: [{ title: strin
 	let content = `
         O partido mais alinhado é o ${winningPartyShortDescription}. 
         As opinioes desta pessoa são as seguintes:
-		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.title).join('\n')}`;
+		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.proposal.title).join('\n')}`;
 		console.log('content', content);
 	let chat = {
 		messages: [
@@ -106,23 +107,23 @@ export async function aiPersonaSummary(platform: any, proposals: [{ title: strin
 	return chatCompletion.choices[0].message.content;
 }
 
-function getVoteDescription(vote: number, lang: string): string {
+function getVoteDescription(vote: string, lang: string): string {
 	if (lang === 'pt') {
-		if (vote == 1) {
+		if (vote === "1") {
 			return 'Concorda com';
-		} else if (vote == 0) {
+		} else if (vote === "0") {
 			return 'Discorda de';
-		} else if (vote == 2) {
+		} else if (vote === "2") {
 			return 'Não se interessa por';
 		} else {
 			return 'Inválido';
 		}
 	} else if (lang === 'en') {
-		if (vote == 1) {
+		if (vote === "1") {
 			return 'Agrees with';
-		} else if (vote == 0) {
+		} else if (vote === "0") {
 			return 'Disagrees with';
-		} else if (vote == 2) {
+		} else if (vote === "2") {
 			return 'Doesnt care about';
 		} else {
 			return 'Invalid';

@@ -1,5 +1,5 @@
-<script lang = "ts">
-	import { Proximity } from "../../types";
+<script lang="ts">
+	import type { Proximity } from "../../types";
     export let pr: Proximity[] = [];
 </script>
 
@@ -9,4 +9,4 @@
         <h3 class="m-4">{party.party.name}</h3>
         <p>{party.value * 100}%</p>
     {/each}
-</div> -->
+</div>

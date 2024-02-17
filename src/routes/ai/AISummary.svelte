@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { aiPersonaSummary } from './ai';
-	export let proposals: [{ title: string; vote: number }];
-	export let winningPartyShortDescription: string;
 	import { Spinner } from 'flowbite-svelte';
+	import type { UserVote } from '../../types';
+
+	export let proposals: UserVote[];
+	export let winningPartyShortDescription: string;
+	
 	let data: string;
 
 	onMount(async () => {
