@@ -12,30 +12,10 @@
 	export let desc = '';
 	export let hashtags = 'adn-politico-2024';
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
-
 	let filesArray: File[] = [];
-	// onMount(async () => {
-	// 	try {
-	// 		let node = document.getElementById('share');
+	let isGenerating = false;
 
-	// 		// await toPng(node).then(function (dataUrl) {
-	// 		// 	var img = new Image();
-	// 		// 	img.src = dataUrl;
-	// 		// 	document.body.appendChild(img);
-	// 		// });
-	// 		function filter(node) {
-	// 			return node.id !== 'descobre';
-	// 		}
-	// 		let blob = await toBlob(node, { backgroundColor: 'white', width: 360, height: 600, filter: filter });
-	// 		// const blob = await (await fetch(await toPng(node, {}))).blob();
-	// 		var file = new File([blob], 'adn.png', { type: 'image/png' });
-	// 		filesArray = [file];
-	// 	} catch (e) {
-	// 		mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
-	// 	}
-	// });
-
-	async function navigatorShare() {
+	async function generatePNG() {
 		try {
 			let node = document.getElementById('share');
 
@@ -47,6 +27,7 @@
 			function filter(node) {
 				return node.id !== 'descobre';
 			}
+			isGenerating = true;
 			let blob = await toBlob(node, { backgroundColor: 'white', width: 360, height: 700, filter: filter });
 			// const blob = await (await fetch(await toPng(node, {}))).blob();
 			var file = new File([blob], 'adn.png', { type: 'image/png' });
@@ -54,6 +35,10 @@
 		} catch (e) {
 			mixpanel.track('Error Detected', { error_type: 'Image generation', error: e.message });
 		}
+		isGenerating = false;
+	}
+
+	async function navigatorShare() {
 		try {
 			await window.navigator.share({
 				title: title,
@@ -78,9 +63,19 @@
 </script>
 
 {#if supportsNavigatorShare}
-	<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
-		<IconShare size={48} stroke={2} class="" />
-	</button>
+	{#if isGenerating}
+		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl">
+			<Spinner class="share-button" />
+		</button>
+	{:else if filesArray.length > 0}
+		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-green-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
+			<IconShare size={48} stroke={2} class="" />
+		</button>
+	{:else}
+		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-gray-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => generatePNG()}>
+			<IconShare size={48} stroke={2} class="" />
+		</button>
+	{/if}
 {:else}
 	<!-- <Email subject={title} body="{desc} {url}" /> -->
 	<!-- <HackerNews class="share-button" {title} {url} /> -->
