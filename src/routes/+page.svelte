@@ -228,11 +228,8 @@
 		let new_data = await response.json();
 		data.db = new_data.proposals;
 		showCategoriesPicker = false;
-		console.log(selectedTags);
 		selectedTags = [];
 		initialize_var();
-		console.log(tagsParam);
-		console.log(quizSize);
 	}
 </script>
 
