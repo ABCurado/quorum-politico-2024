@@ -1,7 +1,8 @@
+import { abstainingParties, aprovingParties, finalResultMapping, rejectingParties } from '../../dbAbstraction';
+
 import type { Proposal } from '../../types'; // Import the Proposal type
 import type { RequestHandler } from '@sveltejs/kit';
 import db from './proposals_db.json';
-import { aprovingParties, rejectingParties, abstainingParties, finalResultMapping } from '../../dbAbstraction';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ request, platform, url }) => {
@@ -25,7 +26,7 @@ export const GET: RequestHandler = async ({ request, platform, url }) => {
 			return proposal.official_id === '3/XV-2';
 		});
 	});
-	
+
 	paginatedProposals = [...paginatedProposals, ...easter_egg];
 
 	return new Response(

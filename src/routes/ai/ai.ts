@@ -91,7 +91,7 @@ export async function aiPersonaSummary(platform: any, proposals: UserVote[], win
         O partido mais alinhado é o ${winningPartyShortDescription}. 
         As opinioes desta pessoa são as seguintes:
 		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.proposal.title).join('\n')}`;
-		console.log('content', content);
+	console.log('content', content);
 	let chat = {
 		messages: [
 			{ role: 'system', content: systemPrompt },
@@ -103,27 +103,27 @@ export async function aiPersonaSummary(platform: any, proposals: UserVote[], win
 		messages: chat.messages,
 		model: 'gpt-3.5-turbo'
 	});
-    console.log('chatCompletion', chatCompletion.choices[0].message.content);
+	console.log('chatCompletion', chatCompletion.choices[0].message.content);
 	return chatCompletion.choices[0].message.content;
 }
 
 function getVoteDescription(vote: string, lang: string): string {
 	if (lang === 'pt') {
-		if (vote === "1") {
+		if (vote === '1') {
 			return 'Concorda com';
-		} else if (vote === "0") {
+		} else if (vote === '0') {
 			return 'Discorda de';
-		} else if (vote === "2") {
+		} else if (vote === '2') {
 			return 'Não se interessa por';
 		} else {
 			return 'Inválido';
 		}
 	} else if (lang === 'en') {
-		if (vote === "1") {
+		if (vote === '1') {
 			return 'Agrees with';
-		} else if (vote === "0") {
+		} else if (vote === '0') {
 			return 'Disagrees with';
-		} else if (vote === "2") {
+		} else if (vote === '2') {
 			return 'Doesnt care about';
 		} else {
 			return 'Invalid';

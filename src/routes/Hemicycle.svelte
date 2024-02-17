@@ -32,7 +32,7 @@
 	function set_proximity(s: string | number) {
 		for (let p of partyRankingList) {
 			if (p.party.name === s) {
-				return p.value
+				return p.value;
 			}
 		}
 	}
@@ -47,7 +47,7 @@
 	});
 </script>
 
-<div class="hidden fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L" />
+<div class="fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L hidden" />
 
 <div class="flex flex-col items-center justify-center">
 	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" width={svgWidth} xmlns="http://www.w3.org/2000/svg">

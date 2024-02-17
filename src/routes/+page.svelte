@@ -23,32 +23,32 @@
 	let showCategoriesPicker: boolean = false;
 	let showPartyInfo: boolean = false;
 	let readInstructions = false;
-	let selectedTags: string [] = [];
+	let selectedTags: string[] = [];
 
-	const BE : Party = {
-		name : 'BE',
+	const BE: Party = {
+		name: 'BE'
 	};
 	const PS: Party = {
-		name : 'PS',
-	};;
-	const CH : Party = {
-		name : 'CH',
-	};;
+		name: 'PS'
+	};
+	const CH: Party = {
+		name: 'CH'
+	};
 	const IL: Party = {
-		name : 'IL',
-	};;
-	const L : Party = {
-		name : 'L',
-	};;
+		name: 'IL'
+	};
+	const L: Party = {
+		name: 'L'
+	};
 	const PAN: Party = {
-		name : 'PAN',
-	};;
-	const PCP : Party = {
-		name : 'PCP',
-	};;
+		name: 'PAN'
+	};
+	const PCP: Party = {
+		name: 'PCP'
+	};
 	const PSD: Party = {
-		name : 'PSD',
-	};;
+		name: 'PSD'
+	};
 
 	let proposals: Proposal[];
 	let userProximity: Proximity[];
@@ -56,7 +56,7 @@
 	let currentVote = 0;
 	let goku: number = 0;
 
-	function initialize_var(){
+	function initialize_var() {
 		quizSize = data.db.length;
 		currentVote = 0;
 		goku = 0;
@@ -69,19 +69,19 @@
 			title: proposal.title_reduced,
 			description: proposal.summary_reduced,
 			counter_arguments: proposal.counter_reduced,
-    		category: proposal.tag_1,
-    		type: proposal.type,
-    		author: proposal.author,
+			category: proposal.tag_1,
+			type: proposal.type,
+			author: proposal.author,
 			parties: Object.keys(proposal.votes),
 			party_votes: Object.values(proposal.votes),
-    		aproving_parties: aprovingParties(proposal),
-    		rejecting_parties: rejectingParties(proposal),
-    		abstaining_parties: abstainingParties(proposal),
-    		final_result: finalResultMapping(proposal.final_result),
+			aproving_parties: aprovingParties(proposal),
+			rejecting_parties: rejectingParties(proposal),
+			abstaining_parties: abstainingParties(proposal),
+			final_result: finalResultMapping(proposal.final_result)
 		}));
 
 		for (let pr of proposals) {
-			userVote[goku] = { proposal: pr , vote: ""};
+			userVote[goku] = { proposal: pr, vote: '' };
 			goku += 1;
 		}
 	}
@@ -95,7 +95,7 @@
 	}
 
 	initialize_var();
-	
+
 	$: if (currentVote === Math.round(quizSize / 2)) {
 		mixpanel.track('Quiz Halfway', {
 			'quiz-size': quizSize
@@ -106,86 +106,86 @@
 		}, 2000);
 	}
 
-	$: if (currentVote === quizSize) {		
-
-		userProximity = [{party: BE, value: 0},
-						{party: PS, value: 0},
-						{party: CH, value: 0},
-						{party: IL, value: 0},
-						{party: L, value: 0},
-						{party: PAN, value: 0},
-						{party: PCP, value: 0},
-						{party: PSD, value: 0}]
+	$: if (currentVote === quizSize) {
+		userProximity = [
+			{ party: BE, value: 0 },
+			{ party: PS, value: 0 },
+			{ party: CH, value: 0 },
+			{ party: IL, value: 0 },
+			{ party: L, value: 0 },
+			{ party: PAN, value: 0 },
+			{ party: PCP, value: 0 },
+			{ party: PSD, value: 0 }
+		];
 
 		for (let proposal of proposals) {
 			for (let uservote of userVote) {
 				if (uservote.proposal.official_id === proposal.official_id) {
-					if (uservote.vote === "1") {
-						for (let p of proposal.aproving_parties){
+					if (uservote.vote === '1') {
+						for (let p of proposal.aproving_parties) {
 							for (let prox of userProximity) {
-								if (p.name === prox.party.name) { 
+								if (p.name === prox.party.name) {
 									prox.value += 1;
 								}
 							}
 						}
-						for (let p of proposal.rejecting_parties){
+						for (let p of proposal.rejecting_parties) {
 							for (let prox of userProximity) {
 								if (p.name === prox.party.name) {
-									 prox.value -= 1;
+									prox.value -= 1;
 								}
 							}
 						}
-						for (let p of proposal.abstaining_parties){
+						for (let p of proposal.abstaining_parties) {
 							for (let prox of userProximity) {
 								if (p.name === prox.party.name) {
-									 prox.value += 0.5;
+									prox.value += 0.5;
 								}
 							}
 						}
-					} else if (uservote.vote === "0") {
-						for (let p of proposal.aproving_parties){
+					} else if (uservote.vote === '0') {
+						for (let p of proposal.aproving_parties) {
 							for (let prox of userProximity) {
 								if (p.name === prox.party.name) {
-									 prox.value -= 1;
+									prox.value -= 1;
 								}
 							}
 						}
-						for (let p of proposal.rejecting_parties){
+						for (let p of proposal.rejecting_parties) {
 							for (let prox of userProximity) {
 								if (p.name === prox.party.name) {
-									 prox.value += 1;
+									prox.value += 1;
 								}
 							}
 						}
-					} else if (uservote.vote === "2") {
-						for (let p of proposal.aproving_parties){
+					} else if (uservote.vote === '2') {
+						for (let p of proposal.aproving_parties) {
 							for (let prox of userProximity) {
 								if (p.name === prox.party.name) {
-									 prox.value += 0.5;
+									prox.value += 0.5;
 								}
 							}
 						}
-						for (let p of proposal.abstaining_parties){
+						for (let p of proposal.abstaining_parties) {
 							for (let prox of userProximity) {
 								if (p.name === prox.party.name) {
-									 prox.value += 1;
+									prox.value += 1;
 								}
 							}
 						}
-						for (let p of proposal.rejecting_parties){
+						for (let p of proposal.rejecting_parties) {
 							for (let prox of userProximity) {
 								if (p.name === prox.party.name) {
-									 prox.value += 0;
+									prox.value += 0;
 								}
 							}
 						}
 					} else {
-
 					}
 				}
 			}
 		}
-		
+
 		for (let p of userProximity) {
 			p.value = p.value / quizSize;
 		}
@@ -224,7 +224,7 @@
 				'Content-Type': 'application/json'
 			}
 		});
-		
+
 		let new_data = await response.json();
 		data.db = new_data.proposals;
 		showCategoriesPicker = false;
@@ -235,24 +235,23 @@
 
 <DevBanner env={data.env} />
 
-<Toast bind:open={showToast}
+<Toast
+	bind:open={showToast}
 	divClass="flex mt-3 fixed z-50 w-full p-4 text-gray-500 bg-white opacity-85 shadow dark:text-gray-400 dark:bg-gray-800 gap-3"
-	contentClass="w-full text-m font-normal text-center">
+	contentClass="w-full text-m font-normal text-center"
+>
 	Chegaste a metade do Quiz! 🎉
 </Toast>
 
 {#if !readInstructions}
-	
 	<div class="absolute z-20 mx-auto flex w-full items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
-
 {:else if currentVote === quizSize}
-	<div class="flex min-h-screen flex-col px-4 sm:px-0 items-center justify-center ">
-		<div id="share" class="flex flex-col items-center justify-center ">
-			
+	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
+		<div id="share" class="flex flex-col items-center justify-center">
 			<Hemicycle partyRankingList={userProximity} party_logo={userProximity[0].party.name} />
-			
+
 			<button
 				tabindex="0"
 				class="mb-4 mt-2 cursor-pointer text-center text-xs text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
@@ -267,24 +266,24 @@
 				}}
 				>Descobre mais sobre o partido
 			</button>
-			
+
 			<PartyInfo bind:show={showPartyInfo} party={userProximity[0].party.name} />
-			
+
 			{#if data.env === 'dev'}
 				<AiSummary proposals={userVote} winningPartyShortDescription={userProximity[0].party.name} />
 			{/if}
-			
-				<BarChart proximity = {userProximity} />
+
+			<BarChart proximity={userProximity} />
 		</div>
-		
+
 		<OthersResults />
-		
-		<VoteResults vote_proposals = {userVote} />
-		
-		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0 text-base">
+
+		<VoteResults vote_proposals={userVote} />
+
+		<div class="mt-4 flex flex-col items-center justify-center px-4 text-base sm:px-0">
 			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas:</p>
 			<button
-				class="mb-4 rounded bg-green-500 px-6 py-3 font-bold text-white text-base hover:bg-green-700"
+				class="mb-4 rounded bg-green-500 px-6 py-3 text-base font-bold text-white hover:bg-green-700"
 				on:click={() => {
 					showCategoriesPicker = true;
 				}}
@@ -302,26 +301,23 @@
 				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {userProximity[0].party.name}" />
 			</div>
 		</div>
-		
-		<AboutButton />
 
+		<AboutButton />
 	</div>
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
 		<div class="flex flex-col items-center justify-center px-4 sm:mt-8 sm:px-0">
+			<Document proposal_document={proposals[currentVote]} />
 
-			<Document proposal_document = {proposals[currentVote]} />
-
-			<div class="fixed bottom-0 left-0 right-0 p-4 flex justify-center space-x-4 bg-gray-100 bg-opacity-95 sm:relative sm:mt-2">
+			<div class="fixed bottom-0 left-0 right-0 flex justify-center space-x-4 bg-gray-100 bg-opacity-95 p-4 sm:relative sm:mt-2">
 				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}
 					>Aprovar<span class="hidden sm:block">👍</span></button
 				>
 				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700 hover:text-gray-200" id="2" on:click={handleVoteClick}
 					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
 				>
-				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}
-					>Rejeitar<span class="hidden sm:block">👎</span></button>
+				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>
 	{/key}

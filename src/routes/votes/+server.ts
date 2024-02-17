@@ -67,7 +67,8 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 		//     return new Response('Too many requests, please try again later.', { status: 429 });
 		// }
 
-		let result = await platform?.env.DB.prepare(`
+		let result = await platform?.env.DB.prepare(
+			`
 			INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) 
 			VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)`
 		)

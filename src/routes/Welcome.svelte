@@ -22,13 +22,12 @@
 <TagPicker />
 {#if !readInstructions}
 	<div class="flex flex-col items-center p-6 sm:p-8">
+		<h1 class="mb-4 text-center text-4xl"><strong>ADN Político</strong>: descobre que partido melhor te representa.</h1>
+		<p class="text mb-4 text-center sm:text-base">Não é só mais um quiz político. Sê o teu próprio representante partidário e <strong>vota diretamente nas propostas parlamentares</strong>.</p>
 
-		<h1 class="text-center text-4xl mb-4"><strong>ADN Político</strong>: descobre que partido melhor te representa.</h1>
-		<p class="text-center text sm:text-base mb-4">Não é só mais um quiz político. Sê o teu próprio representante partidário e <strong>vota diretamente nas propostas parlamentares</strong>.</p>
-		
 		<Hemicycle random={true} />
 
-		<div class="mb-8 mt-4 text-base" >
+		<div class="mb-8 mt-4 text-base">
 			<ul>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} class="text-green-400" />
@@ -50,11 +49,11 @@
 		</div>
 
 		{#if aiQuote}
-			<p class="text-center text sm:text-base mb-4"><i>{aiQuote}</i></p>
+			<p class="text mb-4 text-center sm:text-base"><i>{aiQuote}</i></p>
 		{/if}
 
 		<button
-			class="rounded bg-green-400 px-3 py-3 font-bold mb-4 text-white hover:bg-green-700 sm:px-4"
+			class="mb-4 rounded bg-green-400 px-3 py-3 font-bold text-white hover:bg-green-700 sm:px-4"
 			on:click={() => {
 				readInstructions = true;
 				window.scrollTo(0, 0);
@@ -62,7 +61,7 @@
 			}}>Entra na Assembleia</button
 		>
 
-		<p class="text-center text sm:text-base mb-4 text-gray-500"><i>Demora ~15min</i></p>
+		<p class="text mb-4 text-center text-gray-500 sm:text-base"><i>Demora ~15min</i></p>
 
 		<AboutButton />
 	</div>

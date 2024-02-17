@@ -7,7 +7,7 @@
 	// agrees: 1 - Means agree
 	// agrees: 0 - Means disagree
 	// aggres: 2 - Means no vote
-	
+
 	type Vote = {
 		agrees: number;
 		votes: number;
@@ -62,7 +62,7 @@
 	}
 
 	$: data = {
-		labels: Object.keys(voteResults).map(key => `${key} (${voteResults[key].reduce((acc, cur) => acc + cur.votes, 0)})`),
+		labels: Object.keys(voteResults).map((key) => `${key} (${voteResults[key].reduce((acc, cur) => acc + cur.votes, 0)})`),
 		datasets: [
 			{
 				label: 'Sim',
@@ -99,7 +99,7 @@
 			<div class="h-32 w-32 animate-spin rounded-full border-b-2 border-gray-900" />
 		</div>
 	{:else if showResults}
-	<h2 class="text-m mb-4 text-center font-bold">Resultados de quem já participou:</h2>
+		<h2 class="text-m mb-4 text-center font-bold">Resultados de quem já participou:</h2>
 		<Bar
 			{data}
 			options={{

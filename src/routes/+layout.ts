@@ -8,8 +8,8 @@ export const load = async () => {
 	};
 
 	if (browser) {
-		mixpanel.init("e611f2810e5ef94ed59f38783c6b6ff9", {
-			host: "api-eu.mixpanel.com",
+		mixpanel.init('e611f2810e5ef94ed59f38783c6b6ff9', {
+			host: 'api-eu.mixpanel.com',
 			track_pageview: true
 		} as Config);
 
@@ -27,7 +27,6 @@ export const load = async () => {
 				}
 			});
 		}
-
 	}
-	return
+	return;
 };
