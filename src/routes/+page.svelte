@@ -13,7 +13,7 @@
 	import PartyInfo from './party/PartyInfo.svelte';
 	import AboutButton from './AboutButton.svelte';
 	import type { Party, Proximity, Proposal, UserVote } from '../types';
-	import { aprovingParties, rejectingParties, abstainingParties, finalResultMapping } from '../dbAbstraction';
+	import { aprovingParties, rejectingParties, abstainingParties, finalResultMapping, calculateProximity } from '../dbAbstraction';
 	//import Proximity from './party/+server.ts';
 	import AiSummary from './ai/AISummary.svelte';
 
@@ -118,73 +118,7 @@
 			{ party: PSD, value: 0 }
 		];
 
-		for (let proposal of proposals) {
-			for (let uservote of userVote) {
-				if (uservote.proposal.official_id === proposal.official_id) {
-					if (uservote.vote === '1') {
-						for (let p of proposal.aproving_parties) {
-							for (let prox of userProximity) {
-								if (p.name === prox.party.name) {
-									prox.value += 1;
-								}
-							}
-						}
-						for (let p of proposal.rejecting_parties) {
-							for (let prox of userProximity) {
-								if (p.name === prox.party.name) {
-									prox.value -= 1;
-								}
-							}
-						}
-						for (let p of proposal.abstaining_parties) {
-							for (let prox of userProximity) {
-								if (p.name === prox.party.name) {
-									prox.value += 0.5;
-								}
-							}
-						}
-					} else if (uservote.vote === '0') {
-						for (let p of proposal.aproving_parties) {
-							for (let prox of userProximity) {
-								if (p.name === prox.party.name) {
-									prox.value -= 1;
-								}
-							}
-						}
-						for (let p of proposal.rejecting_parties) {
-							for (let prox of userProximity) {
-								if (p.name === prox.party.name) {
-									prox.value += 1;
-								}
-							}
-						}
-					} else if (uservote.vote === '2') {
-						for (let p of proposal.aproving_parties) {
-							for (let prox of userProximity) {
-								if (p.name === prox.party.name) {
-									prox.value += 0.5;
-								}
-							}
-						}
-						for (let p of proposal.abstaining_parties) {
-							for (let prox of userProximity) {
-								if (p.name === prox.party.name) {
-									prox.value += 1;
-								}
-							}
-						}
-						for (let p of proposal.rejecting_parties) {
-							for (let prox of userProximity) {
-								if (p.name === prox.party.name) {
-									prox.value += 0;
-								}
-							}
-						}
-					} else {
-					}
-				}
-			}
-		}
+		calculateProximity(proposals, userVote, userProximity);
 
 		for (let p of userProximity) {
 			p.value = p.value / quizSize;
