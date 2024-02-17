@@ -56,7 +56,7 @@
 	let currentVote = 0;
 	let goku: number = 0;
 
-	function initialize_var() {
+	function initializeVar() {
 		quizSize = data.db.length;
 		currentVote = 0;
 		goku = 0;
@@ -94,7 +94,7 @@
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
-	initialize_var();
+	initializeVar();
 
 	$: if (currentVote === Math.round(quizSize / 2)) {
 		mixpanel.track('Quiz Halfway', {
@@ -163,7 +163,7 @@
 		data.db = new_data.proposals;
 		showCategoriesPicker = false;
 		selectedTags = [];
-		initialize_var();
+		initializeVar();
 	}
 </script>
 
