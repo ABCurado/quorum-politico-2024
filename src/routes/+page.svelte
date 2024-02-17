@@ -12,30 +12,91 @@
 	import TagPicker from './tags/TagPicker.svelte';
 	import PartyInfo from './party/PartyInfo.svelte';
 	import AboutButton from './AboutButton.svelte';
+	import type { Party, Proximity, Proposal, UserVote } from '../types';
+	import { aprovingParties, rejectingParties, abstainingParties, finalResultMapping } from '../dbAbstraction';
+	//import Proximity from './party/+server.ts';
 	// import AiSummary from './ai/AISummary.svelte';
 
 	export let data;
 	let quizSize: number = data.db.length;
-
 	let showToast: boolean = false;
 	let showCategoriesPicker: boolean = false;
 	let showPartyInfo: boolean = false;
-
 	let readInstructions = false;
 	let selectedTags: string [] = [];
 
-	let currentVote = 0;
+	const BE : Party = {
+		name : 'BE',
+	};
+	const PS: Party = {
+		name : 'PS',
+	};;
+	const CH : Party = {
+		name : 'CH',
+	};;
+	const IL: Party = {
+		name : 'IL',
+	};;
+	const L : Party = {
+		name : 'L',
+	};;
+	const PAN: Party = {
+		name : 'PAN',
+	};;
+	const PCP : Party = {
+		name : 'PCP',
+	};;
+	const PSD: Party = {
+		name : 'PSD',
+	};;
 
-	function handleVoteClick(event) {
-		data.db[currentVote].user_vote = event.target.id;
+	let proposals: Proposal[];
+	let userProximity: Proximity[];
+	let userVote: UserVote[] = [];
+	let currentVote = 0;
+	let goku: number = 0;
+
+	function initialize_var(){
+		quizSize = data.db.length;
+		currentVote = 0;
+		goku = 0;
+
+		proposals = data.db.map((proposal) => ({
+			id: proposal.id,
+			official_id: proposal.official_id,
+			vote_link: proposal.vote_link,
+			proposalLink: proposal.proposal_link,
+			title: proposal.title_reduced,
+			description: proposal.summary_reduced,
+			counter_arguments: proposal.counter_reduced,
+    		category: proposal.tag_1,
+    		type: proposal.type,
+    		author: proposal.author,
+			parties: Object.keys(proposal.votes),
+			party_votes: Object.values(proposal.votes),
+    		aproving_parties: aprovingParties(proposal),
+    		rejecting_parties: rejectingParties(proposal),
+    		abstaining_parties: abstainingParties(proposal),
+    		final_result: finalResultMapping(proposal.final_result),
+		}));
+
+		for (let pr of proposals) {
+			userVote[goku] = { proposal: pr , vote: ""};
+			goku += 1;
+		}
+	}
+
+	function handleVoteClick(event: any) {
+		userVote[currentVote].proposal = proposals[currentVote];
+		userVote[currentVote].vote = event.target.id;
+
 		currentVote += 1;
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
-	//let proximity: { party: string; proximity: number }[] = [];
-	let proximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
-
-	$: if (currentVote === quizSize / 2) {
+	initialize_var();
+	
+	$: if (currentVote === Math.round(quizSize / 2)) {
 		mixpanel.track('Quiz Halfway', {
 			'quiz-size': quizSize
 		});
@@ -45,33 +106,98 @@
 		}, 2000);
 	}
 
-	$: if (currentVote === quizSize) {
-		let partyProximity = { BE: 0, CH: 0, IL: 0, L: 0, PAN: 0, PCP: 0, PS: 0, PSD: 0 };
-		
-		for (let proposal of data.db) {
-			for (const [party, result] of Object.entries(proposal.votes)) {
-				if (result == proposal.user_vote) {
-            				partyProximity[party] += 1;
-        			} else if ((result == 0 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 0)) {
-            				partyProximity[party] -= 1;
-        			} else if ((result == 2 && proposal.user_vote == 1) || (result == 1 && proposal.user_vote == 2)) {
-            				partyProximity[party] += 0.5;
-        			} else if ((result == 2 && proposal.user_vote == 0) || (result == 0 && proposal.user_vote == 2)) {
-            				partyProximity[party] += 0;
-        			}
+	$: if (currentVote === quizSize) {		
+
+		userProximity = [{party: BE, value: 0},
+						{party: PS, value: 0},
+						{party: CH, value: 0},
+						{party: IL, value: 0},
+						{party: L, value: 0},
+						{party: PAN, value: 0},
+						{party: PCP, value: 0},
+						{party: PSD, value: 0}]
+
+		for (let proposal of proposals) {
+			for (let uservote of userVote) {
+				if (uservote.proposal.official_id === proposal.official_id) {
+					if (uservote.vote === "1") {
+						for (let p of proposal.aproving_parties){
+							for (let prox of userProximity) {
+								if (p.name === prox.party.name) { 
+									prox.value += 1;
+								}
+							}
+						}
+						for (let p of proposal.rejecting_parties){
+							for (let prox of userProximity) {
+								if (p.name === prox.party.name) {
+									 prox.value -= 1;
+								}
+							}
+						}
+						for (let p of proposal.abstaining_parties){
+							for (let prox of userProximity) {
+								if (p.name === prox.party.name) {
+									 prox.value += 0.5;
+								}
+							}
+						}
+					} else if (uservote.vote === "0") {
+						for (let p of proposal.aproving_parties){
+							for (let prox of userProximity) {
+								if (p.name === prox.party.name) {
+									 prox.value -= 1;
+								}
+							}
+						}
+						for (let p of proposal.rejecting_parties){
+							for (let prox of userProximity) {
+								if (p.name === prox.party.name) {
+									 prox.value += 1;
+								}
+							}
+						}
+					} else if (uservote.vote === "2") {
+						for (let p of proposal.aproving_parties){
+							for (let prox of userProximity) {
+								if (p.name === prox.party.name) {
+									 prox.value += 0.5;
+								}
+							}
+						}
+						for (let p of proposal.abstaining_parties){
+							for (let prox of userProximity) {
+								if (p.name === prox.party.name) {
+									 prox.value += 1;
+								}
+							}
+						}
+						for (let p of proposal.rejecting_parties){
+							for (let prox of userProximity) {
+								if (p.name === prox.party.name) {
+									 prox.value += 0;
+								}
+							}
+						}
+					} else {
+
+					}
+				}
 			}
 		}
 		
+		for (let p of userProximity) {
+			p.value = p.value / quizSize;
+		}
 
-		proximity = Object.entries(partyProximity)
-			.map(([party, proximity]) => ({ party, proximity: proximity / quizSize }))
-			.sort((a, b) => b.proximity - a.proximity);
+		userProximity = userProximity.sort((a, b) => b.value - a.value);
 
-		const results = data.db.map((vote) => ({ id: vote.official_id, user_vote: vote.user_vote }));
+		const results = userVote.map((p) => ({ id: p.proposal.official_id, user_vote: p.vote }));
+
 		mixpanel.track('Quiz Finished', {
 			'quiz-size': quizSize,
-			'top-party': proximity[0].party,
-			'top-party-proximity': proximity[0].proximity,
+			'top-party': userProximity[0].party.name,
+			'top-party-proximity': userProximity[0].value,
 			'user-votes': results
 		});
 
@@ -84,7 +210,7 @@
 			body: JSON.stringify({
 				device_id: mixpanel.get_distinct_id(),
 				results: results,
-				top_party: proximity[0].party
+				top_party: userProximity[0].party
 			})
 		});
 	}
@@ -98,36 +224,38 @@
 				'Content-Type': 'application/json'
 			}
 		});
+		
 		let new_data = await response.json();
 		data.db = new_data.proposals;
-		quizSize = data.db.length;
-		currentVote = 0;
 		showCategoriesPicker = false;
+		console.log(selectedTags);
 		selectedTags = [];
+		initialize_var();
+		console.log(tagsParam);
+		console.log(quizSize);
 	}
 </script>
 
 <DevBanner env={data.env} />
-<Toast
-	bind:open={showToast}
+
+<Toast bind:open={showToast}
 	divClass="flex mt-3 fixed z-50 w-full p-4 text-gray-500 bg-white opacity-85 shadow dark:text-gray-400 dark:bg-gray-800 gap-3"
-	contentClass="w-full text-m font-normal text-center"
->
+	contentClass="w-full text-m font-normal text-center">
 	Chegaste a metade do Quiz! 🎉
 </Toast>
 
 {#if !readInstructions}
+	
 	<div class="absolute z-20 mx-auto flex w-full items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
-{:else if currentVote == quizSize}
+
+{:else if currentVote === quizSize}
 	<div class="flex min-h-screen flex-col px-4 sm:px-0 items-center justify-center ">
 		<div id="share" class="flex flex-col items-center justify-center ">
-			<Hemicycle partyRankingList={proximity} party_logo={proximity[0].party} />
-			<!-- <h1 class="mb-8 text-center text-4xl sm:text-6xl">Concordas?</h1> -->
-			<!-- <p class="mb-1 mt-4 text-center text-base sm:text-lg">
-				Tens uma proximidade de <span class="font-bold">{Number(proximity[0].proximity.toFixed(2)) * 100}%</span> com o partido{' '}
-			</p> -->
+			
+			<Hemicycle partyRankingList={userProximity} party_logo={userProximity[0].party.name} />
+			
 			<button
 				tabindex="0"
 				class="mb-4 mt-2 cursor-pointer text-center text-xs text-gray-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
@@ -141,13 +269,18 @@
 				}}
 				>Descobre mais sobre o partido
 			</button>
-			<PartyInfo bind:show={showPartyInfo} party={proximity[0].party} />
-			<!-- <AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote}))} winningPartyShortDescription={proximity[0].party}/> -->
-			<BarChart {proximity} />
+			
+			<PartyInfo bind:show={showPartyInfo} party={userProximity[0].party.name} />
+			
+			<!-- <AiSummary proposals={data.db.map((vote_row) => ({ title: vote_row.title_reduced, vote: vote_row.user_vote}))} winningPartyShortDescription={userProximity[0].party.name}/> -->
+			
+				<BarChart proximity = {userProximity} />
 		</div>
+		
 		<OthersResults />
-		<VoteResults vote_proposals={data.db} />
-
+		
+		<VoteResults vote_proposals = {userVote} />
+		
 		<div class="mt-4 flex flex-col items-center justify-center px-4 sm:px-0 text-base">
 			<p class="mb-4 text-center text-base sm:text-lg">Se o resultado não foi o que esperavas:</p>
 			<button
@@ -166,18 +299,20 @@
 		<div class="m-2 mt-6 flex w-full flex-col gap-3">
 			<p class="text-center text-base">Compara as tua representação partidária com amigos:</p>
 			<div class="flex items-center justify-center gap-3">
-				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {proximity[0].party}" {proximity} />
+				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {userProximity[0].party.name}" />
 			</div>
 		</div>
+		
 		<AboutButton />
+
 	</div>
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
 		<div class="flex flex-col items-center justify-center px-4 sm:mt-8 sm:px-0">
-			<Document {...data.db[currentVote]} />
 
-			<!-- <div class="fixed bottom-	10 sm:bottom-16 left-0 right-0 flex justify-center space-x-4 m-8"> -->
+			<Document proposal_document = {proposals[currentVote]} />
+
 			<div class="fixed bottom-0 left-0 right-0 p-4 flex justify-center space-x-4 bg-gray-100 bg-opacity-95 sm:relative sm:mt-2">
 				<button class="rounded bg-green-400 px-4 py-1 font-bold text-gray-700 hover:bg-green-700 hover:text-gray-200" id="1" on:click={handleVoteClick}
 					>Aprovar<span class="hidden sm:block">👍</span></button
@@ -185,7 +320,8 @@
 				<button class="rounded bg-gray-400 px-4 font-bold text-gray-700 hover:bg-gray-700 hover:text-gray-200" id="2" on:click={handleVoteClick}
 					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
 				>
-				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
+				<button class="rounded bg-red-400 px-4 font-bold text-gray-700 hover:bg-red-700 hover:text-gray-200" id="0" on:click={handleVoteClick}
+					>Rejeitar<span class="hidden sm:block">👎</span></button>
 			</div>
 		</div>
 	{/key}

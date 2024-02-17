@@ -1,17 +1,17 @@
-import type { Proposal } from './types'; // Import the Proposal type
+import type { Proposal } from '../../types'; // Import the Proposal type
 import type { RequestHandler } from '@sveltejs/kit';
 import db from './proposals_db.json';
+import { aprovingParties, rejectingParties, abstainingParties, finalResultMapping } from '../../dbAbstraction';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const GET: RequestHandler = async ({ request, platform, url }) => {
 	const tags = url.searchParams.get('tags')?.split(',') ?? [];
 	const pageSize: number = Number(url.searchParams.get('pageSize') ?? 10);
 
-	// console.log(db);
-	// Filter proposals atribute tag_1 and tag_2 by tags
-	const filteredProposals = db.filter((proposal: Proposal) => {
+	// Filter proposals atribute by tags
+	let filteredProposals = db.filter((proposal) => {
 		return tags.some((tag: string) => {
-			return proposal.tag_1 === tag || proposal.tag_2 === tag;
+			return proposal.tag_1 === tag;
 		});
 	});
 
@@ -19,12 +19,13 @@ export const GET: RequestHandler = async ({ request, platform, url }) => {
 	const randomizedProposals = filteredProposals.sort(() => Math.random() - 0.5);
 	// Paginate the randomized proposals
 	let paginatedProposals = randomizedProposals.slice(0, pageSize - 1);
-	const easter_egg = db.filter((proposal: Proposal) => {
+	const easter_egg = db.filter((proposal) => {
 		// Use the Proposal type
 		return tags.some((tag: string) => {
-			return proposal.official_id == '3/XV-2';
+			return proposal.official_id === '3/XV-2';
 		});
 	});
+	
 	paginatedProposals = [...paginatedProposals, ...easter_egg];
 
 	return new Response(

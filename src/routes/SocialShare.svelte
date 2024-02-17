@@ -11,7 +11,6 @@
 	export let title = '';
 	export let desc = '';
 	export let hashtags = 'adn-politico-2024';
-	export let proximity: { party: string; proximity: number }[] = [];
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 
 	let filesArray: File[] = [];
