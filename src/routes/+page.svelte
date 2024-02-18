@@ -231,7 +231,8 @@
 		</div>
 
 		<div class="m-2 mt-6 flex w-full flex-col gap-3">
-			<p class="text-center text-base">Compara as tua representação partidária com amigos:</p>
+			<h2 class="text-m  text-center text-base font-bold">Compara as tua representação partidária com amigos</h2> 
+			<p class="text-center text-xs">Gera uma imagem com os teus resultados e partilha.</p>
 			<div class="flex items-center justify-center gap-3">
 				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {userProximity[0].party.name}" />
 			</div>

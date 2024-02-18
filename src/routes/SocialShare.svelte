@@ -16,6 +16,7 @@
 	let isGenerating = false;
 
 	async function generatePNG() {
+		isGenerating = true;
 		try {
 			let node = document.getElementById('share');
 
@@ -27,7 +28,6 @@
 			function filter(node) {
 				return node.id !== 'descobre';
 			}
-			isGenerating = true;
 			let blob = await toBlob(node, { backgroundColor: 'white', width: 360, height: 700, filter: filter });
 			// const blob = await (await fetch(await toPng(node, {}))).blob();
 			var file = new File([blob], 'adn.png', { type: 'image/png' });
@@ -64,15 +64,15 @@
 
 {#if supportsNavigatorShare}
 	{#if isGenerating}
-		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl">
+		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-xl hover:shadow-2xl">
 			<Spinner class="share-button" />
 		</button>
 	{:else if filesArray.length > 0}
-		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-green-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => navigatorShare()}>
+		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-3xl hover:shadow-2xl" on:click={() => navigatorShare()}>
 			<IconShare size={48} stroke={2} class="" />
 		</button>
 	{:else}
-		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-lg hover:shadow-2xl" on:click={() => generatePNG()}>
+		<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-md hover:shadow-2xl" on:click={() => generatePNG()}>
 			<IconShare size={48} stroke={2} class="" />
 		</button>
 	{/if}
