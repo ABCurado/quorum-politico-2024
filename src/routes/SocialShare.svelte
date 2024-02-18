@@ -57,14 +57,14 @@
 	}
 </script>
 
-<div class="m-2 mt-6 flex w-full flex-col gap-3">
+<div class="m-2 mt-6 flex w-full flex-col">
 	<h2 class="text-m text-center text-base font-bold">Compara as tua representação partidária com amigos</h2>
 	{#if supportsNavigatorShare}
 		<p class="text-center text-xs">Gera uma imagem com os teus resultados e partilha.</p>
 	{:else}
 		<p class="text-center text-xs">Partilha e descobre os resultados de outros.</p>
 	{/if}
-	<div class="flex items-center justify-center gap-3">
+	<div class="flex items-center justify-center gap-3 mt-2">
 		{#if supportsNavigatorShare}
 			{#if isGenerating}
 				<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-xl hover:shadow-2xl">
