@@ -179,11 +179,11 @@
 </Toast>
 
 {#if !readInstructions}
-	<div class="mx-auto flex w-full h-full items-center justify-center">
+	<div class="mx-auto flex h-full w-full items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote === quizSize}
-	<div class="flex min-h-screen flex-col items-center justify-center  px-4 sm:px-0">
+	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
 		<div id="share" class="flex flex-col items-center justify-center">
 			<Hemicycle partyRankingList={userProximity} party_logo={userProximity[0].party.name} />
 
@@ -204,9 +204,9 @@
 
 			<PartyInfo bind:show={showPartyInfo} party={userProximity[0].party.name} />
 
-			{#if data.env !== 'production'}
-				<AiSummary proposals={userVote} winningPartyShortDescription={userProximity[0].party.name} />
-			{/if}
+			<!-- {#if data.env !== 'production'} -->
+			<AiSummary proposals={userVote} winningPartyShortDescription={userProximity[0].party.name} />
+			<!-- {/if} -->
 
 			<BarChart proximity={userProximity} />
 		</div>
