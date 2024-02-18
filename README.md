@@ -1,8 +1,8 @@
-# ADN Politico 2024
+# Quórum Politico 2024
 
 ![hemicycle](./static/hemicycleTranparent.png)
 
-ADN Político is a non-partisan initiative that allows users to vote directly on parliamentary proposals to determine which political party aligns with their preferences. 
+Quórum Político is a non-partisan initiative that allows users to vote directly on parliamentary proposals to determine which political party aligns with their preferences. 
 The platform presents proposals, and users vote for, against, or abstain on each.  
 The goal is to show the impact of seemingly straightforward proposals and find the party that aligns most with the user's voting pattern.   
 The project collected 62 proposals since January 2023, considering factors like unanimity, uniformity, and simplicity.
