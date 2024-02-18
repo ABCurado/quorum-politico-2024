@@ -43,7 +43,7 @@
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} class="text-green-400" />
-					<span class="ml-2">Não guardamos quaisquer dados pessoais.</span>
+					<span class="ml-2">Não guardamos dados pessoais.</span>
 				</li>
 			</ul>
 		</div>
