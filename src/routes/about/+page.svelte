@@ -33,7 +33,7 @@
 				
 			</p>
 			<p class="mt-2 text-base text-gray-700">
-				Reunimos um total de 62 propostas parlamentares desde janeiro de 2023, considerando sempre as versões mais recentes. Na seleção, levamos em conta três fatores: unanimidade, uniformidade e simplicidade. Descartamos propostas técnicas demais ou pouco acessíveis ao cidadão comum. Atribuímos pontos à tua correlação com um partido a cada voto coincidente e subtraímos pontos em caso de votos totalmente divergentes. Abstenções versus votos a favor ou contra também influenciam a correlação de forma ponderada.
+				Reunimos um total de 62 propostas parlamentares desde janeiro de 2023, considerando sempre as versões mais recentes. Na seleção, levamos em conta três fatores: unanimidade, uniformidade e simplicidade. Descartamos propostas demasiado técnicas. Atribuímos pontos à tua correlação com um partido a cada voto coincidente e subtraímos pontos em caso de votos totalmente divergentes. Abstenções versus votos a favor também atribui meio ponto à correlação.
 			</p>
 			<p class="mt-2 text-base text-gray-700">Sem a necessidade de criar uma conta e sem armazenamento de dados pessoais, nosso projeto é transparente e acessível.</p>
 			<p class="mt-2 text-base text-gray-700">Para mais detalhes, o código do projeto está disponível no <a href="https://github.com/ABCurado/em-quem-votar-2023" target="_blank"><u>GitHub</u></a>.</p>
