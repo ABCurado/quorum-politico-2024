@@ -110,6 +110,7 @@ export async function aiPersonaSummary(platform: any, proposals: UserVote[], win
 			{ role: 'user', content: content }
 		]
 	};
+	
 	// let response = await ai.run('@cf/meta/llama-2-7b-chat-fp16', chat);
 	const chatCompletion = await openai.chat.completions.create({
 		messages: chat.messages,
