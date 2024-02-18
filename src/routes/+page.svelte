@@ -230,7 +230,7 @@
 			{/if}
 		</div>
 
-		<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {userProximity[0].party.name}" />
+		<SocialShare title="Quórum Político." url="https://quorum-politico.pt/" desc="O Partido que melhor me representa é: {userProximity[0].party.name}" />
 
 		<AboutButton />
 	</div>

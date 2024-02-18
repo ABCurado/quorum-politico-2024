@@ -6,10 +6,10 @@
 	import { toBlob} from 'html-to-image';
 	import { Spinner } from 'flowbite-svelte';
 
-	export let url = 'https://adn-politico.com/';
+	export let url = 'https://quorum-politico.pt/';
 	export let title = '';
 	export let desc = '';
-	export let hashtags = 'adn-politico-2024';
+	export let hashtags = 'quorum-politico-2024';
 	let supportsNavigatorShare = window.navigator.canShare === undefined ? false : true;
 	let filesArray: File[] = [];
 	let isGenerating = false;

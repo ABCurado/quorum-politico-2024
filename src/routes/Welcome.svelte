@@ -22,7 +22,7 @@
 <TagPicker />
 {#if !readInstructions}
 	<div class="flex flex-col items-center p-6 sm:p-8">
-		<h1 class="mb-4 text-center text-4xl"><strong>ADN Político</strong>: descobre que partido melhor te representa.</h1>
+		<h1 class="mb-4 text-center text-4xl"><strong>Quórum Político</strong>: descobre que partido melhor te representa.</h1>
 		<p class="text mb-4 text-center sm:text-base">Não é só mais um quiz político. Sê o teu próprio representante partidário e <strong>vota diretamente nas propostas parlamentares</strong>.</p>
 
 		<Hemicycle random={true} />

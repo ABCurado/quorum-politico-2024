@@ -4,7 +4,7 @@
 </script>
 
 <div class="flex flex-col bg-green-400 items-center">
-    <h1 class="flex items-center">My ADN Politico Wrapped</h1>
+    <h1 class="flex items-center">O meu Quórum Politico</h1>
     {#each pr as party}
         <h3 class="m-4">{party.party.name}</h3>
         <p>{party.value * 100}%</p>
