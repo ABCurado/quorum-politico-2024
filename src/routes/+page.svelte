@@ -215,10 +215,10 @@
 		<OthersResults />
 
 		<div class="mt-2 flex flex-col items-center justify-center px-4 text-base sm:px-0">
-			<h2 class="text-m  text-center text-base font-bold">Os temas não te diziam muito?</h2> 
+			<h2 class="text-m text-center text-base font-bold">Os temas não te diziam muito?</h2>
 			<p class="text-center text-xs">Recomeça com as categorias que te interessam.</p>
 			<button
-				class="mb-4 mt-4 rounded-2xl bg-green-400 px-6 py-3 text-base font-bold text-slate-200 hover:bg-green-700"
+				class="mb-4 mt-4 rounded-2xl bg-slate-700 px-6 py-3 text-base font-bold text-slate-200 hover:bg-slate-400"
 				on:click={() => {
 					showCategoriesPicker = true;
 				}}
@@ -230,20 +230,14 @@
 			{/if}
 		</div>
 
-		<div class="m-2 mt-6 flex w-full flex-col gap-3">
-			<h2 class="text-m  text-center text-base font-bold">Compara as tua representação partidária com amigos</h2> 
-			<p class="text-center text-xs">Gera uma imagem com os teus resultados e partilha.</p>
-			<div class="flex items-center justify-center gap-3">
-				<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {userProximity[0].party.name}" />
-			</div>
-		</div>
+		<SocialShare title="ADN Político." url="https://adn-politico.com/" desc="O Partido que melhor me representa é: {userProximity[0].party.name}" />
 
 		<AboutButton />
 	</div>
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
-		<div class="flex flex-col items-center justify-center px-4 sm:mt-8 sm:px-0 sm:bg-opacity-100">
+		<div class="flex flex-col items-center justify-center px-4 sm:mt-8 sm:bg-opacity-100 sm:px-0">
 			<Document proposal_document={proposals[currentVote]} />
 
 			<div class="fixed bottom-0 left-0 right-0 flex justify-center space-x-4 bg-slate-100 bg-opacity-95 p-4 sm:relative sm:mt-2 sm:bg-opacity-0">
@@ -253,7 +247,8 @@
 				<button class="rounded bg-slate-400 px-4 font-bold text-slate-700 hover:bg-slate-700 hover:text-slate-200" id="2" on:click={handleVoteClick}
 					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
 				>
-				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button>
+				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button
+				>
 			</div>
 		</div>
 	{/key}
