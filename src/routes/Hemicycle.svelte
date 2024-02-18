@@ -6,6 +6,7 @@
 	export let random = false;
 	export let party_logo = '';
 	export let partyRankingList: Proximity[] = [];
+	let partyRanking = Object.fromEntries(partyRankingList.map((party) => [party.party, party.value]));
 
 	let defaultRadiusBase = 6;
 	function calculateRadius(party: number | undefined) {
@@ -29,15 +30,7 @@
 		}
 	}
 
-	function set_proximity(s: string | number) {
-		for (let p of partyRankingList) {
-			if (p.party.name === s) {
-				return p.value;
-			}
-		}
-	}
-
-	let svgWidth = 200;
+	let svgWidth: number = 200;
 
 	onMount(() => {
 		if (window.innerWidth > 768) svgWidth = window.innerWidth * 0.5;
@@ -58,12 +51,12 @@
 			{/if}
 
 			{#each parlimentData as seat}
-				{@const maxOpacity = calculateOpacity(set_proximity(seat[2]))}
-				{@const midOpacity = calculateOpacity(set_proximity(seat[2]), true)}
-				{@const minOpacity = random ? calculateOpacity(set_proximity(seat[2])) : set_proximity(seat[2]) == 1.0 ? defaultOpacity * (2 / 3) : defaultOpacity}
+				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
+				{@const midOpacity = calculateOpacity(partyRanking[seat[2]], true)}
+				{@const minOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultOpacity * (2 / 3) : defaultOpacity}
 
-				{@const maxRadius = calculateRadius(set_proximity(seat[2]))}
-				{@const minRadius = random ? calculateRadius(set_proximity(seat[2])) : set_proximity(seat[2]) == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
+				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
+				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
 
 				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={`fill-${seat[2]}`} style="opacity: {maxOpacity};">
 					<animate
