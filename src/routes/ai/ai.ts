@@ -3,15 +3,15 @@ import OpenAI from 'openai';
 import type { UserVote } from '../../types';
 
 let partyDescriptions = {
-	PS: 'Partido Socialista',
-	PSD: 'Partido Social Democrata',
-	BE: 'Bloco de Esquerda',
-	CDS: 'Centro Democrático Social',
-	CDU: 'Coligação Democrática Unitária',
-	PAN: 'Pessoas Animais Natureza',
-	CH: 'Chega',
-	IL: 'Iniciativa Liberal',
-	L: 'Livre',
+	'PS': 'Partido Socialista',
+	'PSD': 'Partido Social Democrata',
+	'BE': 'Bloco de Esquerda',
+	'CDS': 'Centro Democrático Social',
+	'PCP': 'Coligação Democrática Unitária',
+	'PAN': 'Pessoas Animais Natureza',
+	'CH': 'Chega',
+	'IL': 'Iniciativa Liberal',
+	'L': 'Livre',
 }
 
 export async function randomPartyDescription(platform: any, party: string) {
@@ -91,7 +91,7 @@ export async function randomPolicialSentence(platform: any) {
 
 export async function aiPersonaSummary(platform: any, proposals: UserVote[], winningPartyShortDescription: string) {
 	const openai = new OpenAI({
-		apiKey: platform.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY
+		apiKey: platform.env.OPENAI_API_KEY 
 	});
 	// const ai = new Ai(platform?.env.AI);
 	// messages - chat style input
