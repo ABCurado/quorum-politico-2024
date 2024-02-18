@@ -6,8 +6,6 @@
 	export let random = false;
 	export let party_logo = '';
 	export let partyRankingList: Proximity[] = [];
-	// Dictionary of party rankings by party name for faster access
-	let partyRanking = Object.fromEntries(partyRankingList.map((party) => [party.party, party.value]));
 
 	let defaultRadiusBase = 6;
 	function calculateRadius(party: number | undefined) {
@@ -31,7 +29,15 @@
 		}
 	}
 
-	let svgWidth: number = 200;
+	function set_proximity(s: string | number) {
+		for (let p of partyRankingList) {
+			if (p.party.name === s) {
+				return p.value;
+			}
+		}
+	}
+
+	let svgWidth = 200;
 
 	onMount(() => {
 		if (window.innerWidth > 768) svgWidth = window.innerWidth * 0.5;
@@ -41,7 +47,7 @@
 	});
 </script>
 
-<div class="hidden fill-BE fill-CH fill-IL fill-L fill-PAN fill-PCP fill-PS fill-PSD" />
+<div class="fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L hidden" />
 
 <div class="flex flex-col items-center justify-center">
 	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" width={svgWidth} xmlns="http://www.w3.org/2000/svg">
@@ -52,12 +58,12 @@
 			{/if}
 
 			{#each parlimentData as seat}
-				{@const maxOpacity = calculateOpacity(partyRanking[seat[2]])}
-				{@const midOpacity = calculateOpacity(partyRanking[seat[2]], true)}
-				{@const minOpacity = random ? calculateOpacity(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultOpacity * (2 / 3) : defaultOpacity}
+				{@const maxOpacity = calculateOpacity(set_proximity(seat[2]))}
+				{@const midOpacity = calculateOpacity(set_proximity(seat[2]), true)}
+				{@const minOpacity = random ? calculateOpacity(set_proximity(seat[2])) : set_proximity(seat[2]) == 1.0 ? defaultOpacity * (2 / 3) : defaultOpacity}
 
-				{@const maxRadius = calculateRadius(partyRanking[seat[2]])}
-				{@const minRadius = random ? calculateRadius(partyRanking[seat[2]]) : partyRanking[seat[2]] == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
+				{@const maxRadius = calculateRadius(set_proximity(seat[2]))}
+				{@const minRadius = random ? calculateRadius(set_proximity(seat[2])) : set_proximity(seat[2]) == 1.0 ? defaultRadiusBase * (2 / 3) : defaultRadiusBase}
 
 				<circle cx={seat[0]} cy={seat[1]} r={maxRadius} class={`fill-${seat[2]}`} style="opacity: {maxOpacity};">
 					<animate
@@ -67,13 +73,7 @@
 						values="{maxOpacity};{midOpacity};{minOpacity};{midOpacity};{maxOpacity}"
 						repeatCount={random ? 'indefinite' : ''}
 					/>
-					<animate 
-						attributeName="r" 
-						dur={random ? '7s' : '10s'} 
-						begin="{Math.random() * 1500}ms" 
-						values="{maxRadius};{minRadius};{maxRadius}" 
-						repeatCount={random ? 'indefinite' : ''} 
-					/>
+					<animate attributeName="r" dur={random ? '7s' : '10s'} begin="{Math.random() * 1500}ms" values="{maxRadius};{minRadius};{maxRadius}" repeatCount={random ? 'indefinite' : ''} />
 				</circle>
 			{/each}
 			<!-- TODO: Make it possible to have highlights around the parties -->

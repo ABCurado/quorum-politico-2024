@@ -17,6 +17,7 @@
 
 	async function generatePNG() {
 		isGenerating = true;
+		await new Promise((r) => setTimeout(r, 1000));
 		try {
 			let node = document.getElementById('share');
 
