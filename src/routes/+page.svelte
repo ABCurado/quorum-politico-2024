@@ -204,7 +204,7 @@
 
 			<PartyInfo bind:show={showPartyInfo} party={userProximity[0].party.name} />
 
-			{#if data.env === 'dev'}
+			{#if data.env !== 'production'}
 				<AiSummary proposals={userVote} winningPartyShortDescription={userProximity[0].party.name} />
 			{/if}
 
