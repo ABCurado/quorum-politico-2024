@@ -21,7 +21,7 @@
 </script>
 
 {#if data !== undefined}
-	<div class="w-3/4 lg:w-1/2 xl:w-1/3">
+	<div class="w-10/12 lg:w-1/2 xl:w-1/3">
 		<p class="text mb-4 text-center sm:text-base"><i>{data}</i></p>
 	</div>
 {:else}
