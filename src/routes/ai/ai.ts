@@ -2,6 +2,18 @@
 import OpenAI from 'openai';
 import type { UserVote } from '../../types';
 
+let partyDescriptions = {
+	PS: 'Partido Socialista',
+	PSD: 'Partido Social Democrata',
+	BE: 'Bloco de Esquerda',
+	CDS: 'Centro Democrático Social',
+	CDU: 'Coligação Democrática Unitária',
+	PAN: 'Pessoas Animais Natureza',
+	CH: 'Chega',
+	IL: 'Iniciativa Liberal',
+	L: 'Livre',
+}
+
 export async function randomPartyDescription(platform: any, party: string) {
 	const ai = new Ai(platform?.env.AI);
 	// messages - chat style input
@@ -86,9 +98,9 @@ export async function aiPersonaSummary(platform: any, proposals: UserVote[], win
 	console.log('proposals', proposals);
 
 	let systemPrompt =
-		'O teu objectivo é criares um perfil extremamente generico e humoristico sobre uma pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera de forma comica, muito divertido. A tua resposta deve ser MUITO CURTA e não pode ter mais de 3 pequenas frases. A pessoa dever falar na primeria pessoa. Não menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
+		'O teu objectivo é criar um perfil politico que seja genérico e humoristico sobre uma pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera de forma comica, muito divertido. A tua resposta deve ser muito curta e não pode ter mais de 30 palavras. A pessoa dever falar na primeria pessoa. Não menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
 	let content = `
-        O partido mais alinhado é o ${winningPartyShortDescription}. 
+        O partido mais alinhado é o ${partyDescriptions[winningPartyShortDescription]}. 
         As opinioes desta pessoa são as seguintes:
 		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.proposal.title).join('\n')}`;
 	console.log('content', content);
