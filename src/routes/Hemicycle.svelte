@@ -37,7 +37,7 @@
 		}
 	}
 
-	let svgWidth = 200;
+	let svgWidth = 300;
 
 	onMount(() => {
 		if (window.innerWidth > 768) svgWidth = window.innerWidth * 0.5;

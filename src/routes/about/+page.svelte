@@ -13,7 +13,7 @@
 	</button>
 </div>
 
-<div class="mb-4 flex w-full justify-center">
+<div class="m-4 flex w-full justify-center">
 	<Hemicycle random={true} />
 </div>
 

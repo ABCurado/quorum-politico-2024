@@ -179,11 +179,11 @@
 </Toast>
 
 {#if !readInstructions}
-	<div class="absolute z-20 mx-auto flex w-full items-center justify-center">
+	<div class="mx-auto flex w-full h-full items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
 {:else if currentVote === quizSize}
-	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
+	<div class="flex min-h-screen flex-col items-center justify-center  px-4 sm:px-0">
 		<div id="share" class="flex flex-col items-center justify-center">
 			<Hemicycle partyRankingList={userProximity} party_logo={userProximity[0].party.name} />
 
