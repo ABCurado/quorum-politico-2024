@@ -100,9 +100,9 @@ export async function aiPersonaSummary(platform: any, proposals: UserVote[], win
 	let systemPrompt =
 		'O teu objectivo é criar um perfil politico que seja genérico, humoristico e muito divertido sobre uma pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera de forma comica, muito divertido. A tua resposta deve ser muito curta e não pode ter mais de 30 palavras. A pessoa dever falar na primeria pessoa. Não menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
 	let content = `
-        O partido mais alinhado com a pessoa é ${partyDescriptions[winningPartyShortDescription]}. 
-        As opiniões desta pessoa são as seguintes:
-		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.proposal.title).join('\n')}`;
+	    O partido mais alinhado com a pessoa é ${partyDescriptions[winningPartyShortDescription as keyof typeof partyDescriptions]}. 
+	    As opiniões desta pessoa são as seguintes:
+	    ${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.proposal.title).join('\n')}+'.'`;
 	console.log('content', content);
 	let chat = {
 		messages: [
@@ -110,7 +110,7 @@ export async function aiPersonaSummary(platform: any, proposals: UserVote[], win
 			{ role: 'user', content: content }
 		]
 	};
-	// let response = await ai.run('@cf/meta/llama-2-7b-chat-fp16', chat);
+	let response = await ai.run('@cf/meta/llama-2-7b-chat-fp16', chat);
 	const chatCompletion = await openai.chat.completions.create({
 		messages: chat.messages,
 		model: 'gpt-4-turbo'
