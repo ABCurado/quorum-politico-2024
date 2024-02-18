@@ -100,8 +100,8 @@ export async function aiPersonaSummary(platform: any, proposals: UserVote[], win
 	let systemPrompt =
 		'O teu objectivo é criar um perfil politico que seja genérico e humoristico sobre uma pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera de forma comica, muito divertido. A tua resposta deve ser muito curta e não pode ter mais de 30 palavras. A pessoa dever falar na primeria pessoa. Não menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
 	let content = `
-        O partido mais alinhado é o ${partyDescriptions[winningPartyShortDescription]}. 
-        As opinioes desta pessoa são as seguintes:
+        O partido mais alinhado com a pessoa é ${partyDescriptions[winningPartyShortDescription]}. 
+        As opiniões desta pessoa são as seguintes:
 		${proposals.map((proposal) => getVoteDescription(proposal.vote, 'pt') + ' ' + proposal.proposal.title).join('\n')}`;
 	console.log('content', content);
 	let chat = {
