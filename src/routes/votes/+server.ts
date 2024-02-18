@@ -72,7 +72,7 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 			INSERT INTO votes (device_id, env, results, top_party, agrees, _created, _updated) 
 			VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)`
 		)
-			.bind(body.device_id, platform?.env.ENV, JSON.stringify(body.results), body.top_party, 2, new Date().toISOString(), new Date().toISOString())
+			.bind(body.device_id, platform?.env.ENV, JSON.stringify(body.results), body.top_party.name, 2, new Date().toISOString(), new Date().toISOString())
 			.run();
 
 		// Store the timestamp of the last insert for this device id
