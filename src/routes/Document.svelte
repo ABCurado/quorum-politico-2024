@@ -98,9 +98,9 @@
 	</Modal>
 {/if}
 
-<div class="mb-20 mt-4 flex w-full flex-col items-center rounded-2xl bg-slate-50 bg-opacity-80 p-4 shadow-2xl sm:mb-4 sm:w-8/12  md:w-10/12 lg:w-8/12">
+<div class="mb-20 mt-2 flex w-full flex-col items-center rounded-2xl bg-slate-50 bg-opacity-80 p-4 shadow-2xl sm:mb-4 sm:w-8/12  md:w-10/12 lg:w-8/12">
 	<div class="items-center sm:w-8/12 flex w-full flex-col md:w-9/12 lg:w-8/12">
-		<div class="mb-2 mt-6 flex flex-row flex-wrap">
+		<div class="mb-2 mt-2 flex flex-row flex-wrap">
 			<div class="mb-2 inline-block rounded-full bg-slate-200 px-4 py-2 text-sm font-semibold text-slate-700">
 				{tag}
 			</div>
