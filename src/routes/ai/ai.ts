@@ -28,7 +28,6 @@ export async function randomPartyDescription(platform: any, party: string) {
 		]
 	};
 	let response = await ai.run('@cf/meta/llama-2-7b-chat-int8', chat);
-	console.log('response', response);
 	// Do something with the response
 	return response.response;
 }
