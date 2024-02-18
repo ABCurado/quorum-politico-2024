@@ -6,6 +6,7 @@
 	export let random = false;
 	export let party_logo = '';
 	export let partyRankingList: Proximity[] = [];
+	// Dictionary of party rankings by party name for faster access
 	let partyRanking = Object.fromEntries(partyRankingList.map((party) => [party.party, party.value]));
 
 	let defaultRadiusBase = 6;
@@ -40,7 +41,7 @@
 	});
 </script>
 
-<div class="fill-BE fill-PS fill-PSD fill-PAN fill-PCP fill-CH fill-IL fill-L hidden" />
+<div class="hidden fill-BE fill-CH fill-IL fill-L fill-PAN fill-PCP fill-PS fill-PSD" />
 
 <div class="flex flex-col items-center justify-center">
 	<svg class="w-full" viewBox="0 0 360 185" preserveAspectRatio="xMidYMid meet" width={svgWidth} xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +67,13 @@
 						values="{maxOpacity};{midOpacity};{minOpacity};{midOpacity};{maxOpacity}"
 						repeatCount={random ? 'indefinite' : ''}
 					/>
-					<animate attributeName="r" dur={random ? '7s' : '10s'} begin="{Math.random() * 1500}ms" values="{maxRadius};{minRadius};{maxRadius}" repeatCount={random ? 'indefinite' : ''} />
+					<animate 
+						attributeName="r" 
+						dur={random ? '7s' : '10s'} 
+						begin="{Math.random() * 1500}ms" 
+						values="{maxRadius};{minRadius};{maxRadius}" 
+						repeatCount={random ? 'indefinite' : ''} 
+					/>
 				</circle>
 			{/each}
 			<!-- TODO: Make it possible to have highlights around the parties -->
