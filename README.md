@@ -1,6 +1,6 @@
 # ADN Politico 2024
 
-![hemicycle](./static/hemicycle.png)
+![hemicycle](./static/hemicycleTranparent.png)
 
 Make informed voting decisions effortlessly with ADN Politico – your digital guide through the political maze.
 

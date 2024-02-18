@@ -1,6 +1,6 @@
 <script>
 	import Hemicycle from '../Hemicycle.svelte';
-	import { IconArrowBack } from '@tabler/icons-svelte';
+	import { IconArrowBack, IconBrandTwitterFilled } from '@tabler/icons-svelte';
 
 	let goBack = () => {
 		window.history.back();
@@ -20,35 +20,23 @@
 <div class="relative mx-auto w-10/12 space-y-8 py-3 sm:mx-auto">
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">ADN Político:</h2>
-		<ul class="mt-4 list-inside list-disc space-y-2 text-base text-gray-700">
-			<li>Iniciativa apartidária para votares diretamente em propostas parlamentares e perceberes que partido melhor te representa.</li>
-			<li>
-				Ignoramos agendas políticas e partidárias, o que se diz em entrevistas e o que se promete em programas eleitoriais. Queremos avaliar objetivamente como cada partido utiliza o seu poder de
-				voto.
-			</li>
-		</ul>
+		Uma iniciativa apartidária que procura proporcionar aos cidadãos a oportunidade de votar diretamente em propostas parlamentares, visando uma compreensão mais clara de qual partido melhor representa suas ideias. Desconsideramos agendas políticas, afiliações partidárias, discursos em entrevistas e promessas eleitorais. Nosso objetivo é avaliar de maneira objetiva como cada partido exerce seu poder de voto e representa os interesses da sociedade.
 	</div>
 
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Como funciona:</h2>
 		<div class="space-y-2">
 			<p class="mt-2 text-base text-gray-700">
-				Apresentamos-te 15 propostas onde podes simular ser o teu próprio representante partidário, votando a favor, contra ou abstendo-te. Em cada uma delas terás acesso à motivação para o partido a
-				ter apresentado, bem como alguns riscos e críticas que a proposta pode ter. O objetivo é mostrar que até propostas que parecem de aprovação óbvia têm impactos diretos e indiretos que é preciso
-				considerar, discutir e mitigar (algo que raramente é exposto nas propostas de cada partido). No final, apresentamos o partido que mais se assemelha ao teu padrão de voto e tens também a
-				oportunidade de repetir a votação selecionando os teus temas preferidos. Podes também explorar os documentos oficiais de cada proposta e como cada partido votou nas propostas em que votaste
-				através do link direto associado.
+				Apresentamos 15 propostas parlamentares, permitindo que simules ser teu próprio representante partidário ao votar a favor, contra ou abster-se. Em cada proposta, fornecemos a motivação do partido proponente, bem como possíveis riscos e críticas associados. Nosso objetivo é destacar que mesmo propostas aparentemente óbvias têm impactos diretos e indiretos que demandam consideração, discussão e mitigação - aspectos muitas vezes ausentes nas propostas partidárias convencionais.
+
+				Ao final, revelamos o partido que mais se alinha ao teu padrão de voto e oferecemos a oportunidade de refazer a votação selecionando teus temas preferidos. Além disso, disponibilizamos documentos oficiais de cada proposta e mostramos como cada partido votou nas propostas em que participaste através de links diretos associados.
+				
 			</p>
 			<p class="mt-2 text-base text-gray-700">
-				No total recolhemos 62 propostas parlamentares apresentadas desde Janeiro de 2023 (considerando sempre a versão mais recente). Consideramos 3 fatores na seleção das propostas: unanimidade (se
-				uma proposta for unânime, não contribui para distinção das posições de cada partido, por isso temos apenas propostas em que pelo menos 1 partido diverge no voto); uniformidade (tentamos
-				garantir representatividade de propostas de todos os espetros partidários e de vários temas relevantes); simplicidade (eliminamos propostas demasiado técnicas e que uma pessoa normal não iria
-				ter interesse de investigar e interagir em tempo útil). Cada voto coincidente (tu votas a favor e partido vota a favor) adiciona um ponto à tua correlação com esse partido. Cada voto
-				totalmente divergente (tu votas contra e partido a favor) retira um ponto à tua correlação com esse partido. Cada abstenção vs voto a favor adiciona 0.5 pontos à correlação. Cada abstenção vs
-				voto contra não influencia a correlação.
+				Reunimos um total de 62 propostas parlamentares desde janeiro de 2023, considerando sempre as versões mais recentes. Na seleção, levamos em conta três fatores: unanimidade, uniformidade e simplicidade. Descartamos propostas técnicas demais ou pouco acessíveis ao cidadão comum. Atribuímos pontos à tua correlação com um partido a cada voto coincidente e subtraímos pontos em caso de votos totalmente divergentes. Abstenções versus votos a favor ou contra também influenciam a correlação de forma ponderada.
 			</p>
-			<p class="mt-2 text-base text-gray-700">Não precisas de criar conta e não guardamos nenhuns dados pessoais.</p>
-			<p class="mt-2 text-base text-gray-700">Código do projeto no <a href="https://github.com/ABCurado/em-quem-votar-2023" target="_blank"><u>GitHub</u></a>.</p>
+			<p class="mt-2 text-base text-gray-700">Sem a necessidade de criar uma conta e sem armazenamento de dados pessoais, nosso projeto é transparente e acessível.</p>
+			<p class="mt-2 text-base text-gray-700">Para mais detalhes, o código do projeto está disponível no <a href="https://github.com/ABCurado/em-quem-votar-2023" target="_blank"><u>GitHub</u></a>.</p>
 		</div>
 	</div>
 
@@ -59,7 +47,7 @@
 				Votos contra dos partidos nem sempre se prendem com divergências com a motivação da proposta em si, mas sim em alguma discordância no plano de implementação ou salvaguardas legislativas que
 				acham necessárias. Isto pode levar a que alguns votos não sigam a doutrina ideológica do partido.
 			</li>
-			<li>Riscos e críticas foram maioritariamente construídos por nós. Apesar de apartidários, podem refletir algum enviesamento.</li>
+			<li>Riscos e críticas foram predominantemente elaborados por nós. Apesar da nossa abordagem apartidária, é possível que revelem algum enviesamento. Procurámos mitigar este enviesamento ao facultar a opção de receber sugestões.</li>
 			<li>
 				Apesar da representatividade das propostas recolhidas, cada seleção individual de 15 propostas pode estar enviesada para determinados temas ou ser maioritariamente de partidos de um espetro
 				político.
@@ -70,9 +58,18 @@
 
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Para sugestões, elogios ou reclamações:</h2>
-		<p class="text-base text-gray-700"><a href="https://twitter.com/ab_curado" target="_blank"><u>twitter.com/ab_curado</u></a></p>
-		<p class="text-base text-gray-700"><a href="https://twitter.com/RicardoPinho96" target="_blank"><u>twitter.com/RicardoPinho96</u></a></p>
-		<p class="text-base text-gray-700"><a href="https://twitter.com/tiagomfurtado" target="_blank"><u>twitter.com/tiagomfurtado</u></a></p>
+			<button class="text-base text-gray-700 flex items-center" on:click={() => window.open('https://twitter.com/ab_curado', '_blank')}>
+				<IconBrandTwitterFilled class="mr-1" size={16} />
+				<span>Antonio B Curado</span>
+			</button>
+			<button class="text-base text-gray-700 flex items-center" on:click={() => window.open('https://twitter.com/RicardoPinho96', '_blank')}>
+				<IconBrandTwitterFilled class="mr-1" size={16} />
+				<span>Ricardo Pinho</span>
+			</button>
+			<button class="text-base text-gray-700 flex items-center" on:click={() => window.open('https://twitter.com/tiagomfurtado', '_blank')}>
+				<IconBrandTwitterFilled class="mr-1" size={16} />
+				<span>Tiago Furtado</span>
+			</button>
 	</div>
 
 	<div class="space-y-4">
