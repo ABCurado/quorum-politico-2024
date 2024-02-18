@@ -2,17 +2,10 @@
 
 ![hemicycle](./static/hemicycleTranparent.png)
 
-Make informed voting decisions effortlessly with ADN Politico – your digital guide through the political maze.
-
-How it Works:
-
-    Vote on proposals.
-    ADN Politico analyzes your choices.
-    Get a picture of your political alignment.
-
-Why ADN Politico?
-
-Simplify your voting experience. Navigate the political landscape with ease. Join the movement towards a more informed democracy.
+ADN Político is a non-partisan initiative that allows users to vote directly on parliamentary proposals to determine which political party aligns with their preferences. 
+The platform presents proposals, and users vote for, against, or abstain on each.  
+The goal is to show the impact of seemingly straightforward proposals and find the party that aligns most with the user's voting pattern.   
+The project collected 62 proposals since January 2023, considering factors like unanimity, uniformity, and simplicity.
 
 ## Getting Started
 
