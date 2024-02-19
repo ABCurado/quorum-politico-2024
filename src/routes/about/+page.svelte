@@ -8,11 +8,13 @@
 	};
 
 	let feedback = '';
+	let isSubmitted = false;
 
 	function submitFeedback() {
 		// Send track event to Mixpanel
 		// Replace 'YOUR_EVENT_NAME' with the actual event name
 		mixpanel.track('Commented', { feedback });
+		isSubmitted = true;
 
 		// Clear the feedback input
 		feedback = '';
@@ -112,13 +114,23 @@
 
 	<div class="mt-8 space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Ajuda-nos a melhorar o projeto:</h2>
-		<form on:submit|preventDefault={submitFeedback}>
-			<div class="flex items-center space-x-4">
-				<textarea class="rounded-md border bg-slate-100 border-gray-300 px-4 p-4 focus:outline-none focus:ring-2 focus:ring-slate-500 w-full" bind:value={feedback} placeholder="A tua opinião"></textarea>
-			</div>
-			<div class="flex justify-end">
-				<button type="submit" class="rounded-md mt-4 bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-600">Submeter</button>
-			</div>
-			</form>
+		<div class="relative mx-auto w-10/12 space-y-8 py-3 sm:mx-auto">
+			<!-- ...existing code... -->
+
+			{#if !isSubmitted}
+				<form on:submit|preventDefault={submitFeedback}>
+					<div class="flex items-center space-x-4">
+						<textarea class="rounded-md border bg-slate-100 border-gray-300 px-4 p-4 focus:outline-none focus:ring-2 focus:ring-slate-500 w-full" bind:value={feedback} placeholder="A tua opinião"></textarea>
+					</div>
+					<div class="flex justify-end">
+						<button type="submit" class="rounded-md mt-4 bg-slate-500 px-4 py-2 font-bold text-white hover:bg-slate-600">Submeter</button>
+					</div>
+				</form>
+			{/if}
+			
+			{#if isSubmitted}
+				<p class="text-base text-gray-700">Obrigado pelo teu feedback!</p>
+			{/if}
+		</div>
 	</div>
 </div>
