@@ -29,10 +29,10 @@
 
 {#if data !== undefined}
 	<div class="w-10/12 text-slate-600 lg:w-1/2 xl:w-1/3">
-		<p class="text-xs mb-4 text-center sm:text-base">
+		<p class="text-xs mb-4 italic text-center sm:text-base">
 			<button on:click={() => (showInfo = true)}>
 				{data}
-				<div class="text-center text-slate-600">
+				<div class="text-center text-slate-600 ">
 					<button on:click={() => (showInfo = true)}>
 						<IconSparkles size={18} stroke={2} class="cursor-pointer text-slate-400 " />
 					</button>
