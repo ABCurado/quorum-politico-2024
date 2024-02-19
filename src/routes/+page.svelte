@@ -55,7 +55,7 @@
 	let proposals: Proposal[];
 	let userProximity: Proximity[];
 	let userVote: UserVote[] = [];
-	let currentVote = 0;
+	let currentVote: number = 0;
 	let goku: number = 0;
 
 	function initializeVar() {
@@ -88,9 +88,11 @@
 		}
 	}
 
-	function handleVoteClick(event: any) {
+	function handleVoteClick(v: string) {
 		userVote[currentVote].proposal = proposals[currentVote];
-		userVote[currentVote].vote = event.target.id;
+		console.log(v)
+		userVote[currentVote].vote = v;
+		console.log(userVote[currentVote].proposal.title + " - " + userVote[currentVote].vote);
 
 		currentVote += 1;
 		window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -242,13 +244,14 @@
 			<Document proposal_document={proposals[currentVote]} />
 
 			<div class="fixed bottom-0 left-0 right-0 flex justify-center space-x-4 bg-slate-100 bg-opacity-95 p-4 sm:relative sm:mt-2 sm:bg-opacity-0">
-				<button class="rounded bg-green-400 px-4 py-1 font-bold text-slate-700 hover:bg-green-700 hover:text-slate-200" id="1" on:click={handleVoteClick}
+				<button class="rounded bg-green-400 px-4 py-1 font-bold text-slate-700 hover:bg-green-700 hover:text-slate-200" on:click={() => handleVoteClick("1")}
 					>Aprovar<span class="hidden sm:block">👍</span></button
 				>
-				<button class="rounded bg-slate-400 px-4 font-bold text-slate-700 hover:bg-slate-700 hover:text-slate-200" id="2" on:click={handleVoteClick}
+				<button class="rounded bg-slate-400 px-4 font-bold text-slate-700 hover:bg-slate-700 hover:text-slate-200" on:click={() => handleVoteClick("2")}
 					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
 				>
-				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button
+				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" on:click={() => handleVoteClick("0")}
+					>Rejeitar<span class="hidden sm:block">👎</span></button
 				>
 			</div>
 		</div>
