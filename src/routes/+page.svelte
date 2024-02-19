@@ -19,12 +19,13 @@
 	import { IconRefresh } from '@tabler/icons-svelte';
 
 	export let data;
+	export let selectedTags: string[];
+
 	let quizSize: number = data.db.length;
 	let showToast: boolean = false;
 	let showCategoriesPicker: boolean = false;
 	let showPartyInfo: boolean = false;
 	let readInstructions = false;
-	let selectedTags: string[] = [];
 
 	const BE: Party = {
 		name: 'BE'
@@ -153,7 +154,7 @@
 	async function getNewQuiz() {
 		let tagsParam = Array.from(selectedTags).join(',');
 
-		let response = await fetch(`/proposals?tags=${tagsParam}&pageSize=6`, {
+		let response = await fetch(`/proposals?tags=${tagsParam}&pageSize=7`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'

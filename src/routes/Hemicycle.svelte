@@ -10,7 +10,7 @@
 	let defaultRadiusBase = 6;
 	function calculateRadius(party: number | undefined) {
 		if (party !== undefined) {
-			return defaultRadiusBase * (party < 0.2 ? 0.2 : party);
+			return defaultRadiusBase * (party < 0.2 ? 0.2 : (party + 0.5 * (1 - party)));
 		} else if (random) {
 			return defaultRadiusBase * Math.random();
 		} else {
@@ -21,7 +21,7 @@
 	let defaultOpacity = 1.0;
 	function calculateOpacity(party: number | undefined, forceRandom = false) {
 		if (party !== undefined) {
-			return defaultOpacity * (party < 0.1 ? 0.1 : party);
+			return defaultOpacity * (party < 0.5 ? 0.5 : party);
 		} else if (random || forceRandom) {
 			return defaultOpacity * Math.random();
 		} else {
@@ -31,7 +31,7 @@
 
 	function set_proximity(s: string | number) {
 		for (let p of partyRankingList) {
-			if (p.party.name === s) {
+			if (p.party.name == s) {
 				return p.value;
 			}
 		}
