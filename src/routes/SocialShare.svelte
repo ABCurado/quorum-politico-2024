@@ -1,7 +1,7 @@
 <script lang="ts">
 	// @ts-ignore
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
-	import { IconShare } from '@tabler/icons-svelte';
+	import { IconShare3 } from '@tabler/icons-svelte';
 	import mixpanel from 'mixpanel-browser';
 	import { toBlob} from 'html-to-image';
 	import { Spinner } from 'flowbite-svelte';
@@ -72,11 +72,11 @@
 				</button>
 			{:else if filesArray.length > 0}
 				<button class="share-button shadow-3xl flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 hover:shadow-2xl" on:click={() => navigatorShare()}>
-					<IconShare size={48} stroke={2}/>
+					<IconShare3 size={48} stroke={2}/>
 				</button>
 			{:else}
 				<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-md hover:shadow-2xl" on:click={() => generatePNG()}>
-					<IconShare size={48} stroke={2}/>
+					<IconShare3 size={48} stroke={2}/>
 				</button>
 			{/if}
 		{:else}
