@@ -55,13 +55,13 @@
 	let proposals: Proposal[];
 	let userProximity: Proximity[];
 	let userVote: UserVote[] = [];
-	let currentVote = 0;
+	let currentVote: number = 0;
 	let goku: number = 0;
 
 	function initializeVar() {
 		quizSize = data.db.length;
 		currentVote = 0;
-		goku = 0;
+		userVote = [];
 
 		proposals = data.db.map((proposal) => ({
 			id: proposal.id,
@@ -81,11 +81,6 @@
 			abstaining_parties: abstainingParties(proposal),
 			final_result: finalResultMapping(proposal.final_result)
 		}));
-
-		for (let pr of proposals) {
-			userVote[goku] = { proposal: pr, vote: '' };
-			goku += 1;
-		}
 	}
 
 	function handleVoteClick(event: any) {
