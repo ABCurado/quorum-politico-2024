@@ -90,6 +90,8 @@
 
 	function handleVoteClick(event: any) {
 		userVote[currentVote].proposal = proposals[currentVote];
+		console.log(event.id)
+		console.log(event.target.id)
 		userVote[currentVote].vote = event.target.id;
 		console.log(userVote[currentVote].proposal.title + " - " + userVote[currentVote].vote);
 
@@ -249,7 +251,8 @@
 				<button class="rounded bg-slate-400 px-4 font-bold text-slate-700 hover:bg-slate-700 hover:text-slate-200" id="2" on:click={handleVoteClick}
 					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
 				>
-				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" id="0" on:click={handleVoteClick}>Rejeitar<span class="hidden sm:block">👎</span></button
+				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" id="0" on:click={handleVoteClick}
+					>Rejeitar<span class="hidden sm:block">👎</span></button
 				>
 			</div>
 		</div>
