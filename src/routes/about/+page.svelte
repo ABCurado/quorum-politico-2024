@@ -2,6 +2,7 @@
 	import Hemicycle from '../Hemicycle.svelte';
 	import { IconArrowBack, IconBrandTwitterFilled } from '@tabler/icons-svelte';
 	import { onMount } from 'svelte';
+	import mixpanel from 'mixpanel-browser';
 
 	let goBack = () => {
 		window.history.back();
@@ -114,9 +115,7 @@
 
 	<div class="mt-8 space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Ajuda-nos a melhorar o projeto:</h2>
-		<div class="relative mx-auto w-10/12 space-y-8 py-3 sm:mx-auto">
-			<!-- ...existing code... -->
-
+		<div class="relative mx-auto w-10/12 space-y-8 sm:mx-auto">
 			{#if !isSubmitted}
 				<form on:submit|preventDefault={submitFeedback}>
 					<div class="flex items-center space-x-4">
