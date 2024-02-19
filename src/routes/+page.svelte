@@ -61,7 +61,7 @@
 	function initializeVar() {
 		quizSize = data.db.length;
 		currentVote = 0;
-		userVote = [];
+		goku = 0;
 
 		proposals = data.db.map((proposal) => ({
 			id: proposal.id,
@@ -81,11 +81,17 @@
 			abstaining_parties: abstainingParties(proposal),
 			final_result: finalResultMapping(proposal.final_result)
 		}));
+
+		for (let pr of proposals) {
+			userVote[goku] = { proposal: pr, vote: '' };
+			goku += 1;
+		}
 	}
 
 	function handleVoteClick(event: any) {
 		userVote[currentVote].proposal = proposals[currentVote];
 		userVote[currentVote].vote = event.target.id;
+		console.log(userVote[currentVote].proposal.title + " - " + userVote[currentVote].vote);
 
 		currentVote += 1;
 		window.scrollTo({ top: 0, behavior: 'smooth' });
