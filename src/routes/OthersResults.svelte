@@ -102,7 +102,7 @@
 						position: 'top',
 						labels: {
 							font: {
-								size: 5
+								size: 8
 							}
 						}
 					},
