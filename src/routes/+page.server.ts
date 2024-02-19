@@ -13,15 +13,21 @@ export const load: PageServerLoad = async ({ request: any, platform }) => {
 		let first_tags: string[] = ["Cidadania", "Habitação", "Fiscalidade", "Educação", "Segurança Social", "Saúde", "Finanças", "Relações internacionais"];
 		first_tag_number = first_tags.length;
 
-		let first_items = db.sort(() => Math.random() - 0.5).slice(0, 1);
+		let first_items = db.sort(() => Math.random() - 0.5).slice(0, 0);
 
 		for (let t of first_tags) {
-			let aux_items = db.filter((proposal) => {return proposal.tag_1 === t})
+			let aux_items = db.filter((proposal) => {return proposal.tag_1 === t});
 			aux_items = aux_items.sort(() => Math.random() - 0.5).slice(0, 1);
 			first_items = first_items.concat(aux_items);
 		};
 
-		let rest_items = db.sort(() => Math.random() - 0.5).slice(0, questions_number - first_tag_number - 1);
+		let db_reduced = db;
+
+		for (let p of first_items) {
+			db_reduced = db_reduced.filter((proposal) => {return proposal.official_id !== p.official_id});
+		}
+
+		let rest_items = db_reduced.sort(() => Math.random() - 0.5).slice(0, questions_number - first_tag_number);
 
 		items = first_items.concat(rest_items);
 
