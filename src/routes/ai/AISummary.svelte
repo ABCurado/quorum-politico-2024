@@ -32,7 +32,7 @@
 		<p class="text-xs mb-4 text-center sm:text-base">
 			<button on:click={() => (showInfo = true)}>
 				{data}
-				<div class="text-center text-slate-600">
+				<div class="text-center text-slate-600 ">
 					<button on:click={() => (showInfo = true)}>
 						<IconSparkles size={18} stroke={2} class="cursor-pointer text-slate-400 " />
 					</button>
