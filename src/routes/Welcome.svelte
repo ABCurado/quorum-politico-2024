@@ -30,25 +30,25 @@
 		<div class="mb-4 mt-4 text-base">
 			<ul>
 				<li class="flex items-center mb-1">
-					<div class="flex items-center">
+					<div class="">
 						<IconCheckbox size={16} stroke={3} class="text-green-600" />
 					</div>
 					<span class="ml-2 flex-grow">Lê a <strong>motivação, riscos e críticas</strong> de cada proposta.</span>
 				</li>
 				<li class="flex items-center mb-1">
-					<div class="flex items-center">
+					<div class="">
 						<IconCheckbox size={16} stroke={3} class="text-green-600" />
 					</div>
 					<span class="ml-2 flex-grow">Decide se és a <strong>favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstém-te</strong>.</span>
 				</li>
 				<li class="flex items-center mb-1">
-					<div class="flex items-center">
+					<div class="">
 						<IconCheckbox size={16} stroke={3} class="text-green-600" />
 					</div>
 					<span class="ml-2 flex-grow">No final, dizemos-te que <strong>partido realmente te representou</strong>.</span>
 				</li>
 				<li class="flex items-center mb-1">
-					<div class="flex items-center">
+					<div class="">
 						<IconCheckbox size={16} stroke={3} class="text-green-600" />
 					</div>
 					<span class="ml-2 flex-grow">Não guardamos quaisquer dados pessoais.</span>
