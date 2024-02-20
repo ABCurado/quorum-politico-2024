@@ -31,11 +31,11 @@
 			<ul>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} class="text-green-400" />
-					<span class="ml-2">Lê a <strong>motivação, riscos e críticas</strong> de cada proposta.</span>
+					<span class="ml-2">Lê a <strong>motivação, riscos e críticas</strong> de 15 propostas parlamentares (das 62 que recolhemos).</span>
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} class="text-green-400" />
-					<span class="ml-2">Decide se és a <strong>favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstém-te</strong>.</span>
+					<span class="ml-2">Decide se és <strong>a favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstém-te</strong>.</span>
 				</li>
 				<li class="ml-3 flex items-center">
 					<IconCheckbox size={16} stroke={3} class="text-green-400" />
