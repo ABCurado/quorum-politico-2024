@@ -16,7 +16,7 @@
 	import { aprovingParties, rejectingParties, abstainingParties, finalResultMapping, calculateProximity } from '../dbAbstraction';
 	//import Proximity from './party/+server.ts';
 	import AiSummary from './ai/AISummary.svelte';
-	import { IconRefresh } from '@tabler/icons-svelte';
+	import { IconRefresh, IconTriangleOff } from '@tabler/icons-svelte';
 
 	export let data;
 	export let selectedTags: string[];
@@ -90,9 +90,7 @@
 
 	function handleVoteClick(v: string) {
 		userVote[currentVote].proposal = proposals[currentVote];
-		console.log(v)
 		userVote[currentVote].vote = v;
-		console.log(userVote[currentVote].proposal.title + " - " + userVote[currentVote].vote);
 
 		currentVote += 1;
 		window.scrollTo({ top: 0, behavior: 'smooth' });
