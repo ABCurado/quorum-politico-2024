@@ -86,7 +86,7 @@
 					<IconShare3 size={48} stroke={2} />
 				</button>
 			{:else}
-				<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-md hover:shadow-2xl" on:click={() => generatePNG()}>
+				<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-md" on:click={() => generatePNG()}>
 					<IconShare3 size={48} stroke={2} />
 				</button>
 			{/if}
