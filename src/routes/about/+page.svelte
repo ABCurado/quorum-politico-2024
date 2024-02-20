@@ -22,10 +22,12 @@
 		<h2 class="text-2xl font-bold text-gray-700">Quórum Político:</h2>
 		<div class="space-y-2">
 			<p class="mt-2 text-base text-gray-700">
-				Uma iniciativa apartidária que procura proporcionar aos cidadãos a oportunidade de votar diretamente em propostas parlamentares, visando uma compreensão mais clara de qual partido melhor representa suas ideias.
-			</p>
-			<p class="mt-2 text-base text-gray-700">
-				Desconsideramos agendas políticas, afiliações partidárias, discursos em entrevistas e promessas eleitorais. O nosso objetivo é avaliar de maneira objetiva como cada partido exerce seu poder de voto e representa os interesses da sociedade.
+				<li>
+					Uma iniciativa apartidária que procura proporcionar aos cidadãos a oportunidade de votar diretamente em propostas parlamentares, visando uma compreensão mais clara de qual partido melhor representa suas ideias.
+				</li>
+				<li>
+					Desconsideramos agendas políticas, afiliações partidárias, discursos em entrevistas e promessas eleitorais. O nosso objetivo é avaliar de maneira objetiva como cada partido exerce seu poder de voto e representa os interesses da sociedade.
+				</li>
 			</p>
 		</div>
 	</div>
@@ -34,14 +36,19 @@
 		<h2 class="text-2xl font-bold text-gray-700">Como funciona:</h2>
 		<div class="space-y-2">
 			<p class="mt-2 text-base text-gray-700">
-				Apresentamos 15 propostas parlamentares, permitindo que simules ser teu próprio representante partidário ao votar a favor, contra ou abster-se. Em cada proposta, fornecemos a motivação do partido proponente, bem como possíveis riscos e críticas associados. Nosso objetivo é destacar que mesmo propostas aparentemente óbvias têm impactos diretos e indiretos que demandam consideração, discussão e mitigação - aspectos muitas vezes ausentes nas propostas partidárias convencionais.
-				Ao final, revelamos o partido que mais se alinha ao teu padrão de voto e oferecemos a oportunidade de refazer a votação selecionando teus temas preferidos. Além disso, disponibilizamos documentos oficiais de cada proposta e mostramos como cada partido votou nas propostas em que participaste através de links diretos associados.
+				<li>
+					Apresentamos 15 propostas parlamentares, permitindo que simules ser teu próprio representante partidário ao votar a favor, contra ou abster-se. Em cada proposta, fornecemos a motivação do partido proponente, bem como possíveis riscos e críticas associados. Nosso objetivo é destacar que mesmo propostas aparentemente óbvias têm impactos diretos e indiretos que demandam consideração, discussão e mitigação - aspectos muitas vezes ausentes nas propostas partidárias convencionais. No final, revelamos o partido que mais se alinha ao teu padrão de voto e oferecemos a oportunidade de refazer a votação selecionando teus temas preferidos. Além disso, disponibilizamos documentos oficiais de cada proposta e mostramos como cada partido votou nas propostas em que participaste através de links diretos associados.
+				</li>
+				<li>
+					Reunimos um total de 62 propostas parlamentares desde janeiro de 2023, considerando sempre as versões mais recentes. Na seleção, levamos em conta três fatores: unanimidade, uniformidade e simplicidade. Descartamos propostas demasiado técnicas ou em que não houvesse diferença no voto dos partidos. Atribuímos pontos à tua correlação com um partido a cada voto coincidente e subtraímos pontos em caso de votos totalmente divergentes. Abstenções versus votos a favor também atribui meio ponto à correlação.
+				</li>
+				<li>
+					Sem a necessidade de criar uma conta e sem armazenamento de dados pessoais, nosso projeto é transparente e acessível.
+				</li>
+				<li>
+					Para mais detalhes, o código do projeto está disponível no <a href="https://github.com/ABCurado/em-quem-votar-2023" target="_blank"><u>GitHub</u></a>.
+				</li>
 			</p>
-			<p class="mt-2 text-base text-gray-700">
-				Reunimos um total de 62 propostas parlamentares desde janeiro de 2023, considerando sempre as versões mais recentes. Na seleção, levamos em conta três fatores: unanimidade, uniformidade e simplicidade. Descartamos propostas demasiado técnicas. Atribuímos pontos à tua correlação com um partido a cada voto coincidente e subtraímos pontos em caso de votos totalmente divergentes. Abstenções versus votos a favor também atribui meio ponto à correlação.
-			</p>
-			<p class="mt-2 text-base text-gray-700">Sem a necessidade de criar uma conta e sem armazenamento de dados pessoais, nosso projeto é transparente e acessível.</p>
-			<p class="mt-2 text-base text-gray-700">Para mais detalhes, o código do projeto está disponível no <a href="https://github.com/ABCurado/em-quem-votar-2023" target="_blank"><u>GitHub</u></a>.</p>
 		</div>
 	</div>
 
