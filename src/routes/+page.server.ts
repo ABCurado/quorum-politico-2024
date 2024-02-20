@@ -22,8 +22,11 @@ export const load: PageServerLoad = async ({ request: any, platform }) => {
 		};
 
 		let db_reduced = db;
+		
+		//auxiliar object to guarantee easter egg proposal is not appearing on first quiz try
+		let aux_items = first_items.concat(db.filter((proposal) => {return proposal.official_id === "3/XV-2"}))
 
-		for (let p of first_items) {
+		for (let p of aux_items) {
 			db_reduced = db_reduced.filter((proposal) => {return proposal.official_id !== p.official_id});
 		}
 

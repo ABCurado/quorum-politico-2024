@@ -24,7 +24,7 @@
 </script>
 
 {#if showInfo}
-	<Modal title="Gerado por IA..." bind:open={showInfo} autoclose outsideclose size="xs">Não nos responsabilizamos por danos físicos ou psicológicos causados por este sumário.</Modal>
+	<Modal title="Gerado por IA." bind:open={showInfo} autoclose outsideclose size="xs">Não nos responsabilizamos por danos físicos ou psicológicos causados por este sumário.</Modal>
 {/if}
 
 {#if data !== undefined}
