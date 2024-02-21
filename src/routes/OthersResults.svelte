@@ -54,13 +54,13 @@
 		labels: Object.keys(voteResults).map((key) => `${key} (${voteResults[key].reduce((acc, cur) => acc + cur.votes, 0)})`),
 		datasets: [
 			{
-				label: 'Identifica-se',
+				label: 'Sim, identifico-me',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 1).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(16, 185, 129, 0.6)',
 				order: 1
 			},
 			{
-				label: 'Não se identifica',
+				label: 'Não me identifico',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 0).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(239, 68, 68, 0.6)'
 			},
