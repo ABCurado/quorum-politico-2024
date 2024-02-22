@@ -33,13 +33,13 @@
 					<div class="">
 						<IconCheckbox size={16} stroke={3} class="text-green-600" />
 					</div>
-					<span class="ml-2 flex-grow">Lê a <strong>motivação, riscos e críticas</strong> de cada proposta.</span>
+					<span class="ml-2">Lê a <strong>motivação, riscos e críticas</strong> de 15 propostas parlamentares (das 62 que recolhemos).</span>
 				</li>
 				<li class="flex items-center mb-1">
 					<div class="">
 						<IconCheckbox size={16} stroke={3} class="text-green-600" />
 					</div>
-					<span class="ml-2 flex-grow">Decide se és a <strong>favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstém-te</strong>.</span>
+					<span class="ml-2">Decide se és <strong>a favor</strong>, <strong>contra</strong> ou simplesmente <strong>abstém-te</strong>.</span>
 				</li>
 				<li class="flex items-center mb-1">
 					<div class="">

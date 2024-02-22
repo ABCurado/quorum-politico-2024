@@ -25,6 +25,6 @@
 		</div>
 	{/each}
 	<svelte:fragment slot="footer">
-		<a href={info.link} target="_blank" class="text-blue-500 hover:underline">Link para as propostas</a>
+		<a href={info.link} target="_blank" class="text-blue-500 hover:underline">Plano eleitoral 2024</a>
 	</svelte:fragment>
 </Modal>

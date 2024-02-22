@@ -24,12 +24,12 @@
 </script>
 
 {#if showInfo}
-	<Modal title="Gerado por AI..." bind:open={showInfo} autoclose outsideclose size="xs">Não nos responsabilizamos por qualquer dano causado por este sumário</Modal>
+	<Modal title="Gerado por IA." bind:open={showInfo} autoclose outsideclose size="xs">Não nos responsabilizamos por danos físicos ou psicológicos causados por este sumário.</Modal>
 {/if}
 
 {#if data !== undefined}
-	<div class="w-10/12 text-slate-600 lg:w-1/2 xl:w-1/3">
-		<p class="text-xs mb-4 italic text-center sm:text-base">
+	<div class="w-10/12 text-slate-600 lg:w-5/6 xl:w-5/6">
+		<p class="text-xs mb-4 text-center sm:text-base">
 			<button on:click={() => (showInfo = true)}>
 				{data}
 				<div class="text-center text-slate-600 ">
