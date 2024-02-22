@@ -3,7 +3,7 @@
 	import { LinkedIn, Telegram, WhatsApp, Facebook, X } from 'svelte-share-buttons-component';
 	import { IconShare3 } from '@tabler/icons-svelte';
 	import mixpanel from 'mixpanel-browser';
-	import { toBlob} from 'html-to-image';
+	import { toBlob } from 'html-to-image';
 	import { Spinner } from 'flowbite-svelte';
 
 	export let url = 'https://quorum-politico.pt/';
@@ -19,7 +19,7 @@
 		await new Promise((r) => setTimeout(r, 200));
 		try {
 			let node = document.getElementById('share');
-			if(!node) return;
+			if (!node) return;
 			function filter(node) {
 				return node.id !== 'descobre';
 			}
@@ -64,19 +64,22 @@
 	{:else}
 		<p class="text-center text-xs">Partilha e descobre os resultados de outros.</p>
 	{/if}
-	<div class="flex items-center justify-center gap-3 mt-2">
+	<div class="mt-2 flex items-center justify-center gap-3">
 		{#if supportsNavigatorShare}
 			{#if isGenerating}
-				<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-xl hover:shadow-2xl">
-					<Spinner />
-				</button>
+				<div class="flex flex-col items-center">
+					<Spinner class="rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-xl hover:shadow-2xl"/>
+					<p class="text-center text-xs animate-pulse">
+						A gerar partilha...
+					</p>
+				</div>
 			{:else if filesArray.length > 0}
-				<button class="share-button shadow-3xl flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 hover:shadow-2xl" on:click={() => navigatorShare()}>
-					<IconShare3 size={48} stroke={2}/>
+				<button class="share-button shadow-3xl flex cursor-pointer items-center rounded-full border-2 bg-slate-400 bg-opacity-30 px-4 py-4 hover:shadow-2xl" on:click={() => navigatorShare()}>
+					<IconShare3 size={48} stroke={2} />
 				</button>
 			{:else}
-				<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-md hover:shadow-2xl" on:click={() => generatePNG()}>
-					<IconShare3 size={48} stroke={2}/>
+				<button class="share-button flex cursor-pointer items-center rounded-full border-2 bg-slate-200 bg-opacity-30 px-4 py-4 shadow-md" on:click={() => generatePNG()}>
+					<IconShare3 size={48} stroke={2} />
 				</button>
 			{/if}
 		{:else}
