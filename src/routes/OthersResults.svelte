@@ -97,6 +97,9 @@
 		<Bar
 			{data}
 			options={{
+				    responsive: true,
+    			maintainAspectRatio: false
+
 				plugins: {
 					legend: {
 						position: 'top',
@@ -131,7 +134,7 @@
 				},
 				maxBarThickness: 25
 			}}
-			class="min-h-52"
+			class="min-h-60"
 		/>
 	{/if}
 </div>
