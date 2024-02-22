@@ -9,7 +9,7 @@
 	{#each proximity as party}
 		<div class="flex items-center justify-between">
 			<div class="text-sm font-medium text-slate-900">{party.party.name}</div>
-			<div class="text-xs text-slate-500">{Number(party.value * 100).toFixed(0)}%</div>
+			<div class="text-xs font-bold {party.value < 0 ? 'text-orange-900' : 'text-slate-500'}">{Number(party.value * 100).toFixed(0)}%</div>
 		</div>
 		<div class="mb-4 flex h-2 overflow-hidden rounded bg-slate-200 text-xs md:h-3">
 			<div

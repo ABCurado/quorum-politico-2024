@@ -190,7 +190,7 @@
 
 			<button
 				tabindex="0"
-				class="mb-4 mt-2 cursor-pointer text-center text-xs text-slate-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
+				class="mb-1 mt-2 font-bold cursor-pointer text-center text-xs text-slate-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
 				id="descobre"
 				on:click={() => {
 					showPartyInfo = true;

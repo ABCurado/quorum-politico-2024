@@ -134,6 +134,6 @@
 			{@html highlightTitles(counter_reduced)}
 		</div>
 
-		<a href={proposal_link} target="_blank" class="text-xs text-blue-500 underline mb-4 sm:text-base">Ver documento oficial {official_id} (Votado a {vote_link})</a>
+		<a href={proposal_link} target="_blank" class="text-xs text-blue-500 underline mb-2 sm:mb-4 sm:text-base">Ver documento oficial {official_id} (Votado a {vote_link})</a>
 	</div>
 </div>
