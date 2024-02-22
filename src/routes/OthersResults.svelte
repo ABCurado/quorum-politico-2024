@@ -94,7 +94,7 @@
 		</div>
 	{:else if showResults}
 		<h2 class="text-m mb-4 text-center font-bold">Resultados de quem já participou:</h2>
-		<div class="min-h-8 max-h-20">
+		<div class="h-60">
 			<Bar
 				{data}
 				options={{
