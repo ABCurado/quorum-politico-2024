@@ -76,7 +76,7 @@
 <div class="w-3/4 lg:w-1/2 xl:w-1/3">
 	{#if !showResults}
 		<div class="container mx-auto p-1">
-			<h2 class="text-m  text-center text-base font-bold">Identificas-te com o resultado?</h2> 
+			<h2 class="text-m text-center text-base font-bold">Identificas-te com o resultado?</h2>
 			<p class="text-center text-xs">Responde para veres os resultados de quem já participou.</p>
 			<div class="flex justify-center">
 				<button on:click={showResultsFunction} id="1" class="m-2 rounded bg-green-800 p-3 font-bold text-slate-200 hover:bg-green-500" title="Click to agree">
@@ -87,7 +87,7 @@
 				</button>
 			</div>
 		</div>
-	{/if}	
+	{/if}
 	{#if loading}
 		<div class="flex justify-center">
 			<div class="h-32 w-32 animate-spin rounded-full border-b-2 border-slate-900" />
@@ -97,8 +97,8 @@
 		<Bar
 			{data}
 			options={{
-				    responsive: true,
-    			maintainAspectRatio: false
+				responsive: true,
+				maintainAspectRatio: false,
 
 				plugins: {
 					legend: {
