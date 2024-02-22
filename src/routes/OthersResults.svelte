@@ -94,47 +94,48 @@
 		</div>
 	{:else if showResults}
 		<h2 class="text-m mb-4 text-center font-bold">Resultados de quem já participou:</h2>
-		<Bar
-			{data}
-			options={{
-				responsive: true,
-				maintainAspectRatio: false,
+		<div class="h-60">
+			<Bar
+				{data}
+				options={{
+					responsive: true,
+					maintainAspectRatio: false,
 
-				plugins: {
-					legend: {
-						position: 'top',
-						labels: {
-							font: {
-								size: 8
+					plugins: {
+						legend: {
+							position: 'top',
+							labels: {
+								font: {
+									size: 8
+								}
 							}
-						}
-					},
-					title: {
-						display: false,
-						text: 'Compara-te com as votações parlamentares'
-					}
-				},
-				responsive: true,
-				scales: {
-					x: {
-						stacked: true,
-						grid: {
-							display: false
 						},
-						ticks: {
-							font: {
-								size: 10
-							}
+						title: {
+							display: false,
+							text: 'Compara-te com as votações parlamentares'
 						}
 					},
-					y: {
-						display: false,
-						stacked: true
-					}
-				},
-				maxBarThickness: 25
-			}}
-			class="min-h-12"
-		/>
+					responsive: true,
+					scales: {
+						x: {
+							stacked: true,
+							grid: {
+								display: false
+							},
+							ticks: {
+								font: {
+									size: 10
+								}
+							}
+						},
+						y: {
+							display: false,
+							stacked: true
+						}
+					},
+					maxBarThickness: 25
+				}}
+			/>
+		</div>
 	{/if}
 </div>
