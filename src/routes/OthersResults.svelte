@@ -131,6 +131,7 @@
 				},
 				maxBarThickness: 25
 			}}
+			class="min-h-52"
 		/>
 	{/if}
 </div>

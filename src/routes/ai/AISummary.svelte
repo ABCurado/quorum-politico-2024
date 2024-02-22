@@ -14,7 +14,7 @@
 	let showInfo = false;
 	let i = 0;
 	function typeWriter() {
-		var speed = 70;
+		var speed = 85;
 		var characters = data.split('');
 		if (i < characters.length) {
 			document.getElementById('aiSummary').innerHTML += characters[i];
@@ -44,7 +44,7 @@
 {#if showInfo}
 	<Modal title="Gerado por IA." bind:open={showInfo} autoclose outsideclose size="xs">Não nos responsabilizamos por danos físicos ou psicológicos causados por este sumário.</Modal>
 {/if}
-<div class="mt-2 w-10/12 text-slate-600 lg:w-5/6 xl:w-5/6">
+<div class="mt-2 w-10/12 text-center items-center text-slate-600 lg:w-5/6 xl:w-5/6">
 	{#if data !== undefined}
 		<p class="mb-3 text-center text-xs sm:text-base">
 			<button on:click={() => (showInfo = true)}>
@@ -63,26 +63,8 @@
 			</button>
 		</p>
 	{:else}
-		<div class="loading-icon text-center items-center">
-			<IconSparkles size={36} stroke={1.5} />
+		<div class="flex justify-center items-center animate-pulse">
+			<IconSparkles size={36} stroke={1.5}  />
 		</div>
 	{/if}
 </div>
-
-<style>
-	.loading-icon {
-		animation: colorAnimation 2s infinite alternate;
-	}
-
-	@keyframes colorAnimation {
-		0% {
-			color: #94a3b8;
-		}
-		50% {
-			color: #64748b;
-		}
-		100% {
-			color: #94a3b8;
-		}
-	}
-</style>
