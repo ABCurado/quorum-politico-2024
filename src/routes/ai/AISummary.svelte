@@ -14,7 +14,7 @@
 	let showInfo = false;
 	let i = 0;
 	function typeWriter() {
-		var speed = 85;
+		var speed = 40;
 		var characters = data.split('');
 		if (i < characters.length) {
 			document.getElementById('aiSummary').innerHTML += characters[i];
