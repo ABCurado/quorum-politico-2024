@@ -63,26 +63,8 @@
 			</button>
 		</p>
 	{:else}
-		<div class="flex justify-center items-center">
-			<IconSparkles size={36} stroke={1.5} />
+		<div class="flex justify-center items-center animate-pulse">
+			<IconSparkles size={36} stroke={1.5}  />
 		</div>
 	{/if}
 </div>
-
-<style>
-	.loading-icon {
-		animation: colorAnimation 2s infinite alternate;
-	}
-
-	@keyframes colorAnimation {
-		0% {
-			color: #94a3b8;
-		}
-		50% {
-			color: #64748b;
-		}
-		100% {
-			color: #94a3b8;
-		}
-	}
-</style>

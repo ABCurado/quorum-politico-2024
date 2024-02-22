@@ -74,7 +74,7 @@
 					</p>
 				</div>
 			{:else if filesArray.length > 0}
-				<button class="share-button shadow-3xl flex cursor-pointer items-center border-cyan-600 rounded-full border-2 bg-slate-100 bg-opacity-30 px-4 py-4 hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105" on:click={() => navigatorShare()}>
+				<button class="share-button shadow-3xl flex cursor-pointer items-center border-cyan-600 animate-ping  rounded-full border-2 bg-slate-100 bg-opacity-30 px-4 py-4 hover:shadow-2xl transition duration-300 ease-in-out transform hover:scale-105" on:click={() => navigatorShare()}>
 					<IconShare3 size={48} stroke={2} />
 				</button>
 			{:else}
