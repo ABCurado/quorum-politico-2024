@@ -126,8 +126,8 @@
 			p.value = p.value / quizSize;
 		}
 
-		userProximity = userProximity.sort((a, b) => b.value - a.value);
-
+		// If multiple parties have the same proximity, shuffle them
+		userProximity = userProximity.sort(() => Math.random() - 0.5).sort((a, b) => b.value - a.value);
 		const results = userVote.map((p) => ({ id: p.proposal.official_id, user_vote: p.vote }));
 
 		mixpanel.track('Quiz Finished', {
