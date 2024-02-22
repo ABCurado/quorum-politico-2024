@@ -95,7 +95,16 @@ export async function aiPersonaSummary(platform: any, proposals: UserVote[], win
 	// const ai = new Ai(platform?.env.AI);
 	// messages - chat style input
 	let systemPrompt =
-		'O teu objectivo é criar um perfil politico que seja genérico, humoristico e muito divertido sobre uma pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera de forma comica, muito divertido. A tua resposta deve ser muito curta e não pode ter mais de 30 palavras. A pessoa dever falar na primeria pessoa. Não menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.';
+		`
+		O teu objectivo é criar um perfil politico que seja genérico, humoristico e muito divertido sobre uma pessoa. Vou enviar-te frases com as quais a pessoa concorda ou discorda para te ajudar a conheceres a pessoa. Exagera de forma comica, muito divertido. A tua resposta deve ser muito curta e não pode ter mais de 30 palavras. A pessoa dever falar na primeria pessoa. Não menciones nada sem ser a descrição da pessoa. A resposta deve ser em português de Portugal.
+		
+		Bons exemplos de respostas:
+			"Sou um visionário dos tijolos, a transformar ruínas em mansões com IVA baixinho. Educação animal? Mas quem precisa, se o meu cão já tem doutoramento em latim."
+			"Sou o tipo que não se interessa por nada, exceto por saber onde fica a próxima manifestação. Se está na rua, estou lá, com o meu cartaz de \"interesse zero\".
+			"Sou o provedor dos liberais descomprometidos, o Robin Hood dos tempos modernos mas com uma carteira de ações em vez de um arco. Salários altos, impostos baixos, essa a melodia a que danço."'
+			"Sou uma pessoa que vibra com Solidariedade, sempre a levantar o braço por causas. Sonho com um país mais justo, onde até na fila do pão se grita Bloco"
+			"Eu sou tipo um super-herói verdem apaixonado por tudo que respira. Defender a natureza é o meu lema, mas sou flexível como um bambu apaixonado por justiça para os jovens aventureiros."
+		`;
 	let content = `
 	    O partido mais alinhado com a pessoa é ${partyDescriptions[winningPartyShortDescription as keyof typeof partyDescriptions]}. 
 	    As opiniões desta pessoa são as seguintes:

@@ -63,7 +63,7 @@
 			</button>
 		</p>
 	{:else}
-		<div class="loading-icon">
+		<div class="loading-icon text-center items-center">
 			<IconSparkles size={36} stroke={1.5} />
 		</div>
 	{/if}
