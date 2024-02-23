@@ -10,7 +10,7 @@
 	}
 </script>
 
-<button on:click={() => (showResults = !showResults)} class="m-6 rounded bg-slate-400 p-3 text-base font-bold text-slate-100 hover:bg-slate-700"> Detalhes das das votações </button>
+<button on:click={() => (showResults = !showResults)} class="m-6 rounded bg-slate-400 p-3 text-base font-bold text-slate-100 hover:bg-slate-700"> Detalhes das votações </button>
 
 {#if showResults}
 	{#each vote_proposals as vote}
