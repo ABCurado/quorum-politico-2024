@@ -44,7 +44,7 @@
 {#if showInfo}
 	<Modal title="Gerado por IA." bind:open={showInfo} autoclose outsideclose size="xs">Não nos responsabilizamos por danos físicos ou psicológicos causados por este sumário.</Modal>
 {/if}
-<div class="mt-2 w-10/12 text-center items-center text-slate-600 lg:w-5/6 xl:w-5/6">
+<div class="mt-2 w-2/3 text-center items-center text-slate-600 lg:w-2/3 xl:w-2/3">
 	{#if data !== undefined}
 		<p class="mb-3 text-center text-xs sm:text-base">
 			<button on:click={() => (showInfo = true)}>
