@@ -2,6 +2,7 @@
 	import { Bar } from 'svelte-chartjs';
 	import 'chart.js/auto';
 	import { IconThumbUpFilled, IconThumbDownFilled } from '@tabler/icons-svelte';
+	import mixpanel from 'mixpanel-browser';
 
 	// agrees: 1 - Means agree
 	// agrees: 0 - Means disagree
@@ -37,6 +38,16 @@
 
 	async function showResultsFunction(event: { target: { id: string } }) {
 		loading = true;
+		await fetch('/votes', {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				device_id: mixpanel.get_distinct_id(),
+				agrees: event.target.id === '1' ? 1 : 0
+			})
+		});
 		voteResults = await fetchData();
 
 		voteResults = Object.fromEntries(
@@ -54,18 +65,18 @@
 		labels: Object.keys(voteResults).map((key) => `${key} (${voteResults[key].reduce((acc, cur) => acc + cur.votes, 0)})`),
 		datasets: [
 			{
-				label: 'Sim, identifico-me',
+				label: 'Número de votantes que se identificam com o resultado',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 1).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(16, 185, 129, 0.6)',
 				order: 1
 			},
 			{
-				label: 'Não me identifico',
+				label: 'Número de votantes que não se identificam',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 0).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(239, 68, 68, 0.6)'
 			},
 			{
-				label: 'Sem opiniāo',
+				label: 'Número de votantes que não expressaram a sua opinião',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 2).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(200, 200, 200, 0.6)'
 			}
@@ -124,7 +135,7 @@
 							},
 							ticks: {
 								font: {
-									size: 10
+									size: 12
 								}
 							}
 						},
