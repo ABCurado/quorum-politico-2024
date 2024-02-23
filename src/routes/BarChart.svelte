@@ -5,7 +5,7 @@
 
 <div class="bg-BE bg-PS bg-PSD bg-PAN bg-PCP bg-CH bg-IL bg-L hidden" />
 
-<div class="w-2/3 lg:w-1/2 xl:w-1/3">
+<div class="w-2/3 lg:w-2/3 xl:w-2/3">
 	{#each proximity as party}
 		<div class="flex items-center justify-between">
 			<div class="text-sm font-medium text-slate-900">{party.party.name}</div>
