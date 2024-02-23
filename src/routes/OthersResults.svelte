@@ -20,7 +20,8 @@
 	let voteResults: Votes = {};
 	let showResults = false;
 	let loading = false;
-
+	let isMobile;
+	
 	async function fetchData() {
 		const response = await fetch('/votes', {
 			method: 'GET',
@@ -38,6 +39,7 @@
 
 	async function showResultsFunction(event: { target: { id: string } }) {
 		loading = true;
+		isMobile = window.innerWidth < 768
 		await fetch('/votes', {
 			method: 'PUT',
 			headers: {
@@ -49,7 +51,6 @@
 			})
 		});
 		voteResults = await fetchData();
-
 		voteResults = Object.fromEntries(
 			Object.entries(voteResults).sort((a, b) => {
 				const totalVotesA = a[1].reduce((acc, cur) => acc + cur.votes, 0);
@@ -65,7 +66,7 @@
 		labels: Object.keys(voteResults).map((key) => `${key} (${voteResults[key].reduce((acc, cur) => acc + cur.votes, 0)})`),
 		datasets: [
 			{
-				label: 'Número de votantes que se identificam com o resultado',
+				label: 'Número de votantes que se identificam',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 1).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(16, 185, 129, 0.6)',
 				order: 1
@@ -76,12 +77,13 @@
 				backgroundColor: 'rgb(239, 68, 68, 0.6)'
 			},
 			{
-				label: 'Número de votantes que não expressaram a sua opinião',
+				label: 'Não expressaram a sua opinião',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 2).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(200, 200, 200, 0.6)'
 			}
 		]
 	};
+	
 </script>
 
 <div class="w-3/4 lg:w-1/2 xl:w-1/3">
@@ -117,8 +119,7 @@
 							position: 'top',
 							labels: {
 								font: {
-									size: 8
-								}
+									size: isMobile ? 10 : 14
 							}
 						},
 						title: {
