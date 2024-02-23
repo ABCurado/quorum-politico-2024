@@ -120,6 +120,7 @@
 							labels: {
 								font: {
 									size: isMobile ? 10 : 14
+								}
 							}
 						},
 						title: {
