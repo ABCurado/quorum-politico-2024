@@ -33,7 +33,7 @@
 			});
 			const { response: responseData } = await response.json();
 			data = responseData;
-			setTimeout(typeWriter, 300);
+			setTimeout(typeWriter, 40);
 			mixpanel.track('AI Summary Generated', { summary: data });
 		} catch (error) {
 			console.error('Error fetching data:', error);
