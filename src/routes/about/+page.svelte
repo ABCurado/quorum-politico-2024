@@ -67,7 +67,7 @@
 					Sem a necessidade de criar uma conta e sem armazenamento de dados pessoais, nosso projeto é transparente e acessível.
 				</li>
 				<li>
-					Para mais detalhes, o código do projeto está disponível no <a href="https://github.com/ABCurado/em-quem-votar-2023" target="_blank"><u>GitHub</u></a>.
+					Para mais detalhes, o código do projeto está disponível no <a href="https://github.com/ABCurado/quorum-politico-2024" target="_blank"><u>GitHub</u></a>.
 				</li>
 			</p>
 		</div>

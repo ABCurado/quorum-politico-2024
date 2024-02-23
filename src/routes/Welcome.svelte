@@ -22,8 +22,9 @@
 <TagPicker />
 {#if !readInstructions}
 	<div class="flex flex-col items-center p-6 sm:p-8">
-		<h1 class="mb-4 text-center text-4xl"><strong>Quórum Político</strong>: descobre que partido melhor te representa.</h1>
-		<p class="text mb-4 text-center sm:text-base">Não é só mais um quiz político. Sê o teu próprio representante partidário e <strong>vota diretamente nas propostas parlamentares</strong>.</p>
+		<h1 class="mb-4 text-center text-4xl"><strong>Quórum Político</strong>: vota diretamente nas propostas parlamentares.</h1>
+		<p class="text mb-4 text-center sm:text-base">Avalia objetivamente o partido que melhor te representa, longe de <strong>promessas eleitorais</strong> e <strong>ideologias partidárias</strong>. Sê o teu próprio representante partidário.</p>
+		<p class="text mb-4 text-center text-slate-500 sm:text-base"><i>Não é só mais um quiz político.</i></p>
 
 		<Hemicycle random={true} />
 
