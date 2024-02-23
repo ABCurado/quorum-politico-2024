@@ -16,6 +16,7 @@
 
 	async function generatePNG() {
 		isGenerating = true;
+		mixpanel.track('Share Button Clicked');
 		await new Promise((r) => setTimeout(r, 200));
 		try {
 			let node = document.getElementById('share');
