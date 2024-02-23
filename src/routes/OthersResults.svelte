@@ -2,6 +2,7 @@
 	import { Bar } from 'svelte-chartjs';
 	import 'chart.js/auto';
 	import { IconThumbUpFilled, IconThumbDownFilled } from '@tabler/icons-svelte';
+	import mixpanel from 'mixpanel-browser';
 
 	// agrees: 1 - Means agree
 	// agrees: 0 - Means disagree
@@ -19,7 +20,8 @@
 	let voteResults: Votes = {};
 	let showResults = false;
 	let loading = false;
-
+	let isMobile;
+	
 	async function fetchData() {
 		const response = await fetch('/votes', {
 			method: 'GET',
@@ -37,8 +39,18 @@
 
 	async function showResultsFunction(event: { target: { id: string } }) {
 		loading = true;
+		isMobile = window.innerWidth < 768
+		await fetch('/votes', {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				device_id: mixpanel.get_distinct_id(),
+				agrees: event.target.id === '1' ? 1 : 0
+			})
+		});
 		voteResults = await fetchData();
-
 		voteResults = Object.fromEntries(
 			Object.entries(voteResults).sort((a, b) => {
 				const totalVotesA = a[1].reduce((acc, cur) => acc + cur.votes, 0);
@@ -54,23 +66,24 @@
 		labels: Object.keys(voteResults).map((key) => `${key} (${voteResults[key].reduce((acc, cur) => acc + cur.votes, 0)})`),
 		datasets: [
 			{
-				label: 'Sim, identifico-me',
+				label: 'Número de votantes que se identificam',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 1).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(16, 185, 129, 0.6)',
 				order: 1
 			},
 			{
-				label: 'Não me identifico',
+				label: 'Número de votantes que não se identificam',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 0).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(239, 68, 68, 0.6)'
 			},
 			{
-				label: 'Sem opiniāo',
+				label: 'Não expressaram a sua opinião',
 				data: Object.values(voteResults).map((vote) => vote.filter((v) => v.agrees === 2).reduce((acc, cur) => acc + cur.votes, 0)),
 				backgroundColor: 'rgb(200, 200, 200, 0.6)'
 			}
 		]
 	};
+	
 </script>
 
 <div class="w-3/4 lg:w-1/2 xl:w-1/3">
@@ -106,7 +119,7 @@
 							position: 'top',
 							labels: {
 								font: {
-									size: 8
+									size: isMobile ? 10 : 14
 								}
 							}
 						},
@@ -124,7 +137,7 @@
 							},
 							ticks: {
 								font: {
-									size: 10
+									size: 12
 								}
 							}
 						},
