@@ -110,7 +110,7 @@
 
 	<div class="space-y-4">
 		<h2 class="text-2xl font-bold text-gray-700">Agradecimentos:</h2>
-		<p class="text-sm text-gray-700">Maria R. Gonçalves, Matilde P. Aires, Rui Maciel, Catarina Ribeiro Lopes, Pedro Gonzalez, Bernardo Peixoto Silva, Filipe Furtado.</p>
+		<p class="text-sm text-gray-700">Maria G. Ribeiro, Matilde P. Aires, Rui Maciel, Catarina Ribeiro Lopes, Pedro Gonzalez, Bernardo Peixoto Silva, Filipe Furtado.</p>
 	</div>
 
 	<div class="mt-8 space-y-4">
