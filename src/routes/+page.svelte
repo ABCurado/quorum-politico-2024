@@ -262,7 +262,7 @@
 		>
 		{#if quizSize === 15 || quizSize === 2}
 			<button class="mt-2 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={addQuestion}
-				>Responde a mais 10 para aumeter a precisão 🤓</button
+				>Responde a mais 10 para aumetar a precisão 🤓</button
 			>
 		{:else}
 			<button class="mt-2 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={addQuestion}
