@@ -51,12 +51,12 @@ export function calculateProximity(proposals: Proposal[], userVote: UserVote[], 
 				if (uservote.vote === '1') {
 					updateProximity(proposal.aproving_parties, userProximity, 1);
 					updateProximity(proposal.rejecting_parties, userProximity, -1);
-					updateProximity(proposal.abstaining_parties, userProximity, 0.5);
+					//updateProximity(proposal.abstaining_parties, userProximity, 0.5);
 				} else if (uservote.vote === '0') {
 					updateProximity(proposal.aproving_parties, userProximity, -1);
 					updateProximity(proposal.rejecting_parties, userProximity, 1);
 				} else if (uservote.vote === '2') {
-					updateProximity(proposal.aproving_parties, userProximity, 0.5);
+					//updateProximity(proposal.aproving_parties, userProximity, 0.5);
 					updateProximity(proposal.abstaining_parties, userProximity, 1);
 				}
 			}
