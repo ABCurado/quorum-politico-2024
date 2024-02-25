@@ -269,6 +269,7 @@
 				>Estou a pensar tornar-me um deputado (Mais 10 perguntas) 📚</button
 			>
 		{/if}
+		<p class="italic text-lg text-slate-400 mt-4">{quizSize} votos até agora.</p>
 	</div>
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
