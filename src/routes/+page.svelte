@@ -180,6 +180,18 @@
 		currentVote = 0;
 	}
 
+	function categoryCounts(){
+		let counts = {};
+		for (let proposal of proposals) {
+			if (counts[proposal.category]) {
+				counts[proposal.category] += 1;
+			} else {
+				counts[proposal.category] = 1;
+			}
+		}
+		return Object.entries(counts).map(([category, count]) => ({ category, count }));
+	}
+
 	initializeVar();
 </script>
 
@@ -258,18 +270,24 @@
 
 	<div class="mt-8 flex w-full flex-col items-center">
 		<button class="mb-2 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={() => (showResults = true)}
-			>Mostra-me os resultados 👁️</button
+			>👁️ Mostra-me os resultados</button
 		>
 		{#if quizSize === 15 || quizSize === 2}
-			<button class="mt-2 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={addQuestion}
-				>Responde a mais 10 para aumetar a precisão 🤓</button
+			<button class="mt-2 mb-6 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={addQuestion}
+				>🤓 Responde a mais 10 para aumetar a precisão</button
 			>
 		{:else}
-			<button class="mt-2 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={addQuestion}
-				>Estou a pensar tornar-me um deputado (Mais 10 perguntas) 📚</button
+			<button class="mt-2 mb-6 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={addQuestion}
+				>📚 Estou a pensar tornar-me um deputado (Mais 10 perguntas)</button
 			>
 		{/if}
-		<p class="italic text-lg text-slate-400 mt-4">{quizSize} votos até agora.</p>
+
+	    {#each categoryCounts() as proposal, i}
+			<div class="italic flex flex-col items-center justify-center px-4 text-slate-400 sm:mt-2 sm:bg-opacity-100 sm:px-0">
+				{proposal.category} - {proposal.count}
+			</div>
+		{/each}
+		<p class="italic text-lg text-slate-400 mt-1">{quizSize} votos até agora.</p>
 	</div>
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />

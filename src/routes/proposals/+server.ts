@@ -9,7 +9,7 @@ export const GET: RequestHandler = async ({ request, platform, url }) => {
 	const tags = url.searchParams.get('tags')?.split(',') ?? [];
 	const pageSize: number = Number(url.searchParams.get('pageSize') ?? 10);
 	const excludeIds: string[] = url.searchParams.get('exlcudeIds')?.split(",") ?? [];
-	console.log('excludeIds', excludeIds);
+
 	// Filter proposals atribute by tags
 	let filteredProposals = db
 	if (tags.length > 0) {
