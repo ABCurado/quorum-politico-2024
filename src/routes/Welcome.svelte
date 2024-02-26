@@ -24,7 +24,7 @@
 	<div class="flex flex-col items-center p-6 sm:p-8">
 		<h1 class="mb-4 text-center text-4xl"><strong>Quórum Político</strong>: vota diretamente nas propostas parlamentares.</h1>
 		<p class="text mb-4 text-center sm:text-base">Avalia objetivamente o partido que melhor te representa, longe de <strong>promessas eleitorais</strong> e <strong>ideologias partidárias</strong>. Sê o teu próprio representante partidário.</p>
-		<p class="text mb-4 text-center text-slate-500 sm:text-base"><i>Sim, é só mais um quiz político. Mas este tem inteligência artificial</i></p>
+		<p class="text mb-4 text-center text-slate-500 sm:text-base"><i>Sim, é só mais um quiz político. Mas este tem inteligência artificial.</i></p>
 
 		<Hemicycle random={true} />
 
