@@ -11,29 +11,19 @@ export const load: PageServerLoad = async ({ request: any, platform }) => {
 		questions_number = 15;
 	
 		let first_tags: string[] = ["Cidadania", "Habitação", "Fiscalidade", "Educação", "Segurança Social", "Saúde", "Finanças", "Relações internacionais"];
-		first_tag_number = first_tags.length;
-
-		let first_items = db.sort(() => Math.random() - 0.5).slice(0, 0);
+		let first_items: any[] = [];
 
 		for (let t of first_tags) {
 			let aux_items = db.filter((proposal) => {return proposal.tag_1 === t});
 			aux_items = aux_items.sort(() => Math.random() - 0.5).slice(0, 1);
 			first_items = first_items.concat(aux_items);
 		};
-
-		let db_reduced = db;
 		
-		//auxiliar object to guarantee easter egg proposal is not appearing on first quiz try
-		let aux_items = first_items.concat(db.filter((proposal) => {return proposal.official_id === "3/XV-2"}))
+		let db_reduced = db.filter((proposal) => !first_items.includes(proposal) && proposal.official_id !== "3/XV-2");
 
-		for (let p of aux_items) {
-			db_reduced = db_reduced.filter((proposal) => {return proposal.official_id !== p.official_id});
-		}
-
-		let rest_items = db_reduced.sort(() => Math.random() - 0.5).slice(0, questions_number - first_tag_number);
+		let rest_items = db_reduced.sort(() => Math.random() - 0.5).slice(0, questions_number - first_tags.length);
 
 		items = first_items.concat(rest_items);
-
 	} 	
 
 	return {

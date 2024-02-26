@@ -25,6 +25,7 @@
 	let showToast: boolean = false;
 	let showCategoriesPicker: boolean = false;
 	let showPartyInfo: boolean = false;
+	let showResults: boolean = false;
 	let readInstructions = false;
 
 	const BE: Party = {
@@ -60,7 +61,6 @@
 
 	function initializeVar() {
 		quizSize = data.db.length;
-		currentVote = 0;
 		goku = 0;
 
 		proposals = data.db.map((proposal) => ({
@@ -83,7 +83,7 @@
 		}));
 
 		for (let pr of proposals) {
-			userVote[goku] = { proposal: pr, vote: '' };
+			userVote[goku] = { proposal: pr, vote: userVote[goku]?.vote || '' };
 			goku += 1;
 		}
 	}
@@ -96,7 +96,20 @@
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 
-	initializeVar();
+	async function addQuestion() {
+		let response = await fetch(`/proposals?pageSize=10&exlcudeIds=${proposals.map((proposal) => proposal.official_id)}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		});
+		mixpanel.track('Add 10 Questions', {
+			'quiz-size': quizSize
+		});
+		let new_data = await response.json();
+		data.db = data.db.concat(new_data.proposals);
+		initializeVar();
+	}
 
 	$: if (currentVote === Math.round(quizSize / 2)) {
 		mixpanel.track('Quiz Halfway', {
@@ -108,7 +121,7 @@
 		}, 2000);
 	}
 
-	$: if (currentVote === quizSize) {
+	$: if (currentVote === quizSize && showResults) {
 		userProximity = [
 			{ party: BE, value: 0 },
 			{ party: PS, value: 0 },
@@ -166,7 +179,22 @@
 		showCategoriesPicker = false;
 		selectedTags = [];
 		initializeVar();
+		currentVote = 0;
 	}
+
+	function categoryCounts(){
+		let counts = {};
+		for (let proposal of proposals) {
+			if (counts[proposal.category]) {
+				counts[proposal.category] += 1;
+			} else {
+				counts[proposal.category] = 1;
+			}
+		}
+		return Object.entries(counts).map(([category, count]) => ({ category, count }));
+	}
+
+	initializeVar();
 </script>
 
 <DevBanner env={data.env} />
@@ -183,14 +211,14 @@
 	<div class="mx-auto flex h-full w-full items-center justify-center">
 		<Welcome bind:readInstructions />
 	</div>
-{:else if currentVote === quizSize}
+{:else if currentVote === quizSize && showResults}
 	<div class="flex min-h-screen flex-col items-center justify-center px-4 sm:px-0">
 		<div id="share" class="flex flex-col items-center justify-center">
 			<Hemicycle partyRankingList={userProximity} party_logo={userProximity[0].party.name} />
 
 			<button
 				tabindex="0"
-				class="mb-1 mt-2 font-bold cursor-pointer text-center text-xs text-slate-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
+				class="mb-1 mt-2 cursor-pointer text-center text-xs font-bold text-slate-500 underline decoration-slate-300 decoration-dashed decoration-2 underline-offset-2 hover:decoration-slate-500 sm:text-lg md:text-sm"
 				id="descobre"
 				on:click={() => {
 					showPartyInfo = true;
@@ -235,6 +263,34 @@
 
 		<AboutButton />
 	</div>
+{:else if currentVote === quizSize && !showResults}
+	<div class="mt-8 flex w-full flex-col items-center justify-center">
+		<div class="flex w-2/3 flex-col items-center justify-center">
+			<Hemicycle random={true} />
+		</div>
+	</div>
+
+	<div class="mt-8 flex w-full flex-col items-center">
+		<button class="mb-2 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={() => (showResults = true)}
+			>👁️ Mostra-me os resultados</button
+		>
+		{#if quizSize === 15 || quizSize === 2}
+			<button class="mt-2 mb-6 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={addQuestion}
+				>🤓 Responde a mais 10 perguntas para aumentar a precisão do resultado</button
+			>
+		{:else}
+			<button class="mt-2 mb-6 w-2/3 rounded bg-slate-500 bg-opacity-50 py-2 font-bold text-slate-100 shadow-2xl hover:bg-slate-700 sm:w-1/3" on:click={addQuestion}
+				>📚 Estou a pensar tornar-me um deputado (mais 10 perguntas)</button
+			>
+		{/if}
+
+	    <!-- {#each categoryCounts() as proposal, i}
+			<div class="italic flex flex-col items-center justify-center px-4 text-slate-400 sm:mt-2 sm:bg-opacity-100 sm:px-0">
+				{proposal.category} - {proposal.count}
+			</div>
+		{/each} -->
+		<p class="italic text-lg text-slate-400 mt-1">{quizSize} votos até agora.</p>
+	</div>
 {:else}
 	<div class="loading absolute top-0 z-40 h-2 bg-teal-500 opacity-50 transition-all duration-200 sm:h-4" style="width: {(currentVote / quizSize) * 100}%" />
 	{#key currentVote}
@@ -242,13 +298,13 @@
 			<Document proposal_document={proposals[currentVote]} />
 
 			<div class="fixed bottom-0 left-0 right-0 flex justify-center space-x-4 bg-slate-100 bg-opacity-95 p-4 sm:relative sm:mt-2 sm:bg-opacity-0">
-				<button class="rounded bg-green-400 px-4 py-1 font-bold text-slate-700 hover:bg-green-700 hover:text-slate-200" on:click={() => handleVoteClick("1")}
+				<button class="rounded bg-green-400 px-4 py-1 font-bold text-slate-700 hover:bg-green-700 hover:text-slate-200" on:click={() => handleVoteClick('1')}
 					>Aprovar<span class="hidden sm:block">👍</span></button
 				>
-				<button class="rounded bg-slate-400 px-4 font-bold text-slate-700 hover:bg-slate-700 hover:text-slate-200" on:click={() => handleVoteClick("2")}
+				<button class="rounded bg-slate-400 px-4 font-bold text-slate-700 hover:bg-slate-700 hover:text-slate-200" on:click={() => handleVoteClick('2')}
 					>Abster-me<span class="hidden sm:block">🤷‍♂️</span></button
 				>
-				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" on:click={() => handleVoteClick("0")}
+				<button class="rounded bg-red-400 px-4 font-bold text-slate-700 hover:bg-red-700 hover:text-slate-200" on:click={() => handleVoteClick('0')}
 					>Rejeitar<span class="hidden sm:block">👎</span></button
 				>
 			</div>
