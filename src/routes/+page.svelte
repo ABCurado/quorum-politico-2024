@@ -103,7 +103,9 @@
 				'Content-Type': 'application/json'
 			}
 		});
-
+		mixpanel.track('Add 10 Questions', {
+			'quiz-size': quizSize
+		});
 		let new_data = await response.json();
 		data.db = data.db.concat(new_data.proposals);
 		initializeVar();
@@ -282,11 +284,11 @@
 			>
 		{/if}
 
-	    {#each categoryCounts() as proposal, i}
+	    <!-- {#each categoryCounts() as proposal, i}
 			<div class="italic flex flex-col items-center justify-center px-4 text-slate-400 sm:mt-2 sm:bg-opacity-100 sm:px-0">
 				{proposal.category} - {proposal.count}
 			</div>
-		{/each}
+		{/each} -->
 		<p class="italic text-lg text-slate-400 mt-1">{quizSize} votos até agora.</p>
 	</div>
 {:else}
