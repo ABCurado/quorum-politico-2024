@@ -34,7 +34,7 @@
 					<div class="">
 						<IconCheckbox size={16} stroke={3} class="text-green-600" />
 					</div>
-					<span class="ml-2">Lê a <strong>motivação, riscos e críticas</strong> de 15 propostas parlamentares (das 62 que recolhemos).</span>
+					<span class="ml-2">Lê a <strong>motivação, riscos e críticas</strong> de 15 propostas parlamentares (de 67 que foram votadas desde Janeiro'23).</span>
 				</li>
 				<li class="flex items-center mb-1">
 					<div class="">
