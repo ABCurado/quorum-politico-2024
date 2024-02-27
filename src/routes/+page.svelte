@@ -111,9 +111,7 @@
 		let new_data = await response.json();
 		data.db = data.db.concat(new_data.proposals);
 
-		console.log(data.db.length)
-		console.log(total_db_proposals)
-		if (data.db.length === total_db_proposals) {
+		if (data.db.length >= total_db_proposals) {
 			showResults = true;
 		}
 		
