@@ -24,7 +24,7 @@ export const load: PageServerLoad = async ({ request: any, platform }) => {
 		let rest_items = db_reduced.sort(() => Math.random() - 0.5).slice(0, questions_number - first_tags.length);
 
 		items = first_items.concat(rest_items);
-	} 	
+	}
 
 	return {
 		db: items,

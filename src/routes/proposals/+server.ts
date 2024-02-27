@@ -19,12 +19,15 @@ export const GET: RequestHandler = async ({ request, platform, url }) => {
 			});
 		});
 	}
+	
 	// Exclude proposals by id
 	filteredProposals = filteredProposals.filter((proposal) => {
 		return !excludeIds.includes(proposal.official_id);
 	});
+
 	// Randomize the order of filtered proposals
 	const randomizedProposals = filteredProposals.sort(() => Math.random() - 0.5);
+	
 	// Paginate the randomized proposals
 	let paginatedProposals = randomizedProposals.slice(0, pageSize);
 	

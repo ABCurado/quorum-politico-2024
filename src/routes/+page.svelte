@@ -17,10 +17,12 @@
 	//import Proximity from './party/+server.ts';
 	import AiSummary from './ai/AISummary.svelte';
 	import { IconRefresh, IconTriangleOff } from '@tabler/icons-svelte';
+	import db_total from './proposals/proposals_db.json';
 
 	export let data;
 	export let selectedTags: string[];
-
+	
+	const total_db_proposals: number = db_total.length;
 	let quizSize: number = data.db.length;
 	let showToast: boolean = false;
 	let showCategoriesPicker: boolean = false;
@@ -108,6 +110,11 @@
 		});
 		let new_data = await response.json();
 		data.db = data.db.concat(new_data.proposals);
+
+		if (data.db.length === total_db_proposals) {
+			showResults = true;
+		}
+		
 		initializeVar();
 	}
 
@@ -182,6 +189,7 @@
 		currentVote = 0;
 	}
 
+	/*
 	function categoryCounts(){
 		let counts = {};
 		for (let proposal of proposals) {
@@ -193,6 +201,7 @@
 		}
 		return Object.entries(counts).map(([category, count]) => ({ category, count }));
 	}
+	*/
 
 	initializeVar();
 </script>
