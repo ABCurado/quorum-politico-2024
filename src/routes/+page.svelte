@@ -112,6 +112,7 @@
 		data.db = data.db.concat(new_data.proposals);
 
 		if (data.db.length >= total_db_proposals) {
+			data.db = data.db.slice(0, total_db_proposals);
 			showResults = true;
 		}
 		
