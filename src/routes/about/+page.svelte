@@ -85,13 +85,14 @@
 			</li>
 			<li>
 				Riscos e críticas foram predominantemente elaborados por nós. Apesar da nossa abordagem apartidária, é possível que revelem algum enviesamento. Procurámos mitigar este enviesamento ao facultar
-				a opção de receber sugestões.
+				a opção de receber sugestões da comunidade.
 			</li>
 			<li>
-				Apesar da representatividade das propostas recolhidas, cada seleção individual de 15 propostas pode estar enviesada para determinados temas ou ser maioritariamente de partidos de um espetro
-				político.
+				Tentamos ter representatividade nas propostas recolhidas a nível de espetro político (24 de partidos de esquerda, 21 de direita, 22 do bloco central) e de temas. No entanto nada impede uma pessoa que responda 2x (com um seleção de perguntas diferente) de ter resultados completamente antagónicos.
 			</li>
-			<li>Esta ferramenta não substitui a leitura dos programas eleitorais como preparação do voto (até porque só inclui partidos com representação parlamentar).</li>
+			<li>
+				Esta ferramenta não substitui a leitura dos programas eleitorais como preparação do voto (até porque só inclui partidos com representação parlamentar).
+			</li>
 		</ul>
 	</div>
 
