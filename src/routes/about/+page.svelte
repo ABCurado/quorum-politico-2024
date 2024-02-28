@@ -44,10 +44,10 @@
 		<div class="space-y-2">
 			<p class="mt-2 text-base text-gray-700">
 				<li>
-					Uma iniciativa apartidária que procura proporcionar aos cidadãos a oportunidade de votar diretamente em propostas parlamentares, visando uma compreensão mais clara de qual partido melhor representa suas ideias.
+					Uma iniciativa apartidária que procura proporcionar aos cidadãos a oportunidade de votar diretamente em propostas parlamentares, trazendo uma abordagem mais objetiva na decisão do partido que melhor representa as suas ideias.
 				</li>
 				<li>
-					Desconsideramos agendas políticas, afiliações partidárias, discursos em entrevistas e promessas eleitorais. O nosso objetivo é avaliar de maneira objetiva como cada partido exerce seu poder de voto e representa os interesses da sociedade.
+					Desconsideramos agendas políticas, afiliações partidárias, discursos em entrevistas e promessas eleitorais.
 				</li>
 			</p>
 		</div>
@@ -58,10 +58,13 @@
 		<div class="space-y-2">
 			<p class="mt-2 text-base text-gray-700">
 				<li>
-					Apresentamos 15 propostas parlamentares, permitindo que simules ser teu próprio representante partidário ao votar a favor, contra ou abster-se. Em cada proposta, fornecemos a motivação do partido proponente, bem como possíveis riscos e críticas associados. Nosso objetivo é destacar que mesmo propostas aparentemente óbvias têm impactos diretos e indiretos que demandam consideração, discussão e mitigação - aspectos muitas vezes ausentes nas propostas partidárias convencionais. No final, revelamos o partido que mais se alinha ao teu padrão de voto e oferecemos a oportunidade de refazer a votação selecionando teus temas preferidos. Além disso, disponibilizamos documentos oficiais de cada proposta e mostramos como cada partido votou nas propostas em que participaste através de links diretos associados.
+					Reunimos 67 propostas parlamentares apresentadas desde Janeiro de 2023 (fonte: <a href="https://www.parlamento.pt/ArquivoDocumentacao/Paginas/Arquivodevotacoes.aspx" target="_blank"><u>Arquivo de Votações do Parlamento</u></a>) onde desconsideramos propostas demasiado técnicas (ex: pequenas alterações legislativas difíceis de enquadrar) e propostas unânimes que não ajudam a fazer distinção entre partidos (ex: pesar pelo falecimento da Maria Odete dos Santos apresentada a 2024/01/05).
 				</li>
 				<li>
-					Reunimos um total de 67 propostas parlamentares desde janeiro de 2023, considerando sempre as versões mais recentes (fonte: <a href="https://www.parlamento.pt/ArquivoDocumentacao/Paginas/Arquivodevotacoes.aspx" target="_blank"><u>Arquivo de Votações do Parlamento</u></a>). Na seleção, levamos em conta três fatores: unanimidade, uniformidade e simplicidade. Descartamos propostas demasiado técnicas ou em que não houvesse diferença no voto dos partidos. Atribuímos pontos à tua correlação com um partido a cada voto coincidente e subtraímos pontos em caso de votos totalmente divergentes.
+					Destas apresentamos 15 (inicialmente), permitindo que cada pessoa simule o seu voto (a favor, contra, ou abstenção). Cada proposta é acompanhada por um breve sumário (resumido do documento oficial apresentado pelo partido) e por possíveis riscos/críticas associadas (criadas por nós e em aberto para serem complementadas pela comunidade). O grande objetivo é destacar que mesmo propostas aparentemente óbvias têm impactos diretos e indiretos que obrigam a consideração, discussão e mitigação - aspetos muitas vezes ausentes nas propostas partidárias convencionais.
+				</li>
+				<li>
+					No final, conseguimos revelar que partido mais se alinha com os votos - cada voto coincidente vale +1 e cada voto divergente (i.e.: tu contra e partido a favor, ou vice-versa) vale -1. Há a possibilidade de ir prolongando o quiz (+10 perguntas de cada vez) para aumentar a precisão do resultado.
 				</li>
 				<li>
 					Sem a necessidade de criar uma conta e sem armazenamento de dados pessoais, nosso projeto é transparente e acessível.
